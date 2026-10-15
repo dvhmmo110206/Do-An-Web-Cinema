@@ -1,0 +1,1155 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="web_standard" name="shell-type" />
+        <load src="src/components/head-resources.html" />
+    </head>
+    <body
+        class="bg-background font-body-md text-body-md text-on-background min-h-screen selection:bg-primary-container selection:text-on-primary-container"
+    >
+        <load src="src/components/header.html" />
+        <main class="w-full pt-16 bg-background min-h-[calc(100vh-280px)]">
+            <div class="flex flex-col w-full">
+                <!-- SEARCH HERO SECTION -->
+                <section
+                    class="relative w-full overflow-hidden px-margin-mobile md:px-margin-desktop pt-space-xl pb-space-2xl flex flex-col items-center justify-center text-center"
+                >
+                    <!-- Ambient Radial Glow Behind Hero -->
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[900px] h-[350px] bg-primary-container/15 blur-[120px] pointer-events-none rounded-full -z-10"
+                    ></div>
+                    <div
+                        class="absolute top-0 right-1/4 w-72 h-72 bg-secondary/10 blur-[100px] pointer-events-none rounded-full -z-10"
+                    ></div>
+                    <!-- Status Eyebrow Badge -->
+                    <div
+                        class="inline-flex items-center gap-space-sm px-space-md py-1.5 rounded-full bg-surface-container-high/70 backdrop-blur-md shadow-sm mb-space-lg"
+                    >
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
+                            ></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        </span>
+                        <span
+                            class="font-label-badge text-label-badge tracking-widest text-on-surface-variant uppercase"
+                            >OFFICIAL SUPPORT PORTAL</span
+                        >
+                        <span class="text-on-surface-variant/40 text-xs">•</span>
+                        <span class="font-label-md text-label-md text-emerald-400 font-medium"
+                            >All Streaming Services Operational</span
+                        >
+                    </div>
+                    <!-- Massive Theatrical Headline -->
+                    <h1
+                        class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface tracking-tight max-w-4xl leading-tight"
+                    >
+                        How can we help you today with
+                        <span
+                            class="bg-gradient-to-r from-primary-container via-primary to-secondary-fixed-dim bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(229,9,20,0.45)]"
+                            >CineStream</span
+                        >?
+                    </h1>
+                    <p class="mt-space-md font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        Search troubleshooting guides, high-fidelity device setups, billing queries, and theatrical
+                        streaming masterclasses.
+                    </p>
+                    <!-- Glassmorphic Global Search Bar -->
+                    <div class="w-full max-w-3xl mt-space-xl relative group">
+                        <div
+                            class="relative flex items-center w-full bg-surface-container-high/90 backdrop-blur-xl rounded-xl shadow-2xl transition-all duration-300 focus-within:shadow-[0_0_35px_rgba(229,9,20,0.35)] focus-within:bg-surface-container-highest"
+                        >
+                            <span
+                                class="material-symbols-outlined text-primary-container text-2xl pl-space-lg select-none"
+                                >search</span
+                            >
+                            <input
+                                class="w-full bg-transparent px-space-md py-space-lg text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant/50 focus:outline-none"
+                                id="helpSearchInput"
+                                placeholder="What can we help you with? (e.g. download films, 4K buffering, Smart TV setup...)"
+                                type="text"
+                            />
+                            <button
+                                aria-label="Clear Search"
+                                class="hidden pr-space-lg text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
+                                id="clearSearchBtn"
+                                type="button"
+                            >
+                                <span class="material-symbols-outlined text-xl">close</span>
+                            </button>
+                        </div>
+                        <!-- Live Search Instant Results Box (Dynamic hidden state) -->
+                        <div
+                            class="hidden absolute top-full left-0 w-full mt-2 bg-surface-container-high/95 backdrop-blur-2xl rounded-xl p-space-md shadow-2xl text-left z-30"
+                            id="searchResultsDropdown"
+                        >
+                            <div
+                                class="flex items-center justify-between pb-space-xs mb-space-xs text-on-surface-variant text-label-md font-label-md uppercase tracking-wider"
+                            >
+                                <span>Matching Knowledge Base Articles</span>
+                                <span class="text-xs">Press ESC to dismiss</span>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <a
+                                    class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest text-on-surface transition-colors"
+                                    href="#"
+                                >
+                                    <span class="material-symbols-outlined text-primary text-lg">tv</span>
+                                    <span class="font-body-md text-body-md truncate"
+                                        >How to enable 4K Ultra HD &amp; Dolby Vision on Samsung &amp; LG Smart
+                                        TVs</span
+                                    >
+                                </a>
+                                <a
+                                    class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest text-on-surface transition-colors"
+                                    href="#"
+                                >
+                                    <span class="material-symbols-outlined text-secondary text-lg">volume_up</span>
+                                    <span class="font-body-md text-body-md truncate"
+                                        >Fixing Audio Desync and Activating Dolby Atmos Passthrough</span
+                                    >
+                                </a>
+                                <a
+                                    class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest text-on-surface transition-colors"
+                                    href="#"
+                                >
+                                    <span class="material-symbols-outlined text-tertiary text-lg">wifi_off</span>
+                                    <span class="font-body-md text-body-md truncate"
+                                        >Troubleshooting Error Code CS-4001: 'Network Bandwidth Insufficient'</span
+                                    >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quick Search Filter Pills -->
+                    <div class="flex flex-wrap items-center justify-center gap-space-xs mt-space-lg max-w-3xl">
+                        <span class="font-label-md text-label-md text-on-surface-variant/70 mr-space-xs"
+                            >Quick search:</span
+                        >
+                        <button
+                            class="quick-pill px-space-md py-1.5 rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all"
+                            type="button"
+                        >
+                            Reset Password
+                        </button>
+                        <button
+                            class="quick-pill px-space-md py-1.5 rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all"
+                            type="button"
+                        >
+                            Fix 4K Stutter
+                        </button>
+                        <button
+                            class="quick-pill px-space-md py-1.5 rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all"
+                            type="button"
+                        >
+                            Dolby Atmos Setup
+                        </button>
+                        <button
+                            class="quick-pill px-space-md py-1.5 rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all"
+                            type="button"
+                        >
+                            Supported Smart TVs
+                        </button>
+                        <button
+                            class="quick-pill px-space-md py-1.5 rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all"
+                            type="button"
+                        >
+                            Cancel Membership
+                        </button>
+                        <button
+                            class="quick-pill px-space-md py-1.5 rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all"
+                            type="button"
+                        >
+                            AirPlay / Chromecast
+                        </button>
+                    </div>
+                </section>
+                <!-- HELP CATEGORIES GRID -->
+                <section class="w-full px-margin-mobile md:px-margin-desktop py-space-xl">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl">
+                        <div>
+                            <span
+                                class="font-label-badge text-label-badge tracking-widest uppercase text-primary-container"
+                                >ARCHITECTURAL TAXONOMY</span
+                            >
+                            <h2
+                                class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface mt-1"
+                            >
+                                Browse Help by Category
+                            </h2>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 md:mt-0">
+                            Curated technical repositories &amp; administrative guides
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter">
+                        <!-- Category 1: Account -->
+                        <div
+                            class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-lg hover:bg-surface-container-high transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] cursor-pointer"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between mb-space-md">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform"
+                                    >
+                                        <span class="material-symbols-outlined text-2xl">manage_accounts</span>
+                                    </div>
+                                    <span
+                                        class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-badge text-label-badge uppercase"
+                                        >14 Articles</span
+                                    >
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors"
+                                >
+                                    Getting Started &amp; Account
+                                </h3>
+                                <p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                                    Account creation, profile avatars, parental controls, PIN security, and initial
+                                    onboarding.
+                                </p>
+                            </div>
+                            <div class="mt-space-lg pt-space-md flex flex-wrap gap-1.5">
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Create Account</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Manage Profiles</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Password Reset</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Maturity Ratings</span
+                                >
+                            </div>
+                        </div>
+                        <!-- Category 2: Devices -->
+                        <div
+                            class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-lg hover:bg-surface-container-high transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] cursor-pointer"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between mb-space-md">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform"
+                                    >
+                                        <span class="material-symbols-outlined text-2xl">devices</span>
+                                    </div>
+                                    <span
+                                        class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-badge text-label-badge uppercase"
+                                        >28 Articles</span
+                                    >
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors"
+                                >
+                                    Watching on Devices
+                                </h3>
+                                <p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                                    Setup guides for Apple TV 4K, Android TV, Samsung Tizen, LG webOS, PS5, Xbox, and
+                                    mobile apps.
+                                </p>
+                            </div>
+                            <div class="mt-space-lg pt-space-md flex flex-wrap gap-1.5">
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Smart TV Activation</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Console Setup</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Offline Downloads</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Casting &amp; AirPlay</span
+                                >
+                            </div>
+                        </div>
+                        <!-- Category 3: AV Troubleshooting -->
+                        <div
+                            class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-lg hover:bg-surface-container-high transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] cursor-pointer"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between mb-space-md">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-tertiary-container/30 flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform"
+                                    >
+                                        <span class="material-symbols-outlined text-2xl">high_quality</span>
+                                    </div>
+                                    <span
+                                        class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-badge text-label-badge uppercase"
+                                        >19 Articles</span
+                                    >
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-tertiary transition-colors"
+                                >
+                                    Video &amp; Audio Support
+                                </h3>
+                                <p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                                    Resolve 4K HDR playback errors, buffering lag, Dolby Atmos multichannel
+                                    pass-through, and black screens.
+                                </p>
+                            </div>
+                            <div class="mt-space-lg pt-space-md flex flex-wrap gap-1.5">
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Buffering &amp; CDN</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Dolby Vision Sync</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Audio Lag Fix</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Error CS-108</span
+                                >
+                            </div>
+                        </div>
+                        <!-- Category 4: Billing -->
+                        <div
+                            class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-lg hover:bg-surface-container-high transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] cursor-pointer"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between mb-space-md">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-surface-tint/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform"
+                                    >
+                                        <span class="material-symbols-outlined text-2xl">credit_card</span>
+                                    </div>
+                                    <span
+                                        class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-badge text-label-badge uppercase"
+                                        >12 Articles</span
+                                    >
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors"
+                                >
+                                    Billing, Plans &amp; Payments
+                                </h3>
+                                <p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                                    Manage subscription tiers, update payment cards, view tax invoices, refunds, and
+                                    redeem gift cards.
+                                </p>
+                            </div>
+                            <div class="mt-space-lg pt-space-md flex flex-wrap gap-1.5">
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Change Subscription</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Payment Methods</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Invoice History</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Gift Cards</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- POPULAR ARTICLES & HARDWARE BENCHMARKS -->
+                <section class="w-full px-margin-mobile md:px-margin-desktop py-space-xl bg-surface-container-lowest">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl">
+                        <div>
+                            <div class="flex items-center gap-space-xs">
+                                <span class="material-symbols-outlined text-secondary text-sm">bolt</span>
+                                <span class="font-label-badge text-label-badge tracking-widest uppercase text-secondary"
+                                    >HOT TOPICS</span
+                                >
+                            </div>
+                            <h2
+                                class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface mt-1"
+                            >
+                                Popular Help Articles
+                            </h2>
+                        </div>
+                        <div
+                            class="flex items-center gap-space-sm mt-3 md:mt-0 text-on-surface-variant font-body-sm text-body-sm"
+                        >
+                            <span>Updated continuously based on live diagnostics</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                        <!-- Article 1 -->
+                        <a
+                            class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 hover:shadow-xl"
+                            href="#"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between gap-space-xs mb-space-md">
+                                    <span
+                                        class="px-space-sm py-0.5 rounded bg-primary-container text-on-primary-container font-label-badge text-label-badge uppercase font-bold"
+                                        >Most Viewed</span
+                                    >
+                                    <span
+                                        class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-sm">visibility</span> 142k views
+                                    </span>
+                                </div>
+                                <div class="flex items-start gap-space-sm">
+                                    <span class="material-symbols-outlined text-primary text-xl mt-0.5 shrink-0"
+                                        >tv</span
+                                    >
+                                    <h3
+                                        class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2"
+                                    >
+                                        How to enable 4K Ultra HD &amp; Dolby Vision on Samsung &amp; LG Smart TVs
+                                    </h3>
+                                </div>
+                                <p class="mt-space-sm font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    Fine-tune HDR deep color settings, HDMI 2.1 eARC compatibility flags, and picture
+                                    mode picture calibration.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-space-lg pt-space-md flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"
+                            >
+                                <div class="flex items-center gap-space-sm">
+                                    <span>3 min read</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-400 font-medium">98% helpful</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-1 transition-all"
+                                    >arrow_forward</span
+                                >
+                            </div>
+                        </a>
+                        <!-- Article 2 -->
+                        <a
+                            class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 hover:shadow-xl"
+                            href="#"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between gap-space-xs mb-space-md">
+                                    <span
+                                        class="px-space-sm py-0.5 rounded bg-surface-container-highest text-secondary font-label-badge text-label-badge uppercase font-bold"
+                                        >Audio Master</span
+                                    >
+                                    <span
+                                        class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-sm">visibility</span> 98k views
+                                    </span>
+                                </div>
+                                <div class="flex items-start gap-space-sm">
+                                    <span class="material-symbols-outlined text-secondary text-xl mt-0.5 shrink-0"
+                                        >volume_up</span
+                                    >
+                                    <h3
+                                        class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors line-clamp-2"
+                                    >
+                                        Fixing Audio Desync and Activating Dolby Atmos Passthrough
+                                    </h3>
+                                </div>
+                                <p class="mt-space-sm font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    Configure soundbars, AV receivers, and uncompressed spatial audio rendering via
+                                    bitstream settings.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-space-lg pt-space-md flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"
+                            >
+                                <div class="flex items-center gap-space-sm">
+                                    <span>4 min read</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-400 font-medium">96% helpful</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary group-hover:translate-x-1 transition-all"
+                                    >arrow_forward</span
+                                >
+                            </div>
+                        </a>
+                        <!-- Article 3 -->
+                        <a
+                            class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 hover:shadow-xl"
+                            href="#"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between gap-space-xs mb-space-md">
+                                    <span
+                                        class="px-space-sm py-0.5 rounded bg-surface-container-highest text-tertiary font-label-badge text-label-badge uppercase font-bold"
+                                        >Mobile Offline</span
+                                    >
+                                    <span
+                                        class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-sm">visibility</span> 87k views
+                                    </span>
+                                </div>
+                                <div class="flex items-start gap-space-sm">
+                                    <span class="material-symbols-outlined text-tertiary text-xl mt-0.5 shrink-0"
+                                        >download_for_offline</span
+                                    >
+                                    <h3
+                                        class="font-headline-sm text-headline-sm text-on-surface group-hover:text-tertiary transition-colors line-clamp-2"
+                                    >
+                                        Downloading Movies &amp; TV Episodes for Offline Viewing on iOS/Android
+                                    </h3>
+                                </div>
+                                <p class="mt-space-sm font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    Manage high-bitrate offline storage, smart download queues, SD card destinations,
+                                    and cellular data safeguards.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-space-lg pt-space-md flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"
+                            >
+                                <div class="flex items-center gap-space-sm">
+                                    <span>2 min read</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-400 font-medium">99% helpful</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-tertiary group-hover:translate-x-1 transition-all"
+                                    >arrow_forward</span
+                                >
+                            </div>
+                        </a>
+                        <!-- Article 4 -->
+                        <a
+                            class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 hover:shadow-xl"
+                            href="#"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between gap-space-xs mb-space-md">
+                                    <span
+                                        class="px-space-sm py-0.5 rounded bg-surface-container-highest text-on-surface font-label-badge text-label-badge uppercase font-bold"
+                                        >Security</span
+                                    >
+                                    <span
+                                        class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-sm">visibility</span> 76k views
+                                    </span>
+                                </div>
+                                <div class="flex items-start gap-space-sm">
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant text-xl mt-0.5 shrink-0"
+                                        >lock</span
+                                    >
+                                    <h3
+                                        class="font-headline-sm text-headline-sm text-on-surface group-hover:text-on-surface transition-colors line-clamp-2"
+                                    >
+                                        Managing Multiple Profiles &amp; Setting up 4-Digit Parental PIN Codes
+                                    </h3>
+                                </div>
+                                <p class="mt-space-sm font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    Establish age-gated viewing tiers, restrict explicit content categories, and lock
+                                    personal profile watchlists.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-space-lg pt-space-md flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"
+                            >
+                                <div class="flex items-center gap-space-sm">
+                                    <span>3 min read</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-400 font-medium">94% helpful</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface group-hover:translate-x-1 transition-all"
+                                    >arrow_forward</span
+                                >
+                            </div>
+                        </a>
+                        <!-- Article 5 -->
+                        <a
+                            class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 hover:shadow-xl"
+                            href="#"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between gap-space-xs mb-space-md">
+                                    <span
+                                        class="px-space-sm py-0.5 rounded bg-error-container text-on-error-container font-label-badge text-label-badge uppercase font-bold"
+                                        >Playback Error</span
+                                    >
+                                    <span
+                                        class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-sm">visibility</span> 64k views
+                                    </span>
+                                </div>
+                                <div class="flex items-start gap-space-sm">
+                                    <span class="material-symbols-outlined text-error text-xl mt-0.5 shrink-0"
+                                        >wifi_off</span
+                                    >
+                                    <h3
+                                        class="font-headline-sm text-headline-sm text-on-surface group-hover:text-error transition-colors line-clamp-2"
+                                    >
+                                        Troubleshooting Error Code CS-4001: 'Network Bandwidth Insufficient'
+                                    </h3>
+                                </div>
+                                <p class="mt-space-sm font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    Resolve CDN handshake latency, clear local DNS cache, and test your device's direct
+                                    throughput to CineStream servers.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-space-lg pt-space-md flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"
+                            >
+                                <div class="flex items-center gap-space-sm">
+                                    <span>5 min read</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-400 font-medium">91% helpful</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-error group-hover:translate-x-1 transition-all"
+                                    >arrow_forward</span
+                                >
+                            </div>
+                        </a>
+                        <!-- Article 6 -->
+                        <a
+                            class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 hover:shadow-xl"
+                            href="#"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between gap-space-xs mb-space-md">
+                                    <span
+                                        class="px-space-sm py-0.5 rounded bg-surface-container-highest text-primary-fixed font-label-badge text-label-badge uppercase font-bold"
+                                        >Billing &amp; Invoices</span
+                                    >
+                                    <span
+                                        class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-sm">visibility</span> 59k views
+                                    </span>
+                                </div>
+                                <div class="flex items-start gap-space-sm">
+                                    <span
+                                        class="material-symbols-outlined text-primary-fixed-dim text-xl mt-0.5 shrink-0"
+                                        >receipt_long</span
+                                    >
+                                    <h3
+                                        class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2"
+                                    >
+                                        Updating Credit Card Information &amp; Managing Auto-Renewal Invoices
+                                    </h3>
+                                </div>
+                                <p class="mt-space-sm font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    Modify backup payment methods, retrieve VAT/GST compliant tax invoices, and switch
+                                    annual payment cycles.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-space-lg pt-space-md flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"
+                            >
+                                <div class="flex items-center gap-space-sm">
+                                    <span>2 min read</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-400 font-medium">97% helpful</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-1 transition-all"
+                                    >arrow_forward</span
+                                >
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Visual Streaming Quality Diagnostics Meter Banner -->
+                    <div
+                        class="mt-space-xl p-space-lg rounded-xl bg-surface-container-high/60 backdrop-blur-md flex flex-col lg:flex-row items-center justify-between gap-space-lg"
+                    >
+                        <div class="flex items-center gap-space-md w-full lg:w-auto">
+                            <div
+                                class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container shrink-0"
+                            >
+                                <span class="material-symbols-outlined text-2xl">speed</span>
+                            </div>
+                            <div>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface">
+                                    Live Network &amp; Stream Speed Test
+                                </h4>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Check your real-time latency and maximum bitrate to CineStream edge clusters.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-space-lg w-full lg:w-auto justify-between lg:justify-end">
+                            <div class="flex items-center gap-space-sm">
+                                <div class="flex flex-col text-right">
+                                    <span class="font-label-badge text-label-badge uppercase text-on-surface-variant"
+                                        >Optimal 4K HDR</span
+                                    >
+                                    <span class="font-headline-sm text-headline-sm text-emerald-400 font-bold"
+                                        >48.2 Mbps</span
+                                    >
+                                </div>
+                                <!-- Sparkline Mini SVG -->
+                                <svg class="w-24 h-8 text-emerald-500" fill="none" viewbox="0 0 100 30">
+                                    <path
+                                        d="M0 24L15 20L30 22L45 12L60 16L75 6L90 10L100 4"
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2.5"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <button
+                                class="px-space-md py-2 rounded-lg bg-surface-container-highest hover:bg-surface-bright text-on-surface font-label-lg text-label-lg transition-colors shrink-0"
+                                type="button"
+                            >
+                                Run Diagnostics
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <!-- INTERACTIVE FAQ ACCORDION -->
+                <section class="w-full px-margin-mobile md:px-margin-desktop py-space-2xl">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-space-2xl">
+                            <span
+                                class="font-label-badge text-label-badge tracking-widest uppercase text-primary-container"
+                                >FREQUENT INQUIRIES</span
+                            >
+                            <h2
+                                class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface mt-1"
+                            >
+                                Frequently Asked Questions
+                            </h2>
+                            <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                                Immediate resolutions for our most common subscriber requests.
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-space-sm" id="faqAccordionContainer">
+                            <!-- FAQ 1 -->
+                            <div class="faq-item rounded-xl bg-surface-container-low transition-all duration-200">
+                                <button
+                                    class="faq-toggle w-full p-space-lg flex items-center justify-between text-left focus:outline-none"
+                                    type="button"
+                                >
+                                    <span class="font-headline-sm text-headline-sm text-on-surface pr-space-md"
+                                        >How do I upgrade from Standard to Ultra 4K CineVIP plan?</span
+                                    >
+                                    <span
+                                        class="faq-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300 shrink-0"
+                                        >expand_more</span
+                                    >
+                                </button>
+                                <div
+                                    class="faq-content hidden px-space-lg pb-space-lg text-on-surface-variant font-body-md text-body-md"
+                                >
+                                    <div class="pt-space-xs space-y-3">
+                                        <p>Upgrading your tier is seamless and instantaneous:</p>
+                                        <ol
+                                            class="list-decimal list-inside space-y-2 text-on-surface/90 pl-1 font-body-sm text-body-sm"
+                                        >
+                                            <li>
+                                                Log in and navigate to
+                                                <strong class="text-on-surface">Account Settings</strong> from your
+                                                top-right profile avatar.
+                                            </li>
+                                            <li>
+                                                Under the
+                                                <strong class="text-on-surface">Membership &amp; Billing</strong>
+                                                partition, select <strong class="text-primary">Change Plan</strong>.
+                                            </li>
+                                            <li>
+                                                Select the
+                                                <strong class="text-on-surface">Ultra 4K CineVIP</strong> tier to
+                                                immediately unlock Dolby Vision, uncompressed Dolby Atmos, and 4
+                                                concurrent streams.
+                                            </li>
+                                        </ol>
+                                        <p class="text-xs text-on-surface-variant/70">
+                                            Upgrades are prorated immediately; your previous billing cycle credit
+                                            applies towards your new invoice balance.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ 2 -->
+                            <div class="faq-item rounded-xl bg-surface-container-low transition-all duration-200">
+                                <button
+                                    class="faq-toggle w-full p-space-lg flex items-center justify-between text-left focus:outline-none"
+                                    type="button"
+                                >
+                                    <span class="font-headline-sm text-headline-sm text-on-surface pr-space-md"
+                                        >Why am I experiencing video buffering even with high-speed fiber
+                                        internet?</span
+                                    >
+                                    <span
+                                        class="faq-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300 shrink-0"
+                                        >expand_more</span
+                                    >
+                                </button>
+                                <div
+                                    class="faq-content hidden px-space-lg pb-space-lg text-on-surface-variant font-body-md text-body-md"
+                                >
+                                    <div class="pt-space-xs space-y-3">
+                                        <p>
+                                            While your ISP fiber speed may be fast, local routing bottlenecks or TV
+                                            processing limits can cause buffer underruns:
+                                        </p>
+                                        <ul
+                                            class="list-disc list-inside space-y-2 text-on-surface/90 pl-1 font-body-sm text-body-sm"
+                                        >
+                                            <li>
+                                                Verify your streaming device has at least
+                                                <strong class="text-on-surface"
+                                                    >25 Mbps dedicated sustained bandwidth</strong
+                                                >
+                                                for high-bitrate 4K.
+                                            </li>
+                                            <li>
+                                                In the CineStream player settings, switch
+                                                <strong class="text-on-surface">Video Buffer Profile</strong> from
+                                                <em>Automatic</em> to <em>Ultra Aggressive (Pre-render 60s)</em>.
+                                            </li>
+                                            <li>
+                                                Restart your local home router to refresh routing tables toward our
+                                                nearest edge CDN node.
+                                            </li>
+                                            <li>
+                                                If using a Smart TV app, perform a full cold-boot (hold TV power button
+                                                for 10 seconds) to flush video memory.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ 3 -->
+                            <div class="faq-item rounded-xl bg-surface-container-low transition-all duration-200">
+                                <button
+                                    class="faq-toggle w-full p-space-lg flex items-center justify-between text-left focus:outline-none"
+                                    type="button"
+                                >
+                                    <span class="font-headline-sm text-headline-sm text-on-surface pr-space-md"
+                                        >How many devices can stream CineStream simultaneously?</span
+                                    >
+                                    <span
+                                        class="faq-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300 shrink-0"
+                                        >expand_more</span
+                                    >
+                                </button>
+                                <div
+                                    class="faq-content hidden px-space-lg pb-space-lg text-on-surface-variant font-body-md text-body-md"
+                                >
+                                    <div class="pt-space-xs space-y-2">
+                                        <p>Simultaneous streaming allocations depend entirely on your active tier:</p>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm my-space-md">
+                                            <div class="p-space-md rounded-lg bg-surface-container">
+                                                <div
+                                                    class="font-label-badge text-label-badge uppercase text-on-surface-variant"
+                                                >
+                                                    Standard Plan
+                                                </div>
+                                                <div class="font-headline-sm text-headline-sm text-on-surface mt-1">
+                                                    2 Screens
+                                                </div>
+                                                <p class="text-xs text-on-surface-variant mt-1">
+                                                    1080p Full HD resolution on up to 2 active devices in a single
+                                                    household.
+                                                </p>
+                                            </div>
+                                            <div class="p-space-md rounded-lg bg-surface-container-high">
+                                                <div class="font-label-badge text-label-badge uppercase text-primary">
+                                                    Ultra 4K CineVIP
+                                                </div>
+                                                <div class="font-headline-sm text-headline-sm text-on-surface mt-1">
+                                                    4 Screens
+                                                </div>
+                                                <p class="text-xs text-on-surface-variant mt-1">
+                                                    Simultaneous 4K UHD + Dolby Atmos streams across Smart TVs,
+                                                    consoles, and mobile devices.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ 4 -->
+                            <div class="faq-item rounded-xl bg-surface-container-low transition-all duration-200">
+                                <button
+                                    class="faq-toggle w-full p-space-lg flex items-center justify-between text-left focus:outline-none"
+                                    type="button"
+                                >
+                                    <span class="font-headline-sm text-headline-sm text-on-surface pr-space-md"
+                                        >How do I set up CineStream on my PlayStation 5 or Xbox Series X?</span
+                                    >
+                                    <span
+                                        class="faq-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300 shrink-0"
+                                        >expand_more</span
+                                    >
+                                </button>
+                                <div
+                                    class="faq-content hidden px-space-lg pb-space-lg text-on-surface-variant font-body-md text-body-md"
+                                >
+                                    <div class="pt-space-xs space-y-2">
+                                        <p>Console setup is simplified through quick QR activation:</p>
+                                        <ol
+                                            class="list-decimal list-inside space-y-2 text-on-surface/90 pl-1 font-body-sm text-body-sm"
+                                        >
+                                            <li>
+                                                Search for "CineStream" in the
+                                                <strong class="text-on-surface">PlayStation Store</strong> (Media tab)
+                                                or <strong class="text-on-surface">Microsoft Store</strong>.
+                                            </li>
+                                            <li>Download and open the CineStream native application.</li>
+                                            <li>
+                                                A dynamic 6-digit activation PIN and QR code will appear on your
+                                                television screen.
+                                            </li>
+                                            <li>
+                                                Scan the QR code with your smartphone or visit
+                                                <code
+                                                    class="text-primary px-1 py-0.5 rounded bg-surface-container-highest"
+                                                    >cinestream.com/activate</code
+                                                >
+                                                to pair your console instantly.
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ 5 -->
+                            <div class="faq-item rounded-xl bg-surface-container-low transition-all duration-200">
+                                <button
+                                    class="faq-toggle w-full p-space-lg flex items-center justify-between text-left focus:outline-none"
+                                    type="button"
+                                >
+                                    <span class="font-headline-sm text-headline-sm text-on-surface pr-space-md"
+                                        >Can I download CineStream content to watch on airplanes or offline?</span
+                                    >
+                                    <span
+                                        class="faq-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300 shrink-0"
+                                        >expand_more</span
+                                    >
+                                </button>
+                                <div
+                                    class="faq-content hidden px-space-lg pb-space-lg text-on-surface-variant font-body-md text-body-md"
+                                >
+                                    <div class="pt-space-xs space-y-2">
+                                        <p>
+                                            Yes, offline playback is fully supported on authorized mobile and tablet
+                                            devices running iOS or Android.
+                                        </p>
+                                        <p class="font-body-sm text-body-sm">
+                                            Downloaded titles remain stored on your device for
+                                            <strong class="text-on-surface">30 days</strong>. Once you press play on an
+                                            offline title, you have <strong class="text-on-surface">48 hours</strong> to
+                                            complete playback before reconnecting to the internet to renew the offline
+                                            DRM license.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ 6 -->
+                            <div class="faq-item rounded-xl bg-surface-container-low transition-all duration-200">
+                                <button
+                                    class="faq-toggle w-full p-space-lg flex items-center justify-between text-left focus:outline-none"
+                                    type="button"
+                                >
+                                    <span class="font-headline-sm text-headline-sm text-on-surface pr-space-md"
+                                        >What should I do if I see Error CS-502 or regional playback restrictions?</span
+                                    >
+                                    <span
+                                        class="faq-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300 shrink-0"
+                                        >expand_more</span
+                                    >
+                                </button>
+                                <div
+                                    class="faq-content hidden px-space-lg pb-space-lg text-on-surface-variant font-body-md text-body-md"
+                                >
+                                    <div class="pt-space-xs space-y-2">
+                                        <p>
+                                            Error <code class="text-error font-mono">CS-502</code> indicates an active
+                                            IP proxy or mismatch between your current physical IP geocoding and the
+                                            theatrical licensing territory for the selected studio title.
+                                        </p>
+                                        <p class="font-body-sm text-body-sm">
+                                            To resolve: disable any third-party VPN or proxy tunnels, verify your
+                                            internet provider does not utilize CGNAT crossing national boundaries, and
+                                            confirm that your payment billing country corresponds to your viewing
+                                            region.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- STILL NEED HELP? CONTACT & CONCIERGE BANNER -->
+                <section class="w-full px-margin-mobile md:px-margin-desktop pb-space-2xl">
+                    <div
+                        class="relative w-full rounded-2xl overflow-hidden bg-surface-container p-space-xl md:p-space-2xl shadow-2xl"
+                    >
+                        <!-- Ambient Crimson Backlight Overlay -->
+                        <div
+                            class="absolute -bottom-20 -right-20 w-96 h-96 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"
+                        ></div>
+                        <div
+                            class="absolute -top-20 -left-20 w-72 h-72 bg-secondary/10 rounded-full blur-3xl pointer-events-none"
+                        ></div>
+                        <div
+                            class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-xl"
+                        >
+                            <!-- Text details -->
+                            <div class="max-w-2xl">
+                                <div
+                                    class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-primary-container/20 text-primary-container font-label-badge text-label-badge uppercase tracking-wider mb-space-sm"
+                                >
+                                    <span class="material-symbols-outlined text-xs">headset_mic</span>
+                                    <span>24/7 DEDICATED THEATRICAL DESK</span>
+                                </div>
+                                <h2
+                                    class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface tracking-tight"
+                                >
+                                    Can't find what you're looking for?
+                                </h2>
+                                <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-sm">
+                                    Our dedicated CineStream Concierge support team is available around the clock to
+                                    resolve any technical, billing, or device setup challenges with white-glove
+                                    precision.
+                                </p>
+                                <div
+                                    class="flex items-center gap-space-lg mt-space-md text-on-surface-variant font-body-sm text-body-sm"
+                                >
+                                    <div class="flex items-center gap-space-xs">
+                                        <span class="material-symbols-outlined text-emerald-400 text-base"
+                                            >verified</span
+                                        >
+                                        <span>100% Human Concierge</span>
+                                    </div>
+                                    <div class="flex items-center gap-space-xs">
+                                        <span class="material-symbols-outlined text-secondary text-base">schedule</span>
+                                        <span>Average response: under 60 sec</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CTA Options Box -->
+                            <div class="flex flex-col sm:flex-row lg:flex-col gap-space-sm shrink-0 w-full lg:w-80">
+                                <button
+                                    class="w-full flex items-center justify-center gap-space-sm px-space-lg py-space-md rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-lg hover:shadow-[0_0_24px_rgba(229,9,20,0.5)] active:scale-[0.98] transition-all"
+                                    type="button"
+                                >
+                                    <span class="material-symbols-outlined text-xl">chat</span>
+                                    <span>Live Chat with Concierge</span>
+                                </button>
+                                <button
+                                    class="w-full flex items-center justify-center gap-space-sm px-space-lg py-space-md rounded-lg bg-surface-container-high/80 hover:bg-surface-container-highest text-on-surface font-label-lg text-label-lg transition-colors"
+                                    type="button"
+                                >
+                                    <span class="material-symbols-outlined text-xl">confirmation_number</span>
+                                    <span>Submit a Support Ticket</span>
+                                </button>
+                                <div
+                                    class="flex items-center justify-center gap-space-xs pt-space-xs text-on-surface-variant font-label-md text-label-md"
+                                >
+                                    <span class="material-symbols-outlined text-sm">call</span>
+                                    <span>Toll-Free Hotline:</span>
+                                    <a
+                                        class="text-on-surface hover:text-primary transition-colors font-medium"
+                                        href="tel:18008492463"
+                                        >1-800-849-CINE</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <script>
+                // Accordion Logic
+                document.querySelectorAll(".faq-toggle").forEach((button) => {
+                    button.addEventListener("click", () => {
+                        const item = button.closest(".faq-item");
+                        const content = item.querySelector(".faq-content");
+                        const icon = button.querySelector(".faq-icon");
+                        const isOpen = !content.classList.contains("hidden");
+
+                        // Close all other open items for clean theatrical accordion
+                        document.querySelectorAll(".faq-item").forEach((otherItem) => {
+                            if (otherItem !== item) {
+                                otherItem.querySelector(".faq-content").classList.add("hidden");
+                                otherItem.querySelector(".faq-icon").classList.remove("rotate-180");
+                                otherItem.classList.remove("bg-surface-container");
+                                otherItem.classList.add("bg-surface-container-low");
+                            }
+                        });
+
+                        // Toggle current item
+                        if (isOpen) {
+                            content.classList.add("hidden");
+                            icon.classList.remove("rotate-180");
+                            item.classList.remove("bg-surface-container");
+                            item.classList.add("bg-surface-container-low");
+                        } else {
+                            content.classList.remove("hidden");
+                            icon.classList.add("rotate-180");
+                            item.classList.remove("bg-surface-container-low");
+                            item.classList.add("bg-surface-container");
+                        }
+                    });
+                });
+
+                // Search micro-interaction
+                const helpInput = document.getElementById("helpSearchInput");
+                const clearBtn = document.getElementById("clearSearchBtn");
+                const dropdown = document.getElementById("searchResultsDropdown");
+
+                helpInput.addEventListener("input", (e) => {
+                    const val = e.target.value.trim();
+                    if (val.length > 0) {
+                        clearBtn.classList.remove("hidden");
+                        dropdown.classList.remove("hidden");
+                    } else {
+                        clearBtn.classList.add("hidden");
+                        dropdown.classList.add("hidden");
+                    }
+                });
+
+                clearBtn.addEventListener("click", () => {
+                    helpInput.value = "";
+                    clearBtn.classList.add("hidden");
+                    dropdown.classList.add("hidden");
+                    helpInput.focus();
+                });
+
+                // Close dropdown on outside click or escape
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "Escape") {
+                        dropdown.classList.add("hidden");
+                    }
+                });
+
+                // Quick pill population
+                document.querySelectorAll(".quick-pill").forEach((pill) => {
+                    pill.addEventListener("click", () => {
+                        helpInput.value = pill.textContent.trim();
+                        clearBtn.classList.remove("hidden");
+                        dropdown.classList.remove("hidden");
+                        helpInput.focus();
+                    });
+                });
+            </script>
+        </main>
+        <load src="src/components/footer.html" />
+        <script type="module" src="/js/nav.js"></script>
+    </body>
+</html>

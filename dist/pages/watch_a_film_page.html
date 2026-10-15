@@ -1,0 +1,2315 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="web_standard" name="shell-type" />
+                <!-- ==================== CINESTREAM GLOBAL HEAD RESOURCES ==================== -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Outfit:wght@400;600;700;800&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <!-- Favicon & App Icons -->
+        <link rel="icon" type="image/png" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+        <!-- Preload CinePug Mascot Sprites for instant zero-lag rendering across tabs/pages -->
+        <link rel="preload" as="image" href="/mascots/pug-directions.webp" type="image/webp" />
+        <link rel="preload" as="image" href="/mascots/pug-reactions.webp" type="image/webp" />
+        <style>
+            @layer base {
+                html,
+                body {
+                    margin: 0;
+                    padding: 0;
+                }
+                body {
+                    overscroll-behavior: none;
+                }
+                main > :first-child {
+                    margin-top: 0 !important;
+                }
+                main > :last-child {
+                    margin-bottom: 0 !important;
+                }
+            }
+            ::-webkit-scrollbar {
+                display: none;
+            }
+            .material-symbols-outlined {
+                font-family: "Material Symbols Outlined";
+                font-weight: normal;
+                font-style: normal;
+                font-size: 24px;
+                line-height: 1;
+                letter-spacing: normal;
+                text-transform: none;
+                display: inline-block;
+                white-space: nowrap;
+                word-wrap: normal;
+                direction: ltr;
+                -webkit-font-feature-settings: "liga";
+                -webkit-font-smoothing: antialiased;
+            }
+
+            /* Custom subtle glassmorphism and glow utilities */
+            .glass-panel {
+                background: rgba(32, 31, 33, 0.7);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                border: 1px solid rgba(94, 63, 59, 0.3);
+            }
+            .neon-red-glow {
+                box-shadow: 0 0 35px -5px rgba(229, 9, 20, 0.5);
+            }
+            .neon-red-glow-sm {
+                box-shadow: 0 0 15px -3px rgba(229, 9, 20, 0.4);
+            }
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        </style>
+        <script>
+            (function() {
+                const _w = console.warn;
+                console.warn = function(...args) {
+                    if (args[0] && typeof args[0] === 'string' && args[0].includes('cdn.tailwindcss.com')) return;
+                    _w.apply(console, args);
+                };
+            })();
+        </script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            tertiary: "#c0c1ff",
+                            "outline-variant": "#5e3f3b",
+                            "on-surface": "#e5e1e4",
+                            background: "#131315",
+                            "inverse-on-surface": "#313032",
+                            "tertiary-container": "#5e61ec",
+                            "on-tertiary-fixed": "#07006c",
+                            "surface-container-high": "#2a2a2c",
+                            "surface-variant": "#353437",
+                            "primary-fixed": "#ffdad5",
+                            "on-tertiary-fixed-variant": "#2f2ebe",
+                            "on-primary-fixed-variant": "#930007",
+                            primary: "#ffb4aa",
+                            "surface-container-low": "#1c1b1d",
+                            "inverse-primary": "#c0000c",
+                            "tertiary-fixed-dim": "#c0c1ff",
+                            "on-secondary-fixed": "#2a1700",
+                            "on-surface-variant": "#e9bcb6",
+                            "tertiary-fixed": "#e1e0ff",
+                            "secondary-container": "#ee9800",
+                            "primary-container": "#e50914",
+                            "surface-container-lowest": "#0e0e10",
+                            surface: "#131315",
+                            "primary-fixed-dim": "#ffb4aa",
+                            outline: "#af8782",
+                            "on-secondary-container": "#5b3800",
+                            "on-error-container": "#ffdad6",
+                            "on-primary": "#690003",
+                            "surface-tint": "#ffb4aa",
+                            "on-background": "#e5e1e4",
+                            "error-container": "#93000a",
+                            "surface-bright": "#39393b",
+                            "on-primary-container": "#fff7f6",
+                            "on-primary-fixed": "#410001",
+                            "on-secondary": "#472a00",
+                            secondary: "#ffb95f",
+                            error: "#ffb4ab",
+                            "on-tertiary": "#1000a9",
+                            "on-secondary-fixed-variant": "#653e00",
+                            "secondary-fixed": "#ffddb8",
+                            "surface-container-highest": "#353437",
+                            "inverse-surface": "#e5e1e4",
+                            "secondary-fixed-dim": "#ffb95f",
+                            "on-error": "#690005",
+                            "surface-dim": "#131315",
+                            "on-tertiary-container": "#fcf8ff",
+                            "surface-container": "#201f21",
+                        },
+                        borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+                        spacing: {
+                            "gutter-sm": "1rem",
+                            "space-sm": "0.5rem",
+                            "space-xs": "0.25rem",
+                            "space-lg": "1.5rem",
+                            gutter: "1.5rem",
+                            "gutter-lg": "2rem",
+                            margin: "2rem",
+                            "space-md": "1rem",
+                            "margin-mobile": "1rem",
+                            "margin-desktop": "3.5rem",
+                            "space-xl": "2.5rem",
+                            "space-2xl": "4rem",
+                        },
+                        fontFamily: {
+                            "label-md": ["Geist"],
+                            "headline-sm": ["Outfit"],
+                            "label-badge": ["Geist"],
+                            "body-sm": ["Geist"],
+                            "headline-xl": ["Outfit"],
+                            "headline-xl-mobile": ["Outfit"],
+                            "display-hero-mobile": ["Outfit"],
+                            "display-hero": ["Outfit"],
+                            "body-md": ["Geist"],
+                            "label-lg": ["Geist"],
+                            "body-lg": ["Geist"],
+                            "headline-lg": ["Outfit"],
+                        },
+                        fontSize: {
+                            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }],
+                            "headline-sm": ["20px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }],
+                            "label-badge": ["10px", { lineHeight: "12px", letterSpacing: "0.08em", fontWeight: "700" }],
+                            "body-sm": ["13px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }],
+                            "headline-xl": [
+                                "40px",
+                                { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" },
+                            ],
+                            "headline-xl-mobile": [
+                                "28px",
+                                { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" },
+                            ],
+                            "display-hero-mobile": [
+                                "36px",
+                                { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "800" },
+                            ],
+                            "display-hero": [
+                                "64px",
+                                { lineHeight: "72px", letterSpacing: "-0.03em", fontWeight: "800" },
+                            ],
+                            "body-md": ["15px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "400" }],
+                            "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "600" }],
+                            "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "400" }],
+                            "headline-lg": [
+                                "28px",
+                                { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" },
+                            ],
+                        },
+                    },
+                },
+            };
+        </script>
+
+        <link rel="preload" as="image" href="/images/backdrops/cyber_drift_2099.jpg" fetchpriority="high" />
+      <script type="module" crossorigin src="/assets/watch-Blnx1t6v.js"></script>
+      <link rel="modulepreload" crossorigin href="/assets/player-CfUXkRg1.js">
+      <link rel="modulepreload" crossorigin href="/assets/nav-Dr-Z9-3t.js">
+      <link rel="stylesheet" crossorigin href="/assets/player-CPRHHCZG.css">
+    </head>
+    <body
+        class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"
+    >
+        <!-- ==================== CINESTREAM BRAND TOP NAV BAR ==================== -->
+<header
+    class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-2xl transition-all duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.85)]"
+>
+    <div
+        class="h-20 w-full px-margin-mobile md:px-margin-desktop flex items-center justify-between gap-space-lg"
+    >
+        <div class="flex items-center gap-space-xl flex-shrink-0">
+            <a class="flex items-center gap-2.5 group" data-path="home" href="/index.html"
+                ><img
+                    alt="CINESTREAM Logo"
+                    class="h-9 w-9 rounded-xl object-contain shadow-[0_0_20px_rgba(229,9,20,0.35)] transition-transform duration-300 group-hover:scale-105"
+                    src="/logo.png"
+                /><span
+                    class="font-headline-lg text-headline-lg font-bold tracking-tight text-on-surface hidden sm:inline"
+                    >CINE<span class="text-primary-container">STREAM</span></span
+                ></a
+            >
+            <nav
+                class="hidden xl:flex items-center gap-space-md 2xl:gap-space-lg"
+                data-active-classes="text-on-surface font-semibold"
+            >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="home"
+                    href="/index.html"
+                    >Home</a
+                >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="movies"
+                    href="/pages/search_page.html?type=movie"
+                    >Movies</a
+                >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="series"
+                    href="/pages/series_detail.html"
+                    >Series</a
+                >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="pricing"
+                    href="/pages/pricing.html"
+                    >Pricing</a
+                >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="contact-help"
+                    href="/pages/contact.html"
+                    >Contact &amp; Help</a
+                >
+            </nav>
+        </div>
+        <div class="flex items-center gap-space-md md:gap-space-lg flex-shrink-0">
+            <div class="relative group flex items-center">
+                <div
+                    class="flex items-center bg-surface-container-lowest/80 backdrop-blur-md rounded-full px-space-md py-space-xs transition-all duration-300 w-44 md:w-64 focus-within:w-72 md:focus-within:w-80 shadow-[0_2px_12px_rgba(0,0,0,0.5)]"
+                >
+                    <span
+                        class="material-symbols-outlined text-on-surface-variant text-[20px] mr-space-sm select-none"
+                        >search</span
+                    ><input
+                        class="w-full bg-transparent text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none"
+                        placeholder="Titles, people, genres..."
+                        type="search"
+                    />
+                </div>
+                <div
+                    class="absolute right-0 top-full mt-2 w-80 bg-surface-container-high/95 backdrop-blur-2xl rounded-xl p-space-sm shadow-[0_24px_48px_rgba(0,0,0,0.9)] hidden group-focus-within:block z-50"
+                >
+                    <div
+                        class="px-space-sm py-space-xs font-label-badge text-label-badge text-secondary uppercase tracking-wider"
+                    >
+                        Top Searches
+                    </div>
+                    <a
+                        class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest transition-colors"
+                        data-path="search-results"
+                        href="/pages/watch_a_film_page.html?id=dune-part-two"
+                        ><span class="material-symbols-outlined text-primary text-[18px]">trending_up</span>
+                        <div class="flex flex-col">
+                            <span class="font-label-lg text-label-lg text-on-surface">Dune: Part Two</span
+                            ><span class="font-body-sm text-body-sm text-on-surface-variant"
+                                >Sci-Fi • 4K UHD</span
+                            >
+                        </div></a
+                    ><a
+                        class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest transition-colors"
+                        data-path="search-results"
+                        href="/pages/series_detail.html?id=neural-drift-reckoning"
+                        ><span class="material-symbols-outlined text-primary text-[18px]">trending_up</span>
+                        <div class="flex flex-col">
+                            <span class="font-label-lg text-label-lg text-on-surface">Neural Drift: Reckoning</span
+                            ><span class="font-body-sm text-body-sm text-on-surface-variant"
+                                >Crime Drama • Series</span
+                            >
+                        </div></a
+                    ><a
+                        class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest transition-colors"
+                        data-path="search-results"
+                        href="/pages/watch_a_film_page.html?id=oppenheimer"
+                        ><span class="material-symbols-outlined text-primary text-[18px]">trending_up</span>
+                        <div class="flex flex-col">
+                            <span class="font-label-lg text-label-lg text-on-surface">Oppenheimer</span
+                            ><span class="font-body-sm text-body-sm text-on-surface-variant"
+                                >Biographical Drama • IMAX</span
+                            >
+                        </div></a
+                    >
+                </div>
+            </div>
+            <div class="relative" id="notifications-wrapper">
+                <button
+                    id="notifications-btn"
+                    aria-label="Notifications"
+                    aria-expanded="false"
+                    class="relative p-space-sm rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors duration-200 flex items-center justify-center cursor-pointer"
+                    type="button"
+                >
+                    <span class="material-symbols-outlined text-[24px]">notifications</span>
+                    <span
+                        id="notifications-badge"
+                        class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_rgba(229,9,20,0.8)]"
+                    ></span>
+                </button>
+
+                <!-- Notifications Dropdown Panel -->
+                <div
+                    id="notifications-dropdown"
+                    class="absolute right-0 top-full mt-3 w-80 sm:w-96 bg-surface-container-high/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden transition-all duration-200 transform scale-95 opacity-0 pointer-events-none translate-y-2 z-50 select-none"
+                    style="display: none;"
+                >
+                    <!-- Header -->
+                    <div class="px-4 py-3 bg-surface-container/90 border-b border-white/5 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-headline text-[15px] font-bold text-white flex items-center gap-1.5">
+                                Thông báo
+                            </span>
+                            <span id="notifications-count-badge" class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary-fixed text-[11px] font-semibold border border-primary-container/30">
+                                3 Mới
+                            </span>
+                        </div>
+                        <button
+                            id="notifications-mark-read-btn"
+                            type="button"
+                            class="text-[12px] text-on-surface-variant hover:text-white transition-colors cursor-pointer flex items-center gap-1 font-medium"
+                        >
+                            <span class="material-symbols-outlined text-[16px] text-primary">done_all</span>
+                            Đọc tất cả
+                        </button>
+                    </div>
+
+                    <!-- Notification Items -->
+                    <div id="notifications-list" class="max-h-[380px] overflow-y-auto divide-y divide-white/5 scrollbar-thin">
+                        <!-- Notification 1 -->
+                        <a href="/pages/series_detail.html?id=neural-drift-reckoning" class="notification-item flex items-start gap-3 p-3.5 hover:bg-white/[0.04] transition-colors group cursor-pointer bg-white/[0.02]">
+                            <div class="relative flex-shrink-0 w-12 h-16 rounded-lg overflow-hidden bg-surface-container shadow-md">
+                                <img
+                                    src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=200&auto=format&fit=crop&q=80"
+                                    alt="Neural Drift"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <span class="notification-dot absolute top-1 left-1 w-2 h-2 rounded-full bg-primary-container shadow-sm"></span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between gap-1 mb-1">
+                                    <span class="font-headline text-[13px] font-bold text-white group-hover:text-primary transition-colors truncate">
+                                        🎬 Tập mới đã phát hành!
+                                    </span>
+                                    <span class="text-[10px] text-on-surface-variant/70 whitespace-nowrap">10p trước</span>
+                                </div>
+                                <p class="text-[12px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                                    <strong class="text-on-surface font-semibold">Neural Drift: Reckoning</strong> - Tập 7 "Mạng Lưới Bóng Đêm" hiện đã có định dạng 4K HDR.
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- Notification 2 -->
+                        <a href="/pages/watch_a_film_page.html?id=dune-part-two" class="notification-item flex items-start gap-3 p-3.5 hover:bg-white/[0.04] transition-colors group cursor-pointer bg-white/[0.02]">
+                            <div class="relative flex-shrink-0 w-12 h-16 rounded-lg overflow-hidden bg-surface-container shadow-md">
+                                <img
+                                    src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=200&auto=format&fit=crop&q=80"
+                                    alt="Dune Part Two"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <span class="notification-dot absolute top-1 left-1 w-2 h-2 rounded-full bg-primary-container shadow-sm"></span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between gap-1 mb-1">
+                                    <span class="font-headline text-[13px] font-bold text-white group-hover:text-primary transition-colors truncate">
+                                        🔥 Đề xuất phim hot cho bạn
+                                    </span>
+                                    <span class="text-[10px] text-on-surface-variant/70 whitespace-nowrap">2 giờ trước</span>
+                                </div>
+                                <p class="text-[12px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                                    <strong class="text-on-surface font-semibold">Dune: Part Two</strong> đã cập bến rạp CineStream với chuẩn âm thanh vòm Dolby Atmos đỉnh cao.
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- Notification 3 -->
+                        <a href="/pages/pricing.html" class="notification-item flex items-start gap-3 p-3.5 hover:bg-white/[0.04] transition-colors group cursor-pointer bg-white/[0.02]">
+                            <div class="relative flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-tr from-secondary-container to-amber-500 flex items-center justify-center text-white shadow-md">
+                                <span class="material-symbols-outlined text-[24px]">verified</span>
+                                <span class="notification-dot absolute top-1 left-1 w-2 h-2 rounded-full bg-primary-container shadow-sm"></span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between gap-1 mb-1">
+                                    <span class="font-headline text-[13px] font-bold text-white group-hover:text-secondary transition-colors truncate">
+                                        👑 Đặc quyền Hội viên VIP
+                                    </span>
+                                    <span class="text-[10px] text-on-surface-variant/70 whitespace-nowrap">Hôm qua</span>
+                                </div>
+                                <p class="text-[12px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                                    Tài khoản của bạn đã được nâng cấp quyền xem sớm các bản chiếu rạp IMAX không giới hạn!
+                                </p>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="p-2.5 bg-surface-container/90 border-t border-white/5 text-center">
+                        <a href="/pages/contact.html" class="text-[12px] font-medium text-primary hover:text-primary-fixed transition-colors flex items-center justify-center gap-1">
+                            <span>Xem tất cả thông báo &amp; trợ giúp</span>
+                            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a class="flex items-center gap-space-xs group" data-path="profile-settings" href="/pages/select_profile.html"
+                ><div
+                    class="p-0.5 rounded-full transition-transform duration-300 group-hover:scale-105 shadow-[0_0_12px_rgba(0,0,0,0.6)]"
+                >
+                    <img
+                        alt="Profile"
+                        class="w-8 h-8 rounded-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwhMB3eSg_URnC3yT-qp7IQGliA1GRo_tn1SxPdNX0PI6uJBlHcqDuSVhYT9F2q5fzGbOgugl_1qHUIM0TUuFUbyHyuVRR_R9mK9iIpm2JPXm5pubC_3J2sa80OB2jaP-9jQEZXybukDqhKz9dZFVYdOteqcqMjhtGuLuKZywDxjR18wzlPCgF169LlaaHdkxAdovGaytmykRoThIUgZ6BmXoWsg2rd3YUBsWxBLGesZzppcVrwmN1"
+                    />
+                </div>
+                <span
+                    class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface text-[18px] hidden sm:inline transition-colors duration-200"
+                    >arrow_drop_down</span
+                ></a
+            >
+        </div>
+    </div>
+</header>
+
+        <main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
+            <div class="flex flex-col w-full text-on-surface">
+                <!-- Video Player Stage & Hero Scrim -->
+                <section class="relative w-full overflow-hidden" id="player-theater-stage">
+                    <!-- Ambient Backdrop Illumination -->
+                    <div
+                        class="absolute -top-32 left-1/4 w-[700px] h-[400px] bg-primary-container/20 rounded-full blur-[140px] pointer-events-none -z-0"
+                    ></div>
+                    <div
+                        class="absolute top-1/2 right-10 w-[500px] h-[350px] bg-tertiary-container/15 rounded-full blur-[160px] pointer-events-none -z-0"
+                    ></div>
+                    <div
+                        id="film-player-stage"
+                        class="relative w-full aspect-[21/9] min-h-[480px] max-h-[820px] bg-surface-container-lowest flex items-center justify-center group select-none cursor-pointer"
+                    >
+                        <!-- High Production Backdrop Media & Playable Video Stream -->
+                        <div
+                            id="film-stage-backdrop"
+                            class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-[1.015]"
+                            data-alt="Cinematic film still"
+                            style="
+                                background-image: url(&quot;/images/backdrops/cyber_drift_2099.jpg&quot;);
+                            "
+                        ></div>
+                        <video id="active-film-player" class="absolute inset-0 w-full h-full object-cover hidden z-10" playsinline></video>
+                        <!-- Atmospheric Dark Scrim Gradients -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent pointer-events-none"></div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/80 via-transparent to-surface-container-lowest/70 pointer-events-none"
+                        ></div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-b from-surface/70 via-transparent to-transparent pointer-events-none"
+                        ></div>
+                        <!-- Quick Action Overlays (Top Right & Bottom Right Interactive Tags) -->
+                        <div id="player-top-quick-actions" class="absolute top-6 right-6 md:right-margin-desktop z-30 flex items-center gap-space-sm transition-opacity duration-300">
+                            <button
+                                id="film-quick-trailer-btn"
+                                class="px-space-md py-space-xs rounded-full bg-surface-container-high/80 backdrop-blur-xl text-on-surface hover:bg-surface-bright transition-all duration-200 flex items-center gap-space-xs shadow-md group/btn"
+                                type="button"
+                            >
+                                <span class="material-symbols-outlined text-secondary text-[18px]">movie_edit</span>
+                                <span class="font-label-md text-label-md">Watch Trailer</span>
+                            </button>
+                            <button
+                                id="film-quick-skip-intro-btn"
+                                class="px-space-md py-space-xs rounded-full bg-primary-container text-white hover:bg-[#ff1f2d] border border-white/30 transition-all duration-200 shadow-glow-red flex items-center gap-space-xs cursor-pointer select-none"
+                                type="button"
+                                title="Bỏ qua phần giới thiệu (Skip Intro)"
+                            >
+                                <span class="material-symbols-outlined text-[18px] transition-transform">fast_forward</span>
+                                <span class="font-label-md text-label-md tracking-wider uppercase font-bold">Skip Intro</span>
+                            </button>
+                        </div>
+                        <!-- Central Play Pulse (Idle/Initial Start State) -->
+                        <button
+                            aria-label="Toggle Film Playback"
+                            class="relative z-20 w-20 h-20 md:w-24 md:h-24 rounded-full bg-surface-container-lowest/80 backdrop-blur-2xl text-on-surface flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-primary-container hover:text-on-primary-container"
+                            id="stage-center-play-toggle"
+                            type="button"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[44px] md:text-[52px] ml-1.5"
+                                style="font-variation-settings: &quot;FILL&quot; 1"
+                                >play_arrow</span
+                            >
+                            <span
+                                class="absolute inset-0 rounded-full bg-primary-container/30 animate-ping pointer-events-none"
+                            ></span>
+                        </button>
+                        <!-- Center Flash Feedback Ripple/Icon Overlay (Play/Pause Quick Feedback Indicator) -->
+                        <div
+                            id="player-center-flash"
+                            class="absolute inset-0 flex items-center justify-center pointer-events-none z-40 select-none"
+                            aria-hidden="true"
+                        >
+                            <div
+                                id="player-center-flash-box"
+                                class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-surface-container-lowest/85 md:bg-black/75 backdrop-blur-2xl text-white flex items-center justify-center shadow-[0_0_35px_rgba(0,0,0,0.85)] border border-white/20 opacity-0 pointer-events-none"
+                            >
+                                <span
+                                    id="player-center-flash-icon"
+                                    class="material-symbols-outlined text-[48px] md:text-[56px] text-white ml-1.5"
+                                    style="font-variation-settings: 'FILL' 1"
+                                    >play_arrow</span
+                                >
+                            </div>
+                        </div>
+                        <!-- Full-Featured Video Player Control Dock (Level 2 Floating HUD) -->
+                        <div
+                            id="player-control-dock"
+                            class="absolute bottom-0 left-0 right-0 z-30 px-margin-mobile md:px-margin-desktop pb-space-lg pt-space-2xl bg-gradient-to-t from-surface via-surface/90 to-transparent flex flex-col gap-space-sm transition-opacity duration-300"
+                        >
+                            <!-- Interactive Scrubber Timeline with Chapter Markers -->
+                            <div id="player-scrubber-timeline" class="relative w-full group/scrubber cursor-pointer py-space-xs select-none">
+                                <!-- Baseline Background Track -->
+                                <div
+                                    id="player-scrubber-track"
+                                    class="relative w-full h-1.5 md:h-2 bg-surface-variant/80 rounded-full overflow-hidden transition-all duration-200 group-hover/scrubber:h-3"
+                                >
+                                    <!-- Buffered Track -->
+                                    <div
+                                        id="player-buffered-bar"
+                                        class="absolute top-0 left-0 h-full w-0 bg-surface-container-highest/80 rounded-full transition-[width] duration-200"
+                                    ></div>
+                                    <!-- Played Progress Track (Crimson) -->
+                                    <div
+                                        class="absolute top-0 left-0 h-full w-0 bg-primary-container rounded-full shadow-[0_0_12px_rgba(229,9,20,0.8)]"
+                                        id="player-progress-bar"
+                                    ></div>
+                                </div>
+                                <!-- Pulsing Scrubber Head -->
+                                <div
+                                    id="player-scrubber-head"
+                                    class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary-container shadow-[0_0_16px_rgba(229,9,20,0.9)] scale-0 group-hover/scrubber:scale-100 transition-transform pointer-events-none"
+                                    style="left: 0%;"
+                                ></div>
+                                <!-- Floating Hover Time Tooltip -->
+                                <div
+                                    id="player-scrubber-tooltip"
+                                    class="absolute -top-8 -translate-x-1/2 opacity-0 pointer-events-none font-label-badge text-label-badge bg-surface-container-high px-2 py-0.5 rounded text-on-surface shadow-md transition-opacity whitespace-nowrap z-40"
+                                >
+                                    00:00
+                                </div>
+                            </div>
+                            <!-- Controls Toolbar Row -->
+                            <div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+                                <!-- Left Wing: Play/Pause, Replay, Timestamp -->
+                                <div class="flex items-center gap-space-md">
+                                    <button
+                                        aria-label="Play or Pause"
+                                        class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg hover:bg-primary transition-all duration-200 cursor-pointer active:scale-95"
+                                        id="ctrl-play-btn"
+                                        type="button"
+                                        title="Play / Pause (Space)"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[24px]"
+                                            style="font-variation-settings: &quot;FILL&quot; 1"
+                                            >play_arrow</span
+                                        >
+                                    </button>
+                                    <button
+                                        id="ctrl-replay-10"
+                                        aria-label="Step Back 10 Seconds"
+                                        class="text-on-surface-variant hover:text-on-surface transition-all duration-200 p-1 cursor-pointer active:scale-90"
+                                        type="button"
+                                        title="Lùi 10 giây (←)"
+                                    >
+                                        <span class="material-symbols-outlined text-[24px]">replay_10</span>
+                                    </button>
+                                    <button
+                                        id="ctrl-forward-10"
+                                        aria-label="Step Forward 10 Seconds"
+                                        class="text-on-surface-variant hover:text-on-surface transition-all duration-200 p-1 cursor-pointer active:scale-90"
+                                        type="button"
+                                        title="Tiến 10 giây (→)"
+                                    >
+                                        <span class="material-symbols-outlined text-[24px]">forward_10</span>
+                                    </button>
+                                    <!-- Volume Control Module -->
+                                    <div class="flex items-center gap-space-xs group/volume ml-space-xs select-none relative py-1">
+                                        <button
+                                            id="ctrl-volume-btn"
+                                            aria-label="Mute or Unmute"
+                                            class="text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer p-1"
+                                            type="button"
+                                            title="Tắt/Bật tiếng (M)"
+                                        >
+                                            <span id="ctrl-volume-icon" class="material-symbols-outlined text-[22px]">volume_up</span>
+                                        </button>
+                                        <div
+                                            id="ctrl-volume-bar"
+                                            class="w-16 md:w-24 h-5 flex items-center relative cursor-pointer"
+                                            title="Điều chỉnh âm lượng"
+                                        >
+                                            <!-- Volume Track -->
+                                            <div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden relative group-hover/volume:h-2 transition-all">
+                                                <div id="ctrl-volume-fill" class="h-full w-[50%] bg-on-surface rounded-full"></div>
+                                            </div>
+                                            <!-- Volume Scrubber Thumb (Thumble Tròn) -->
+                                            <div
+                                                id="ctrl-volume-thumb"
+                                                class="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.85)] scale-0 group-hover/volume:scale-100 transition-transform duration-150 pointer-events-none z-20"
+                                                style="left: 50%;"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <!-- Timecode -->
+                                    <div
+                                        class="font-body-sm text-body-sm text-on-surface-variant tracking-wider ml-space-sm select-none"
+                                    >
+                                        <span id="ctrl-current-time" class="text-on-surface font-semibold">00:00</span>
+                                        <span class="mx-1 text-outline">/</span>
+                                        <span id="ctrl-total-duration">00:00</span>
+                                    </div>
+                                </div>
+                                <!-- Right Wing: Speed, Audio & Subtitles, PiP, Fullscreen -->
+                                <div class="flex items-center gap-space-sm md:gap-space-md">
+                                    <!-- Playback Speed Dropdown -->
+                                    <div class="relative group/speed select-none" id="ctrl-speed-container">
+                                        <button
+                                            id="ctrl-speed-btn"
+                                            class="flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container-high/80 text-on-surface font-label-badge text-label-badge uppercase hover:bg-surface-bright transition-all cursor-pointer font-bold select-none active:scale-95"
+                                            type="button"
+                                            title="Tốc độ phát"
+                                        >
+                                            <span id="ctrl-speed-label">1.0x</span>
+                                            <span class="material-symbols-outlined text-[15px]">arrow_drop_down</span>
+                                        </button>
+                                        <!-- Speed Dropdown Panel -->
+                                        <div
+                                            id="ctrl-speed-menu"
+                                            class="absolute right-0 bottom-full mb-2 w-44 bg-surface-container-high/95 backdrop-blur-2xl rounded-xl p-2 shadow-2xl hidden z-50 border border-white/10 flex flex-col gap-1 before:absolute before:-bottom-3 before:left-0 before:right-0 before:h-4 before:content-['']"
+                                        >
+                                            <span class="font-label-badge text-label-badge text-secondary uppercase tracking-wider block px-2 py-0.5">Tốc Độ Phát</span>
+                                            <div class="flex flex-col gap-0.5" id="speed-options-list">
+                                                <button class="speed-opt flex items-center justify-between text-left px-2.5 py-1.5 rounded hover:bg-surface-container text-on-surface-variant font-body-sm text-body-sm transition-colors cursor-pointer" data-speed="0.5" type="button">
+                                                    <span>0.5x</span>
+                                                </button>
+                                                <button class="speed-opt flex items-center justify-between text-left px-2.5 py-1.5 rounded hover:bg-surface-container text-on-surface-variant font-body-sm text-body-sm transition-colors cursor-pointer" data-speed="0.75" type="button">
+                                                    <span>0.75x</span>
+                                                </button>
+                                                <button class="speed-opt flex items-center justify-between text-left px-2.5 py-1.5 rounded bg-surface-container-highest text-on-surface font-body-sm text-body-sm transition-colors cursor-pointer" data-speed="1.0" type="button">
+                                                    <span>1.0x (Chuẩn)</span>
+                                                    <span class="material-symbols-outlined text-primary text-[16px] check-icon">check</span>
+                                                </button>
+                                                <button class="speed-opt flex items-center justify-between text-left px-2.5 py-1.5 rounded hover:bg-surface-container text-on-surface-variant font-body-sm text-body-sm transition-colors cursor-pointer" data-speed="1.25" type="button">
+                                                    <span>1.25x</span>
+                                                </button>
+                                                <button class="speed-opt flex items-center justify-between text-left px-2.5 py-1.5 rounded hover:bg-surface-container text-on-surface-variant font-body-sm text-body-sm transition-colors cursor-pointer" data-speed="1.5" type="button">
+                                                    <span>1.5x</span>
+                                                </button>
+                                                <button class="speed-opt flex items-center justify-between text-left px-2.5 py-1.5 rounded hover:bg-surface-container text-on-surface-variant font-body-sm text-body-sm transition-colors cursor-pointer" data-speed="2.0" type="button">
+                                                    <span>2.0x</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Audio & Subtitles Menu Trigger -->
+                                    <div class="relative group/lang select-none" id="ctrl-audio-subs-container">
+                                        <button
+                                            id="ctrl-audio-subs-btn"
+                                            class="flex items-center gap-1.5 px-space-sm py-1 rounded bg-surface-container-high/80 hover:bg-surface-bright text-on-surface transition-colors cursor-pointer"
+                                            type="button"
+                                            title="Âm thanh & Phụ đề"
+                                        >
+                                            <span class="material-symbols-outlined text-[18px]">subtitles</span>
+                                            <span class="font-label-badge text-label-badge uppercase hidden lg:inline"
+                                                >Audio &amp; Subs</span
+                                            >
+                                        </button>
+                                        <!-- Dropdown Panel -->
+                                        <div
+                                            id="ctrl-audio-subs-menu"
+                                            class="absolute right-0 bottom-full mb-2 w-80 bg-surface-container-high/95 backdrop-blur-2xl rounded-xl p-space-md shadow-2xl hidden z-50 border border-white/10 before:absolute before:-bottom-3 before:left-0 before:right-0 before:h-4 before:content-['']"
+                                        >
+                                            <div class="mb-space-sm">
+                                                <span
+                                                    class="font-label-badge text-label-badge text-secondary uppercase tracking-wider block mb-1"
+                                                    >Audio Stream</span
+                                                >
+                                                <div class="flex flex-col gap-1" id="audio-options-list">
+                                                    <button
+                                                        class="audio-opt flex items-center justify-between text-left px-space-sm py-1.5 rounded bg-surface-container-highest text-on-surface font-body-sm text-body-sm transition-colors cursor-pointer"
+                                                        type="button"
+                                                    >
+                                                        <span>English [Original] • Dolby Atmos</span>
+                                                        <span class="material-symbols-outlined text-primary text-[16px] check-icon">check</span>
+                                                    </button>
+                                                    <button
+                                                        class="audio-opt flex items-center justify-between text-left px-space-sm py-1.5 rounded hover:bg-surface-container text-on-surface-variant font-body-sm text-body-sm transition-colors cursor-pointer"
+                                                        type="button"
+                                                    >
+                                                        <span>Japanese (Studio Dub) • 5.1</span>
+                                                    </button>
+                                                    <button
+                                                        class="audio-opt flex items-center justify-between text-left px-space-sm py-1.5 rounded hover:bg-surface-container text-on-surface-variant font-body-sm text-body-sm transition-colors cursor-pointer"
+                                                        type="button"
+                                                    >
+                                                        <span>Director's Commentary Track</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span
+                                                    class="font-label-badge text-label-badge text-secondary uppercase tracking-wider block mb-1"
+                                                    >Subtitles</span
+                                                >
+                                                <div
+                                                    class="grid grid-cols-2 gap-1 font-body-sm text-body-sm text-on-surface-variant"
+                                                    id="subtitle-options-list"
+                                                >
+                                                    <button
+                                                        class="sub-opt px-space-sm py-1.5 rounded bg-surface-container-highest text-on-surface flex items-center justify-between cursor-pointer transition-colors text-left"
+                                                        type="button"
+                                                    >
+                                                        <span>English [CC]</span>
+                                                        <span class="material-symbols-outlined text-primary text-[14px] check-icon">check</span>
+                                                    </button>
+                                                    <button
+                                                        class="sub-opt px-space-sm py-1.5 rounded hover:bg-surface-container text-on-surface-variant flex items-center justify-between cursor-pointer transition-colors text-left"
+                                                        type="button"
+                                                    >
+                                                        <span>Spanish</span>
+                                                    </button>
+                                                    <button
+                                                        class="sub-opt px-space-sm py-1.5 rounded hover:bg-surface-container text-on-surface-variant flex items-center justify-between cursor-pointer transition-colors text-left"
+                                                        type="button"
+                                                    >
+                                                        <span>French</span>
+                                                    </button>
+                                                    <button
+                                                        class="sub-opt px-space-sm py-1.5 rounded hover:bg-surface-container text-on-surface-variant flex items-center justify-between cursor-pointer transition-colors text-left"
+                                                        type="button"
+                                                    >
+                                                        <span>Vietnamese</span>
+                                                    </button>
+                                                    <button
+                                                        class="sub-opt px-space-sm py-1.5 rounded hover:bg-surface-container text-on-surface-variant flex items-center justify-between cursor-pointer transition-colors text-left"
+                                                        type="button"
+                                                    >
+                                                        <span>Japanese</span>
+                                                    </button>
+                                                    <button
+                                                        class="sub-opt px-space-sm py-1.5 rounded hover:bg-surface-container text-on-surface-variant flex items-center justify-between cursor-pointer transition-colors text-left"
+                                                        type="button"
+                                                    >
+                                                        <span>Off</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Picture-in-Picture -->
+                                    <button
+                                        id="ctrl-pip-btn"
+                                        aria-label="Picture in Picture"
+                                        class="text-on-surface-variant hover:text-on-surface transition-colors p-1 cursor-pointer"
+                                        type="button"
+                                        title="Hình trong hình (PiP)"
+                                    >
+                                        <span class="material-symbols-outlined text-[22px]"
+                                            >picture_in_picture_alt</span
+                                        >
+                                    </button>
+                                    <!-- Fullscreen -->
+                                    <button
+                                        id="ctrl-fullscreen-btn"
+                                        aria-label="Fullscreen"
+                                        class="text-on-surface-variant hover:text-on-surface transition-colors p-1 cursor-pointer"
+                                        type="button"
+                                        title="Toàn màn hình (F)"
+                                    >
+                                        <span id="ctrl-fullscreen-icon" class="material-symbols-outlined text-[24px]">fullscreen</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FILM METADATA & PRIMARY COMMAND CENTER -->
+                <section class="w-full px-margin-mobile md:px-margin-desktop py-space-xl bg-surface relative">
+                    <div class="max-w-[1560px] mx-auto grid grid-cols-1 xl:grid-cols-12 gap-space-xl items-start">
+                        <!-- Left Column: Title, Synopsis, Badges, CTAs (8 Cols) -->
+                        <div class="xl:col-span-8 flex flex-col gap-space-md">
+                            <!-- Cinematic Category & Match Bar -->
+                            <div class="flex flex-wrap items-center gap-space-sm">
+                                <span
+                                    class="px-space-sm py-0.5 rounded font-label-badge text-label-badge bg-secondary/15 text-secondary tracking-wide"
+                                >
+                                    99% MATCH FOR YOU
+                                </span>
+                                <span class="font-body-sm text-body-sm text-on-surface-variant">•</span>
+                                <span class="font-label-md text-label-md text-on-surface">2025</span>
+                                <span
+                                    class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-badge text-label-badge"
+                                >
+                                    TV-MA
+                                </span>
+                                <span class="font-label-md text-label-md text-on-surface">2h 38m</span>
+                                <span
+                                    class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-badge text-label-badge"
+                                >
+                                    4K ULTRA HD
+                                </span>
+                                <span
+                                    class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-badge text-label-badge"
+                                >
+                                    DOLBY VISION
+                                </span>
+                                <span
+                                    class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-badge text-label-badge"
+                                >
+                                    DOLBY ATMOS
+                                </span>
+                            </div>
+                            <!-- Film Headline & Tagline -->
+                            <div class="flex flex-col gap-space-xs">
+                                <h1 id="film-title" class="font-headline-xl text-headline-xl text-on-surface tracking-tight uppercase">
+                                    Neon Horizon: Zero Protocol
+                                </h1>
+                                <p id="film-tagline" class="font-body-lg text-body-lg text-secondary italic tracking-wide">
+                                    “In a city without shadows, the light is your enemy.”
+                                </p>
+                            </div>
+                            <!-- Synopsis -->
+                            <p id="film-synopsis" class="font-body-lg text-body-lg text-on-surface-variant max-w-4xl leading-relaxed">
+                                In 2088 Neo-Kyoto, veteran ex-special operative Kaelen Drake is pulled into a
+                                clandestine cyber-war when an enigmatic rogue AI leaks encrypted memory archives that
+                                implicate the world’s most powerful megacorporation in an impending atmospheric
+                                collapse. Outnumbered and tracked by orbital hunters, Drake joins forces with a
+                                disgraced neural-pathologist to initiate the forbidden Zero Protocol.
+                            </p>
+                            <!-- Dynamic Watch Progression Indicator -->
+                            <div
+                                class="w-full max-w-xl bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs shadow-md"
+                            >
+                                <div class="flex items-center justify-between font-label-md text-label-md">
+                                    <span class="text-on-surface flex items-center gap-space-xs">
+                                        <span class="material-symbols-outlined text-primary text-[18px]"
+                                            >timelapse</span
+                                        >
+                                        <span id="film-progress-label">Resume Watching</span>
+                                    </span>
+                                    <span id="film-progress-percent" class="text-secondary font-semibold">65% Completed</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+                                    <div id="film-progress-bar-fill" class="h-full bg-primary-container rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <!-- Primary Action Rack -->
+                            <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+                                <button
+                                    id="film-resume-btn"
+                                    class="px-space-xl py-3.5 rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg uppercase tracking-wider flex items-center gap-space-sm shadow-xl hover:bg-primary hover:text-on-primary transition-all duration-200"
+                                    type="button"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[24px]"
+                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                        >play_arrow</span
+                                    >
+                                    <span id="film-resume-text">Play Film</span>
+                                </button>
+                                <button
+                                    id="film-restart-btn"
+                                    class="px-space-lg py-3.5 rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg flex items-center gap-space-sm hover:bg-surface-bright transition-colors shadow-sm"
+                                    type="button"
+                                >
+                                    <span class="material-symbols-outlined text-[20px]">replay</span>
+                                    <span>Restart</span>
+                                </button>
+                                <button
+                                    id="film-watchlist-btn"
+                                    aria-label="Add to Watchlist"
+                                    class="w-12 h-12 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-bright flex items-center justify-center transition-colors shadow-sm cursor-pointer"
+                                    type="button"
+                                >
+                                    <span class="material-symbols-outlined text-[22px]">add</span>
+                                </button>
+                                <button
+                                    aria-label="Download for Offline Viewing"
+                                    class="w-12 h-12 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-bright flex items-center justify-center transition-colors shadow-sm"
+                                    type="button"
+                                >
+                                    <span class="material-symbols-outlined text-[22px]">download</span>
+                                </button>
+                                <button
+                                    aria-label="Share Film"
+                                    class="w-12 h-12 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-bright flex items-center justify-center transition-colors shadow-sm"
+                                    type="button"
+                                >
+                                    <span class="material-symbols-outlined text-[22px]">share</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Right Column: Filmmaker & Production Spec Bento (4 Cols) -->
+                        <div
+                            class="xl:col-span-4 bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-md shadow-lg"
+                        >
+                            <div class="flex items-center justify-between pb-space-xs">
+                                <h2 class="font-headline-sm text-headline-sm text-on-surface">Production Dossier</h2>
+                                <span
+                                    class="font-label-badge text-label-badge px-2 py-0.5 rounded bg-tertiary/10 text-tertiary uppercase"
+                                    >IMAX Enhanced</span
+                                >
+                            </div>
+                            <div class="flex flex-col gap-space-sm font-body-sm text-body-sm">
+                                <div class="flex flex-col">
+                                    <span
+                                        class="text-on-surface-variant font-label-badge text-label-badge uppercase tracking-wider"
+                                        >Director</span
+                                    >
+                                    <span class="text-on-surface font-medium">Kenji Takahashi</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span
+                                        class="text-on-surface-variant font-label-badge text-label-badge uppercase tracking-wider"
+                                        >Screenplay</span
+                                    >
+                                    <span class="text-on-surface font-medium">Mira Chen &amp; David S. Geller</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span
+                                        class="text-on-surface-variant font-label-badge text-label-badge uppercase tracking-wider"
+                                        >Director of Photography</span
+                                    >
+                                    <span class="text-on-surface font-medium">Greig Fraser, ASC, ACS</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span
+                                        class="text-on-surface-variant font-label-badge text-label-badge uppercase tracking-wider"
+                                        >Original Score</span
+                                    >
+                                    <span class="text-on-surface font-medium">Cliff Martinez &amp; Trent Reznor</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span
+                                        class="text-on-surface-variant font-label-badge text-label-badge uppercase tracking-wider"
+                                        >Studio &amp; Distribution</span
+                                    >
+                                    <span class="text-on-surface font-medium"
+                                        >Aethelgard Pictures / CineStream Originals</span
+                                    >
+                                </div>
+                            </div>
+                            <!-- Spatial Audio & Color Grade Metrics -->
+                            <div
+                                class="pt-space-sm bg-surface-container-lowest p-space-sm rounded-lg flex items-center justify-between"
+                            >
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-secondary text-[22px]"
+                                        >spatial_audio</span
+                                    >
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="font-label-badge text-label-badge text-on-surface font-bold uppercase"
+                                            >Spatial Atmos</span
+                                        >
+                                        <span class="font-body-sm text-[11px] text-on-surface-variant"
+                                            >7.1.4 Object-Based Channel</span
+                                        >
+                                    </div>
+                                </div>
+                                <span class="font-label-badge text-label-badge text-secondary font-semibold"
+                                    >REC.2020</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- CAST & PRINCIPAL CHARACTERS RAIL -->
+                <section class="w-full px-margin-mobile md:px-margin-desktop py-space-lg bg-surface">
+                    <div class="max-w-[1560px] mx-auto flex flex-col gap-space-md">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-space-sm">
+                                <h2 class="font-headline-sm text-headline-sm text-on-surface">Top Cast &amp; Roles</h2>
+                                <span
+                                    class="font-label-badge text-label-badge px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant"
+                                    >4 Principals</span
+                                >
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+                            <!-- Cast Card 1 -->
+                            <div
+                                class="bg-surface-container-low p-space-md rounded-xl flex items-center gap-space-md hover:bg-surface-container transition-colors shadow-sm"
+                            >
+                                <img
+                                    class="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                                    data-alt="Portrait headshot of actor Marcus Vance as Kaelen Drake gritty cyber soldier with cybernetic optical lens implant in sharp moody studio portrait lighting"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNY6UxMCXbX76F-_er-TnoUPA3vJmywe-dKuj1VZu81-ut1nG8IK0l_Vrxm_q69lOFklG_j-6Yp9IMAVTfrn04ad821zLTAbbfjsCVX9AcQFqHpE0USSBwuwAxT0iO6Yb35l41xLvlQMBPPEmEW7T8h8qEDGZi-hQWEHroKTiCvQfWGkuWV5NtYdtXfUAPrmtE-eibsIxhMBR20o1zwmf6AZZnKdG2Wy1mo_Frpp00JNWCsP3CxsYn"
+                                />
+                                <div class="flex flex-col min-w-0">
+                                    <span class="font-label-lg text-label-lg text-on-surface font-semibold truncate"
+                                        >Marcus Vance</span
+                                    >
+                                    <span class="font-body-sm text-body-sm text-secondary truncate">Kaelen Drake</span>
+                                    <span
+                                        class="font-label-badge text-label-badge text-on-surface-variant mt-1 uppercase tracking-wider"
+                                        >Lead Protagonist</span
+                                    >
+                                </div>
+                            </div>
+                            <!-- Cast Card 2 -->
+                            <div
+                                class="bg-surface-container-low p-space-md rounded-xl flex items-center gap-space-md hover:bg-surface-container transition-colors shadow-sm"
+                            >
+                                <img
+                                    class="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                                    data-alt="Portrait headshot of actress Elena Rostova as Dr Vespera Vance elegant neural scientist with platinum hair and deep blue atmospheric light"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZlrLvDrj-5HK1zgIspQXr_IqAHJuvlsm6KzvUUGwvcbflFd9ll7p55GXW_mOodkhuATmPnCJgA4HGUqBXORiAPRCzlf9ESAxv9RS5mb9nj42cZIE19AfHE3oE-bom8-VaxUNq15es7AV1Aurk6gto5HPliWsHFts1XFvDwFNpVNJnQanEZeV1my8K-jNvwuT2qwylRFpAacdf2XBjUWjWYxtgE_ZSTuuflUVvbGkRAyVe16Czt_Rb"
+                                />
+                                <div class="flex flex-col min-w-0">
+                                    <span class="font-label-lg text-label-lg text-on-surface font-semibold truncate"
+                                        >Elena Rostova</span
+                                    >
+                                    <span class="font-body-sm text-body-sm text-secondary truncate"
+                                        >Dr. Vespera Vance</span
+                                    >
+                                    <span
+                                        class="font-label-badge text-label-badge text-on-surface-variant mt-1 uppercase tracking-wider"
+                                        >Neural Pathologist</span
+                                    >
+                                </div>
+                            </div>
+                            <!-- Cast Card 3 -->
+                            <div
+                                class="bg-surface-container-low p-space-md rounded-xl flex items-center gap-space-md hover:bg-surface-container transition-colors shadow-sm"
+                            >
+                                <img
+                                    class="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                                    data-alt="Portrait headshot of actor Jin Tanaka as Cipher-9 mysterious rogue hacker with subtle holographic circuitry on cheekbone in dim red light"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhUyaaDnFE1ZVY4Sm4A8pa18hw2canP8wMLmfrfSBDmmM5Ltljtd_eN8ShF1z79oP9KCmELzvlaWjMru9ePlXPDP3r_kUYLncPP_Mfm-BIbAIyRqiZ7jIj9pQW8UHDGOXxfp8ODHx93exquMhWDiQ9FTEQKRQhZbp5YQxTrt8TYLIbsOBc3O5fleg9C8L13hPiWL-YdGHBecVKh3CZnntT7xNszH8VS6yC9ocnpPCc-7b2JKQY4r5q"
+                                />
+                                <div class="flex flex-col min-w-0">
+                                    <span class="font-label-lg text-label-lg text-on-surface font-semibold truncate"
+                                        >Jin Tanaka</span
+                                    >
+                                    <span class="font-body-sm text-body-sm text-secondary truncate">Cipher-9</span>
+                                    <span
+                                        class="font-label-badge text-label-badge text-on-surface-variant mt-1 uppercase tracking-wider"
+                                        >Data Infiltrator</span
+                                    >
+                                </div>
+                            </div>
+                            <!-- Cast Card 4 -->
+                            <div
+                                class="bg-surface-container-low p-space-md rounded-xl flex items-center gap-space-md hover:bg-surface-container transition-colors shadow-sm"
+                            >
+                                <img
+                                    class="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                                    data-alt="Portrait headshot of actress Sofia Morales as Councilor Ortega commanding corporate director in futuristic tailored obsidian suit"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW7OMXIDY9csMCwPx4uvJklS8XMGYlU6CAddp79G0Nz-KQwimhy_8VHm5ECzyDxiRc4Los0iKHmgSMcYWc3n2UabWojNlw8ciqH6RKeWa-sPSegBTZdrEkFMWemS_klkrg9r5Opq77G4dpzrnXTNbe2fGlqmqIFOs7mBlrLHb15hWXybCsAJZk5sKUYALd6Nwit5t5XCcktrWcIKfcuPZe5O_je5cUkTnLSdf1dqvbSuPNMF6Of649"
+                                />
+                                <div class="flex flex-col min-w-0">
+                                    <span class="font-label-lg text-label-lg text-on-surface font-semibold truncate"
+                                        >Sofia Morales</span
+                                    >
+                                    <span class="font-body-sm text-body-sm text-secondary truncate"
+                                        >Councilor Ortega</span
+                                    >
+                                    <span
+                                        class="font-label-badge text-label-badge text-on-surface-variant mt-1 uppercase tracking-wider"
+                                        >Megacorp High Regent</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- TABBED DEEP DIVE SECTION (Interactive Tab Navigation) -->
+                <section class="w-full px-margin-mobile md:px-margin-desktop py-space-xl bg-surface-container-lowest">
+                    <div class="max-w-[1560px] mx-auto flex flex-col gap-space-lg">
+                        <!-- Tab Bar Selectors -->
+                        <div
+                            class="flex items-center gap-space-sm overflow-x-auto pb-space-xs scrollbar-none"
+                            id="deepdive-tabs"
+                        >
+                            <button
+                                class="tab-btn px-space-md py-space-sm rounded-full bg-on-surface text-surface font-label-lg text-label-lg transition-all shadow-md"
+                                data-tab-target="tab-extras"
+                                type="button"
+                            >
+                                Trailers &amp; Extras (4)
+                            </button>
+                            <button
+                                class="tab-btn px-space-md py-space-sm rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-all"
+                                data-tab-target="tab-episodes"
+                                type="button"
+                            >
+                                Chapters &amp; Parts (3)
+                            </button>
+                            <button
+                                class="tab-btn px-space-md py-space-sm rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-all"
+                                data-tab-target="tab-about"
+                                type="button"
+                            >
+                                Advisories &amp; Details
+                            </button>
+                        </div>
+                        <!-- Tab Content 1: Trailers & Extras -->
+                        <div
+                            class="tab-panel grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg"
+                            id="tab-extras"
+                        >
+                            <!-- Extra 1 -->
+                            <div class="flex flex-col gap-space-xs group cursor-pointer">
+                                <div
+                                    class="relative w-full aspect-video rounded-xl overflow-hidden bg-surface-container-low shadow-md"
+                                >
+                                    <div
+                                        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                        data-alt="Action film trailer thumbnail showing high speed vehicle chase on aerial highway above rain covered neon city with explosion reflection"
+                                        style="
+                                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDQ50ANKNrAWQkrBGYao27LZpdyibIJ4_LPvV9q8uNjpKDONKRWjFeZ8a65GNg7zIv8sSZ4oOwKzaUQFdh_zpNkoHO0JBNwV5CM3XsnykA_wLjbZhlcPmt27yPDrCZKVLnnbLKJVYZjH4jRx3U5gDqMRws3Hp0q82_N3XkCQLlJwxMPiUYoW2h-zmPq4y_XvoTcxvtNm7gZ-9dKwCZCHtoUDz6mLjU00VmQIgM8xPnXrETf72iJo11T&quot;);
+                                        "
+                                    ></div>
+                                    <div
+                                        class="absolute inset-0 bg-surface/30 group-hover:bg-transparent transition-colors"
+                                    ></div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <span
+                                            class="w-12 h-12 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-all"
+                                        >
+                                            <span
+                                                class="material-symbols-outlined text-[28px] ml-0.5"
+                                                style="font-variation-settings: &quot;FILL&quot; 1"
+                                                >play_arrow</span
+                                            >
+                                        </span>
+                                    </div>
+                                    <span
+                                        class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-surface-container-lowest/90 font-label-badge text-label-badge text-on-surface"
+                                        >2:14</span
+                                    >
+                                </div>
+                                <span
+                                    class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors"
+                                    >Official IMAX Teaser Trailer</span
+                                >
+                                <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    The initial teaser revealed during the Worldwide Cinema Expo featuring Hans Zimmer's
+                                    original prelude.
+                                </p>
+                            </div>
+                            <!-- Extra 2 -->
+                            <div class="flex flex-col gap-space-xs group cursor-pointer">
+                                <div
+                                    class="relative w-full aspect-video rounded-xl overflow-hidden bg-surface-container-low shadow-md"
+                                >
+                                    <div
+                                        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                        data-alt="Behind the scenes stunt rigging on high-tech movie soundstage with stunt doubles suspended on wire harnesses against LED volume screen"
+                                        style="
+                                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAMWljY3W3ODrjnvIPxnx_Q8akcjjJVy973CC8GiAJKiZf3cGbd4mt9Ede6XBeTJbyk9UOk3Qf2WZy4bO5Ib_tDaJiMsp4RG8dvpJinMuVIly4kk3DGopEMWBHFOkwhOkDn8F0EKCfBg1bfFMjzhMW6afSdfZPuPzjZusokRIlCqMQXgrMMsw_17wlLQsmN6xcL4xDr_a2GotI0dYC5m9esjOj6RLDN-bUZsQS1g5K00mruyKiRNEDj&quot;);
+                                        "
+                                    ></div>
+                                    <div
+                                        class="absolute inset-0 bg-surface/30 group-hover:bg-transparent transition-colors"
+                                    ></div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <span
+                                            class="w-12 h-12 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-all"
+                                        >
+                                            <span
+                                                class="material-symbols-outlined text-[28px] ml-0.5"
+                                                style="font-variation-settings: &quot;FILL&quot; 1"
+                                                >play_arrow</span
+                                            >
+                                        </span>
+                                    </div>
+                                    <span
+                                        class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-surface-container-lowest/90 font-label-badge text-label-badge text-on-surface"
+                                        >14:02</span
+                                    >
+                                </div>
+                                <span
+                                    class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors"
+                                    >Behind the Stunts: The Orbital Drop</span
+                                >
+                                <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    Marcus Vance and the stunt choreography team breakdown the zero-g drop sequence
+                                    filmed without CGI doubles.
+                                </p>
+                            </div>
+                            <!-- Extra 3 -->
+                            <div class="flex flex-col gap-space-xs group cursor-pointer">
+                                <div
+                                    class="relative w-full aspect-video rounded-xl overflow-hidden bg-surface-container-low shadow-md"
+                                >
+                                    <div
+                                        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                        data-alt="VFX breakdown side-by-side split screen showing wireframe digital rendering on the left and photorealistic final cyberpunk metropolis on the right"
+                                        style="
+                                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDAWpJCWMyqU8btg3G6w8r5RJo-7QbE3AbLf_f6f57F3bR-EN1uiCfvMESc-gfAZQE53OwXSm7v1r-sJ-aGh4VIGhhe_6Pu-lP7HcxgHiSG8Gr8s9LVE8Nh3ArH_4w1G72eD4AmhaXZSi_InfDHVwIrCSjVrQWDPixmZG-3YD-THLNCSjLGHAoGO1snYwoxCU5Y_mnfbrRmTQ140NQgUJChBLBlvTL0Xb9bBSqZlpsqANeaOfVAIU7p&quot;);
+                                        "
+                                    ></div>
+                                    <div
+                                        class="absolute inset-0 bg-surface/30 group-hover:bg-transparent transition-colors"
+                                    ></div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <span
+                                            class="w-12 h-12 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-all"
+                                        >
+                                            <span
+                                                class="material-symbols-outlined text-[28px] ml-0.5"
+                                                style="font-variation-settings: &quot;FILL&quot; 1"
+                                                >play_arrow</span
+                                            >
+                                        </span>
+                                    </div>
+                                    <span
+                                        class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-surface-container-lowest/90 font-label-badge text-label-badge text-on-surface"
+                                        >9:45</span
+                                    >
+                                </div>
+                                <span
+                                    class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors"
+                                    >VFX Breakdown: Constructing Neo-Kyoto</span
+                                >
+                                <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    DNEG and Wētā FX discuss building 42 square kilometers of real-time volumetric neon
+                                    atmospheric haze.
+                                </p>
+                            </div>
+                            <!-- Extra 4 -->
+                            <div class="flex flex-col gap-space-xs group cursor-pointer">
+                                <div
+                                    class="relative w-full aspect-video rounded-xl overflow-hidden bg-surface-container-low shadow-md"
+                                >
+                                    <div
+                                        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                        data-alt="Director Kenji Takahashi speaking beside heavy 70mm IMAX camera on dark cinematic film set"
+                                        style="
+                                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCNkZVWEXb6Sw1187gTt0U_ZZDC5E1xa5ZbFcqgb4PekuSzHkAKQEEz2vhe7jjbiF-oUxgCFnUFrCGKCoPKhUjHEBD9U4YOJMGAI9QxzY6rfy_mGjo9v-VaglKc9i2P1BEt5NwpsTWxCdb0VTWemuwS49Bw5KFlJpTb9-W1UZRxJ5kH_U6G1ipbrcAvmjdE4pTOHPFRw7EJTECzxz5lh4WLPgD0ab0LIXb1dNr5kqcIaT3cK6FYQAc4&quot;);
+                                        "
+                                    ></div>
+                                    <div
+                                        class="absolute inset-0 bg-surface/30 group-hover:bg-transparent transition-colors"
+                                    ></div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <span
+                                            class="w-12 h-12 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-all"
+                                        >
+                                            <span
+                                                class="material-symbols-outlined text-[28px] ml-0.5"
+                                                style="font-variation-settings: &quot;FILL&quot; 1"
+                                                >play_arrow</span
+                                            >
+                                        </span>
+                                    </div>
+                                    <span
+                                        class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-surface-container-lowest/90 font-label-badge text-label-badge text-on-surface"
+                                        >18:30</span
+                                    >
+                                </div>
+                                <span
+                                    class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors"
+                                    >Director Commentary: The Cyber Mythos</span
+                                >
+                                <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    In-depth interview on philosophical transhumanism and practical in-camera lighting
+                                    rigs.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Tab Content 2: Chapters / Parts (Hidden by default) -->
+                        <div class="tab-panel hidden flex flex-col gap-space-md" id="tab-episodes">
+                            <!-- Part 1 -->
+                            <div
+                                class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col md:flex-row gap-space-md items-center justify-between shadow-sm"
+                            >
+                                <div class="flex items-center gap-space-md w-full md:w-auto">
+                                    <div class="relative w-40 aspect-video rounded-lg overflow-hidden flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-cover bg-center"
+                                            data-alt="Film still of rainy neon alleys with protagonist standing in shadows watching holographic surveillance drone"
+                                            style="
+                                                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBL6ZRefsVizZ0Ld6sGnQEsDWS1Dqz3bs_01A3XcN6EpT2WIwWDVVs4SlGWHGfMAD-hdOmS_zvTYESgE6W53vihrEaKXuk-4anoSrUZYrRWW8hBfVxTLKbSVUMjaqG7DCgDQYC0nLnDehuelsFTWlq2TcU9R5_vXYyNGEBG15cWvF2aL4BWOZXBjniiQDXTIF4OBLcGjfGPJwkWpcj-vaZtV0g6fgKKghCSVX-pk25JG085Gjy2lFrg&quot;);
+                                            "
+                                        ></div>
+                                        <div class="absolute bottom-0 left-0 w-full h-1 bg-primary-container"></div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <div class="flex items-center gap-space-xs">
+                                            <span class="font-label-badge text-label-badge text-secondary font-bold"
+                                                >ACT 1</span
+                                            >
+                                            <span class="font-label-badge text-label-badge text-on-surface-variant"
+                                                >• 52 MIN</span
+                                            >
+                                        </div>
+                                        <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                                            The Neural Drift
+                                        </h3>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                            Kaelen uncovers the fragmented AI protocol during an anomalous server heist
+                                            in district 4.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button
+                                    class="w-full md:w-auto px-space-md py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-colors"
+                                    type="button"
+                                >
+                                    <span class="material-symbols-outlined text-[18px]">play_circle</span>
+                                    <span>Resume Part</span>
+                                </button>
+                            </div>
+                            <!-- Part 2 -->
+                            <div
+                                class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col md:flex-row gap-space-md items-center justify-between shadow-sm"
+                            >
+                                <div class="flex items-center gap-space-md w-full md:w-auto">
+                                    <div class="relative w-40 aspect-video rounded-lg overflow-hidden flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-cover bg-center"
+                                            data-alt="Film still showing high tech laboratory with suspended glass cryo chambers glowing with blue liquid"
+                                            style="
+                                                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuChCMlEdzEXVEdHncSchXPLJvot6gm_Qg2YEXGbyxn4Pq7nurQMk5Qh_VElrzYoGVndUFx5lIydGDOa15F4AI8sOkvygW54uhZdvQl7mmNL0hx2oH8kCt0yYDma-vaFaokLqAiiF2GFSUbjQrEN24L5UtmtiCq0x7_ZCcVZLOsv3x53pdjQCcQ4vw0BuabAxGhxbYOpeEFHVKdirYNBBYKMV2oktuOb4UA7t9tevZf5rRsnA0dJ1KHX&quot;);
+                                            "
+                                        ></div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <div class="flex items-center gap-space-xs">
+                                            <span class="font-label-badge text-label-badge text-secondary font-bold"
+                                                >ACT 2</span
+                                            >
+                                            <span class="font-label-badge text-label-badge text-on-surface-variant"
+                                                >• 56 MIN</span
+                                            >
+                                        </div>
+                                        <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                                            The Orbital Fracture
+                                        </h3>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                            Dr. Vance extracts corporate memory hashes while syndicate assassins trace
+                                            their frequency.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button
+                                    class="w-full md:w-auto px-space-md py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-colors"
+                                    type="button"
+                                >
+                                    <span class="material-symbols-outlined text-[18px]">play_circle</span>
+                                    <span>Play Act</span>
+                                </button>
+                            </div>
+                            <!-- Part 3 -->
+                            <div
+                                class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col md:flex-row gap-space-md items-center justify-between shadow-sm"
+                            >
+                                <div class="flex items-center gap-space-md w-full md:w-auto">
+                                    <div class="relative w-40 aspect-video rounded-lg overflow-hidden flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-cover bg-center"
+                                            data-alt="Film still showing giant quantum mainframe core with electric sparks and red atmospheric light"
+                                            style="
+                                                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDERQeX5uQWPgChLANQCB4lr0IHcroScWfPkxri0NV0GTwZ3w9WezhmW3X3j6VnEfUZTNu5Vt8wuZm01prSJVsnuI0rV7riQsq6Tl7UnYxFc2y-4f23-c1VcYJ_YDB0Xnl9HueSbm3WePyLcm6MSVWASiDzmiidKaWtyIbJpx-S8o9kxY8yUKLK0EP-smz33yg13xn3JySYsDzPxgRgxQIedLZ4AzujVfEG5pbzNle4sgFAzEaAUB4Y&quot;);
+                                            "
+                                        ></div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <div class="flex items-center gap-space-xs">
+                                            <span class="font-label-badge text-label-badge text-secondary font-bold"
+                                                >ACT 3</span
+                                            >
+                                            <span class="font-label-badge text-label-badge text-on-surface-variant"
+                                                >• 50 MIN</span
+                                            >
+                                        </div>
+                                        <h3 class="font-headline-sm text-headline-sm text-on-surface">Zero Protocol</h3>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                            The final confrontation atop the stratospheric communications spire above
+                                            Neo-Kyoto.
+                                        </p>
+                                    </div>
+                                </div>
+                                <button
+                                    class="w-full md:w-auto px-space-md py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-colors"
+                                    type="button"
+                                >
+                                    <span class="material-symbols-outlined text-[18px]">play_circle</span>
+                                    <span>Play Act</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Tab Content 3: About This Movie (Hidden by default) -->
+                        <div class="tab-panel hidden grid grid-cols-1 md:grid-cols-3 gap-space-lg" id="tab-about">
+                            <div
+                                class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-sm shadow-sm"
+                            >
+                                <span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-secondary">warning</span>
+                                    Content Advisories
+                                </span>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Rated TV-MA for persistent sci-fi violence, graphic combat sequences, language
+                                    throughout, brief sensuality, and intense flashing strobe lighting patterns.
+                                </p>
+                                <div class="flex flex-wrap gap-2 pt-2">
+                                    <span
+                                        class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-badge text-label-badge uppercase"
+                                        >Graphic Violence</span
+                                    >
+                                    <span
+                                        class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-badge text-label-badge uppercase"
+                                        >Photosensitivity Warning</span
+                                    >
+                                    <span
+                                        class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-badge text-label-badge uppercase"
+                                        >Strong Language</span
+                                    >
+                                </div>
+                            </div>
+                            <div
+                                class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-sm shadow-sm"
+                            >
+                                <span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-secondary">workspace_premium</span>
+                                    Accolades &amp; Honors
+                                </span>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Official Selection – Venice International Film Festival 2024. Winner of Best Visual
+                                    Effects and Best Sound Design at the Global Cinema Guild Awards.
+                                </p>
+                                <div class="pt-2 text-secondary font-label-md text-label-md flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[18px]">hotel_class</span>
+                                    <span>CineStream Critic’s Choice 2025</span>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-sm shadow-sm"
+                            >
+                                <span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-secondary">devices</span>
+                                    Viewing Formats
+                                </span>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Available in Ultra HD 4K, HDR10+, Dolby Vision IQ, and IMAX Enhanced aspect ratio
+                                    (1.90:1). Best experienced with headphone spatial audio head tracking.
+                                </p>
+                                <div class="flex items-center gap-2 pt-2">
+                                    <span
+                                        class="font-label-badge text-label-badge px-2 py-1 bg-surface-container-high rounded text-on-surface"
+                                        >BITRATE: 38.4 MBPS</span
+                                    >
+                                    <span
+                                        class="font-label-badge text-label-badge px-2 py-1 bg-surface-container-high rounded text-on-surface"
+                                        >DCI-P3 99%</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- "MORE LIKE THIS" CURATED TITLE MOSAIC (6 Cinematic Titles) -->
+                <section class="w-full px-margin-mobile md:px-margin-desktop py-space-2xl bg-surface">
+                    <div class="max-w-[1560px] mx-auto flex flex-col gap-space-lg">
+                        <!-- Section Header -->
+                        <div class="flex items-end justify-between">
+                            <div class="flex flex-col">
+                                <span class="font-label-badge text-label-badge text-secondary uppercase tracking-widest"
+                                    >Algorithmic Recommendations</span
+                                >
+                                <h2 class="font-headline-lg text-headline-lg text-on-surface">More Like This</h2>
+                            </div>
+                            <a
+                                class="font-label-md text-label-md text-primary hover:text-on-surface flex items-center gap-1 transition-colors"
+                                href="/pages/search_page.html?genre=Sci-Fi"
+                            >
+                                <span>Explore All Sci-Fi Noir</span>
+                                <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                            </a>
+                        </div>
+                        <!-- 6-Card Mosaic Grid -->
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-space-md" id="more-like-this-grid">
+                            <!-- Card 1: Cyberpunk Edgerunners -->
+                            <div
+                                class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:-translate-y-1.5 shadow-md"
+                            >
+                                <div class="relative w-full aspect-[2/3] overflow-hidden bg-surface-container-high">
+                                    <div
+                                        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                        data-alt="Anime cyber action poster showing punk boy with glowing yellow jacket jumping over cyber city skyline in neon green and electric yellow tones"
+                                        style="
+                                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBToLZT48tp0d_5SUdZB4Z63a9W7jI1zTZUPeZNwp_whm3ahsTF3NLRmyKzGQzsSXTExu5z-i9j96muHY6byuRvPw7ECsEjfEQSppvRvuLUATcxi_fpOO05_XekZXzCfE-WmQKtbZIjUCMHqtuJQnIaVM-mwimED4FfNuot33f8f2ES564FTnGr2mDUtVVpfvJsQ3Hl-u2YDcH0XOrbvh6uhR96XbAEYj2viLM_knMBjN1csMxnXsEN&quot;);
+                                        "
+                                    ></div>
+                                    <div
+                                        class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md font-label-badge text-label-badge text-secondary font-bold"
+                                    >
+                                        98%
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-space-sm"
+                                    >
+                                        <button
+                                            aria-label="Play title"
+                                            class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg"
+                                            type="button"
+                                        >
+                                            <span
+                                                class="material-symbols-outlined text-[22px]"
+                                                style="font-variation-settings: &quot;FILL&quot; 1"
+                                                >play_arrow</span
+                                            >
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-space-sm flex flex-col gap-1">
+                                    <span class="font-label-lg text-label-lg text-on-surface truncate"
+                                        >Cyber Drift: 2099</span
+                                    >
+                                    <div
+                                        class="flex items-center gap-1 font-label-badge text-label-badge text-on-surface-variant"
+                                    >
+                                        <span>Anime</span>
+                                        <span>•</span>
+                                        <span>1 Season</span>
+                                        <span>•</span>
+                                        <span class="text-on-surface">16+</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 2: Blade Runner 2049 -->
+                            <div
+                                class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:-translate-y-1.5 shadow-md"
+                            >
+                                <div class="relative w-full aspect-[2/3] overflow-hidden bg-surface-container-high">
+                                    <div
+                                        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                        data-alt="Atmospheric orange dust storm cinematic film poster showing lonely detective coat figure looking at giant hollow statue in apocalyptic wasteland"
+                                        style="
+                                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAEjIPlBwnrgP6dGCwaj2rc04L8gxxVKud6vIAnM1OZkYBt-Q-ZVELOZxoDaSwJeuWVPBU6T0FaAk8qvZzvPhsDW1e9XKPXotUF5NUWYUeVS1w8TQYKOcWI4qi4tqZyzdQmZ3ZMIbdR0kw74F0dEMDGzBjp2GFgBjDOMM9oCpsBNPJ8_fO2doSM6t7U-WrXecMONLn05AFOkCAccpuA9i7xycGjs9JdX5dOCRa2vD202Y9BH79LBibL&quot;);
+                                        "
+                                    ></div>
+                                    <div
+                                        class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md font-label-badge text-label-badge text-secondary font-bold"
+                                    >
+                                        97%
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-space-sm"
+                                    >
+                                        <button
+                                            aria-label="Play title"
+                                            class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg"
+                                            type="button"
+                                        >
+                                            <span
+                                                class="material-symbols-outlined text-[22px]"
+                                                style="font-variation-settings: &quot;FILL&quot; 1"
+                                                >play_arrow</span
+                                            >
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-space-sm flex flex-col gap-1">
+                                    <span class="font-label-lg text-label-lg text-on-surface truncate"
+                                        >Shadows of 2049</span
+                                    >
+                                    <div
+                                        class="flex items-center gap-1 font-label-badge text-label-badge text-on-surface-variant"
+                                    >
+                                        <span>Sci-Fi Noir</span>
+                                        <span>•</span>
+                                        <span>2h 44m</span>
+                                        <span>•</span>
+                                        <span class="text-on-surface">R</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 3: The Peripheral -->
+                            <div
+                                class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:-translate-y-1.5 shadow-md"
+                            >
+                                <div class="relative w-full aspect-[2/3] overflow-hidden bg-surface-container-high">
+                                    <div
+                                        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                        data-alt="Futuristic London architectural skyline with transparent glass robotic android woman gazing at quantum teleportation portal"
+                                        style="
+                                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDl4HtjHbe7Tb8gwcZ0ryXdZ5qKYute7Ok5GiKUEq22b31JDE75wV-HzWX3OiBbrnafm8EnAXEzggxZJBJjilYSdbsXemPJr0bWEqOI256TgiENm2-xDHeesCpwx1Kgcyn8ABzRzXrSCR_kUYdD818GL7YQO0w3-_2jF3jwOXfPokPbe_x0L1_XsgNOty8PdCx4vCANR6lSy4-p-O3HnbzU3UhnkAeaMRwCQv3whHt56EDZDjpbYLFu&quot;);
+                                        "
+                                    ></div>
+                                    <div
+                                        class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md font-label-badge text-label-badge text-secondary font-bold"
+                                    >
+                                        94%
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-space-sm"
+                                    >
+                                        <button
+                                            aria-label="Play title"
+                                            class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg"
+                                            type="button"
+                                        >
+                                            <span
+                                                class="material-symbols-outlined text-[22px]"
+                                                style="font-variation-settings: &quot;FILL&quot; 1"
+                                                >play_arrow</span
+                                            >
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-space-sm flex flex-col gap-1">
+                                    <span class="font-label-lg text-label-lg text-on-surface truncate"
+                                        >The Quantum Shift</span
+                                    >
+                                    <div
+                                        class="flex items-center gap-1 font-label-badge text-label-badge text-on-surface-variant"
+                                    >
+                                        <span>Time Mystery</span>
+                                        <span>•</span>
+                                        <span>Series</span>
+                                        <span>•</span>
+                                        <span class="text-on-surface">18+</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 4: Altered Carbon -->
+                            <div
+                                class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:-translate-y-1.5 shadow-md"
+                            >
+                                <div class="relative w-full aspect-[2/3] overflow-hidden bg-surface-container-high">
+                                    <div
+                                        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                        data-alt="Neon lit dystopian street with floating holographic pink serpent and cybernetic human sleeve suspended in glass tank"
+                                        style="
+                                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCazyd_ticFuyqK0Ju7cPtMNHWgzshJxbWE-jVgoiAzr-_OyZW51ie9wDfj26qxayBzi8FZ561A0smCTVxs0WEGSC29Dq7bxD17nR7rYzGDScXmCqri_M7eYWmHgg4dW4ZXowE720STLMHvZqXCJlTVd_i0tago6tVw3JsDWOqw3b2zJGQTMdasVY8x_oUbDAV6dHL5P3U0DMeIVPH_GTDYAJp-rbz-M3pjoWqzj0h6x0bFVXX43Pg4&quot;);
+                                        "
+                                    ></div>
+                                    <div
+                                        class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md font-label-badge text-label-badge text-secondary font-bold"
+                                    >
+                                        96%
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-space-sm"
+                                    >
+                                        <button
+                                            aria-label="Play title"
+                                            class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg"
+                                            type="button"
+                                        >
+                                            <span
+                                                class="material-symbols-outlined text-[22px]"
+                                                style="font-variation-settings: &quot;FILL&quot; 1"
+                                                >play_arrow</span
+                                            >
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-space-sm flex flex-col gap-1">
+                                    <span class="font-label-lg text-label-lg text-on-surface truncate"
+                                        >Resurrection Protocol</span
+                                    >
+                                    <div
+                                        class="flex items-center gap-1 font-label-badge text-label-badge text-on-surface-variant"
+                                    >
+                                        <span>Cyberpunk</span>
+                                        <span>•</span>
+                                        <span>2 Seasons</span>
+                                        <span>•</span>
+                                        <span class="text-on-surface">TV-MA</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 5: Chappie Protocol -->
+                            <div
+                                class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:-translate-y-1.5 shadow-md"
+                            >
+                                <div class="relative w-full aspect-[2/3] overflow-hidden bg-surface-container-high">
+                                    <div
+                                        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                        data-alt="Military combat AI robot sitting pensively on concrete ledge overlooking futuristic Johannesburg with graffiti spray tags"
+                                        style="
+                                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBcsgLkGrt1MBtl_x1aoeZWZQlBTUGTIzgmu28RVm2pW8rrH69Qtm3wJf0fRapI94RffUErB4ZIe3KRsuP4gUKLYh9ZgMyf42FT3dH2KIHoW7uRkZgSpTUdx49GijUPRPH-3TKtFsjw1QFpMG5C9o3prh5nntaiKpPmGwARThZWuH4iNaQcMoUkk35MN5p-_h3PKbpkjPNzCyYovVEJi_z6OlL__YETc8WX5Sx_x4J4kCHvj8Q71nOl&quot;);
+                                        "
+                                    ></div>
+                                    <div
+                                        class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md font-label-badge text-label-badge text-secondary font-bold"
+                                    >
+                                        91%
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-space-sm"
+                                    >
+                                        <button
+                                            aria-label="Play title"
+                                            class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg"
+                                            type="button"
+                                        >
+                                            <span
+                                                class="material-symbols-outlined text-[22px]"
+                                                style="font-variation-settings: &quot;FILL&quot; 1"
+                                                >play_arrow</span
+                                            >
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-space-sm flex flex-col gap-1">
+                                    <span class="font-label-lg text-label-lg text-on-surface truncate"
+                                        >Sentient Unit 01</span
+                                    >
+                                    <div
+                                        class="flex items-center gap-1 font-label-badge text-label-badge text-on-surface-variant"
+                                    >
+                                        <span>AI Action</span>
+                                        <span>•</span>
+                                        <span>2h 05m</span>
+                                        <span>•</span>
+                                        <span class="text-on-surface">PG-13</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 6: Ghost Net -->
+                            <div
+                                class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:-translate-y-1.5 shadow-md"
+                            >
+                                <div class="relative w-full aspect-[2/3] overflow-hidden bg-surface-container-high">
+                                    <div
+                                        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                        data-alt="Deep ocean underwater fiber optic cables pulsing with luminous blue light while robotic submersible investigates deep sea abyss"
+                                        style="
+                                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBTgTi8is3h20vfHYpALgdWKJOz6AUpFdjFJClQ4YneiNIAR8WhbVP5ghjQoF9w95xa329npq8OlMHW5yDUx28NZYbPIEaDo_RxBVuL2vtPzQPe3ORFSmin_0lIi4GN-5n9TxGIcQbN13RY3rKicKC1Rl0lgy0kW3KoaRwIoeGCB6daTGOwSwnkwELtnrn5R0BONaeLk049gzsNzHymGzuI6RV8GJknIexi1GQ8W42Uy6WDCdgycy8b&quot;);
+                                        "
+                                    ></div>
+                                    <div
+                                        class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md font-label-badge text-label-badge text-secondary font-bold"
+                                    >
+                                        95%
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-space-sm"
+                                    >
+                                        <button
+                                            aria-label="Play title"
+                                            class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg"
+                                            type="button"
+                                        >
+                                            <span
+                                                class="material-symbols-outlined text-[22px]"
+                                                style="font-variation-settings: &quot;FILL&quot; 1"
+                                                >play_arrow</span
+                                            >
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-space-sm flex flex-col gap-1">
+                                    <span class="font-label-lg text-label-lg text-on-surface truncate"
+                                        >Ghost Network</span
+                                    >
+                                    <div
+                                        class="flex items-center gap-1 font-label-badge text-label-badge text-on-surface-variant"
+                                    >
+                                        <span>Techno-Thriller</span>
+                                        <span>•</span>
+                                        <span>1h 58m</span>
+                                        <span>•</span>
+                                        <span class="text-on-surface">R</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- CLIENT-SIDE INTERACTION SCRIPT -->
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        // Tab navigation switcher
+                        const tabButtons = document.querySelectorAll("#deepdive-tabs .tab-btn");
+                        const tabPanels = document.querySelectorAll(".tab-panel");
+
+                        tabButtons.forEach((btn) => {
+                            btn.addEventListener("click", () => {
+                                const targetId = btn.getAttribute("data-tab-target");
+
+                                // Style tabs
+                                tabButtons.forEach((b) => {
+                                    b.classList.remove("bg-on-surface", "text-surface", "shadow-md");
+                                    b.classList.add("bg-surface-container-high", "text-on-surface-variant");
+                                });
+                                btn.classList.add("bg-on-surface", "text-surface", "shadow-md");
+                                btn.classList.remove("bg-surface-container-high", "text-on-surface-variant");
+
+                                // Toggle visibility
+                                tabPanels.forEach((panel) => {
+                                    if (panel.id === targetId) {
+                                        panel.classList.remove("hidden");
+                                    } else {
+                                        panel.classList.add("hidden");
+                                    }
+                                });
+                            });
+                        });
+                    });
+                </script>
+
+                <!-- Interactive Trailer & Media Preview Modal -->
+                <div
+                    class="fixed inset-0 z-50 flex items-center justify-center bg-surface-container-lowest/90 backdrop-blur-2xl opacity-0 pointer-events-none transition-opacity duration-300 p-margin-mobile md:p-margin-desktop"
+                    id="trailer-modal"
+                >
+                    <div
+                        class="relative w-full max-w-4xl bg-surface-container-low rounded-2xl overflow-hidden shadow-[0_30px_90px_rgba(0,0,0,0.95)] flex flex-col scale-95 transition-transform duration-300 border border-outline-variant/30"
+                        id="modal-box"
+                    >
+                        <!-- Interactive Video Player Area with Cinema HUD Controls -->
+                        <div id="modal-video-container" class="relative w-full aspect-video bg-black overflow-hidden flex items-center justify-center group/modalplayer cursor-pointer select-none">
+                            <video
+                                id="modal-video-player"
+                                class="w-full h-full object-contain"
+                                playsinline
+                                preload="auto"
+                            ></video>
+
+                            <!-- Cinema HUD Player Dock & Feedback Overlay (Reusable Component) -->
+                            <!-- ==================== REUSABLE CINEMA PLAYER HUD CONTROL DOCK ==================== -->
+<!-- Center Flash Feedback Ripple / Icon Overlay -->
+<div
+    id="modal-center-flash"
+    class="absolute inset-0 flex items-center justify-center pointer-events-none z-30 select-none"
+    aria-hidden="true"
+>
+    <div
+        id="modal-center-flash-box"
+        class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-black/75 backdrop-blur-2xl text-white flex items-center justify-center shadow-[0_0_35px_rgba(0,0,0,0.85)] border border-white/20 opacity-0 pointer-events-none"
+    >
+        <span
+            id="modal-center-flash-icon"
+            class="material-symbols-outlined text-[36px] md:text-[44px] text-white ml-1"
+            style="font-variation-settings: 'FILL' 1"
+            >play_arrow</span
+        >
+    </div>
+</div>
+
+<!-- Top Overlay Actions (Close Button - Tự động ẩn khi không di chuột, bỏ hẳn khi phóng to toàn màn hình) -->
+<div
+    id="modal-player-top-actions"
+    class="player-top-actions absolute top-4 right-4 z-40 flex items-center gap-3 transition-opacity duration-300"
+>
+    <button
+        id="modal-modal-close-btn"
+        class="player-modal-close-btn size-10 rounded-full bg-black/70 hover:bg-[#e50914] text-white flex items-center justify-center transition-all cursor-pointer backdrop-blur-sm shadow-xl group/close"
+        aria-label="Close Video Player"
+        type="button"
+    >
+        <span class="material-symbols-outlined text-[22px] group-hover/close:rotate-90 transition-transform duration-200">close</span>
+    </button>
+</div>
+
+<!-- Live Interactive Scrubber & Controls (Cinema HUD Floating Dock) -->
+<div id="modal-player-control-dock" class="absolute bottom-0 left-0 right-0 z-30 px-4 md:px-6 pb-4 pt-10 bg-gradient-to-t from-black/95 via-black/60 to-transparent flex flex-col gap-2 transition-opacity duration-300 cursor-default">
+    <!-- Scrubber Track Timeline with Expanding Track & Pure Red Thumb -->
+    <div
+        id="modal-scrubber-timeline"
+        class="relative w-full h-5 flex items-center group/scrubber cursor-pointer select-none"
+    >
+        <!-- Baseline & Played Track -->
+        <div class="relative w-full h-1.5 group-hover/scrubber:h-2.5 bg-white/20 rounded-full overflow-hidden transition-all duration-200">
+            <div
+                id="modal-buffered-bar"
+                class="absolute top-0 left-0 h-full w-0 bg-white/30 rounded-full transition-[width] duration-150"
+            ></div>
+            <div
+                id="modal-scrubber-fill"
+                class="absolute top-0 left-0 h-full w-0 bg-[#e50914] rounded-full shadow-[0_0_12px_rgba(229,9,20,0.8)] transition-all duration-75"
+            ></div>
+        </div>
+        <!-- Pure Red Round Thumb / Scrubber Head (thumb tròn đỏ không trắng) -->
+        <div
+            id="modal-scrubber-thumb"
+            class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#e50914] shadow-[0_0_12px_rgba(229,9,20,0.9)] scale-0 group-hover/scrubber:scale-100 transition-transform duration-150 pointer-events-none z-20"
+            style="left: 0%;"
+        ></div>
+        <!-- Floating Hover Time Tooltip -->
+        <div
+            id="modal-scrubber-tooltip"
+            class="absolute -top-7 -translate-x-1/2 opacity-0 pointer-events-none font-mono text-[11px] bg-black/85 px-2 py-0.5 rounded text-white shadow-xl transition-opacity whitespace-nowrap z-40 border border-white/10"
+        >
+            00:00
+        </div>
+    </div>
+
+    <!-- Control Toolbar Row -->
+    <div
+        class="flex items-center justify-between text-white font-label-badge text-label-badge select-none"
+    >
+        <div class="flex items-center gap-3">
+            <button
+                id="modal-ctrl-play-btn"
+                class="w-8 h-8 rounded-full hover:bg-white/15 text-white flex items-center justify-center transition-colors cursor-pointer"
+                title="Play / Pause"
+                type="button"
+            >
+                <span
+                    id="modal-ctrl-play-icon"
+                    class="material-symbols-outlined text-[22px]"
+                    style="font-variation-settings: 'FILL' 1"
+                    >pause</span
+                >
+            </button>
+            <button
+                id="modal-ctrl-replay-btn"
+                class="w-8 h-8 rounded-full hover:bg-white/15 text-white/90 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+                title="Replay 10s"
+                type="button"
+            >
+                <span class="material-symbols-outlined text-[19px]">replay_10</span>
+            </button>
+            <button
+                id="modal-ctrl-forward-btn"
+                class="w-8 h-8 rounded-full hover:bg-white/15 text-white/90 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+                title="Forward 10s"
+                type="button"
+            >
+                <span class="material-symbols-outlined text-[19px]">forward_10</span>
+            </button>
+            <span id="modal-ctrl-time" class="text-white/80 font-mono text-xs tracking-wider ml-1"
+                >00:00 / 00:00</span
+            >
+        </div>
+        <div class="flex items-center gap-3">
+            <span
+                class="px-2 py-0.5 rounded bg-[#e50914] text-white text-[10px] font-extrabold tracking-wider shadow-[0_0_10px_rgba(229,9,20,0.5)]"
+                >4K 60FPS</span
+            >
+            <!-- Expandable Volume with Pure Red Thumb -->
+            <div class="relative flex items-center group/vol">
+                <button
+                    id="modal-ctrl-volume-btn"
+                    class="w-8 h-8 rounded-full hover:bg-white/15 text-white/90 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+                    title="Mute / Unmute"
+                    type="button"
+                >
+                    <span id="modal-ctrl-volume-icon" class="material-symbols-outlined text-[20px]">volume_up</span>
+                </button>
+                <div class="w-0 group-hover/vol:w-16 md:group-hover/vol:w-20 transition-all duration-200 overflow-hidden flex items-center px-0 group-hover/vol:px-1.5 cursor-pointer">
+                    <div id="modal-ctrl-volume-bar" class="relative w-full h-1.5 bg-white/20 rounded-full py-2 flex items-center">
+                        <div class="relative w-full h-1.5 bg-white/20 rounded-full">
+                            <div id="modal-ctrl-volume-fill" class="absolute top-0 left-0 h-full w-1/2 bg-white rounded-full"></div>
+                            <div id="modal-ctrl-volume-thumb" class="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] scale-0 group-hover/vol:scale-100 transition-transform" style="left: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button
+                id="modal-ctrl-fullscreen-btn"
+                class="w-8 h-8 rounded-full hover:bg-white/15 text-white/90 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+                title="Fullscreen"
+                type="button"
+            >
+                <span id="modal-ctrl-fullscreen-icon" class="material-symbols-outlined text-[20px]">fullscreen</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+                        </div>
+
+                        <!-- Modal Metadata & Quick Info -->
+                        <div class="p-space-lg md:p-space-xl flex flex-col gap-space-md max-h-[42vh] overflow-y-auto">
+                            <div class="flex flex-wrap items-start justify-between gap-space-md">
+                                <div class="flex flex-col gap-1 max-w-xl">
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <span
+                                            id="modal-badge"
+                                            class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-badge text-label-badge font-bold uppercase"
+                                            >TRAILER</span
+                                        >
+                                        <span
+                                            id="modal-match"
+                                            class="text-secondary font-label-badge text-label-badge font-bold"
+                                            >98% MATCH</span
+                                        >
+                                        <span class="text-on-surface-variant">•</span>
+                                        <span
+                                            id="modal-year"
+                                            class="text-on-surface-variant font-label-badge text-label-badge"
+                                            >2024</span
+                                        >
+                                        <span class="text-on-surface-variant">•</span>
+                                        <span
+                                            id="modal-runtime"
+                                            class="text-on-surface-variant font-label-badge text-label-badge"
+                                            >2:14</span
+                                        >
+                                        <span
+                                            id="modal-quality"
+                                            class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface text-[10px] font-bold"
+                                            >4K ULTRA HD</span
+                                        >
+                                    </div>
+                                    <h2
+                                        id="modal-title"
+                                        class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight mt-1"
+                                    >
+                                        Movie Title
+                                    </h2>
+                                </div>
+                                <div class="flex items-center gap-space-sm">
+                                    <button
+                                        id="modal-action-btn"
+                                        class="flex items-center gap-2 px-space-lg py-2.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-label-lg text-label-lg transition-all shadow-lg active:scale-95 cursor-pointer"
+                                        type="button"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            style="font-variation-settings: 'FILL' 1"
+                                            >play_arrow</span
+                                        >
+                                        <span id="modal-action-text">Watch Now</span>
+                                    </button>
+                                    <button
+                                        id="modal-watchlist-btn"
+                                        class="w-10 h-10 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface flex items-center justify-center transition-colors cursor-pointer"
+                                        type="button"
+                                        title="Add to Watchlist"
+                                    >
+                                        <span class="material-symbols-outlined text-[20px]">add</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <p
+                                id="modal-desc"
+                                class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                            >
+                                Detailed synopsis loading...
+                            </p>
+                            <div
+                                class="flex flex-wrap items-center justify-between gap-2 pt-space-xs text-on-surface-variant font-body-sm text-body-sm border-t border-outline-variant/20 mt-1"
+                            >
+                                <div>
+                                    <span class="text-on-surface font-semibold">Genres:</span>
+                                    <span id="modal-genres">Sci-Fi, Cyberpunk, Action</span>
+                                </div>
+                                <div>
+                                    <span class="text-on-surface font-semibold">Audio:</span>
+                                    <span id="modal-audio">Dolby Atmos Spatial 7.1.4</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- ==================== CINESTREAM BRAND FOOTER ==================== -->
+<footer class="w-full bg-surface-container-lowest text-on-surface-variant py-space-2xl mt-space-2xl border-t border-white/5">
+    <div class="w-full px-margin-mobile md:px-margin-desktop">
+        <div class="flex items-center gap-space-lg mb-space-xl">
+            <a
+                aria-label="Cinema Community"
+                class="text-on-surface-variant hover:text-on-surface transition-colors"
+                href="/pages/about.html"
+                ><span class="material-symbols-outlined text-[24px]">movie</span></a
+            ><a
+                aria-label="Playlists &amp; Watch Parties"
+                class="text-on-surface-variant hover:text-on-surface transition-colors"
+                href="/pages/my_list.html"
+                ><span class="material-symbols-outlined text-[24px]">group_work</span></a
+            ><a
+                aria-label="Awards &amp; Honors"
+                class="text-on-surface-variant hover:text-on-surface transition-colors"
+                href="/pages/search_page.html"
+                ><span class="material-symbols-outlined text-[24px]">hotel_class</span></a
+            ><a
+                aria-label="Global Network"
+                class="text-on-surface-variant hover:text-on-surface transition-colors"
+                href="/pages/contact.html"
+                ><span class="material-symbols-outlined text-[24px]">language</span></a
+            >
+        </div>
+        <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-y-space-md gap-x-gutter-lg mb-space-xl font-body-sm text-body-sm"
+        >
+            <div class="flex flex-col gap-space-sm">
+                <a class="hover:text-on-surface transition-colors" data-path="audio-and-subtitles" href="/pages/help.html"
+                    >Audio &amp; Subtitles</a
+                ><a class="hover:text-on-surface transition-colors" data-path="media-center" href="/pages/about.html"
+                    >Media Center</a
+                ><a class="hover:text-on-surface transition-colors" data-path="privacy" href="/pages/about.html#privacy">Privacy</a>
+            </div>
+            <div class="flex flex-col gap-space-sm">
+                <a class="hover:text-on-surface transition-colors" data-path="help-center" href="/pages/help.html"
+                    >Help Center</a
+                ><a class="hover:text-on-surface transition-colors" data-path="corporate-information" href="/pages/about.html"
+                    >Corporate Information</a
+                ><a class="hover:text-on-surface transition-colors" data-path="terms-of-use" href="/pages/about.html#terms"
+                    >Terms of Use</a
+                >
+            </div>
+            <div class="flex flex-col gap-space-sm">
+                <a class="hover:text-on-surface transition-colors" data-path="pricing" href="/pages/pricing.html">Plans &amp; Pricing</a
+                ><a class="hover:text-on-surface transition-colors" data-path="contact" href="/pages/contact.html"
+                    >Contact Support</a
+                ><a class="hover:text-on-surface transition-colors" data-path="select-profile" href="/pages/select_profile.html"
+                    >Manage Profiles</a
+                >
+            </div>
+            <div class="flex flex-col gap-space-sm">
+                <a class="hover:text-on-surface transition-colors" data-path="movies" href="/pages/search_page.html?type=movie"
+                    >All Movies</a
+                ><a class="hover:text-on-surface transition-colors" data-path="series" href="/pages/series_detail.html"
+                    >Original Series</a
+                ><a class="hover:text-on-surface transition-colors" data-path="legal-notices" href="/pages/about.html#legal"
+                    >Legal Notices</a
+                >
+            </div>
+        </div>
+        <div
+            class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md pt-space-lg border-t border-white/5"
+        >
+            <a
+                class="px-space-md py-space-xs rounded font-label-md text-label-md bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors"
+                href="/pages/help.html"
+            >
+                Service Center
+            </a>
+            <p class="font-label-badge text-label-badge text-on-surface-variant/70 uppercase tracking-widest">
+                © 2025 CINESTREAM ENTERTAINMENT INC. ALL RIGHTS RESERVED.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- ==================== CINEPUG CHAT SUPPORT POPUP WIDGET ==================== -->
+<div id="cinepug-widget" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 pointer-events-none font-body-md select-none">
+    <!-- Chat Support Popup Card (Positioned ABOVE the mascot) -->
+    <div
+        id="cinepug-popup"
+        class="pointer-events-auto absolute bottom-[calc(100%+12px)] right-0 w-[320px] sm:w-[350px] max-w-[calc(100vw-2rem)] h-[420px] max-h-[85vh] bg-surface-container-low/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.85)] flex flex-col overflow-hidden transition-all duration-300 transform scale-95 opacity-0 pointer-events-none translate-y-3"
+        style="display: none; height: 420px; max-height: 85vh;"
+    >
+        <!-- Popup Header (Draggable Handle) -->
+        <div id="cinepug-popup-header" class="px-4 py-3 bg-surface-container/80 border-b border-white/5 flex items-center justify-between flex-shrink-0 cursor-grab active:cursor-grabbing select-none" title="Kéo để di chuyển vị trí">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px] text-on-surface-variant/40 hover:text-on-surface-variant cursor-grab" title="Kéo để di chuyển">drag_indicator</span>
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <div class="flex flex-col">
+                    <span class="font-headline-sm text-[14px] font-bold text-on-surface flex items-center gap-1.5">
+                        CinePug Support 🐾
+                    </span>
+                    <span class="text-[11px] text-on-surface-variant/80 font-medium">Trợ lý cún cưng • Sẵn sàng hỗ trợ</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-1">
+                <button
+                    id="cinepug-clear-chat-btn"
+                    class="w-7 h-7 rounded-full hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
+                    title="Xóa lịch sử chat"
+                    type="button"
+                >
+                    <span class="material-symbols-outlined text-[16px]">delete_sweep</span>
+                </button>
+                <button
+                    id="cinepug-close-btn"
+                    class="w-7 h-7 rounded-full hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
+                    title="Thu nhỏ cửa sổ chat (X)"
+                    type="button"
+                >
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Simulated Chat Messages Area -->
+        <div id="cinepug-chat-messages" class="p-3.5 flex flex-col gap-2.5 flex-1 min-h-0 overflow-y-auto text-[13px] scrollbar-thin">
+            <div class="flex items-start gap-2">
+                <span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[12px] flex-shrink-0">🐶</span>
+                <div class="bg-surface-container-high text-on-surface p-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm">
+                    Gâu gâu! 🐾 Chào bạn, tôi là CinePug! Bạn muốn tìm phim gì hay hoặc cần tôi hỗ trợ gì không?
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Suggestion Chips -->
+        <div class="px-3 pb-2 flex flex-wrap gap-1.5 flex-shrink-0" id="cinepug-quick-chips">
+            <button type="button" class="chip-btn px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high text-[11px] font-medium transition-colors cursor-pointer border border-white/5">
+                🎬 Gợi ý phim hay
+            </button>
+            <button type="button" class="chip-btn px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high text-[11px] font-medium transition-colors cursor-pointer border border-white/5">
+                🔥 Phim thịnh hành
+            </button>
+            <button type="button" class="chip-btn px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high text-[11px] font-medium transition-colors cursor-pointer border border-white/5">
+                ❤️ Thả tim cho Pug
+            </button>
+            <button type="button" class="chip-btn px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high text-[11px] font-medium transition-colors cursor-pointer border border-white/5">
+                🐶 Làm trò đi Pug
+            </button>
+        </div>
+
+        <!-- Chat Input Bar -->
+        <form id="cinepug-chat-form" class="p-2.5 bg-surface-container/60 border-t border-white/5 flex items-center gap-2 flex-shrink-0">
+            <input
+                id="cinepug-chat-input"
+                class="flex-1 bg-surface-container-lowest text-on-surface px-3 py-1.5 rounded-full text-[12px] border border-white/10 focus:border-primary-container focus:outline-none placeholder:text-on-surface-variant/50"
+                placeholder="Nhập tin nhắn..."
+                type="text"
+                autocomplete="off"
+            />
+            <button
+                type="submit"
+                class="w-8 h-8 rounded-full bg-primary-container hover:bg-primary text-on-primary-container flex items-center justify-center transition-colors cursor-pointer flex-shrink-0 shadow-sm"
+                title="Gửi"
+            >
+                <span class="material-symbols-outlined text-[16px] ml-0.5">send</span>
+            </button>
+        </form>
+    </div>
+
+    <!-- The Dog Mascot (VISIBLE OUTSIDE BY DEFAULT - DRAGGABLE) -->
+    <div id="cinepug-launcher-container" class="pointer-events-auto relative flex flex-col items-end group cursor-grab active:cursor-grabbing select-none" title="Kéo để di chuyển • Nhấn vào tôi để chat">
+        <!-- Floating Speech Bubble / Hint with Close (X) positioned at top-right -->
+        <div class="relative mb-1.5 inline-flex items-center">
+            <div
+                id="cinepug-hint-bubble"
+                class="px-3 py-1 rounded-full bg-surface-container-high/95 backdrop-blur-md text-on-surface border border-white/15 shadow-[0_4px_16px_rgba(0,0,0,0.4)] text-[11px] font-medium flex items-center gap-1.5 transition-all duration-300 group-hover:scale-105 cursor-pointer pr-4"
+            >
+                <span class="material-symbols-outlined text-[12px] text-on-surface-variant/40">drag_indicator</span>
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span id="cinepug-hint-text">Chat với CinePug 💬</span>
+            </div>
+
+            <!-- Close (X) button positioned at top-right of the "Chat với CinePug" button, spaced out and slightly smaller -->
+            <button
+                id="cinepug-launcher-close-btn"
+                class="absolute -top-2.5 -right-3 z-30 w-5 h-5 rounded-full bg-surface-container-highest/95 hover:bg-primary-container text-on-surface-variant hover:text-white flex items-center justify-center shadow-lg border border-white/30 transition-all duration-200 cursor-pointer hover:scale-110 active:scale-90"
+                type="button"
+                aria-label="Đóng biểu tượng chat"
+                title="Đóng (X)"
+            >
+                <span class="material-symbols-outlined text-[13px] font-medium leading-none">close</span>
+            </button>
+        </div>
+
+        <!-- The Animated Mascot Button (Follows cursor, boops on click) -->
+        <button
+            id="cinepug-mascot-element"
+            class="relative cursor-grab active:cursor-grabbing focus:outline-none transition-transform hover:scale-105 active:scale-95 flex items-center justify-center filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)] select-none p-0 border-0 bg-transparent"
+            type="button"
+            aria-label="CinePug Mascot - Click to chat"
+            title="Kéo để di chuyển • Nhấn vào tôi để mở chat hỗ trợ! 🐾"
+            style="width: 110px; height: 110px;"
+        >
+            <!-- Pre-rendered layers so mascot appears immediately on first frame without flickering -->
+            <span data-mascot-squash style="position: relative; display: block; width: 100%; height: 100%; transform-origin: 50% 78%;">
+                <span data-mascot-directions style="position: absolute; inset: 0px; background-size: 300% 300%; background-repeat: no-repeat; background-image: url('/mascots/pug-directions.webp'); background-position: 50% 50%; opacity: 1; transition: opacity 0.08s ease;"></span>
+                <span data-mascot-reactions style="position: absolute; inset: 0px; background-size: 300% 300%; background-repeat: no-repeat; background-image: url('/mascots/pug-reactions.webp'); background-position: 0% 0%; opacity: 0; transition: opacity 0.08s ease;"></span>
+            </span>
+        </button>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,568 @@
+<!doctype html>
+<html class="dark" lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>CineStream — Đăng ký tài khoản mới (Sign Up / Onboarding)</title>
+        <load src="src/components/head-resources.html" />
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
+                display: inline-block;
+                vertical-align: middle;
+                line-height: 1;
+            }
+            .material-symbols-outlined.fill-icon {
+                font-variation-settings:
+                    "FILL" 1,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
+            }
+            /* Subtle background grid noise / glow */
+            .bg-cinema-backdrop {
+                background-image: radial-gradient(
+                        circle at 50% 15%,
+                        rgba(229, 9, 20, 0.16) 0%,
+                        rgba(19, 19, 21, 0.95) 75%
+                    ),
+                    radial-gradient(circle at 10% 80%, rgba(238, 152, 0, 0.08) 0%, transparent 50%),
+                    url("https://lh3.googleusercontent.com/aida-public/AB6AXuBENL7yKIDMr1gOv1rUnxN3bPYFTq-hekJks82u7bDaoScytAxkFtKF_V4RRAc9OqLGvkFf7CXXycPZZ3UzunHB2LpMvELYRQRHGbXi7ckF-ygT_Rd6Qk_9xNZYmjCdF1yHYUf9r1VMhf87dlyt4a7X9o4U_s5EaMOwC-b_Ycfmv7S51uV4u00zlRYEm0Z_nuduC-DnR_ZYBrhFN6tvXadNEsqJohoU2zw-kTLKcMVINVuG3X5BOFD3");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+        </style>
+    </head>
+    <body
+        class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-white min-h-screen flex flex-col justify-between bg-cinema-backdrop relative"
+    >
+        <!-- Top Dark Overlay Tint -->
+        <div class="absolute inset-0 bg-[#0e0e10]/80 backdrop-blur-[3px] pointer-events-none z-0"></div>
+
+        <!-- ================= 1. HEADER TINH GỌN ================= -->
+        <header
+            class="relative z-20 w-full border-b border-white/5 bg-surface/70 backdrop-blur-md px-6 md:px-14 py-4 transition-all"
+        >
+            <div class="max-w-6xl mx-auto flex items-center justify-between">
+                <!-- CineStream Wordmark Logo -->
+                <a href="/index.html" class="flex items-center gap-2.5 group cursor-pointer" title="CineStream Home">
+                    <img
+                        src="/logo.png"
+                        alt="CineStream Logo"
+                        class="size-9 rounded-xl object-contain shadow-lg shadow-primary-container/30 group-hover:scale-105 transition-transform duration-200"
+                    />
+                    <span class="font-headline font-black text-2xl tracking-wider text-white">
+                        CINE<span class="text-primary-container">STREAM</span>
+                    </span>
+                </a>
+
+                <!-- Right Action: Sign In Link -->
+                <div class="flex items-center gap-4">
+                    <span class="text-xs md:text-sm text-on-surface-variant hidden sm:inline"
+                        >Đã có tài khoản CineStream?</span
+                    >
+                    <a
+                        href="/pages/login.html"
+                        class="px-5 py-2 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest border border-white/10 hover:border-white/20 text-white font-medium text-xs md:text-sm transition-all duration-200 active:scale-95 flex items-center gap-1.5 shadow-md"
+                    >
+                        <span class="material-symbols-outlined text-[18px] text-primary">login</span>
+                        <span>Sign In</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- ================= MAIN CONTAINER ================= -->
+        <main class="relative z-10 w-full flex-1 flex flex-col items-center justify-center px-4 py-8 md:py-12">
+            <div class="w-full max-w-xl flex flex-col">
+                <!-- ================= 2. MULTI-STEP ONBOARDING INDICATOR ================= -->
+                <div class="w-full mb-8">
+                    <div class="flex items-center justify-between relative">
+                        <!-- Background Progress Bar Line -->
+                        <div
+                            class="absolute left-6 right-6 top-1/2 -translate-y-1/2 h-0.5 bg-surface-container-highest z-0"
+                        ></div>
+                        <!-- Active Line (Step 1 -> 33% progress) -->
+                        <div
+                            class="absolute left-6 w-[20%] top-1/2 -translate-y-1/2 h-0.5 bg-primary-container z-0 transition-all duration-500"
+                        ></div>
+
+                        <!-- Step 1 (Active) -->
+                        <div class="relative z-10 flex flex-col items-center gap-1.5 group cursor-pointer">
+                            <div
+                                class="size-10 rounded-full bg-primary-container text-white flex items-center justify-center font-headline font-bold text-sm shadow-[0_0_20px_rgba(229,9,20,0.6)] ring-4 ring-primary-container/20 transition-all"
+                            >
+                                1
+                            </div>
+                            <span
+                                class="text-[11px] md:text-xs font-semibold text-white font-headline tracking-wide uppercase"
+                                >Account</span
+                            >
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div
+                            class="relative z-10 flex flex-col items-center gap-1.5 opacity-60 hover:opacity-80 transition-opacity"
+                        >
+                            <div
+                                class="size-10 rounded-full bg-surface-container-high text-on-surface-variant border border-white/10 flex items-center justify-center font-headline font-semibold text-sm"
+                            >
+                                2
+                            </div>
+                            <span
+                                class="text-[11px] md:text-xs font-medium text-on-surface-variant font-headline tracking-wide uppercase"
+                                >Plan</span
+                            >
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div
+                            class="relative z-10 flex flex-col items-center gap-1.5 opacity-40 hover:opacity-60 transition-opacity"
+                        >
+                            <div
+                                class="size-10 rounded-full bg-surface-container-high text-on-surface-variant border border-white/10 flex items-center justify-center font-headline font-semibold text-sm"
+                            >
+                                3
+                            </div>
+                            <span
+                                class="text-[11px] md:text-xs font-medium text-on-surface-variant font-headline tracking-wide uppercase"
+                                >Payment</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= 3. FORM CARD TRUNG TÂM (STEP 1) ================= -->
+                <div
+                    class="w-full bg-surface-container-low/95 backdrop-blur-2xl rounded-2xl p-6 sm:p-10 border border-white/10 shadow-2xl shadow-black/80 relative overflow-hidden"
+                >
+                    <!-- Ambient decorative corner glow -->
+                    <div
+                        class="absolute -top-24 -right-24 size-48 bg-primary-container/15 rounded-full blur-3xl pointer-events-none"
+                    ></div>
+                    <div
+                        class="absolute -bottom-24 -left-24 size-48 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none"
+                    ></div>
+
+                    <!-- Header Step Tag & Titles -->
+                    <div class="text-left space-y-2 mb-7">
+                        <div
+                            class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-primary-container/15 border border-primary-container/30 text-primary text-[11px] font-semibold tracking-wider uppercase"
+                        >
+                            <span class="size-1.5 rounded-full bg-primary-container animate-ping"></span>
+                            Bước 1 / 3: Khởi tạo tài khoản VIP
+                        </div>
+                        <h1
+                            class="font-headline text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight"
+                        >
+                            Unlimited movies, TV shows, and more.
+                            <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-white via-on-surface to-primary"
+                                >Watch anywhere.</span
+                            >
+                        </h1>
+                        <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                            Create an account to start your
+                            <span class="text-secondary font-semibold">30-day free trial</span>. Trải nghiệm chất lượng
+                            4K Dolby Vision không nén.
+                        </p>
+                    </div>
+
+                    <!-- Social 1-Touch Sign Up (Google) -->
+                    <div class="mb-6">
+                        <button
+                            type="button"
+                            class="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl bg-surface-container-high hover:bg-surface-container-highest border border-white/10 hover:border-white/25 text-white text-sm font-medium transition-all duration-200 shadow-md group cursor-pointer active:scale-[0.99]"
+                            onclick="handleGoogleSignUp()"
+                        >
+                            <!-- Google SVG Icon -->
+                            <svg class="size-5 shrink-0" viewBox="0 0 24 24">
+                                <path
+                                    fill="#EA4335"
+                                    d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.9C6.2 7.3 8.9 5 12 5z"
+                                />
+                                <path
+                                    fill="#4285F4"
+                                    d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"
+                                />
+                                <path
+                                    fill="#FBBC05"
+                                    d="M5.3 14.7c-.2-.7-.4-1.5-.4-2.4s.2-1.7.4-2.4L1.6 7c-.8 1.6-1.3 3.4-1.3 5.3s.5 3.7 1.3 5.3l3.7-2.9z"
+                                />
+                                <path
+                                    fill="#34A853"
+                                    d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5L1.6 16.2C3.5 20 7.4 23 12 23z"
+                                />
+                            </svg>
+                            <span class="group-hover:text-white transition-colors"
+                                >Đăng ký nhanh với Google (1-Click)</span
+                            >
+                        </button>
+                    </div>
+
+                    <!-- OR Divider -->
+                    <div class="relative flex items-center justify-center mb-6">
+                        <div class="border-t border-white/10 w-full"></div>
+                        <span
+                            class="bg-surface-container-low px-3 text-[11px] font-semibold tracking-wider uppercase text-on-surface-variant/70 shrink-0"
+                        >
+                            Hoặc đăng ký bằng Email
+                        </span>
+                        <div class="border-t border-white/10 w-full"></div>
+                    </div>
+
+                    <!-- Form Fields -->
+                    <form id="signup-form" onsubmit="event.preventDefault(); proceedToStepTwo();" class="space-y-4">
+                        <!-- Field 1: Họ và tên -->
+                        <div class="space-y-1.5 text-left">
+                            <label for="fullname" class="block text-xs font-medium text-white/90">
+                                Họ và tên <span class="text-primary-container">*</span>
+                            </label>
+                            <div class="relative flex items-center">
+                                <span
+                                    class="material-symbols-outlined absolute left-3.5 text-[20px] text-on-surface-variant pointer-events-none"
+                                    >person</span
+                                >
+                                <input
+                                    id="fullname"
+                                    type="text"
+                                    required
+                                    placeholder="Ví dụ: Alex Nguyễn"
+                                    class="w-full bg-surface-container-highest/60 border border-white/10 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded-xl pl-11 pr-4 py-3 text-sm text-white placeholder:text-white/30 transition-all outline-none"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Field 2: Địa chỉ Email -->
+                        <div class="space-y-1.5 text-left">
+                            <label for="email" class="block text-xs font-medium text-white/90">
+                                Địa chỉ Email <span class="text-primary-container">*</span>
+                            </label>
+                            <div class="relative flex items-center">
+                                <span
+                                    class="material-symbols-outlined absolute left-3.5 text-[20px] text-on-surface-variant pointer-events-none"
+                                    >mail</span
+                                >
+                                <input
+                                    id="email"
+                                    type="email"
+                                    required
+                                    placeholder="name@cinestream.com"
+                                    class="w-full bg-surface-container-highest/60 border border-white/10 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded-xl pl-11 pr-4 py-3 text-sm text-white placeholder:text-white/30 transition-all outline-none"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Field 3: Mật khẩu & Strength Meter -->
+                        <div class="space-y-1.5 text-left">
+                            <div class="flex items-center justify-between">
+                                <label for="password" class="block text-xs font-medium text-white/90">
+                                    Mật khẩu <span class="text-primary-container">*</span>
+                                </label>
+                                <span id="strength-label" class="text-[11px] font-semibold text-on-surface-variant"
+                                    >Tối thiểu 6 ký tự</span
+                                >
+                            </div>
+                            <div class="relative flex items-center">
+                                <span
+                                    class="material-symbols-outlined absolute left-3.5 text-[20px] text-on-surface-variant pointer-events-none"
+                                    >lock</span
+                                >
+                                <input
+                                    id="password"
+                                    type="password"
+                                    required
+                                    oninput="checkPasswordStrength(this.value)"
+                                    placeholder="Nhập mật khẩu an toàn..."
+                                    class="w-full bg-surface-container-highest/60 border border-white/10 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded-xl pl-11 pr-11 py-3 text-sm text-white placeholder:text-white/30 transition-all outline-none"
+                                />
+                                <button
+                                    type="button"
+                                    onclick="togglePasswordVisibility('password', this)"
+                                    class="absolute right-3.5 text-on-surface-variant hover:text-white transition-colors"
+                                    title="Hiện/Ẩn mật khẩu"
+                                >
+                                    <span class="material-symbols-outlined text-[20px]">visibility</span>
+                                </button>
+                            </div>
+
+                            <!-- Password Strength Meter Visualizer -->
+                            <div class="pt-1 space-y-1">
+                                <div class="grid grid-cols-4 gap-1.5 h-1.5 w-full">
+                                    <div
+                                        id="bar-1"
+                                        class="h-full rounded-full bg-surface-container-highest transition-all duration-300"
+                                    ></div>
+                                    <div
+                                        id="bar-2"
+                                        class="h-full rounded-full bg-surface-container-highest transition-all duration-300"
+                                    ></div>
+                                    <div
+                                        id="bar-3"
+                                        class="h-full rounded-full bg-surface-container-highest transition-all duration-300"
+                                    ></div>
+                                    <div
+                                        id="bar-4"
+                                        class="h-full rounded-full bg-surface-container-highest transition-all duration-300"
+                                    ></div>
+                                </div>
+                                <p class="text-[10px] text-white/50">
+                                    Gợi ý: Kết hợp chữ hoa, chữ số & ký tự đặc biệt để tài khoản đạt chuẩn an toàn 100%.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Field 4: Xác nhận mật khẩu -->
+                        <div class="space-y-1.5 text-left">
+                            <label for="confirm-password" class="block text-xs font-medium text-white/90">
+                                Xác nhận mật khẩu <span class="text-primary-container">*</span>
+                            </label>
+                            <div class="relative flex items-center">
+                                <span
+                                    class="material-symbols-outlined absolute left-3.5 text-[20px] text-on-surface-variant pointer-events-none"
+                                    >verified_user</span
+                                >
+                                <input
+                                    id="confirm-password"
+                                    type="password"
+                                    required
+                                    oninput="validatePasswordMatch()"
+                                    placeholder="Nhập lại mật khẩu..."
+                                    class="w-full bg-surface-container-highest/60 border border-white/10 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded-xl pl-11 pr-11 py-3 text-sm text-white placeholder:text-white/30 transition-all outline-none"
+                                />
+                                <button
+                                    type="button"
+                                    onclick="togglePasswordVisibility('confirm-password', this)"
+                                    class="absolute right-3.5 text-on-surface-variant hover:text-white transition-colors"
+                                    title="Hiện/Ẩn mật khẩu"
+                                >
+                                    <span class="material-symbols-outlined text-[20px]">visibility</span>
+                                </button>
+                            </div>
+                            <p id="match-error" class="hidden text-[11px] text-primary flex items-center gap-1 mt-1">
+                                <span class="material-symbols-outlined text-[14px]">error</span> Mật khẩu xác nhận chưa
+                                khớp.
+                            </p>
+                        </div>
+
+                        <!-- Checkboxes Cluster -->
+                        <div class="pt-2 space-y-2.5 text-left">
+                            <!-- Checkbox 1: Terms -->
+                            <label
+                                class="flex items-start gap-2.5 cursor-pointer text-xs text-on-surface-variant group"
+                            >
+                                <input
+                                    id="agree-terms"
+                                    type="checkbox"
+                                    required
+                                    class="size-4 mt-0.5 rounded border-white/20 bg-surface-container-highest text-primary-container focus:ring-primary-container focus:ring-offset-0 cursor-pointer"
+                                />
+                                <span class="leading-relaxed group-hover:text-white transition-colors">
+                                    Tôi đồng ý với
+                                    <a href="#" class="text-white underline hover:text-primary transition-colors"
+                                        >Điều khoản dịch vụ</a
+                                    >
+                                    và
+                                    <a href="#" class="text-white underline hover:text-primary transition-colors"
+                                        >Chính sách bảo mật CineStream</a
+                                    >.
+                                </span>
+                            </label>
+
+                            <!-- Checkbox 2: Newsletter -->
+                            <label
+                                class="flex items-start gap-2.5 cursor-pointer text-xs text-on-surface-variant group"
+                            >
+                                <input
+                                    type="checkbox"
+                                    checked
+                                    class="size-4 mt-0.5 rounded border-white/20 bg-surface-container-highest text-primary-container focus:ring-primary-container focus:ring-offset-0 cursor-pointer"
+                                />
+                                <span class="leading-relaxed group-hover:text-white transition-colors">
+                                    Nhận thông báo đặc quyền về các suất chiếu sớm phim 4K IMAX và bom tấn độc quyền mới
+                                    ra mắt.
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- CTA Button: Next: Choose Plan -->
+                        <div class="pt-3">
+                            <button
+                                type="submit"
+                                class="w-full py-3.5 px-6 rounded-xl bg-primary-container hover:bg-inverse-primary text-white font-headline font-bold text-base tracking-wide uppercase transition-all duration-300 transform hover:scale-[1.01] active:scale-[0.98] shadow-glow-red flex items-center justify-center gap-2 cursor-pointer"
+                            >
+                                <span>Next: Choose Plan</span>
+                                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Security Guarantee Pill -->
+                    <div
+                        class="mt-6 pt-4 border-t border-white/5 flex flex-wrap items-center justify-center gap-4 text-[11px] text-on-surface-variant/80"
+                    >
+                        <span class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[15px] text-secondary">verified</span> Mã hóa
+                            bảo mật TLS 256-Bit
+                        </span>
+                        <span class="size-1 rounded-full bg-white/20"></span>
+                        <span class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[15px] text-secondary">alarm_off</span> Hủy bất
+                            kỳ lúc nào online
+                        </span>
+                        <span class="size-1 rounded-full bg-white/20"></span>
+                        <span class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[15px] text-secondary">block</span> Hoàn toàn
+                            không quảng cáo
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ================= 5. MINI-FOOTER TINH GỌN ================= -->
+        <footer
+            class="relative z-10 w-full border-t border-white/5 bg-[#0e0e10]/90 backdrop-blur-md py-6 px-6 md:px-14 text-xs text-on-surface-variant/70"
+        >
+            <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+                <!-- Footer Nav Links -->
+                <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+                    <a href="#" class="hover:text-white transition-colors">Trung tâm trợ giúp</a>
+                    <a href="#" class="hover:text-white transition-colors">Điều khoản dịch vụ</a>
+                    <a href="#" class="hover:text-white transition-colors">Chính sách bảo mật</a>
+                    <a href="#" class="hover:text-white transition-colors">Tùy chọn Cookie</a>
+                    <a href="#" class="hover:text-white transition-colors">Thông tin bản quyền</a>
+                </div>
+
+                <!-- Copyright & System Status -->
+                <div class="flex items-center gap-3 text-white/50 text-[11px]">
+                    <span class="flex items-center gap-1.5">
+                        <span class="size-1.5 rounded-full bg-emerald-500"></span> CineStream Auth Secured
+                    </span>
+                    <span>•</span>
+                    <span>© 2025 CineStream Entertainment Inc.</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ================= CLIENT JAVASCRIPT ================= -->
+        <script>
+            // Toggle Show/Hide Password
+            function togglePasswordVisibility(fieldId, btn) {
+                const input = document.getElementById(fieldId);
+                const icon = btn.querySelector(".material-symbols-outlined");
+                if (input.type === "password") {
+                    input.type = "text";
+                    icon.textContent = "visibility_off";
+                } else {
+                    input.type = "password";
+                    icon.textContent = "visibility";
+                }
+            }
+
+            // Password Strength Meter Logic
+            function checkPasswordStrength(val) {
+                const b1 = document.getElementById("bar-1");
+                const b2 = document.getElementById("bar-2");
+                const b3 = document.getElementById("bar-3");
+                const b4 = document.getElementById("bar-4");
+                const label = document.getElementById("strength-label");
+
+                // Reset bars
+                [b1, b2, b3, b4].forEach((b) => {
+                    b.className = "h-full rounded-full bg-surface-container-highest transition-all duration-300";
+                });
+
+                if (!val || val.length === 0) {
+                    label.textContent = "Tối thiểu 6 ký tự";
+                    label.className = "text-[11px] font-semibold text-on-surface-variant";
+                    return;
+                }
+
+                let score = 0;
+                if (val.length >= 6) score++;
+                if (val.length >= 10) score++;
+                if (/[A-Z]/.test(val) && /[0-9]/.test(val)) score++;
+                if (/[^A-Za-z0-9]/.test(val)) score++;
+
+                if (score === 1) {
+                    b1.className = "h-full rounded-full bg-red-500 transition-all duration-300";
+                    label.textContent = "Độ mạnh: Yếu";
+                    label.className = "text-[11px] font-semibold text-red-400";
+                } else if (score === 2) {
+                    b1.className = "h-full rounded-full bg-amber-500 transition-all duration-300";
+                    b2.className = "h-full rounded-full bg-amber-500 transition-all duration-300";
+                    label.textContent = "Độ mạnh: Trung bình";
+                    label.className = "text-[11px] font-semibold text-amber-400";
+                } else if (score === 3) {
+                    b1.className = "h-full rounded-full bg-emerald-500 transition-all duration-300";
+                    b2.className = "h-full rounded-full bg-emerald-500 transition-all duration-300";
+                    b3.className = "h-full rounded-full bg-emerald-500 transition-all duration-300";
+                    label.textContent = "Độ mạnh: Tốt";
+                    label.className = "text-[11px] font-semibold text-emerald-400";
+                } else if (score >= 4) {
+                    b1.className =
+                        "h-full rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.7)] transition-all duration-300";
+                    b2.className =
+                        "h-full rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.7)] transition-all duration-300";
+                    b3.className =
+                        "h-full rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.7)] transition-all duration-300";
+                    b4.className =
+                        "h-full rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.7)] transition-all duration-300";
+                    label.textContent = "Độ mạnh: Xuất sắc";
+                    label.className = "text-[11px] font-bold text-emerald-300";
+                }
+            }
+
+            // Validate Password Match
+            function validatePasswordMatch() {
+                const pwd = document.getElementById("password").value;
+                const confirmPwd = document.getElementById("confirm-password").value;
+                const err = document.getElementById("match-error");
+
+                if (confirmPwd.length > 0 && pwd !== confirmPwd) {
+                    err.classList.remove("hidden");
+                    return false;
+                } else {
+                    err.classList.add("hidden");
+                    return true;
+                }
+            }
+
+            // Google Sign-Up Simulation
+            function handleGoogleSignUp() {
+                try {
+                    localStorage.setItem("cinestream_current_user", JSON.stringify({
+                        email: "google.user@gmail.com",
+                        plan: "Ultra 4K CineVIP",
+                        memberSince: 2025
+                    }));
+                } catch(e) {}
+                window.location.href = "/pages/pricing.html";
+            }
+
+            // Proceed to Step Two simulation
+            function proceedToStepTwo() {
+                if (!validatePasswordMatch()) {
+                    alert("Vui lòng kiểm tra lại mật khẩu xác nhận.");
+                    return;
+                }
+                const email = document.getElementById("email") ? document.getElementById("email").value.trim() : "user@example.com";
+                try {
+                    localStorage.setItem("cinestream_current_user", JSON.stringify({
+                        email: email,
+                        plan: "Trial",
+                        memberSince: 2025
+                    }));
+                } catch(e) {}
+                window.location.href = "/pages/pricing.html";
+            }
+        </script>
+    </body>
+</html>

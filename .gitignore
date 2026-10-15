@@ -1,0 +1,15 @@
+# =========================
+# Generated dependencies / analysis
+# =========================
+**/node_modules/
+
+# =========================
+# VSCode / IDE
+# =========================
+*.lnk
+.codex
+.codex_tmp
+bin/
+obj/
+*.apk
+*.xapk

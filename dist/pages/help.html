@@ -1,0 +1,1820 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="web_standard" name="shell-type" />
+                <!-- ==================== CINESTREAM GLOBAL HEAD RESOURCES ==================== -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Outfit:wght@400;600;700;800&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <!-- Favicon & App Icons -->
+        <link rel="icon" type="image/png" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+        <!-- Preload CinePug Mascot Sprites for instant zero-lag rendering across tabs/pages -->
+        <link rel="preload" as="image" href="/mascots/pug-directions.webp" type="image/webp" />
+        <link rel="preload" as="image" href="/mascots/pug-reactions.webp" type="image/webp" />
+        <style>
+            @layer base {
+                html,
+                body {
+                    margin: 0;
+                    padding: 0;
+                }
+                body {
+                    overscroll-behavior: none;
+                }
+                main > :first-child {
+                    margin-top: 0 !important;
+                }
+                main > :last-child {
+                    margin-bottom: 0 !important;
+                }
+            }
+            ::-webkit-scrollbar {
+                display: none;
+            }
+            .material-symbols-outlined {
+                font-family: "Material Symbols Outlined";
+                font-weight: normal;
+                font-style: normal;
+                font-size: 24px;
+                line-height: 1;
+                letter-spacing: normal;
+                text-transform: none;
+                display: inline-block;
+                white-space: nowrap;
+                word-wrap: normal;
+                direction: ltr;
+                -webkit-font-feature-settings: "liga";
+                -webkit-font-smoothing: antialiased;
+            }
+
+            /* Custom subtle glassmorphism and glow utilities */
+            .glass-panel {
+                background: rgba(32, 31, 33, 0.7);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                border: 1px solid rgba(94, 63, 59, 0.3);
+            }
+            .neon-red-glow {
+                box-shadow: 0 0 35px -5px rgba(229, 9, 20, 0.5);
+            }
+            .neon-red-glow-sm {
+                box-shadow: 0 0 15px -3px rgba(229, 9, 20, 0.4);
+            }
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        </style>
+        <script>
+            (function() {
+                const _w = console.warn;
+                console.warn = function(...args) {
+                    if (args[0] && typeof args[0] === 'string' && args[0].includes('cdn.tailwindcss.com')) return;
+                    _w.apply(console, args);
+                };
+            })();
+        </script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            tertiary: "#c0c1ff",
+                            "outline-variant": "#5e3f3b",
+                            "on-surface": "#e5e1e4",
+                            background: "#131315",
+                            "inverse-on-surface": "#313032",
+                            "tertiary-container": "#5e61ec",
+                            "on-tertiary-fixed": "#07006c",
+                            "surface-container-high": "#2a2a2c",
+                            "surface-variant": "#353437",
+                            "primary-fixed": "#ffdad5",
+                            "on-tertiary-fixed-variant": "#2f2ebe",
+                            "on-primary-fixed-variant": "#930007",
+                            primary: "#ffb4aa",
+                            "surface-container-low": "#1c1b1d",
+                            "inverse-primary": "#c0000c",
+                            "tertiary-fixed-dim": "#c0c1ff",
+                            "on-secondary-fixed": "#2a1700",
+                            "on-surface-variant": "#e9bcb6",
+                            "tertiary-fixed": "#e1e0ff",
+                            "secondary-container": "#ee9800",
+                            "primary-container": "#e50914",
+                            "surface-container-lowest": "#0e0e10",
+                            surface: "#131315",
+                            "primary-fixed-dim": "#ffb4aa",
+                            outline: "#af8782",
+                            "on-secondary-container": "#5b3800",
+                            "on-error-container": "#ffdad6",
+                            "on-primary": "#690003",
+                            "surface-tint": "#ffb4aa",
+                            "on-background": "#e5e1e4",
+                            "error-container": "#93000a",
+                            "surface-bright": "#39393b",
+                            "on-primary-container": "#fff7f6",
+                            "on-primary-fixed": "#410001",
+                            "on-secondary": "#472a00",
+                            secondary: "#ffb95f",
+                            error: "#ffb4ab",
+                            "on-tertiary": "#1000a9",
+                            "on-secondary-fixed-variant": "#653e00",
+                            "secondary-fixed": "#ffddb8",
+                            "surface-container-highest": "#353437",
+                            "inverse-surface": "#e5e1e4",
+                            "secondary-fixed-dim": "#ffb95f",
+                            "on-error": "#690005",
+                            "surface-dim": "#131315",
+                            "on-tertiary-container": "#fcf8ff",
+                            "surface-container": "#201f21",
+                        },
+                        borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+                        spacing: {
+                            "gutter-sm": "1rem",
+                            "space-sm": "0.5rem",
+                            "space-xs": "0.25rem",
+                            "space-lg": "1.5rem",
+                            gutter: "1.5rem",
+                            "gutter-lg": "2rem",
+                            margin: "2rem",
+                            "space-md": "1rem",
+                            "margin-mobile": "1rem",
+                            "margin-desktop": "3.5rem",
+                            "space-xl": "2.5rem",
+                            "space-2xl": "4rem",
+                        },
+                        fontFamily: {
+                            "label-md": ["Geist"],
+                            "headline-sm": ["Outfit"],
+                            "label-badge": ["Geist"],
+                            "body-sm": ["Geist"],
+                            "headline-xl": ["Outfit"],
+                            "headline-xl-mobile": ["Outfit"],
+                            "display-hero-mobile": ["Outfit"],
+                            "display-hero": ["Outfit"],
+                            "body-md": ["Geist"],
+                            "label-lg": ["Geist"],
+                            "body-lg": ["Geist"],
+                            "headline-lg": ["Outfit"],
+                        },
+                        fontSize: {
+                            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }],
+                            "headline-sm": ["20px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }],
+                            "label-badge": ["10px", { lineHeight: "12px", letterSpacing: "0.08em", fontWeight: "700" }],
+                            "body-sm": ["13px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }],
+                            "headline-xl": [
+                                "40px",
+                                { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" },
+                            ],
+                            "headline-xl-mobile": [
+                                "28px",
+                                { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" },
+                            ],
+                            "display-hero-mobile": [
+                                "36px",
+                                { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "800" },
+                            ],
+                            "display-hero": [
+                                "64px",
+                                { lineHeight: "72px", letterSpacing: "-0.03em", fontWeight: "800" },
+                            ],
+                            "body-md": ["15px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "400" }],
+                            "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "600" }],
+                            "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "400" }],
+                            "headline-lg": [
+                                "28px",
+                                { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" },
+                            ],
+                        },
+                    },
+                },
+            };
+        </script>
+
+      <script type="module" crossorigin src="/assets/player-CfUXkRg1.js"></script>
+      <script type="module" crossorigin src="/assets/nav-Dr-Z9-3t.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/player-CPRHHCZG.css">
+    </head>
+    <body
+        class="bg-background font-body-md text-body-md text-on-background min-h-screen selection:bg-primary-container selection:text-on-primary-container"
+    >
+        <!-- ==================== CINESTREAM BRAND TOP NAV BAR ==================== -->
+<header
+    class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-2xl transition-all duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.85)]"
+>
+    <div
+        class="h-20 w-full px-margin-mobile md:px-margin-desktop flex items-center justify-between gap-space-lg"
+    >
+        <div class="flex items-center gap-space-xl flex-shrink-0">
+            <a class="flex items-center gap-2.5 group" data-path="home" href="/index.html"
+                ><img
+                    alt="CINESTREAM Logo"
+                    class="h-9 w-9 rounded-xl object-contain shadow-[0_0_20px_rgba(229,9,20,0.35)] transition-transform duration-300 group-hover:scale-105"
+                    src="/logo.png"
+                /><span
+                    class="font-headline-lg text-headline-lg font-bold tracking-tight text-on-surface hidden sm:inline"
+                    >CINE<span class="text-primary-container">STREAM</span></span
+                ></a
+            >
+            <nav
+                class="hidden xl:flex items-center gap-space-md 2xl:gap-space-lg"
+                data-active-classes="text-on-surface font-semibold"
+            >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="home"
+                    href="/index.html"
+                    >Home</a
+                >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="movies"
+                    href="/pages/search_page.html?type=movie"
+                    >Movies</a
+                >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="series"
+                    href="/pages/series_detail.html"
+                    >Series</a
+                >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="pricing"
+                    href="/pages/pricing.html"
+                    >Pricing</a
+                >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="contact-help"
+                    href="/pages/contact.html"
+                    >Contact &amp; Help</a
+                >
+            </nav>
+        </div>
+        <div class="flex items-center gap-space-md md:gap-space-lg flex-shrink-0">
+            <div class="relative group flex items-center">
+                <div
+                    class="flex items-center bg-surface-container-lowest/80 backdrop-blur-md rounded-full px-space-md py-space-xs transition-all duration-300 w-44 md:w-64 focus-within:w-72 md:focus-within:w-80 shadow-[0_2px_12px_rgba(0,0,0,0.5)]"
+                >
+                    <span
+                        class="material-symbols-outlined text-on-surface-variant text-[20px] mr-space-sm select-none"
+                        >search</span
+                    ><input
+                        class="w-full bg-transparent text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none"
+                        placeholder="Titles, people, genres..."
+                        type="search"
+                    />
+                </div>
+                <div
+                    class="absolute right-0 top-full mt-2 w-80 bg-surface-container-high/95 backdrop-blur-2xl rounded-xl p-space-sm shadow-[0_24px_48px_rgba(0,0,0,0.9)] hidden group-focus-within:block z-50"
+                >
+                    <div
+                        class="px-space-sm py-space-xs font-label-badge text-label-badge text-secondary uppercase tracking-wider"
+                    >
+                        Top Searches
+                    </div>
+                    <a
+                        class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest transition-colors"
+                        data-path="search-results"
+                        href="/pages/watch_a_film_page.html?id=dune-part-two"
+                        ><span class="material-symbols-outlined text-primary text-[18px]">trending_up</span>
+                        <div class="flex flex-col">
+                            <span class="font-label-lg text-label-lg text-on-surface">Dune: Part Two</span
+                            ><span class="font-body-sm text-body-sm text-on-surface-variant"
+                                >Sci-Fi • 4K UHD</span
+                            >
+                        </div></a
+                    ><a
+                        class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest transition-colors"
+                        data-path="search-results"
+                        href="/pages/series_detail.html?id=neural-drift-reckoning"
+                        ><span class="material-symbols-outlined text-primary text-[18px]">trending_up</span>
+                        <div class="flex flex-col">
+                            <span class="font-label-lg text-label-lg text-on-surface">Neural Drift: Reckoning</span
+                            ><span class="font-body-sm text-body-sm text-on-surface-variant"
+                                >Crime Drama • Series</span
+                            >
+                        </div></a
+                    ><a
+                        class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest transition-colors"
+                        data-path="search-results"
+                        href="/pages/watch_a_film_page.html?id=oppenheimer"
+                        ><span class="material-symbols-outlined text-primary text-[18px]">trending_up</span>
+                        <div class="flex flex-col">
+                            <span class="font-label-lg text-label-lg text-on-surface">Oppenheimer</span
+                            ><span class="font-body-sm text-body-sm text-on-surface-variant"
+                                >Biographical Drama • IMAX</span
+                            >
+                        </div></a
+                    >
+                </div>
+            </div>
+            <div class="relative" id="notifications-wrapper">
+                <button
+                    id="notifications-btn"
+                    aria-label="Notifications"
+                    aria-expanded="false"
+                    class="relative p-space-sm rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors duration-200 flex items-center justify-center cursor-pointer"
+                    type="button"
+                >
+                    <span class="material-symbols-outlined text-[24px]">notifications</span>
+                    <span
+                        id="notifications-badge"
+                        class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_rgba(229,9,20,0.8)]"
+                    ></span>
+                </button>
+
+                <!-- Notifications Dropdown Panel -->
+                <div
+                    id="notifications-dropdown"
+                    class="absolute right-0 top-full mt-3 w-80 sm:w-96 bg-surface-container-high/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden transition-all duration-200 transform scale-95 opacity-0 pointer-events-none translate-y-2 z-50 select-none"
+                    style="display: none;"
+                >
+                    <!-- Header -->
+                    <div class="px-4 py-3 bg-surface-container/90 border-b border-white/5 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-headline text-[15px] font-bold text-white flex items-center gap-1.5">
+                                Thông báo
+                            </span>
+                            <span id="notifications-count-badge" class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary-fixed text-[11px] font-semibold border border-primary-container/30">
+                                3 Mới
+                            </span>
+                        </div>
+                        <button
+                            id="notifications-mark-read-btn"
+                            type="button"
+                            class="text-[12px] text-on-surface-variant hover:text-white transition-colors cursor-pointer flex items-center gap-1 font-medium"
+                        >
+                            <span class="material-symbols-outlined text-[16px] text-primary">done_all</span>
+                            Đọc tất cả
+                        </button>
+                    </div>
+
+                    <!-- Notification Items -->
+                    <div id="notifications-list" class="max-h-[380px] overflow-y-auto divide-y divide-white/5 scrollbar-thin">
+                        <!-- Notification 1 -->
+                        <a href="/pages/series_detail.html?id=neural-drift-reckoning" class="notification-item flex items-start gap-3 p-3.5 hover:bg-white/[0.04] transition-colors group cursor-pointer bg-white/[0.02]">
+                            <div class="relative flex-shrink-0 w-12 h-16 rounded-lg overflow-hidden bg-surface-container shadow-md">
+                                <img
+                                    src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=200&auto=format&fit=crop&q=80"
+                                    alt="Neural Drift"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <span class="notification-dot absolute top-1 left-1 w-2 h-2 rounded-full bg-primary-container shadow-sm"></span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between gap-1 mb-1">
+                                    <span class="font-headline text-[13px] font-bold text-white group-hover:text-primary transition-colors truncate">
+                                        🎬 Tập mới đã phát hành!
+                                    </span>
+                                    <span class="text-[10px] text-on-surface-variant/70 whitespace-nowrap">10p trước</span>
+                                </div>
+                                <p class="text-[12px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                                    <strong class="text-on-surface font-semibold">Neural Drift: Reckoning</strong> - Tập 7 "Mạng Lưới Bóng Đêm" hiện đã có định dạng 4K HDR.
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- Notification 2 -->
+                        <a href="/pages/watch_a_film_page.html?id=dune-part-two" class="notification-item flex items-start gap-3 p-3.5 hover:bg-white/[0.04] transition-colors group cursor-pointer bg-white/[0.02]">
+                            <div class="relative flex-shrink-0 w-12 h-16 rounded-lg overflow-hidden bg-surface-container shadow-md">
+                                <img
+                                    src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=200&auto=format&fit=crop&q=80"
+                                    alt="Dune Part Two"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <span class="notification-dot absolute top-1 left-1 w-2 h-2 rounded-full bg-primary-container shadow-sm"></span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between gap-1 mb-1">
+                                    <span class="font-headline text-[13px] font-bold text-white group-hover:text-primary transition-colors truncate">
+                                        🔥 Đề xuất phim hot cho bạn
+                                    </span>
+                                    <span class="text-[10px] text-on-surface-variant/70 whitespace-nowrap">2 giờ trước</span>
+                                </div>
+                                <p class="text-[12px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                                    <strong class="text-on-surface font-semibold">Dune: Part Two</strong> đã cập bến rạp CineStream với chuẩn âm thanh vòm Dolby Atmos đỉnh cao.
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- Notification 3 -->
+                        <a href="/pages/pricing.html" class="notification-item flex items-start gap-3 p-3.5 hover:bg-white/[0.04] transition-colors group cursor-pointer bg-white/[0.02]">
+                            <div class="relative flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-tr from-secondary-container to-amber-500 flex items-center justify-center text-white shadow-md">
+                                <span class="material-symbols-outlined text-[24px]">verified</span>
+                                <span class="notification-dot absolute top-1 left-1 w-2 h-2 rounded-full bg-primary-container shadow-sm"></span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between gap-1 mb-1">
+                                    <span class="font-headline text-[13px] font-bold text-white group-hover:text-secondary transition-colors truncate">
+                                        👑 Đặc quyền Hội viên VIP
+                                    </span>
+                                    <span class="text-[10px] text-on-surface-variant/70 whitespace-nowrap">Hôm qua</span>
+                                </div>
+                                <p class="text-[12px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                                    Tài khoản của bạn đã được nâng cấp quyền xem sớm các bản chiếu rạp IMAX không giới hạn!
+                                </p>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="p-2.5 bg-surface-container/90 border-t border-white/5 text-center">
+                        <a href="/pages/contact.html" class="text-[12px] font-medium text-primary hover:text-primary-fixed transition-colors flex items-center justify-center gap-1">
+                            <span>Xem tất cả thông báo &amp; trợ giúp</span>
+                            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a class="flex items-center gap-space-xs group" data-path="profile-settings" href="/pages/select_profile.html"
+                ><div
+                    class="p-0.5 rounded-full transition-transform duration-300 group-hover:scale-105 shadow-[0_0_12px_rgba(0,0,0,0.6)]"
+                >
+                    <img
+                        alt="Profile"
+                        class="w-8 h-8 rounded-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwhMB3eSg_URnC3yT-qp7IQGliA1GRo_tn1SxPdNX0PI6uJBlHcqDuSVhYT9F2q5fzGbOgugl_1qHUIM0TUuFUbyHyuVRR_R9mK9iIpm2JPXm5pubC_3J2sa80OB2jaP-9jQEZXybukDqhKz9dZFVYdOteqcqMjhtGuLuKZywDxjR18wzlPCgF169LlaaHdkxAdovGaytmykRoThIUgZ6BmXoWsg2rd3YUBsWxBLGesZzppcVrwmN1"
+                    />
+                </div>
+                <span
+                    class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface text-[18px] hidden sm:inline transition-colors duration-200"
+                    >arrow_drop_down</span
+                ></a
+            >
+        </div>
+    </div>
+</header>
+
+        <main class="w-full pt-16 bg-background min-h-[calc(100vh-280px)]">
+            <div class="flex flex-col w-full">
+                <!-- SEARCH HERO SECTION -->
+                <section
+                    class="relative w-full overflow-hidden px-margin-mobile md:px-margin-desktop pt-space-xl pb-space-2xl flex flex-col items-center justify-center text-center"
+                >
+                    <!-- Ambient Radial Glow Behind Hero -->
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[900px] h-[350px] bg-primary-container/15 blur-[120px] pointer-events-none rounded-full -z-10"
+                    ></div>
+                    <div
+                        class="absolute top-0 right-1/4 w-72 h-72 bg-secondary/10 blur-[100px] pointer-events-none rounded-full -z-10"
+                    ></div>
+                    <!-- Status Eyebrow Badge -->
+                    <div
+                        class="inline-flex items-center gap-space-sm px-space-md py-1.5 rounded-full bg-surface-container-high/70 backdrop-blur-md shadow-sm mb-space-lg"
+                    >
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
+                            ></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        </span>
+                        <span
+                            class="font-label-badge text-label-badge tracking-widest text-on-surface-variant uppercase"
+                            >OFFICIAL SUPPORT PORTAL</span
+                        >
+                        <span class="text-on-surface-variant/40 text-xs">•</span>
+                        <span class="font-label-md text-label-md text-emerald-400 font-medium"
+                            >All Streaming Services Operational</span
+                        >
+                    </div>
+                    <!-- Massive Theatrical Headline -->
+                    <h1
+                        class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface tracking-tight max-w-4xl leading-tight"
+                    >
+                        How can we help you today with
+                        <span
+                            class="bg-gradient-to-r from-primary-container via-primary to-secondary-fixed-dim bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(229,9,20,0.45)]"
+                            >CineStream</span
+                        >?
+                    </h1>
+                    <p class="mt-space-md font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        Search troubleshooting guides, high-fidelity device setups, billing queries, and theatrical
+                        streaming masterclasses.
+                    </p>
+                    <!-- Glassmorphic Global Search Bar -->
+                    <div class="w-full max-w-3xl mt-space-xl relative group">
+                        <div
+                            class="relative flex items-center w-full bg-surface-container-high/90 backdrop-blur-xl rounded-xl shadow-2xl transition-all duration-300 focus-within:shadow-[0_0_35px_rgba(229,9,20,0.35)] focus-within:bg-surface-container-highest"
+                        >
+                            <span
+                                class="material-symbols-outlined text-primary-container text-2xl pl-space-lg select-none"
+                                >search</span
+                            >
+                            <input
+                                class="w-full bg-transparent px-space-md py-space-lg text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant/50 focus:outline-none"
+                                id="helpSearchInput"
+                                placeholder="What can we help you with? (e.g. download films, 4K buffering, Smart TV setup...)"
+                                type="text"
+                            />
+                            <button
+                                aria-label="Clear Search"
+                                class="hidden pr-space-lg text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
+                                id="clearSearchBtn"
+                                type="button"
+                            >
+                                <span class="material-symbols-outlined text-xl">close</span>
+                            </button>
+                        </div>
+                        <!-- Live Search Instant Results Box (Dynamic hidden state) -->
+                        <div
+                            class="hidden absolute top-full left-0 w-full mt-2 bg-surface-container-high/95 backdrop-blur-2xl rounded-xl p-space-md shadow-2xl text-left z-30"
+                            id="searchResultsDropdown"
+                        >
+                            <div
+                                class="flex items-center justify-between pb-space-xs mb-space-xs text-on-surface-variant text-label-md font-label-md uppercase tracking-wider"
+                            >
+                                <span>Matching Knowledge Base Articles</span>
+                                <span class="text-xs">Press ESC to dismiss</span>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <a
+                                    class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest text-on-surface transition-colors"
+                                    href="#"
+                                >
+                                    <span class="material-symbols-outlined text-primary text-lg">tv</span>
+                                    <span class="font-body-md text-body-md truncate"
+                                        >How to enable 4K Ultra HD &amp; Dolby Vision on Samsung &amp; LG Smart
+                                        TVs</span
+                                    >
+                                </a>
+                                <a
+                                    class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest text-on-surface transition-colors"
+                                    href="#"
+                                >
+                                    <span class="material-symbols-outlined text-secondary text-lg">volume_up</span>
+                                    <span class="font-body-md text-body-md truncate"
+                                        >Fixing Audio Desync and Activating Dolby Atmos Passthrough</span
+                                    >
+                                </a>
+                                <a
+                                    class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest text-on-surface transition-colors"
+                                    href="#"
+                                >
+                                    <span class="material-symbols-outlined text-tertiary text-lg">wifi_off</span>
+                                    <span class="font-body-md text-body-md truncate"
+                                        >Troubleshooting Error Code CS-4001: 'Network Bandwidth Insufficient'</span
+                                    >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quick Search Filter Pills -->
+                    <div class="flex flex-wrap items-center justify-center gap-space-xs mt-space-lg max-w-3xl">
+                        <span class="font-label-md text-label-md text-on-surface-variant/70 mr-space-xs"
+                            >Quick search:</span
+                        >
+                        <button
+                            class="quick-pill px-space-md py-1.5 rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all"
+                            type="button"
+                        >
+                            Reset Password
+                        </button>
+                        <button
+                            class="quick-pill px-space-md py-1.5 rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all"
+                            type="button"
+                        >
+                            Fix 4K Stutter
+                        </button>
+                        <button
+                            class="quick-pill px-space-md py-1.5 rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all"
+                            type="button"
+                        >
+                            Dolby Atmos Setup
+                        </button>
+                        <button
+                            class="quick-pill px-space-md py-1.5 rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all"
+                            type="button"
+                        >
+                            Supported Smart TVs
+                        </button>
+                        <button
+                            class="quick-pill px-space-md py-1.5 rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all"
+                            type="button"
+                        >
+                            Cancel Membership
+                        </button>
+                        <button
+                            class="quick-pill px-space-md py-1.5 rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all"
+                            type="button"
+                        >
+                            AirPlay / Chromecast
+                        </button>
+                    </div>
+                </section>
+                <!-- HELP CATEGORIES GRID -->
+                <section class="w-full px-margin-mobile md:px-margin-desktop py-space-xl">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl">
+                        <div>
+                            <span
+                                class="font-label-badge text-label-badge tracking-widest uppercase text-primary-container"
+                                >ARCHITECTURAL TAXONOMY</span
+                            >
+                            <h2
+                                class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface mt-1"
+                            >
+                                Browse Help by Category
+                            </h2>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 md:mt-0">
+                            Curated technical repositories &amp; administrative guides
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter">
+                        <!-- Category 1: Account -->
+                        <div
+                            class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-lg hover:bg-surface-container-high transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] cursor-pointer"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between mb-space-md">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform"
+                                    >
+                                        <span class="material-symbols-outlined text-2xl">manage_accounts</span>
+                                    </div>
+                                    <span
+                                        class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-badge text-label-badge uppercase"
+                                        >14 Articles</span
+                                    >
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors"
+                                >
+                                    Getting Started &amp; Account
+                                </h3>
+                                <p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                                    Account creation, profile avatars, parental controls, PIN security, and initial
+                                    onboarding.
+                                </p>
+                            </div>
+                            <div class="mt-space-lg pt-space-md flex flex-wrap gap-1.5">
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Create Account</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Manage Profiles</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Password Reset</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Maturity Ratings</span
+                                >
+                            </div>
+                        </div>
+                        <!-- Category 2: Devices -->
+                        <div
+                            class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-lg hover:bg-surface-container-high transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] cursor-pointer"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between mb-space-md">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform"
+                                    >
+                                        <span class="material-symbols-outlined text-2xl">devices</span>
+                                    </div>
+                                    <span
+                                        class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-badge text-label-badge uppercase"
+                                        >28 Articles</span
+                                    >
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors"
+                                >
+                                    Watching on Devices
+                                </h3>
+                                <p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                                    Setup guides for Apple TV 4K, Android TV, Samsung Tizen, LG webOS, PS5, Xbox, and
+                                    mobile apps.
+                                </p>
+                            </div>
+                            <div class="mt-space-lg pt-space-md flex flex-wrap gap-1.5">
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Smart TV Activation</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Console Setup</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Offline Downloads</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Casting &amp; AirPlay</span
+                                >
+                            </div>
+                        </div>
+                        <!-- Category 3: AV Troubleshooting -->
+                        <div
+                            class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-lg hover:bg-surface-container-high transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] cursor-pointer"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between mb-space-md">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-tertiary-container/30 flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform"
+                                    >
+                                        <span class="material-symbols-outlined text-2xl">high_quality</span>
+                                    </div>
+                                    <span
+                                        class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-badge text-label-badge uppercase"
+                                        >19 Articles</span
+                                    >
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-tertiary transition-colors"
+                                >
+                                    Video &amp; Audio Support
+                                </h3>
+                                <p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                                    Resolve 4K HDR playback errors, buffering lag, Dolby Atmos multichannel
+                                    pass-through, and black screens.
+                                </p>
+                            </div>
+                            <div class="mt-space-lg pt-space-md flex flex-wrap gap-1.5">
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Buffering &amp; CDN</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Dolby Vision Sync</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Audio Lag Fix</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Error CS-108</span
+                                >
+                            </div>
+                        </div>
+                        <!-- Category 4: Billing -->
+                        <div
+                            class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-lg hover:bg-surface-container-high transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] cursor-pointer"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between mb-space-md">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-surface-tint/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform"
+                                    >
+                                        <span class="material-symbols-outlined text-2xl">credit_card</span>
+                                    </div>
+                                    <span
+                                        class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-badge text-label-badge uppercase"
+                                        >12 Articles</span
+                                    >
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors"
+                                >
+                                    Billing, Plans &amp; Payments
+                                </h3>
+                                <p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                                    Manage subscription tiers, update payment cards, view tax invoices, refunds, and
+                                    redeem gift cards.
+                                </p>
+                            </div>
+                            <div class="mt-space-lg pt-space-md flex flex-wrap gap-1.5">
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Change Subscription</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Payment Methods</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Invoice History</span
+                                >
+                                <span
+                                    class="font-label-md text-label-md px-2 py-1 rounded bg-surface-container-highest/60 text-on-surface-variant"
+                                    >Gift Cards</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- POPULAR ARTICLES & HARDWARE BENCHMARKS -->
+                <section class="w-full px-margin-mobile md:px-margin-desktop py-space-xl bg-surface-container-lowest">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl">
+                        <div>
+                            <div class="flex items-center gap-space-xs">
+                                <span class="material-symbols-outlined text-secondary text-sm">bolt</span>
+                                <span class="font-label-badge text-label-badge tracking-widest uppercase text-secondary"
+                                    >HOT TOPICS</span
+                                >
+                            </div>
+                            <h2
+                                class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface mt-1"
+                            >
+                                Popular Help Articles
+                            </h2>
+                        </div>
+                        <div
+                            class="flex items-center gap-space-sm mt-3 md:mt-0 text-on-surface-variant font-body-sm text-body-sm"
+                        >
+                            <span>Updated continuously based on live diagnostics</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                        <!-- Article 1 -->
+                        <a
+                            class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 hover:shadow-xl"
+                            href="#"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between gap-space-xs mb-space-md">
+                                    <span
+                                        class="px-space-sm py-0.5 rounded bg-primary-container text-on-primary-container font-label-badge text-label-badge uppercase font-bold"
+                                        >Most Viewed</span
+                                    >
+                                    <span
+                                        class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-sm">visibility</span> 142k views
+                                    </span>
+                                </div>
+                                <div class="flex items-start gap-space-sm">
+                                    <span class="material-symbols-outlined text-primary text-xl mt-0.5 shrink-0"
+                                        >tv</span
+                                    >
+                                    <h3
+                                        class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2"
+                                    >
+                                        How to enable 4K Ultra HD &amp; Dolby Vision on Samsung &amp; LG Smart TVs
+                                    </h3>
+                                </div>
+                                <p class="mt-space-sm font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    Fine-tune HDR deep color settings, HDMI 2.1 eARC compatibility flags, and picture
+                                    mode picture calibration.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-space-lg pt-space-md flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"
+                            >
+                                <div class="flex items-center gap-space-sm">
+                                    <span>3 min read</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-400 font-medium">98% helpful</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-1 transition-all"
+                                    >arrow_forward</span
+                                >
+                            </div>
+                        </a>
+                        <!-- Article 2 -->
+                        <a
+                            class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 hover:shadow-xl"
+                            href="#"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between gap-space-xs mb-space-md">
+                                    <span
+                                        class="px-space-sm py-0.5 rounded bg-surface-container-highest text-secondary font-label-badge text-label-badge uppercase font-bold"
+                                        >Audio Master</span
+                                    >
+                                    <span
+                                        class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-sm">visibility</span> 98k views
+                                    </span>
+                                </div>
+                                <div class="flex items-start gap-space-sm">
+                                    <span class="material-symbols-outlined text-secondary text-xl mt-0.5 shrink-0"
+                                        >volume_up</span
+                                    >
+                                    <h3
+                                        class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors line-clamp-2"
+                                    >
+                                        Fixing Audio Desync and Activating Dolby Atmos Passthrough
+                                    </h3>
+                                </div>
+                                <p class="mt-space-sm font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    Configure soundbars, AV receivers, and uncompressed spatial audio rendering via
+                                    bitstream settings.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-space-lg pt-space-md flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"
+                            >
+                                <div class="flex items-center gap-space-sm">
+                                    <span>4 min read</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-400 font-medium">96% helpful</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary group-hover:translate-x-1 transition-all"
+                                    >arrow_forward</span
+                                >
+                            </div>
+                        </a>
+                        <!-- Article 3 -->
+                        <a
+                            class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 hover:shadow-xl"
+                            href="#"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between gap-space-xs mb-space-md">
+                                    <span
+                                        class="px-space-sm py-0.5 rounded bg-surface-container-highest text-tertiary font-label-badge text-label-badge uppercase font-bold"
+                                        >Mobile Offline</span
+                                    >
+                                    <span
+                                        class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-sm">visibility</span> 87k views
+                                    </span>
+                                </div>
+                                <div class="flex items-start gap-space-sm">
+                                    <span class="material-symbols-outlined text-tertiary text-xl mt-0.5 shrink-0"
+                                        >download_for_offline</span
+                                    >
+                                    <h3
+                                        class="font-headline-sm text-headline-sm text-on-surface group-hover:text-tertiary transition-colors line-clamp-2"
+                                    >
+                                        Downloading Movies &amp; TV Episodes for Offline Viewing on iOS/Android
+                                    </h3>
+                                </div>
+                                <p class="mt-space-sm font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    Manage high-bitrate offline storage, smart download queues, SD card destinations,
+                                    and cellular data safeguards.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-space-lg pt-space-md flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"
+                            >
+                                <div class="flex items-center gap-space-sm">
+                                    <span>2 min read</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-400 font-medium">99% helpful</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-tertiary group-hover:translate-x-1 transition-all"
+                                    >arrow_forward</span
+                                >
+                            </div>
+                        </a>
+                        <!-- Article 4 -->
+                        <a
+                            class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 hover:shadow-xl"
+                            href="#"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between gap-space-xs mb-space-md">
+                                    <span
+                                        class="px-space-sm py-0.5 rounded bg-surface-container-highest text-on-surface font-label-badge text-label-badge uppercase font-bold"
+                                        >Security</span
+                                    >
+                                    <span
+                                        class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-sm">visibility</span> 76k views
+                                    </span>
+                                </div>
+                                <div class="flex items-start gap-space-sm">
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant text-xl mt-0.5 shrink-0"
+                                        >lock</span
+                                    >
+                                    <h3
+                                        class="font-headline-sm text-headline-sm text-on-surface group-hover:text-on-surface transition-colors line-clamp-2"
+                                    >
+                                        Managing Multiple Profiles &amp; Setting up 4-Digit Parental PIN Codes
+                                    </h3>
+                                </div>
+                                <p class="mt-space-sm font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    Establish age-gated viewing tiers, restrict explicit content categories, and lock
+                                    personal profile watchlists.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-space-lg pt-space-md flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"
+                            >
+                                <div class="flex items-center gap-space-sm">
+                                    <span>3 min read</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-400 font-medium">94% helpful</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface group-hover:translate-x-1 transition-all"
+                                    >arrow_forward</span
+                                >
+                            </div>
+                        </a>
+                        <!-- Article 5 -->
+                        <a
+                            class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 hover:shadow-xl"
+                            href="#"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between gap-space-xs mb-space-md">
+                                    <span
+                                        class="px-space-sm py-0.5 rounded bg-error-container text-on-error-container font-label-badge text-label-badge uppercase font-bold"
+                                        >Playback Error</span
+                                    >
+                                    <span
+                                        class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-sm">visibility</span> 64k views
+                                    </span>
+                                </div>
+                                <div class="flex items-start gap-space-sm">
+                                    <span class="material-symbols-outlined text-error text-xl mt-0.5 shrink-0"
+                                        >wifi_off</span
+                                    >
+                                    <h3
+                                        class="font-headline-sm text-headline-sm text-on-surface group-hover:text-error transition-colors line-clamp-2"
+                                    >
+                                        Troubleshooting Error Code CS-4001: 'Network Bandwidth Insufficient'
+                                    </h3>
+                                </div>
+                                <p class="mt-space-sm font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    Resolve CDN handshake latency, clear local DNS cache, and test your device's direct
+                                    throughput to CineStream servers.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-space-lg pt-space-md flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"
+                            >
+                                <div class="flex items-center gap-space-sm">
+                                    <span>5 min read</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-400 font-medium">91% helpful</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-error group-hover:translate-x-1 transition-all"
+                                    >arrow_forward</span
+                                >
+                            </div>
+                        </a>
+                        <!-- Article 6 -->
+                        <a
+                            class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 hover:shadow-xl"
+                            href="#"
+                        >
+                            <div>
+                                <div class="flex items-center justify-between gap-space-xs mb-space-md">
+                                    <span
+                                        class="px-space-sm py-0.5 rounded bg-surface-container-highest text-primary-fixed font-label-badge text-label-badge uppercase font-bold"
+                                        >Billing &amp; Invoices</span
+                                    >
+                                    <span
+                                        class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-sm">visibility</span> 59k views
+                                    </span>
+                                </div>
+                                <div class="flex items-start gap-space-sm">
+                                    <span
+                                        class="material-symbols-outlined text-primary-fixed-dim text-xl mt-0.5 shrink-0"
+                                        >receipt_long</span
+                                    >
+                                    <h3
+                                        class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2"
+                                    >
+                                        Updating Credit Card Information &amp; Managing Auto-Renewal Invoices
+                                    </h3>
+                                </div>
+                                <p class="mt-space-sm font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                                    Modify backup payment methods, retrieve VAT/GST compliant tax invoices, and switch
+                                    annual payment cycles.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-space-lg pt-space-md flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"
+                            >
+                                <div class="flex items-center gap-space-sm">
+                                    <span>2 min read</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-400 font-medium">97% helpful</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-1 transition-all"
+                                    >arrow_forward</span
+                                >
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Visual Streaming Quality Diagnostics Meter Banner -->
+                    <div
+                        class="mt-space-xl p-space-lg rounded-xl bg-surface-container-high/60 backdrop-blur-md flex flex-col lg:flex-row items-center justify-between gap-space-lg"
+                    >
+                        <div class="flex items-center gap-space-md w-full lg:w-auto">
+                            <div
+                                class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container shrink-0"
+                            >
+                                <span class="material-symbols-outlined text-2xl">speed</span>
+                            </div>
+                            <div>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface">
+                                    Live Network &amp; Stream Speed Test
+                                </h4>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Check your real-time latency and maximum bitrate to CineStream edge clusters.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-space-lg w-full lg:w-auto justify-between lg:justify-end">
+                            <div class="flex items-center gap-space-sm">
+                                <div class="flex flex-col text-right">
+                                    <span class="font-label-badge text-label-badge uppercase text-on-surface-variant"
+                                        >Optimal 4K HDR</span
+                                    >
+                                    <span class="font-headline-sm text-headline-sm text-emerald-400 font-bold"
+                                        >48.2 Mbps</span
+                                    >
+                                </div>
+                                <!-- Sparkline Mini SVG -->
+                                <svg class="w-24 h-8 text-emerald-500" fill="none" viewbox="0 0 100 30">
+                                    <path
+                                        d="M0 24L15 20L30 22L45 12L60 16L75 6L90 10L100 4"
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2.5"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <button
+                                class="px-space-md py-2 rounded-lg bg-surface-container-highest hover:bg-surface-bright text-on-surface font-label-lg text-label-lg transition-colors shrink-0"
+                                type="button"
+                            >
+                                Run Diagnostics
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <!-- INTERACTIVE FAQ ACCORDION -->
+                <section class="w-full px-margin-mobile md:px-margin-desktop py-space-2xl">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-space-2xl">
+                            <span
+                                class="font-label-badge text-label-badge tracking-widest uppercase text-primary-container"
+                                >FREQUENT INQUIRIES</span
+                            >
+                            <h2
+                                class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface mt-1"
+                            >
+                                Frequently Asked Questions
+                            </h2>
+                            <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                                Immediate resolutions for our most common subscriber requests.
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-space-sm" id="faqAccordionContainer">
+                            <!-- FAQ 1 -->
+                            <div class="faq-item rounded-xl bg-surface-container-low transition-all duration-200">
+                                <button
+                                    class="faq-toggle w-full p-space-lg flex items-center justify-between text-left focus:outline-none"
+                                    type="button"
+                                >
+                                    <span class="font-headline-sm text-headline-sm text-on-surface pr-space-md"
+                                        >How do I upgrade from Standard to Ultra 4K CineVIP plan?</span
+                                    >
+                                    <span
+                                        class="faq-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300 shrink-0"
+                                        >expand_more</span
+                                    >
+                                </button>
+                                <div
+                                    class="faq-content hidden px-space-lg pb-space-lg text-on-surface-variant font-body-md text-body-md"
+                                >
+                                    <div class="pt-space-xs space-y-3">
+                                        <p>Upgrading your tier is seamless and instantaneous:</p>
+                                        <ol
+                                            class="list-decimal list-inside space-y-2 text-on-surface/90 pl-1 font-body-sm text-body-sm"
+                                        >
+                                            <li>
+                                                Log in and navigate to
+                                                <strong class="text-on-surface">Account Settings</strong> from your
+                                                top-right profile avatar.
+                                            </li>
+                                            <li>
+                                                Under the
+                                                <strong class="text-on-surface">Membership &amp; Billing</strong>
+                                                partition, select <strong class="text-primary">Change Plan</strong>.
+                                            </li>
+                                            <li>
+                                                Select the
+                                                <strong class="text-on-surface">Ultra 4K CineVIP</strong> tier to
+                                                immediately unlock Dolby Vision, uncompressed Dolby Atmos, and 4
+                                                concurrent streams.
+                                            </li>
+                                        </ol>
+                                        <p class="text-xs text-on-surface-variant/70">
+                                            Upgrades are prorated immediately; your previous billing cycle credit
+                                            applies towards your new invoice balance.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ 2 -->
+                            <div class="faq-item rounded-xl bg-surface-container-low transition-all duration-200">
+                                <button
+                                    class="faq-toggle w-full p-space-lg flex items-center justify-between text-left focus:outline-none"
+                                    type="button"
+                                >
+                                    <span class="font-headline-sm text-headline-sm text-on-surface pr-space-md"
+                                        >Why am I experiencing video buffering even with high-speed fiber
+                                        internet?</span
+                                    >
+                                    <span
+                                        class="faq-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300 shrink-0"
+                                        >expand_more</span
+                                    >
+                                </button>
+                                <div
+                                    class="faq-content hidden px-space-lg pb-space-lg text-on-surface-variant font-body-md text-body-md"
+                                >
+                                    <div class="pt-space-xs space-y-3">
+                                        <p>
+                                            While your ISP fiber speed may be fast, local routing bottlenecks or TV
+                                            processing limits can cause buffer underruns:
+                                        </p>
+                                        <ul
+                                            class="list-disc list-inside space-y-2 text-on-surface/90 pl-1 font-body-sm text-body-sm"
+                                        >
+                                            <li>
+                                                Verify your streaming device has at least
+                                                <strong class="text-on-surface"
+                                                    >25 Mbps dedicated sustained bandwidth</strong
+                                                >
+                                                for high-bitrate 4K.
+                                            </li>
+                                            <li>
+                                                In the CineStream player settings, switch
+                                                <strong class="text-on-surface">Video Buffer Profile</strong> from
+                                                <em>Automatic</em> to <em>Ultra Aggressive (Pre-render 60s)</em>.
+                                            </li>
+                                            <li>
+                                                Restart your local home router to refresh routing tables toward our
+                                                nearest edge CDN node.
+                                            </li>
+                                            <li>
+                                                If using a Smart TV app, perform a full cold-boot (hold TV power button
+                                                for 10 seconds) to flush video memory.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ 3 -->
+                            <div class="faq-item rounded-xl bg-surface-container-low transition-all duration-200">
+                                <button
+                                    class="faq-toggle w-full p-space-lg flex items-center justify-between text-left focus:outline-none"
+                                    type="button"
+                                >
+                                    <span class="font-headline-sm text-headline-sm text-on-surface pr-space-md"
+                                        >How many devices can stream CineStream simultaneously?</span
+                                    >
+                                    <span
+                                        class="faq-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300 shrink-0"
+                                        >expand_more</span
+                                    >
+                                </button>
+                                <div
+                                    class="faq-content hidden px-space-lg pb-space-lg text-on-surface-variant font-body-md text-body-md"
+                                >
+                                    <div class="pt-space-xs space-y-2">
+                                        <p>Simultaneous streaming allocations depend entirely on your active tier:</p>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm my-space-md">
+                                            <div class="p-space-md rounded-lg bg-surface-container">
+                                                <div
+                                                    class="font-label-badge text-label-badge uppercase text-on-surface-variant"
+                                                >
+                                                    Standard Plan
+                                                </div>
+                                                <div class="font-headline-sm text-headline-sm text-on-surface mt-1">
+                                                    2 Screens
+                                                </div>
+                                                <p class="text-xs text-on-surface-variant mt-1">
+                                                    1080p Full HD resolution on up to 2 active devices in a single
+                                                    household.
+                                                </p>
+                                            </div>
+                                            <div class="p-space-md rounded-lg bg-surface-container-high">
+                                                <div class="font-label-badge text-label-badge uppercase text-primary">
+                                                    Ultra 4K CineVIP
+                                                </div>
+                                                <div class="font-headline-sm text-headline-sm text-on-surface mt-1">
+                                                    4 Screens
+                                                </div>
+                                                <p class="text-xs text-on-surface-variant mt-1">
+                                                    Simultaneous 4K UHD + Dolby Atmos streams across Smart TVs,
+                                                    consoles, and mobile devices.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ 4 -->
+                            <div class="faq-item rounded-xl bg-surface-container-low transition-all duration-200">
+                                <button
+                                    class="faq-toggle w-full p-space-lg flex items-center justify-between text-left focus:outline-none"
+                                    type="button"
+                                >
+                                    <span class="font-headline-sm text-headline-sm text-on-surface pr-space-md"
+                                        >How do I set up CineStream on my PlayStation 5 or Xbox Series X?</span
+                                    >
+                                    <span
+                                        class="faq-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300 shrink-0"
+                                        >expand_more</span
+                                    >
+                                </button>
+                                <div
+                                    class="faq-content hidden px-space-lg pb-space-lg text-on-surface-variant font-body-md text-body-md"
+                                >
+                                    <div class="pt-space-xs space-y-2">
+                                        <p>Console setup is simplified through quick QR activation:</p>
+                                        <ol
+                                            class="list-decimal list-inside space-y-2 text-on-surface/90 pl-1 font-body-sm text-body-sm"
+                                        >
+                                            <li>
+                                                Search for "CineStream" in the
+                                                <strong class="text-on-surface">PlayStation Store</strong> (Media tab)
+                                                or <strong class="text-on-surface">Microsoft Store</strong>.
+                                            </li>
+                                            <li>Download and open the CineStream native application.</li>
+                                            <li>
+                                                A dynamic 6-digit activation PIN and QR code will appear on your
+                                                television screen.
+                                            </li>
+                                            <li>
+                                                Scan the QR code with your smartphone or visit
+                                                <code
+                                                    class="text-primary px-1 py-0.5 rounded bg-surface-container-highest"
+                                                    >cinestream.com/activate</code
+                                                >
+                                                to pair your console instantly.
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ 5 -->
+                            <div class="faq-item rounded-xl bg-surface-container-low transition-all duration-200">
+                                <button
+                                    class="faq-toggle w-full p-space-lg flex items-center justify-between text-left focus:outline-none"
+                                    type="button"
+                                >
+                                    <span class="font-headline-sm text-headline-sm text-on-surface pr-space-md"
+                                        >Can I download CineStream content to watch on airplanes or offline?</span
+                                    >
+                                    <span
+                                        class="faq-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300 shrink-0"
+                                        >expand_more</span
+                                    >
+                                </button>
+                                <div
+                                    class="faq-content hidden px-space-lg pb-space-lg text-on-surface-variant font-body-md text-body-md"
+                                >
+                                    <div class="pt-space-xs space-y-2">
+                                        <p>
+                                            Yes, offline playback is fully supported on authorized mobile and tablet
+                                            devices running iOS or Android.
+                                        </p>
+                                        <p class="font-body-sm text-body-sm">
+                                            Downloaded titles remain stored on your device for
+                                            <strong class="text-on-surface">30 days</strong>. Once you press play on an
+                                            offline title, you have <strong class="text-on-surface">48 hours</strong> to
+                                            complete playback before reconnecting to the internet to renew the offline
+                                            DRM license.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ 6 -->
+                            <div class="faq-item rounded-xl bg-surface-container-low transition-all duration-200">
+                                <button
+                                    class="faq-toggle w-full p-space-lg flex items-center justify-between text-left focus:outline-none"
+                                    type="button"
+                                >
+                                    <span class="font-headline-sm text-headline-sm text-on-surface pr-space-md"
+                                        >What should I do if I see Error CS-502 or regional playback restrictions?</span
+                                    >
+                                    <span
+                                        class="faq-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300 shrink-0"
+                                        >expand_more</span
+                                    >
+                                </button>
+                                <div
+                                    class="faq-content hidden px-space-lg pb-space-lg text-on-surface-variant font-body-md text-body-md"
+                                >
+                                    <div class="pt-space-xs space-y-2">
+                                        <p>
+                                            Error <code class="text-error font-mono">CS-502</code> indicates an active
+                                            IP proxy or mismatch between your current physical IP geocoding and the
+                                            theatrical licensing territory for the selected studio title.
+                                        </p>
+                                        <p class="font-body-sm text-body-sm">
+                                            To resolve: disable any third-party VPN or proxy tunnels, verify your
+                                            internet provider does not utilize CGNAT crossing national boundaries, and
+                                            confirm that your payment billing country corresponds to your viewing
+                                            region.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- STILL NEED HELP? CONTACT & CONCIERGE BANNER -->
+                <section class="w-full px-margin-mobile md:px-margin-desktop pb-space-2xl">
+                    <div
+                        class="relative w-full rounded-2xl overflow-hidden bg-surface-container p-space-xl md:p-space-2xl shadow-2xl"
+                    >
+                        <!-- Ambient Crimson Backlight Overlay -->
+                        <div
+                            class="absolute -bottom-20 -right-20 w-96 h-96 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"
+                        ></div>
+                        <div
+                            class="absolute -top-20 -left-20 w-72 h-72 bg-secondary/10 rounded-full blur-3xl pointer-events-none"
+                        ></div>
+                        <div
+                            class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-xl"
+                        >
+                            <!-- Text details -->
+                            <div class="max-w-2xl">
+                                <div
+                                    class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-primary-container/20 text-primary-container font-label-badge text-label-badge uppercase tracking-wider mb-space-sm"
+                                >
+                                    <span class="material-symbols-outlined text-xs">headset_mic</span>
+                                    <span>24/7 DEDICATED THEATRICAL DESK</span>
+                                </div>
+                                <h2
+                                    class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface tracking-tight"
+                                >
+                                    Can't find what you're looking for?
+                                </h2>
+                                <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-sm">
+                                    Our dedicated CineStream Concierge support team is available around the clock to
+                                    resolve any technical, billing, or device setup challenges with white-glove
+                                    precision.
+                                </p>
+                                <div
+                                    class="flex items-center gap-space-lg mt-space-md text-on-surface-variant font-body-sm text-body-sm"
+                                >
+                                    <div class="flex items-center gap-space-xs">
+                                        <span class="material-symbols-outlined text-emerald-400 text-base"
+                                            >verified</span
+                                        >
+                                        <span>100% Human Concierge</span>
+                                    </div>
+                                    <div class="flex items-center gap-space-xs">
+                                        <span class="material-symbols-outlined text-secondary text-base">schedule</span>
+                                        <span>Average response: under 60 sec</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CTA Options Box -->
+                            <div class="flex flex-col sm:flex-row lg:flex-col gap-space-sm shrink-0 w-full lg:w-80">
+                                <button
+                                    class="w-full flex items-center justify-center gap-space-sm px-space-lg py-space-md rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-lg hover:shadow-[0_0_24px_rgba(229,9,20,0.5)] active:scale-[0.98] transition-all"
+                                    type="button"
+                                >
+                                    <span class="material-symbols-outlined text-xl">chat</span>
+                                    <span>Live Chat with Concierge</span>
+                                </button>
+                                <button
+                                    class="w-full flex items-center justify-center gap-space-sm px-space-lg py-space-md rounded-lg bg-surface-container-high/80 hover:bg-surface-container-highest text-on-surface font-label-lg text-label-lg transition-colors"
+                                    type="button"
+                                >
+                                    <span class="material-symbols-outlined text-xl">confirmation_number</span>
+                                    <span>Submit a Support Ticket</span>
+                                </button>
+                                <div
+                                    class="flex items-center justify-center gap-space-xs pt-space-xs text-on-surface-variant font-label-md text-label-md"
+                                >
+                                    <span class="material-symbols-outlined text-sm">call</span>
+                                    <span>Toll-Free Hotline:</span>
+                                    <a
+                                        class="text-on-surface hover:text-primary transition-colors font-medium"
+                                        href="tel:18008492463"
+                                        >1-800-849-CINE</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <script>
+                // Accordion Logic
+                document.querySelectorAll(".faq-toggle").forEach((button) => {
+                    button.addEventListener("click", () => {
+                        const item = button.closest(".faq-item");
+                        const content = item.querySelector(".faq-content");
+                        const icon = button.querySelector(".faq-icon");
+                        const isOpen = !content.classList.contains("hidden");
+
+                        // Close all other open items for clean theatrical accordion
+                        document.querySelectorAll(".faq-item").forEach((otherItem) => {
+                            if (otherItem !== item) {
+                                otherItem.querySelector(".faq-content").classList.add("hidden");
+                                otherItem.querySelector(".faq-icon").classList.remove("rotate-180");
+                                otherItem.classList.remove("bg-surface-container");
+                                otherItem.classList.add("bg-surface-container-low");
+                            }
+                        });
+
+                        // Toggle current item
+                        if (isOpen) {
+                            content.classList.add("hidden");
+                            icon.classList.remove("rotate-180");
+                            item.classList.remove("bg-surface-container");
+                            item.classList.add("bg-surface-container-low");
+                        } else {
+                            content.classList.remove("hidden");
+                            icon.classList.add("rotate-180");
+                            item.classList.remove("bg-surface-container-low");
+                            item.classList.add("bg-surface-container");
+                        }
+                    });
+                });
+
+                // Search micro-interaction
+                const helpInput = document.getElementById("helpSearchInput");
+                const clearBtn = document.getElementById("clearSearchBtn");
+                const dropdown = document.getElementById("searchResultsDropdown");
+
+                helpInput.addEventListener("input", (e) => {
+                    const val = e.target.value.trim();
+                    if (val.length > 0) {
+                        clearBtn.classList.remove("hidden");
+                        dropdown.classList.remove("hidden");
+                    } else {
+                        clearBtn.classList.add("hidden");
+                        dropdown.classList.add("hidden");
+                    }
+                });
+
+                clearBtn.addEventListener("click", () => {
+                    helpInput.value = "";
+                    clearBtn.classList.add("hidden");
+                    dropdown.classList.add("hidden");
+                    helpInput.focus();
+                });
+
+                // Close dropdown on outside click or escape
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "Escape") {
+                        dropdown.classList.add("hidden");
+                    }
+                });
+
+                // Quick pill population
+                document.querySelectorAll(".quick-pill").forEach((pill) => {
+                    pill.addEventListener("click", () => {
+                        helpInput.value = pill.textContent.trim();
+                        clearBtn.classList.remove("hidden");
+                        dropdown.classList.remove("hidden");
+                        helpInput.focus();
+                    });
+                });
+            </script>
+        </main>
+        <!-- ==================== CINESTREAM BRAND FOOTER ==================== -->
+<footer class="w-full bg-surface-container-lowest text-on-surface-variant py-space-2xl mt-space-2xl border-t border-white/5">
+    <div class="w-full px-margin-mobile md:px-margin-desktop">
+        <div class="flex items-center gap-space-lg mb-space-xl">
+            <a
+                aria-label="Cinema Community"
+                class="text-on-surface-variant hover:text-on-surface transition-colors"
+                href="/pages/about.html"
+                ><span class="material-symbols-outlined text-[24px]">movie</span></a
+            ><a
+                aria-label="Playlists &amp; Watch Parties"
+                class="text-on-surface-variant hover:text-on-surface transition-colors"
+                href="/pages/my_list.html"
+                ><span class="material-symbols-outlined text-[24px]">group_work</span></a
+            ><a
+                aria-label="Awards &amp; Honors"
+                class="text-on-surface-variant hover:text-on-surface transition-colors"
+                href="/pages/search_page.html"
+                ><span class="material-symbols-outlined text-[24px]">hotel_class</span></a
+            ><a
+                aria-label="Global Network"
+                class="text-on-surface-variant hover:text-on-surface transition-colors"
+                href="/pages/contact.html"
+                ><span class="material-symbols-outlined text-[24px]">language</span></a
+            >
+        </div>
+        <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-y-space-md gap-x-gutter-lg mb-space-xl font-body-sm text-body-sm"
+        >
+            <div class="flex flex-col gap-space-sm">
+                <a class="hover:text-on-surface transition-colors" data-path="audio-and-subtitles" href="/pages/help.html"
+                    >Audio &amp; Subtitles</a
+                ><a class="hover:text-on-surface transition-colors" data-path="media-center" href="/pages/about.html"
+                    >Media Center</a
+                ><a class="hover:text-on-surface transition-colors" data-path="privacy" href="/pages/about.html#privacy">Privacy</a>
+            </div>
+            <div class="flex flex-col gap-space-sm">
+                <a class="hover:text-on-surface transition-colors" data-path="help-center" href="/pages/help.html"
+                    >Help Center</a
+                ><a class="hover:text-on-surface transition-colors" data-path="corporate-information" href="/pages/about.html"
+                    >Corporate Information</a
+                ><a class="hover:text-on-surface transition-colors" data-path="terms-of-use" href="/pages/about.html#terms"
+                    >Terms of Use</a
+                >
+            </div>
+            <div class="flex flex-col gap-space-sm">
+                <a class="hover:text-on-surface transition-colors" data-path="pricing" href="/pages/pricing.html">Plans &amp; Pricing</a
+                ><a class="hover:text-on-surface transition-colors" data-path="contact" href="/pages/contact.html"
+                    >Contact Support</a
+                ><a class="hover:text-on-surface transition-colors" data-path="select-profile" href="/pages/select_profile.html"
+                    >Manage Profiles</a
+                >
+            </div>
+            <div class="flex flex-col gap-space-sm">
+                <a class="hover:text-on-surface transition-colors" data-path="movies" href="/pages/search_page.html?type=movie"
+                    >All Movies</a
+                ><a class="hover:text-on-surface transition-colors" data-path="series" href="/pages/series_detail.html"
+                    >Original Series</a
+                ><a class="hover:text-on-surface transition-colors" data-path="legal-notices" href="/pages/about.html#legal"
+                    >Legal Notices</a
+                >
+            </div>
+        </div>
+        <div
+            class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md pt-space-lg border-t border-white/5"
+        >
+            <a
+                class="px-space-md py-space-xs rounded font-label-md text-label-md bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors"
+                href="/pages/help.html"
+            >
+                Service Center
+            </a>
+            <p class="font-label-badge text-label-badge text-on-surface-variant/70 uppercase tracking-widest">
+                © 2025 CINESTREAM ENTERTAINMENT INC. ALL RIGHTS RESERVED.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- ==================== CINEPUG CHAT SUPPORT POPUP WIDGET ==================== -->
+<div id="cinepug-widget" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 pointer-events-none font-body-md select-none">
+    <!-- Chat Support Popup Card (Positioned ABOVE the mascot) -->
+    <div
+        id="cinepug-popup"
+        class="pointer-events-auto absolute bottom-[calc(100%+12px)] right-0 w-[320px] sm:w-[350px] max-w-[calc(100vw-2rem)] h-[420px] max-h-[85vh] bg-surface-container-low/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.85)] flex flex-col overflow-hidden transition-all duration-300 transform scale-95 opacity-0 pointer-events-none translate-y-3"
+        style="display: none; height: 420px; max-height: 85vh;"
+    >
+        <!-- Popup Header (Draggable Handle) -->
+        <div id="cinepug-popup-header" class="px-4 py-3 bg-surface-container/80 border-b border-white/5 flex items-center justify-between flex-shrink-0 cursor-grab active:cursor-grabbing select-none" title="Kéo để di chuyển vị trí">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px] text-on-surface-variant/40 hover:text-on-surface-variant cursor-grab" title="Kéo để di chuyển">drag_indicator</span>
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <div class="flex flex-col">
+                    <span class="font-headline-sm text-[14px] font-bold text-on-surface flex items-center gap-1.5">
+                        CinePug Support 🐾
+                    </span>
+                    <span class="text-[11px] text-on-surface-variant/80 font-medium">Trợ lý cún cưng • Sẵn sàng hỗ trợ</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-1">
+                <button
+                    id="cinepug-clear-chat-btn"
+                    class="w-7 h-7 rounded-full hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
+                    title="Xóa lịch sử chat"
+                    type="button"
+                >
+                    <span class="material-symbols-outlined text-[16px]">delete_sweep</span>
+                </button>
+                <button
+                    id="cinepug-close-btn"
+                    class="w-7 h-7 rounded-full hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
+                    title="Thu nhỏ cửa sổ chat (X)"
+                    type="button"
+                >
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Simulated Chat Messages Area -->
+        <div id="cinepug-chat-messages" class="p-3.5 flex flex-col gap-2.5 flex-1 min-h-0 overflow-y-auto text-[13px] scrollbar-thin">
+            <div class="flex items-start gap-2">
+                <span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[12px] flex-shrink-0">🐶</span>
+                <div class="bg-surface-container-high text-on-surface p-2.5 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm">
+                    Gâu gâu! 🐾 Chào bạn, tôi là CinePug! Bạn muốn tìm phim gì hay hoặc cần tôi hỗ trợ gì không?
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Suggestion Chips -->
+        <div class="px-3 pb-2 flex flex-wrap gap-1.5 flex-shrink-0" id="cinepug-quick-chips">
+            <button type="button" class="chip-btn px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high text-[11px] font-medium transition-colors cursor-pointer border border-white/5">
+                🎬 Gợi ý phim hay
+            </button>
+            <button type="button" class="chip-btn px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high text-[11px] font-medium transition-colors cursor-pointer border border-white/5">
+                🔥 Phim thịnh hành
+            </button>
+            <button type="button" class="chip-btn px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high text-[11px] font-medium transition-colors cursor-pointer border border-white/5">
+                ❤️ Thả tim cho Pug
+            </button>
+            <button type="button" class="chip-btn px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high text-[11px] font-medium transition-colors cursor-pointer border border-white/5">
+                🐶 Làm trò đi Pug
+            </button>
+        </div>
+
+        <!-- Chat Input Bar -->
+        <form id="cinepug-chat-form" class="p-2.5 bg-surface-container/60 border-t border-white/5 flex items-center gap-2 flex-shrink-0">
+            <input
+                id="cinepug-chat-input"
+                class="flex-1 bg-surface-container-lowest text-on-surface px-3 py-1.5 rounded-full text-[12px] border border-white/10 focus:border-primary-container focus:outline-none placeholder:text-on-surface-variant/50"
+                placeholder="Nhập tin nhắn..."
+                type="text"
+                autocomplete="off"
+            />
+            <button
+                type="submit"
+                class="w-8 h-8 rounded-full bg-primary-container hover:bg-primary text-on-primary-container flex items-center justify-center transition-colors cursor-pointer flex-shrink-0 shadow-sm"
+                title="Gửi"
+            >
+                <span class="material-symbols-outlined text-[16px] ml-0.5">send</span>
+            </button>
+        </form>
+    </div>
+
+    <!-- The Dog Mascot (VISIBLE OUTSIDE BY DEFAULT - DRAGGABLE) -->
+    <div id="cinepug-launcher-container" class="pointer-events-auto relative flex flex-col items-end group cursor-grab active:cursor-grabbing select-none" title="Kéo để di chuyển • Nhấn vào tôi để chat">
+        <!-- Floating Speech Bubble / Hint with Close (X) positioned at top-right -->
+        <div class="relative mb-1.5 inline-flex items-center">
+            <div
+                id="cinepug-hint-bubble"
+                class="px-3 py-1 rounded-full bg-surface-container-high/95 backdrop-blur-md text-on-surface border border-white/15 shadow-[0_4px_16px_rgba(0,0,0,0.4)] text-[11px] font-medium flex items-center gap-1.5 transition-all duration-300 group-hover:scale-105 cursor-pointer pr-4"
+            >
+                <span class="material-symbols-outlined text-[12px] text-on-surface-variant/40">drag_indicator</span>
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span id="cinepug-hint-text">Chat với CinePug 💬</span>
+            </div>
+
+            <!-- Close (X) button positioned at top-right of the "Chat với CinePug" button, spaced out and slightly smaller -->
+            <button
+                id="cinepug-launcher-close-btn"
+                class="absolute -top-2.5 -right-3 z-30 w-5 h-5 rounded-full bg-surface-container-highest/95 hover:bg-primary-container text-on-surface-variant hover:text-white flex items-center justify-center shadow-lg border border-white/30 transition-all duration-200 cursor-pointer hover:scale-110 active:scale-90"
+                type="button"
+                aria-label="Đóng biểu tượng chat"
+                title="Đóng (X)"
+            >
+                <span class="material-symbols-outlined text-[13px] font-medium leading-none">close</span>
+            </button>
+        </div>
+
+        <!-- The Animated Mascot Button (Follows cursor, boops on click) -->
+        <button
+            id="cinepug-mascot-element"
+            class="relative cursor-grab active:cursor-grabbing focus:outline-none transition-transform hover:scale-105 active:scale-95 flex items-center justify-center filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)] select-none p-0 border-0 bg-transparent"
+            type="button"
+            aria-label="CinePug Mascot - Click to chat"
+            title="Kéo để di chuyển • Nhấn vào tôi để mở chat hỗ trợ! 🐾"
+            style="width: 110px; height: 110px;"
+        >
+            <!-- Pre-rendered layers so mascot appears immediately on first frame without flickering -->
+            <span data-mascot-squash style="position: relative; display: block; width: 100%; height: 100%; transform-origin: 50% 78%;">
+                <span data-mascot-directions style="position: absolute; inset: 0px; background-size: 300% 300%; background-repeat: no-repeat; background-image: url('/mascots/pug-directions.webp'); background-position: 50% 50%; opacity: 1; transition: opacity 0.08s ease;"></span>
+                <span data-mascot-reactions style="position: absolute; inset: 0px; background-size: 300% 300%; background-repeat: no-repeat; background-image: url('/mascots/pug-reactions.webp'); background-position: 0% 0%; opacity: 0; transition: opacity 0.08s ease;"></span>
+            </span>
+        </button>
+    </div>
+</div>
+
+    </body>
+</html>

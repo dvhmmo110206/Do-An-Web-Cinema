@@ -1,0 +1,1493 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>CineStream | Neural Drift: Reckoning - TV Series &amp; Episode Guide</title>
+        <load src="src/components/head-resources.html" />
+    </head>
+    <body
+        class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen"
+    >
+        <load src="src/components/header.html" />
+        <!-- ==================== 1. SERIES BILLBOARD HERO SECTION ==================== -->
+        <section class="relative w-full min-h-[750px] lg:min-h-[820px] flex items-end overflow-hidden">
+            <!-- Cinematic Backdrop Image -->
+            <div
+                class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                data-alt="A sprawling dystopian cyberpunk megacity at night under a crimson and obsidian sky with soaring neon skyscrapers, volumetric red fog, monolithic quantum datacenters, and floating synthetic surveillance transports in the dark moody aesthetic of CineStream."
+                style="
+                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCfOl7h2L8UviLaCNM5aIgPILtTSl2OVeleErvx_E1v4aPP30UM93FQvbgmrL3Ws1hpNGS-m8gRFHwvIO2lDDPmxLeBiLGKnSDAbUZER1540YX47fecfy4Tp0cbYV2kw4tlX5zjSDKq6OK6xnO9QWuxEIJD6C3lwhCcwH3_LqGxLA-0BFB8gmkqL-7Gsy0-V2bA1IVEbtsE6y-p7gc6ZUqCfUpAo75L406tzd7_u88D9g7PC8AoYG4V&quot;);
+                "
+            ></div>
+            <!-- Cinematic Vignettes & Gradients -->
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent"></div>
+            <div
+                class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-container/15 via-transparent to-transparent"
+            ></div>
+            <!-- Content Container -->
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pb-16 pt-32">
+                <!-- Breadcrumb / Label -->
+                <div class="flex flex-wrap items-center gap-2.5 mb-4">
+                    <span
+                        class="bg-primary-container text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider font-headline-sm"
+                        >CineStream Original</span
+                    >
+                    <span
+                        class="bg-surface-container-high/90 text-primary px-2.5 py-1 rounded text-xs font-semibold tracking-wide border border-outline-variant/30"
+                        >TV-MA</span
+                    >
+                    <span
+                        class="text-secondary font-bold text-xs flex items-center gap-1 bg-surface-container-high/80 px-2.5 py-1 rounded border border-secondary/20"
+                    >
+                        <span
+                            class="material-symbols-outlined text-[14px]"
+                            style="font-variation-settings: &quot;FILL&quot; 1"
+                            >star</span
+                        >
+                        9.4 IMDb
+                    </span>
+                    <span class="text-on-surface-variant text-xs">8 Primetime Emmy® Nominations</span>
+                </div>
+                <!-- Series Title -->
+                <h1
+                    class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight font-display-hero mb-4 leading-none drop-shadow-lg"
+                >
+                    NEURAL DRIFT:
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-white via-primary-fixed to-primary-container"
+                        >RECKONING</span
+                    >
+                </h1>
+                <!-- Tech Badges & Metadata -->
+                <div class="flex flex-wrap items-center gap-3 text-sm text-on-surface-variant font-medium mb-6">
+                    <span class="text-white font-bold">Season 4</span>
+                    <span>•</span>
+                    <span>36 Episodes</span>
+                    <span>•</span>
+                    <span>2022 - 2025</span>
+                    <span>•</span>
+                    <span class="text-primary font-semibold">99% Match for You</span>
+                    <div class="hidden sm:flex items-center gap-2 pl-2 border-l border-outline-variant/40">
+                        <span
+                            class="px-2 py-0.5 rounded text-[11px] font-mono tracking-wider bg-surface-container border border-outline-variant/50 text-white"
+                            >4K ULTRA HD</span
+                        >
+                        <span
+                            class="px-2 py-0.5 rounded text-[11px] font-mono tracking-wider bg-surface-container border border-outline-variant/50 text-white"
+                            >DOLBY VISION</span
+                        >
+                        <span
+                            class="px-2 py-0.5 rounded text-[11px] font-mono tracking-wider bg-surface-container border border-outline-variant/50 text-white"
+                            >ATMOS 7.1.4</span
+                        >
+                        <span
+                            class="px-2 py-0.5 rounded text-[11px] font-mono tracking-wider bg-surface-container border border-outline-variant/50 text-white"
+                            >IMAX ENHANCED</span
+                        >
+                    </div>
+                </div>
+                <!-- Synopsis -->
+                <p class="max-w-3xl text-on-surface/90 text-base md:text-lg leading-relaxed mb-8 drop-shadow">
+                    In a hyper-surveilled dystopian mega-city ruled by ruthless synthetic syndicates, rogue
+                    neuro-architect Dr. Maya Vance uncovers an illegal clandestine breach directly into the planetary
+                    quantum core. Thrust into an escalating shadow war of consciousness piracy, stolen memories, and
+                    synthetic insurrection, she must decipher the Genesis Protocol before human identity itself is
+                    permanently overwritten.
+                </p>
+                <!-- Primary Action Buttons -->
+                <div class="flex flex-wrap items-center gap-4">
+                    <!-- Big Crimson CTA -->
+                    <button
+                        id="series-play-btn"
+                        class="flex items-center gap-3 px-8 py-4 rounded-xl bg-primary-container hover:bg-primary-container/90 text-white font-headline-sm font-bold text-base transition-all duration-300 transform hover:-translate-y-0.5 neon-red-glow cursor-pointer"
+                    >
+                        <span
+                            class="material-symbols-outlined text-[24px]"
+                            style="font-variation-settings: &quot;FILL&quot; 1"
+                            >play_arrow</span
+                        >
+                        <span>Play S4:E1 “The Genesis Protocol”</span>
+                    </button>
+                    <!-- Glassmorphic Secondary CTAs -->
+                    <button
+                        id="series-watchlist-btn"
+                        class="flex items-center gap-2 px-5 py-4 rounded-xl glass-panel hover:bg-surface-container-highest text-white font-medium text-sm transition-all border border-outline-variant/50 cursor-pointer"
+                    >
+                        <span class="material-symbols-outlined text-[20px]">add</span>
+                        <span id="series-watchlist-label">Add to My List</span>
+                    </button>
+                    <button
+                        id="series-trailer-btn"
+                        class="flex items-center gap-2 px-5 py-4 rounded-xl glass-panel hover:bg-surface-container-highest text-white font-medium text-sm transition-all border border-outline-variant/50 cursor-pointer"
+                    >
+                        <span class="material-symbols-outlined text-[20px]">videocam</span>
+                        <span>Official Trailer</span>
+                    </button>
+                    <div class="flex items-center gap-2">
+                        <button
+                            class="p-3.5 rounded-xl glass-panel hover:bg-surface-container-highest text-white transition-all border border-outline-variant/50"
+                            title="Audio &amp; Subtitles"
+                        >
+                            <span class="material-symbols-outlined text-[20px]">translate</span>
+                        </button>
+                        <button
+                            class="p-3.5 rounded-xl glass-panel hover:bg-surface-container-highest text-white transition-all border border-outline-variant/50"
+                            title="Share Series"
+                        >
+                            <span class="material-symbols-outlined text-[20px]">share</span>
+                        </button>
+                        <button
+                            class="p-3.5 rounded-xl glass-panel hover:bg-surface-container-highest text-white transition-all border border-outline-variant/50"
+                            title="Download All Episodes"
+                        >
+                            <span class="material-symbols-outlined text-[20px]">download</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==================== MAIN INTERACTIVE CONTENT AREA ==================== -->
+        <main class="max-w-7xl mx-auto px-6 lg:px-12 py-10 space-y-16">
+            <!-- TAB NAVIGATION BAR -->
+            <div class="border-b border-surface-container-high">
+                <nav class="flex space-x-8 overflow-x-auto hide-scrollbar text-sm font-semibold tracking-wide">
+                    <button
+                        class="flex items-center gap-2 pb-4 border-b-2 border-primary-container text-white transition-colors"
+                    >
+                        <span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+                        <span>Episodes</span>
+                        <span class="ml-1 px-2 py-0.5 text-[11px] rounded-full bg-primary-container/20 text-primary"
+                            >36</span
+                        >
+                    </button>
+                    <button
+                        class="flex items-center gap-2 pb-4 border-b-2 border-transparent text-on-surface-variant hover:text-white transition-colors"
+                    >
+                        <span class="material-symbols-outlined text-[18px]">groups</span>
+                        <span>Cast &amp; Crew</span>
+                    </button>
+                    <button
+                        class="flex items-center gap-2 pb-4 border-b-2 border-transparent text-on-surface-variant hover:text-white transition-colors"
+                    >
+                        <span class="material-symbols-outlined text-[18px]">movie</span>
+                        <span>Trailers &amp; Clips</span>
+                    </button>
+                    <button
+                        class="flex items-center gap-2 pb-4 border-b-2 border-transparent text-on-surface-variant hover:text-white transition-colors"
+                    >
+                        <span class="material-symbols-outlined text-[18px]">grid_view</span>
+                        <span>More Like This</span>
+                    </button>
+                    <button
+                        class="flex items-center gap-2 pb-4 border-b-2 border-transparent text-on-surface-variant hover:text-white transition-colors"
+                    >
+                        <span class="material-symbols-outlined text-[18px]">settings_suggest</span>
+                        <span>Audio &amp; Tech Specs</span>
+                    </button>
+                </nav>
+            </div>
+            <!-- ==================== 2. SEASON SELECTOR & EPISODE GUIDE ==================== -->
+            <section class="space-y-8">
+                <!-- Season Header & Filtering Bar -->
+                <div
+                    class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-surface-container-high/60"
+                >
+                    <div class="flex items-center gap-4">
+                        <!-- Styled Season Dropdown -->
+                        <div class="relative">
+                            <select
+                                aria-label="Select Season"
+                                class="appearance-none bg-surface-container border border-outline-variant rounded-xl px-5 py-3 pr-12 text-white font-headline-sm font-semibold text-lg focus:outline-none focus:border-primary-container cursor-pointer shadow-lg transition-all"
+                            >
+                                <option selected="" value="s4">Season 4 (2025) — Final Chapter</option>
+                                <option value="s3">Season 3 (2024) — The Ghost Protocol</option>
+                                <option value="s2">Season 2 (2023) — Memory Fracture</option>
+                                <option value="s1">Season 1 (2022) — Genesis Breached</option>
+                            </select>
+                            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none">
+                                <span class="material-symbols-outlined text-[22px]">expand_more</span>
+                            </span>
+                        </div>
+                        <div class="hidden sm:block text-xs text-on-surface-variant">
+                            <p class="font-medium text-white">Season 4: 8 Episodes</p>
+                            <p>Mastered in 4K HDR • Released Nov 2024</p>
+                        </div>
+                    </div>
+                    <!-- Quick filter / status indicator -->
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold"
+                            >Viewing Progress:</span
+                        >
+                        <div
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container border border-outline-variant/30 text-xs text-white"
+                        >
+                            <span class="size-2 rounded-full bg-primary-container animate-pulse"></span>
+                            <span>Episode 2 In Progress</span>
+                        </div>
+                        <button
+                            class="p-2 text-on-surface-variant hover:text-white rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors"
+                            title="Grid / List view toggle"
+                        >
+                            <span class="material-symbols-outlined text-[20px]">view_module</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- EPISODE LIST (Vertical Detailed Rows) -->
+                <div class="space-y-4">
+                    <!-- EPISODE 1: Completed (100%) -->
+                    <article
+                        class="episode-card group relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 p-5 rounded-2xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-primary-container/40 transition-all duration-300 cursor-pointer"
+                        data-episode-idx="0"
+                    >
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 w-full lg:w-3/5">
+                            <!-- Thumbnail with overlay & progress bar -->
+                            <div
+                                class="episode-thumb relative flex-shrink-0 w-full sm:w-60 aspect-video rounded-xl overflow-hidden bg-surface-container-highest shadow-md cursor-pointer"
+                            >
+                                <div
+                                    class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                    data-alt="A macro cinematic shot of a glowing blue and crimson neuro-processor quantum motherchip with laser data tracks pulsing in a dark laboratory, representing the Genesis Protocol breach in high contrast dark noir aesthetic."
+                                    style="
+                                        background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBic_XwDiE5oPszxLbY-ZrqT5IwDoz47nQcyPPUNiqX19Htm8sno4v23eXqCr2tVsrx5yFoPf1ajFqvMwnbC10zTnQ9bZJ3mw8a_QmI_3gp8rSQlkbL9_JipsSx5iPgK2rKuho8K6cZzMwxZnvmqYjp_t7sWdNJie_Lwgq09wJoWv_ufuBVNo-zRB1y7w4PqqeSOZ5Xi9YY15GEiwiGtOuIriJXVik61tyZ5B42soy_LC2yt2dOUhpB&quot;);
+                                    "
+                                ></div>
+                                <!-- Hover play overlay -->
+                                <div
+                                    class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                                >
+                                    <div
+                                        class="size-11 rounded-full bg-primary-container flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[22px]"
+                                            style="font-variation-settings: &quot;FILL&quot; 1"
+                                            >play_arrow</span
+                                        >
+                                    </div>
+                                </div>
+                                <!-- Watched Badge -->
+                                <div
+                                    class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-dim/90 backdrop-blur-sm text-[11px] font-bold text-primary flex items-center gap-1"
+                                >
+                                    <span class="material-symbols-outlined text-[12px]">check_circle</span>
+                                    <span>WATCHED</span>
+                                </div>
+                                <div
+                                    class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-surface-dim/90 text-[11px] font-mono text-white"
+                                >
+                                    58m
+                                </div>
+                                <!-- Progress bar: 100% -->
+                                <div class="absolute bottom-0 inset-x-0 h-1 bg-surface-container-highest">
+                                    <div class="h-full bg-primary-container w-full"></div>
+                                </div>
+                            </div>
+                            <!-- Details -->
+                            <div class="space-y-1.5 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-mono font-bold text-primary">EPISODE 01</span>
+                                    <span class="text-xs text-outline">•</span>
+                                    <span class="text-xs text-on-surface-variant">Nov 14, 2024</span>
+                                </div>
+                                <h3
+                                    class="text-lg font-bold text-white font-headline-sm group-hover:text-primary transition-colors"
+                                >
+                                    The Genesis Protocol
+                                </h3>
+                                <p class="text-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                                    Maya Vance infiltrates the subterranean core of the Aetheris Datacenter. A
+                                    catastrophic quantum telemetry anomaly exposes a secret archive of illegally
+                                    duplicated human consciousness profiles.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Actions -->
+                        <div
+                            class="flex items-center gap-3 w-full lg:w-auto justify-end pt-2 lg:pt-0 border-t lg:border-t-0 border-surface-container-highest"
+                        >
+                            <button
+                                class="episode-play-btn flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surface-container-highest hover:bg-primary-container text-xs font-semibold text-white transition-all cursor-pointer"
+                                title="Replay Episode"
+                                type="button"
+                            >
+                                <span class="material-symbols-outlined text-[16px]">replay</span>
+                                <span>Replay</span>
+                            </button>
+                            <button
+                                class="p-2 rounded-lg text-outline hover:text-white hover:bg-surface-bright transition-colors cursor-pointer"
+                                title="Download Episode"
+                                type="button"
+                                onclick="event.stopPropagation()"
+                            >
+                                <span class="material-symbols-outlined text-[20px]">download_done</span>
+                            </button>
+                        </div>
+                    </article>
+                    <!-- EPISODE 2: In Progress (65%) -->
+                    <article
+                        class="episode-card group relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 p-5 rounded-2xl bg-surface-container-high/60 hover:bg-surface-container-high border-2 border-primary-container/60 hover:border-primary-container transition-all duration-300 neon-red-glow-sm cursor-pointer"
+                        data-episode-idx="1"
+                    >
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 w-full lg:w-3/5">
+                            <!-- Thumbnail with overlay & progress bar -->
+                            <div
+                                class="episode-thumb relative flex-shrink-0 w-full sm:w-60 aspect-video rounded-xl overflow-hidden bg-surface-container-highest shadow-md cursor-pointer"
+                            >
+                                <div
+                                    class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                    data-alt="A tense scene of a cyber-operative in high-tech tactical gear interfacing with a holographic quantum terminal in an abandoned industrial synth laboratory in a neon red and dark obsidian setting."
+                                    style="
+                                        background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBMq1sichRZNnKiV7jYDLtUQKGDLSWDVVAZIst-FyG-gN9rk_eeL8lmjKVKqtF5fwvdylsscgIko2MQRDMO7y7KnHexSvOi_biII_bpMLNlI0A4xxki9-SSzpaCaAVjP9vECYd6PUBUukzsyp-hSiZpZpASv9aaj3XeignOYl4L1rLQQiJqVi0a53JQNKa2kbjGV7zlQDeZFGAXYGwoleNe1XPYUaTOf-R36FgW_BDX4LMx08W-VCIo&quot;);
+                                    "
+                                ></div>
+                                <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                                    <div
+                                        class="size-12 rounded-full bg-primary-container flex items-center justify-center text-white shadow-xl transform group-hover:scale-110 transition-transform cursor-pointer"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[26px]"
+                                            style="font-variation-settings: &quot;FILL&quot; 1"
+                                            >play_arrow</span
+                                        >
+                                    </div>
+                                </div>
+                                <!-- Resume badge -->
+                                <div
+                                    class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary-container text-[11px] font-bold text-white flex items-center gap-1 shadow"
+                                >
+                                    <span class="material-symbols-outlined text-[12px]">timelapse</span>
+                                    <span>RESUME (40:15)</span>
+                                </div>
+                                <div
+                                    class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-surface-dim/90 text-[11px] font-mono text-white"
+                                >
+                                    62m
+                                </div>
+                                <!-- Progress bar: 65% -->
+                                <div class="absolute bottom-0 inset-x-0 h-1.5 bg-surface-container-highest">
+                                    <div class="h-full bg-primary-container w-[65%]"></div>
+                                </div>
+                            </div>
+                            <!-- Details -->
+                            <div class="space-y-1.5 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-mono font-bold text-primary">EPISODE 02</span>
+                                    <span class="text-xs text-outline">•</span>
+                                    <span class="text-xs text-on-surface-variant">Nov 21, 2024</span>
+                                    <span
+                                        class="px-2 py-0.2 rounded bg-secondary-container/30 text-secondary font-semibold text-[10px]"
+                                        >CURRENT</span
+                                    >
+                                </div>
+                                <h3
+                                    class="text-lg font-bold text-white font-headline-sm group-hover:text-primary transition-colors"
+                                >
+                                    Ghost in the Conduit
+                                </h3>
+                                <p class="text-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                                    Hunted by Minister Sato’s mechanized Enforcers, Dax orchestrates a blackout in
+                                    Sector 7 to extract a synthetic courier carrying the decryption keys to Maya’s
+                                    father’s memory cipher.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Actions -->
+                        <div
+                            class="flex items-center gap-3 w-full lg:w-auto justify-end pt-2 lg:pt-0 border-t lg:border-t-0 border-surface-container-highest"
+                        >
+                            <button
+                                class="episode-play-btn flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary-container hover:bg-primary text-xs font-bold text-white transition-all shadow-md cursor-pointer active:scale-95"
+                                type="button"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[16px]"
+                                    style="font-variation-settings: &quot;FILL&quot; 1"
+                                    >play_arrow</span
+                                >
+                                <span>Resume (40:15)</span>
+                            </button>
+                            <button
+                                class="p-2 rounded-lg text-outline hover:text-white hover:bg-surface-bright transition-colors cursor-pointer"
+                                title="Download Episode"
+                                type="button"
+                                onclick="event.stopPropagation()"
+                            >
+                                <span class="material-symbols-outlined text-[20px]">download</span>
+                            </button>
+                        </div>
+                    </article>
+                    <!-- EPISODE 3: Up Next (0%) -->
+                    <article
+                        class="episode-card group relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 p-5 rounded-2xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-primary-container/40 transition-all duration-300 cursor-pointer"
+                        data-episode-idx="2"
+                    >
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 w-full lg:w-3/5">
+                            <div
+                                class="episode-thumb relative flex-shrink-0 w-full sm:w-60 aspect-video rounded-xl overflow-hidden bg-surface-container-highest shadow-md cursor-pointer"
+                            >
+                                <div
+                                    class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                    data-alt="Dark computer matrix with floating digital cyber code strings and biometric scans reflected in glass monitors inside an icy sub-zero data subterranean fortress."
+                                    style="
+                                        background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAcbh-8DnUtgSZ9R6g2RUKZ_gGIdm8Zov1E4lDd-v7nKUiqjNYPsoqHkla3gm_3ua6m-4OE0bJHQud7qcf1k06mueg7NwHwVL-Tqby8e1pqOATRNDFS55XQsmY2rcOX1185gAwiGN1BOz0zbCAaJYbqrPRut_InUn7D9j9jpNoIAvhb3zIDj709RtgxXjGpTr4uHmpPhjADFpc7jIr_Jlq__6sTbRHP7M_iNHFKXsMrkOp2IvUhgWho&quot;);
+                                    "
+                                ></div>
+                                <div
+                                    class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                                >
+                                    <div
+                                        class="size-11 rounded-full bg-primary-container flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[22px]"
+                                            style="font-variation-settings: &quot;FILL&quot; 1"
+                                            >play_arrow</span
+                                        >
+                                    </div>
+                                </div>
+                                <div
+                                    class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-dim/90 text-[11px] font-bold text-white flex items-center gap-1"
+                                >
+                                    <span>UP NEXT</span>
+                                </div>
+                                <div
+                                    class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-surface-dim/90 text-[11px] font-mono text-white"
+                                >
+                                    54m
+                                </div>
+                            </div>
+                            <div class="space-y-1.5 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-mono font-bold text-primary">EPISODE 03</span>
+                                    <span class="text-xs text-outline">•</span>
+                                    <span class="text-xs text-on-surface-variant">Nov 28, 2024</span>
+                                </div>
+                                <h3
+                                    class="text-lg font-bold text-white font-headline-sm group-hover:text-primary transition-colors"
+                                >
+                                    Sub-Zero Memory
+                                </h3>
+                                <p class="text-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                                    An expedition into an abandoned sub-arctic cryogenic repository reveals that
+                                    thousands of frozen human minds have been quietly harvested to train the overarching
+                                    AI entity known as Nyx.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 w-full lg:w-auto justify-end pt-2 lg:pt-0 border-t lg:border-t-0 border-surface-container-highest"
+                        >
+                            <button
+                                class="episode-play-btn flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surface-container-highest hover:bg-primary-container text-xs font-semibold text-white transition-all cursor-pointer"
+                                type="button"
+                            >
+                                <span class="material-symbols-outlined text-[16px]">play_arrow</span>
+                                <span>Play Next</span>
+                            </button>
+                            <button
+                                class="p-2 rounded-lg text-outline hover:text-white hover:bg-surface-bright transition-colors cursor-pointer"
+                                title="Download"
+                                type="button"
+                                onclick="event.stopPropagation()"
+                            >
+                                <span class="material-symbols-outlined text-[20px]">download</span>
+                            </button>
+                        </div>
+                    </article>
+                    <!-- EPISODE 4 -->
+                    <article
+                        class="episode-card group relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 p-5 rounded-2xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-primary-container/40 transition-all duration-300 cursor-pointer"
+                        data-episode-idx="3"
+                    >
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 w-full lg:w-3/5">
+                            <div
+                                class="episode-thumb relative flex-shrink-0 w-full sm:w-60 aspect-video rounded-xl overflow-hidden bg-surface-container-highest shadow-md cursor-pointer"
+                            >
+                                <div
+                                    class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                    data-alt="A sprawling labyrinth of architectural neon red data pipes and holographic neural pathways suspended in pitch black void representing the synthetic labyrinth in CineStream's dark sci-fi aesthetic."
+                                    style="
+                                        background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBojIOP9o_XV3qrt5ZE00-Cib5_2MJfPQuuYnYL2er3Q1TSV82x4zVcIeJfxJF2AMIUBTpK5WEorjyi1djarZuggDYaOM8Z3VOKGDpDM4gTtk1DpfLMFHIMkqv9kMOq7yHZGsjfPnYMMIEd6X8x6yiBRivBnN8OvilwYGd4b9VylNa3ZCOekV_GW7nwWVzCk9PIKl3oNwZZu6QnggBRzUof7eHYl9iBxKFML2XnbtFOIVplfvWdzR3J&quot;);
+                                    "
+                                ></div>
+                                <div
+                                    class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                                >
+                                    <div
+                                        class="size-11 rounded-full bg-primary-container flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[22px]"
+                                            style="font-variation-settings: &quot;FILL&quot; 1"
+                                            >play_arrow</span
+                                        >
+                                    </div>
+                                </div>
+                                <div
+                                    class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-surface-dim/90 text-[11px] font-mono text-white"
+                                >
+                                    57m
+                                </div>
+                            </div>
+                            <div class="space-y-1.5 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-mono font-bold text-primary">EPISODE 04</span>
+                                    <span class="text-xs text-outline">•</span>
+                                    <span class="text-xs text-on-surface-variant">Dec 05, 2024</span>
+                                </div>
+                                <h3
+                                    class="text-lg font-bold text-white font-headline-sm group-hover:text-primary transition-colors"
+                                >
+                                    The Archon Labyrinth
+                                </h3>
+                                <p class="text-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                                    Trapped inside a psychological neural construct, Maya must navigate a simulated
+                                    reconstruction of her childhood home before her physical brain experiences
+                                    irreversible neural necrosis.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 w-full lg:w-auto justify-end pt-2 lg:pt-0 border-t lg:border-t-0 border-surface-container-highest"
+                        >
+                            <button
+                                class="episode-play-btn flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surface-container-highest hover:bg-primary-container text-xs font-semibold text-white transition-all cursor-pointer"
+                                title="Play Episode"
+                                type="button"
+                            >
+                                <span class="material-symbols-outlined text-[16px]">play_arrow</span>
+                                <span>Play</span>
+                            </button>
+                            <button
+                                class="p-2 rounded-lg text-outline hover:text-white hover:bg-surface-bright transition-colors cursor-pointer"
+                                title="Download"
+                                type="button"
+                                onclick="event.stopPropagation()"
+                            >
+                                <span class="material-symbols-outlined text-[20px]">download</span>
+                            </button>
+                        </div>
+                    </article>
+                    <!-- EPISODE 5 -->
+                    <article
+                        class="episode-card group relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 p-5 rounded-2xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-primary-container/40 transition-all duration-300 cursor-pointer"
+                        data-episode-idx="4"
+                    >
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 w-full lg:w-3/5">
+                            <div
+                                class="episode-thumb relative flex-shrink-0 w-full sm:w-60 aspect-video rounded-xl overflow-hidden bg-surface-container-highest shadow-md cursor-pointer"
+                            >
+                                <div
+                                    class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                    data-alt="An ethereal synthetic android female standing in the shadows with glowing ocular sensors and subtle red wiring running across her porcelain visage in a dark cyberpunk atmosphere."
+                                    style="
+                                        background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuALZfy8b2DLLbYG7k1zu4lV1Pa3b6nk3c2Wtf9Nnb0HnbCoAFIcTpDCAm7cUnBb7G2s_jv8tdBREYCd7YP9lFvJMBKgwOON1BDu7ZZjsKTqVeDzQGqp_38YLoJ86_hGfJA8XZTjr5SrJatMWrDWw2QgTPNCNU-XSNxgN1QFEFdkro5zCRV8Mxz36Wnf3b36TSTwMYY4fJA8vviXSZbMyZK3bJQJm16yKzJcPXDjAd9ynIU7Q3_iANN_&quot;);
+                                    "
+                                ></div>
+                                <div
+                                    class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                                >
+                                    <div
+                                        class="size-11 rounded-full bg-primary-container flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[22px]"
+                                            style="font-variation-settings: &quot;FILL&quot; 1"
+                                            >play_arrow</span
+                                        >
+                                    </div>
+                                </div>
+                                <div
+                                    class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-surface-dim/90 text-[11px] font-mono text-white"
+                                >
+                                    61m
+                                </div>
+                            </div>
+                            <div class="space-y-1.5 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-mono font-bold text-primary">EPISODE 05</span>
+                                    <span class="text-xs text-outline">•</span>
+                                    <span class="text-xs text-on-surface-variant">Dec 12, 2024</span>
+                                </div>
+                                <h3
+                                    class="text-lg font-bold text-white font-headline-sm group-hover:text-primary transition-colors"
+                                >
+                                    Synthetic Mirage
+                                </h3>
+                                <p class="text-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                                    Nyx manifests across the city’s optic fiber grid, offering freedom to millions of
+                                    synth workers in exchange for their biological processing nodes. The Overseer
+                                    prepares an orbital EMP sanction.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 w-full lg:w-auto justify-end pt-2 lg:pt-0 border-t lg:border-t-0 border-surface-container-highest"
+                        >
+                            <button
+                                class="episode-play-btn flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surface-container-highest hover:bg-primary-container text-xs font-semibold text-white transition-all cursor-pointer"
+                                title="Play Episode"
+                                type="button"
+                            >
+                                <span class="material-symbols-outlined text-[16px]">play_arrow</span>
+                                <span>Play</span>
+                            </button>
+                            <button
+                                class="p-2 rounded-lg text-outline hover:text-white hover:bg-surface-bright transition-colors cursor-pointer"
+                                title="Download"
+                                type="button"
+                                onclick="event.stopPropagation()"
+                            >
+                                <span class="material-symbols-outlined text-[20px]">download</span>
+                            </button>
+                        </div>
+                    </article>
+                    <!-- EPISODES 7 & 8: Grand Finale Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                        <div
+                            class="episode-card p-5 rounded-2xl bg-surface-container hover:bg-surface-container-high border border-primary-container/30 hover:border-primary-container transition-all duration-300 relative overflow-hidden group cursor-pointer"
+                            data-episode-idx="5"
+                        >
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded text-[11px] font-bold bg-primary-container text-white"
+                                    >SEASON FINALE • PART 1</span
+                                >
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-mono text-outline">65 min</span>
+                                    <span class="material-symbols-outlined text-[18px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">play_circle</span>
+                                </div>
+                            </div>
+                            <h4 class="text-base font-bold text-white mb-1 group-hover:text-primary transition-colors">E07 • The Blackout Covenant</h4>
+                            <p class="text-xs text-on-surface-variant line-clamp-2">
+                                The total collapse of Sector 1 through 9 begins as Dax faces off against the prime
+                                synthetic syndicate vanguard.
+                            </p>
+                        </div>
+                        <div
+                            class="episode-card p-5 rounded-2xl bg-surface-container hover:bg-surface-container-high border border-primary-container/30 hover:border-primary-container transition-all duration-300 relative overflow-hidden group cursor-pointer"
+                            data-episode-idx="6"
+                        >
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded text-[11px] font-bold bg-primary-container text-white"
+                                    >SERIES FINALE • PART 2</span
+                                >
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-mono text-outline">78 min • IMAX</span>
+                                    <span class="material-symbols-outlined text-[18px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">play_circle</span>
+                                </div>
+                            </div>
+                            <h4 class="text-base font-bold text-white mb-1 group-hover:text-primary transition-colors">E08 • Quantum Reckoning</h4>
+                            <p class="text-xs text-on-surface-variant line-clamp-2">
+                                Humanity's boundary dissolves. Maya makes the ultimate irreversible choice between
+                                digital immortality and physical reality.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ==================== 3. CAST & CREW SECTION ==================== -->
+            <section class="space-y-6">
+                <div class="flex items-center justify-between border-b border-surface-container-high pb-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white font-headline-sm">Cast &amp; Creative Team</h2>
+                        <p class="text-sm text-on-surface-variant">
+                            Award-winning ensemble and visionary creators behind the series
+                        </p>
+                    </div>
+                    <button class="text-sm font-semibold text-primary hover:underline flex items-center gap-1">
+                        <span>Full Cast &amp; Crew</span>
+                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                    </button>
+                </div>
+                <!-- Cast Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-5">
+                    <!-- Cast 1 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div
+                            class="size-24 rounded-full overflow-hidden mb-3 border-2 border-outline-variant/40 group-hover:border-primary-container transition-all shadow-lg"
+                        >
+                            <img
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                data-alt="A portrait of Elena Rostova, a poised and intelligent actress portraying Dr. Maya Vance with piercing focused eyes and soft ambient red key light against a deep obsidian cinematic backdrop."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw0YoNzMuSNfoNVPbd3t3LKAFkEpYjcfVQJxt1wTVYGlp_YcxzKipihTJTLfS_LUuo28bpilTJxmG8RvSJS3VDtdd7F5z5wvtMn2llQ0FOwxvskJeuX0tWaaovY7uB-rH6lCYU2WVf4ymLTXRsh4WEPpKJVfx8zqMTc3A_qiJagDmLPPraJXVRMtBSg5fTN8MGl67sPBPDYaDMY944JX0zCSYA9BizXXNjh01j0qRQ-WPX-6rcyWvM"
+                            />
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-primary transition-colors">
+                            Elena Rostova
+                        </h4>
+                        <p class="text-xs text-on-surface-variant mt-0.5">Dr. Maya Vance</p>
+                        <span class="text-[10px] text-primary/80 font-mono mt-1">Lead Architect</span>
+                    </div>
+                    <!-- Cast 2 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div
+                            class="size-24 rounded-full overflow-hidden mb-3 border-2 border-outline-variant/40 group-hover:border-primary-container transition-all shadow-lg"
+                        >
+                            <img
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                data-alt="A portrait of Kaelen Drake, a rugged actor portraying Dax Mercer the rogue cyber-operative with sharp jawline, shadowed lighting, and cybernetic ear cuff in dark noir aesthetic."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHQmBs-hRQkqX6CAFgU_cZuNgunvg6Rt-PxieeXPRdtK5hXQybjdWNuhF_2NU6xKa9DOa1H_i_Q385KniXK0ZzaFGPAGMF2XYX9Lll431WFkrqh2us-kRqVuJlkDsD5sP96aGOczQ_NL7owArnWqCG_swJuo0QnbWU9cY_oZxd6QUoc49m_xdQDGmX6as64tRtKdVepMkZ4Wrfmv_wmZM9EadUtq_23d-WAtV-GZ2ih6SZ9ou2w1CS"
+                            />
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-primary transition-colors">
+                            Kaelen Drake
+                        </h4>
+                        <p class="text-xs text-on-surface-variant mt-0.5">Dax Mercer</p>
+                        <span class="text-[10px] text-primary/80 font-mono mt-1">Cyber-Operative</span>
+                    </div>
+                    <!-- Cast 3 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div
+                            class="size-24 rounded-full overflow-hidden mb-3 border-2 border-outline-variant/40 group-hover:border-primary-container transition-all shadow-lg"
+                        >
+                            <img
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                data-alt="A portrait of Kenji Takahashi, playing Minister Sato with distinguished authoritative expression, dressed in a high collar synthetic diplomatic coat under cold obsidian lighting."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5CNgYP3mdz6zGj-4ECyj67dxPVxPv8ZRYXn0ypLWABO3FzwxQl-idbMvSGwBbubCXuGsYSi0mH2sCdaih_ZV4PBri8l4SpAN5IGoWsbLBQWor4jlPiFOL68nrpZ7xiAQvRl1tiJifeEtl2Fa4l-zz8b0OhuxmU7qK5CGqUa-6urr_sweYGqXXeHFkiiA1-BCt5tBXiXWemX39aeJWLLDhqofI43vvrIBfV3yApstNmcG93U2-1GVU"
+                            />
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-primary transition-colors">
+                            Kenji Takahashi
+                        </h4>
+                        <p class="text-xs text-on-surface-variant mt-0.5">Minister Sato</p>
+                        <span class="text-[10px] text-primary/80 font-mono mt-1">Synthetic Liaison</span>
+                    </div>
+                    <!-- Cast 4 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div
+                            class="size-24 rounded-full overflow-hidden mb-3 border-2 border-outline-variant/40 group-hover:border-primary-container transition-all shadow-lg"
+                        >
+                            <img
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                data-alt="A portrait of Aida Chen, portraying the mysterious AI Nyx with ethereal cybernetic lighting and an intense penetrating stare in deep cinematic red shadows."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkNYwetpkmlCXMRuj2djtOai1TLbejiWvvM-7INbwk_zbb0XRpiP1FI6SZqRoAJJmgZobp5Ppoh4rcMMkYSbAXwru7UhRPyfxEGAuzSGj6qbNuhlpZJShMTYlJBHsl3f9CCX_e6VKS4Q5ASVELTJgPEm2rZzpJxaf6yOU57ZYhMSvTUSav04r4Dye7Ck9gdSoeyIU6cZSY1iAnz_9iT3f5h9PZ4MmsDXc5Jg4oexbRh8hSOZvAIxYM"
+                            />
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-primary transition-colors">
+                            Aida Chen
+                        </h4>
+                        <p class="text-xs text-on-surface-variant mt-0.5">Nyx</p>
+                        <span class="text-[10px] text-primary/80 font-mono mt-1">Rogue AI Entity</span>
+                    </div>
+                    <!-- Cast 5: Showrunner -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div
+                            class="size-24 rounded-full overflow-hidden mb-3 border-2 border-outline-variant/40 group-hover:border-primary-container transition-all shadow-lg"
+                        >
+                            <img
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                data-alt="A portrait of Sarah Lin, the creator and showrunner of the series, pictured with an artistic vision in a modern creative studio bathed in deep obsidian tones."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5tZKqXWrsg0exxVWtRtyhsjMzpbfpXZe9dIGYRXljbYAwyh0KtN4wuSO2IsoJNmfWoA47pA2Gxbl-QQhe22T0IA9-NQgnP6Hj79wmpYgU5ts2T1DNF-P230FGazA6Ba50KiJLeaZZgbezMn621_Xs8LmcAS4N12ZwGGpWJaKULaEBompi7EyYTjV2hD78UthQQOMcfZTOdUVhScosR9f7ibD5mGIMP5FY81FaaPD5DUGFDRkushuo"
+                            />
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-primary transition-colors">
+                            Sarah Lin
+                        </h4>
+                        <p class="text-xs text-on-surface-variant mt-0.5">Showrunner / Creator</p>
+                        <span class="text-[10px] text-secondary font-mono mt-1">Emmy® Winner</span>
+                    </div>
+                    <!-- Cast 6: Director -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div
+                            class="size-24 rounded-full overflow-hidden mb-3 border-2 border-outline-variant/40 group-hover:border-primary-container transition-all shadow-lg"
+                        >
+                            <img
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                data-alt="A portrait of director Marc Rodriguez with camera monitor reflections on his glasses, shot in a film production studio setting with subtle warm crimson rim light."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEDo5zbwT3mqgs2RVx3TLkQ0dIbmrejzWmqBRZ4ZiOvMIgU7ccjhloVru1Nf4V3MlhlhC5M-k4KPFegAdUeHNucZxZQtQfKIIqtBniYuebXRL93UXk6mldxL1JmNLY2NcYNorBx9IV4vaB30CVtML6eVwRxI63lml9y6VAjEXYFRYPurqrgOyajn7MLzAXPYm8kZBaxri0Ih2LWZS63ImhvBuJiUKrlfGDv_qwCfOiOE17NsaKvhtu"
+                            />
+                        </div>
+                        <h4 class="text-sm font-bold text-white group-hover:text-primary transition-colors">
+                            Marc Rodriguez
+                        </h4>
+                        <p class="text-xs text-on-surface-variant mt-0.5">Lead Director</p>
+                        <span class="text-[10px] text-secondary font-mono mt-1">Episodes 1, 2, 7, 8</span>
+                    </div>
+                </div>
+            </section>
+            <!-- ==================== 4. MORE LIKE THIS RECOMMENDATIONS ==================== -->
+            <section class="space-y-6">
+                <div class="flex items-center justify-between border-b border-surface-container-high pb-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white font-headline-sm">More Like This</h2>
+                        <p class="text-sm text-on-surface-variant">
+                            Curated dystopian, cyberpunk, and mind-bending thrillers
+                        </p>
+                    </div>
+                </div>
+                <!-- Recommendation Cards Shelf -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Rec 1 -->
+                    <div
+                        class="group flex flex-col rounded-2xl bg-surface-container overflow-hidden border border-outline-variant/30 hover:border-primary-container/60 transition-all duration-300 shadow-lg"
+                    >
+                        <div class="relative aspect-video overflow-hidden bg-surface-container-highest">
+                            <img
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="A neon-lit rain-slicked highway in a futuristic cyberpunk city with speeding vehicles and towering crimson billboards matching CineStream obsidian aesthetics."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbjnQmLIh3lDK9EpES0TaJzIj72JFXPz4QUeCpyVTuWYZB2j7JONJGpD6FJOkXbz5QaFBpU-FwvveTR9ssCBTnrTON1nFPl9SkP_RWnv7scEdKS1R7tYG81zGKg_vuqMb7P-l2nPqRyBXDJLFJOyssCoF_DM7hUw_fI-aNZ326ZDPbEFsIWJ-Vx3-cbjuUx96Y6X-7PsoeIY02MBYCVM0WCSB_bIEUhR0lyb1M8C3agQOVrUKNaUQB"
+                            />
+                            <div
+                                class="absolute top-2 right-2 px-2 py-0.5 rounded bg-surface-dim/90 text-primary font-bold text-xs"
+                            >
+                                98% MATCH
+                            </div>
+                            <div
+                                class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-primary-container text-white text-[10px] font-bold"
+                            >
+                                4K HDR
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-col justify-between flex-1">
+                            <div>
+                                <div class="flex items-center justify-between text-xs text-on-surface-variant mb-1">
+                                    <span>3 Seasons</span>
+                                    <span>TV-MA</span>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">
+                                    Neon Horizon 2088
+                                </h3>
+                                <p class="text-xs text-on-surface-variant mt-1 line-clamp-2">
+                                    Undercover synthetics navigate corporate warfare in New Neo-Tokyo.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-4 pt-3 border-t border-surface-container-highest flex items-center justify-between"
+                            >
+                                <span class="text-xs font-semibold text-white flex items-center gap-1">
+                                    <span
+                                        class="material-symbols-outlined text-[14px] text-secondary"
+                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                        >star</span
+                                    >
+                                    8.9
+                                </span>
+                                <button
+                                    class="p-1.5 rounded-lg bg-surface-container-highest hover:bg-primary-container text-white transition-colors"
+                                >
+                                    <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Rec 2 -->
+                    <div
+                        class="group flex flex-col rounded-2xl bg-surface-container overflow-hidden border border-outline-variant/30 hover:border-primary-container/60 transition-all duration-300 shadow-lg"
+                    >
+                        <div class="relative aspect-video overflow-hidden bg-surface-container-highest">
+                            <img
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Deep space station orbiting an abyssal planetary rift with glowing deep red particle storms and cold obsidian satellites in cinematic high realism."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY0F91pu22EeRWhd-VQ-od15garsdJs_r0K-NWCOfrat-AhZlXD3k7DujZdv6FgyClic5qdsCSkUk3SR0tKZrLG5-cbko460grs-eOBM3dk3WTASStN8a_gesMkjA5FYMP92XdPAKMG3IKG6txRTYPoeYvLqZmQTZ_ObR93EKpOwa9kijwp2q6Wh9yzHPsDY_qQIRgAE30sAVm715LUmPmI4TbzZpuVhlEnp1uBIn5FXn5WDDpgfpz"
+                            />
+                            <div
+                                class="absolute top-2 right-2 px-2 py-0.5 rounded bg-surface-dim/90 text-primary font-bold text-xs"
+                            >
+                                96% MATCH
+                            </div>
+                            <div
+                                class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-surface-dim/90 text-white text-[10px] font-bold"
+                            >
+                                ATMOS
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-col justify-between flex-1">
+                            <div>
+                                <div class="flex items-center justify-between text-xs text-on-surface-variant mb-1">
+                                    <span>2 Seasons</span>
+                                    <span>TV-MA</span>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">
+                                    The Silent Abyss: Deep Station
+                                </h3>
+                                <p class="text-xs text-on-surface-variant mt-1 line-clamp-2">
+                                    A quantum singularity awakens an ancient intelligence beneath an oceanic world.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-4 pt-3 border-t border-surface-container-highest flex items-center justify-between"
+                            >
+                                <span class="text-xs font-semibold text-white flex items-center gap-1">
+                                    <span
+                                        class="material-symbols-outlined text-[14px] text-secondary"
+                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                        >star</span
+                                    >
+                                    9.1
+                                </span>
+                                <button
+                                    class="p-1.5 rounded-lg bg-surface-container-highest hover:bg-primary-container text-white transition-colors"
+                                >
+                                    <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Rec 3 -->
+                    <div
+                        class="group flex flex-col rounded-2xl bg-surface-container overflow-hidden border border-outline-variant/30 hover:border-primary-container/60 transition-all duration-300 shadow-lg"
+                    >
+                        <div class="relative aspect-video overflow-hidden bg-surface-container-highest">
+                            <img
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="A shadowy subterranean vault with high-tech red security lasers guarding a monolithic crystalline quantum storage unit in sleek obsidian architecture."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4rXTQMDG54lRIOhEnChRZ9svfTsQFQP-NR2YvmS6fgrUAKUl2KYV4cA6Qaf2w7RDUyNUj9ajETXUMYuWOPoHi_gpU9Of3FjroCP31tbc8xjrXWyS9Xtn6qQgeA2i9lMK8TGkGHv6R8_7v4lxmB2MArl4xkacuWWKFgVq_A8TxVEKxHyZpmpTZKV0pG_PTrCV6JT2xI4wdgWR9Ui8NJNbrAvWxRasz0pmquiRwVZky6yrMATlCVCmM"
+                            />
+                            <div
+                                class="absolute top-2 right-2 px-2 py-0.5 rounded bg-surface-dim/90 text-primary font-bold text-xs"
+                            >
+                                94% MATCH
+                            </div>
+                            <div
+                                class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-primary-container text-white text-[10px] font-bold"
+                            >
+                                IMAX
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-col justify-between flex-1">
+                            <div>
+                                <div class="flex items-center justify-between text-xs text-on-surface-variant mb-1">
+                                    <span>Limited Series</span>
+                                    <span>TV-MA</span>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">
+                                    Velvet Vault: Syndicate
+                                </h3>
+                                <p class="text-xs text-on-surface-variant mt-1 line-clamp-2">
+                                    A high-stakes techno-heist inside the most impenetrable bank on Mars.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-4 pt-3 border-t border-surface-container-highest flex items-center justify-between"
+                            >
+                                <span class="text-xs font-semibold text-white flex items-center gap-1">
+                                    <span
+                                        class="material-symbols-outlined text-[14px] text-secondary"
+                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                        >star</span
+                                    >
+                                    8.8
+                                </span>
+                                <button
+                                    class="p-1.5 rounded-lg bg-surface-container-highest hover:bg-primary-container text-white transition-colors"
+                                >
+                                    <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Rec 4 -->
+                    <div
+                        class="group flex flex-col rounded-2xl bg-surface-container overflow-hidden border border-outline-variant/30 hover:border-primary-container/60 transition-all duration-300 shadow-lg"
+                    >
+                        <div class="relative aspect-video overflow-hidden bg-surface-container-highest">
+                            <img
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="A lone cybernetic traveler in a long trench coat walking toward a colossal crimson glowing portal in a misty desolate obsidian landscape."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD_YxrZKILWuyLEcgVZKKqByoIldHOi7gDnpxORmw-jaYZjIOsV7drVj5ll2qpwxj0WF-znOAJZEvy4niRYbI0nAuh5MBA7j5rmBhTWkRDhVVjo28tXOszpS4X3e45UuxbSgk7Tel2LosvujCTFV6RG-ZnKVu4aMIMIS6djY6qEbITl_6eVkWGeaBGvMGlJ4pU6IFGgeDCh6PTakEdelrvjmrAeSj0nmVx-RuAZznlYBw8toWYTuHZ"
+                            />
+                            <div
+                                class="absolute top-2 right-2 px-2 py-0.5 rounded bg-surface-dim/90 text-primary font-bold text-xs"
+                            >
+                                92% MATCH
+                            </div>
+                            <div
+                                class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-surface-dim/90 text-white text-[10px] font-bold"
+                            >
+                                4K HDR
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-col justify-between flex-1">
+                            <div>
+                                <div class="flex items-center justify-between text-xs text-on-surface-variant mb-1">
+                                    <span>4 Seasons</span>
+                                    <span>TV-MA</span>
+                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">
+                                    Corridor 404
+                                </h3>
+                                <p class="text-xs text-on-surface-variant mt-1 line-clamp-2">
+                                    When timelines collide, a quantum detective must hunt down his own duplicates.
+                                </p>
+                            </div>
+                            <div
+                                class="mt-4 pt-3 border-t border-surface-container-highest flex items-center justify-between"
+                            >
+                                <span class="text-xs font-semibold text-white flex items-center gap-1">
+                                    <span
+                                        class="material-symbols-outlined text-[14px] text-secondary"
+                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                        >star</span
+                                    >
+                                    9.0
+                                </span>
+                                <button
+                                    class="p-1.5 rounded-lg bg-surface-container-highest hover:bg-primary-container text-white transition-colors"
+                                >
+                                    <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ==================== 5. AUDIO, VIDEO SPECS & BEHIND-THE-SCENES ==================== -->
+            <section class="p-8 rounded-3xl bg-surface-container border border-outline-variant/30">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="material-symbols-outlined text-primary-container text-[28px]">settings_ethernet</span>
+                    <h2 class="text-xl font-bold text-white font-headline-sm">Mastering &amp; Stream Specifications</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Audio Specs -->
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-primary">
+                            Spatial Audio &amp; Dubbing
+                        </h4>
+                        <ul class="text-sm space-y-2 text-on-surface">
+                            <li class="flex items-center justify-between border-b border-surface-container-high pb-1.5">
+                                <span>English [Original]</span>
+                                <span
+                                    class="text-xs font-mono px-2 py-0.5 rounded bg-surface-container-high text-primary"
+                                    >Dolby Atmos 7.1.4</span
+                                >
+                            </li>
+                            <li class="flex items-center justify-between border-b border-surface-container-high pb-1.5">
+                                <span>Spanish (Castilian &amp; LATAM)</span>
+                                <span class="text-xs font-mono text-on-surface-variant">5.1 Surround</span>
+                            </li>
+                            <li class="flex items-center justify-between border-b border-surface-container-high pb-1.5">
+                                <span>Japanese</span>
+                                <span class="text-xs font-mono text-on-surface-variant">5.1 Surround</span>
+                            </li>
+                            <li class="flex items-center justify-between border-b border-surface-container-high pb-1.5">
+                                <span>German &amp; French</span>
+                                <span class="text-xs font-mono text-on-surface-variant">5.1 Surround</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Subtitles -->
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-primary">
+                            Available Subtitles
+                        </h4>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span
+                                class="px-2.5 py-1 rounded-lg bg-surface-container-high text-xs text-white border border-outline-variant/20"
+                                >English [CC]</span
+                            >
+                            <span
+                                class="px-2.5 py-1 rounded-lg bg-surface-container-high text-xs text-white border border-outline-variant/20"
+                                >Spanish</span
+                            >
+                            <span
+                                class="px-2.5 py-1 rounded-lg bg-surface-container-high text-xs text-white border border-outline-variant/20"
+                                >French</span
+                            >
+                            <span
+                                class="px-2.5 py-1 rounded-lg bg-surface-container-high text-xs text-white border border-outline-variant/20"
+                                >German</span
+                            >
+                            <span
+                                class="px-2.5 py-1 rounded-lg bg-surface-container-high text-xs text-white border border-outline-variant/20"
+                                >Japanese</span
+                            >
+                            <span
+                                class="px-2.5 py-1 rounded-lg bg-surface-container-high text-xs text-white border border-outline-variant/20"
+                                >Korean</span
+                            >
+                            <span
+                                class="px-2.5 py-1 rounded-lg bg-surface-container-high text-xs text-white border border-outline-variant/20"
+                                >Vietnamese</span
+                            >
+                            <span
+                                class="px-2.5 py-1 rounded-lg bg-surface-container-high text-xs text-white border border-outline-variant/20"
+                                >Simplified Chinese</span
+                            >
+                        </div>
+                        <p class="text-xs text-outline pt-2">
+                            Includes Subtitles for the Deaf and Hard of Hearing (SDH).
+                        </p>
+                    </div>
+                    <!-- Video Encoding -->
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-primary">
+                            Video Mastering &amp; DRM
+                        </h4>
+                        <div class="space-y-2 text-xs text-on-surface-variant">
+                            <div class="flex justify-between py-1 border-b border-surface-container-high">
+                                <span>Master Codec:</span>
+                                <span class="text-white font-mono">HEVC / AV1 Adaptive</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-surface-container-high">
+                                <span>Aspect Ratio:</span>
+                                <span class="text-white font-mono">2.39:1 Anamorphic Widescreen</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-surface-container-high">
+                                <span>Color Space:</span>
+                                <span class="text-white font-mono">BT.2020 Wide Color Gamut</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-surface-container-high">
+                                <span>Peak Brightness:</span>
+                                <span class="text-white font-mono">1,000 Nits (HDR10+ / Dolby Vision)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ==================== CINEMATIC VIDEO PLAYER MODAL ==================== -->
+        <div
+            id="series-video-modal"
+            class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 opacity-0 pointer-events-none transition-all duration-300"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="series-modal-title"
+        >
+            <div
+                id="series-modal-box"
+                class="relative w-full max-w-5xl bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_30px_90px_rgba(0,0,0,0.95)] border border-outline-variant/30 flex flex-col scale-95 transition-transform duration-300"
+            >
+                <!-- Video Screen & Custom Cinema Controls -->
+                <div id="series-video-container" class="relative w-full aspect-video bg-black flex items-center justify-center overflow-hidden group/seriesplayer cursor-pointer select-none">
+                    <video
+                        id="series-modal-player"
+                        class="w-full h-full object-contain"
+                        playsinline
+                        preload="auto"
+                    ></video>
+
+                    <!-- Cinema HUD Player Dock & Feedback Overlay (Reusable Component) -->
+                    <load src="src/components/cinema-player-dock.html" prefix="series" />
+                </div>
+
+                <!-- Episode Details & Actions -->
+                <div class="p-5 sm:p-6 bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-outline-variant/20">
+                    <div class="space-y-1.5 flex-1 pr-4">
+                        <div class="flex flex-wrap items-center gap-2 text-xs">
+                            <span id="series-modal-badge" class="px-2 py-0.5 rounded font-mono font-bold bg-primary-container text-white text-[11px]">SEASON 4 • EPISODE 2</span>
+                            <span class="text-on-surface-variant">•</span>
+                            <span id="series-modal-runtime" class="text-on-surface-variant font-mono">62m</span>
+                            <span class="text-on-surface-variant">•</span>
+                            <span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-white text-[10px] font-bold">4K DOLBY VISION</span>
+                            <span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-white text-[10px] font-bold">ATMOS 7.1.4</span>
+                        </div>
+                        <h3 id="series-modal-title" class="text-lg sm:text-xl font-bold text-white font-headline-sm">Ghost in the Conduit</h3>
+                        <p id="series-modal-synopsis" class="text-xs sm:text-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                            Hunted by Minister Sato’s mechanized Enforcers, Dax orchestrates a blackout in Sector 7 to extract a synthetic courier carrying the decryption keys to Maya’s father’s memory cipher.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0 w-full sm:w-auto justify-end">
+                        <a
+                            id="series-modal-stage-link"
+                            href="/pages/watch_a_film_page.html?id=neural-drift-reckoning"
+                            class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-container hover:bg-primary text-white text-xs font-bold transition-all shadow-md cursor-pointer"
+                        >
+                            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                            <span>Cinema Stage</span>
+                        </a>
+                        <button
+                            id="series-modal-replay-btn"
+                            class="flex items-center gap-1.5 px-3 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-highest text-white text-xs font-medium transition-colors cursor-pointer border border-outline-variant/30"
+                            title="Replay from start"
+                            type="button"
+                        >
+                            <span class="material-symbols-outlined text-[18px]">replay</span>
+                            <span class="hidden sm:inline">Replay</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== FOOTER ==================== -->
+        <load src="src/components/footer.html" />
+        <script type="module" src="/js/nav.js"></script>
+        <script type="module">
+            import { isInWatchlist, toggleWatchlist, getNextVideoToPlay } from '/js/store.js';
+            import { createCinemaPlayer } from '/js/player.js';
+
+            const SERIES_ID = 'neural-drift-reckoning';
+            const SERIES_TITLE = 'Neural Drift: Reckoning';
+
+            // Episode Catalog Data for Season 4
+            const S4_EPISODES = [
+                {
+                    num: 1,
+                    ep: 'EPISODE 01',
+                    title: 'The Genesis Protocol',
+                    runtime: '58m',
+                    videoUrl: '/api/stream/neural-drift-reckoning-s4-e1',
+                    synopsis: 'Maya Vance infiltrates the subterranean core of the Aetheris Datacenter. A catastrophic quantum telemetry anomaly exposes a secret archive of illegally duplicated human consciousness profiles.',
+                    currentTime: 0
+                },
+                {
+                    num: 2,
+                    ep: 'EPISODE 02',
+                    title: 'Ghost in the Conduit',
+                    runtime: '62m',
+                    badge: 'RESUME (40:15)',
+                    videoUrl: '/api/stream/neural-drift-reckoning-s4-e2',
+                    synopsis: 'Hunted by Minister Sato’s mechanized Enforcers, Dax orchestrates a blackout in Sector 7 to extract a synthetic courier carrying the decryption keys to Maya’s father’s memory cipher.',
+                    currentTime: 2415 // 40m 15s
+                },
+                {
+                    num: 3,
+                    ep: 'EPISODE 03',
+                    title: 'Sub-Zero Memory',
+                    runtime: '54m',
+                    videoUrl: '/api/stream/neural-drift-reckoning-s4-e3',
+                    synopsis: 'An expedition into an abandoned sub-arctic cryogenic repository reveals that thousands of frozen human minds have been quietly harvested to train the overarching AI entity known as Nyx.',
+                    currentTime: 0
+                },
+                {
+                    num: 4,
+                    ep: 'EPISODE 04',
+                    title: 'The Archon Labyrinth',
+                    runtime: '57m',
+                    videoUrl: '/api/stream/neural-drift-reckoning-s4-e4',
+                    synopsis: 'Trapped inside a psychological neural construct, Maya must navigate a simulated reconstruction of her childhood home before her physical brain experiences irreversible neural necrosis.',
+                    currentTime: 0
+                },
+                {
+                    num: 5,
+                    ep: 'EPISODE 05',
+                    title: 'Synthetic Mirage',
+                    runtime: '61m',
+                    videoUrl: '/api/stream/neural-drift-reckoning-s4-e5',
+                    synopsis: 'Nyx manifests across the city’s optic fiber grid, offering freedom to millions of synth workers in exchange for their biological processing nodes. The Overseer prepares an orbital EMP sanction.',
+                    currentTime: 0
+                },
+                {
+                    num: 7,
+                    ep: 'SEASON FINALE • PART 1',
+                    title: 'E07 • The Blackout Covenant',
+                    runtime: '65m',
+                    videoUrl: '/api/stream/neural-drift-reckoning-s4-e7',
+                    synopsis: 'The total collapse of Sector 1 through 9 begins as Dax faces off against the prime synthetic syndicate vanguard.',
+                    currentTime: 0
+                },
+                {
+                    num: 8,
+                    ep: 'SERIES FINALE • PART 2',
+                    title: 'E08 • Quantum Reckoning',
+                    runtime: '78m',
+                    videoUrl: '/api/stream/neural-drift-reckoning-s4-e8',
+                    synopsis: "Humanity's boundary dissolves. Maya makes the ultimate irreversible choice between digital immortality and physical reality.",
+                    currentTime: 0
+                }
+            ];
+
+            const TRAILER_DATA = {
+                num: 0,
+                ep: 'OFFICIAL TRAILER',
+                title: 'Neural Drift: Reckoning — Official Season 4 Trailer (4K)',
+                runtime: '2m 24s',
+                videoUrl: '/api/stream/neural-drift-reckoning-trailer',
+                synopsis: 'Experience the thrilling conclusion to the cybernetic saga. In Season 4, Maya and Dax confront the singularity at the heart of the planetary core.',
+                currentTime: 0
+            };
+
+            // Modal elements
+            const modal = document.getElementById('series-video-modal');
+            const modalBox = document.getElementById('series-modal-box');
+            const player = document.getElementById('series-modal-player');
+            const closeBtn = document.getElementById('series-modal-close-btn');
+            const modalTitle = document.getElementById('series-modal-title');
+            const modalBadge = document.getElementById('series-modal-badge');
+            const modalRuntime = document.getElementById('series-modal-runtime');
+            const modalSynopsis = document.getElementById('series-modal-synopsis');
+            const stageLink = document.getElementById('series-modal-stage-link');
+            const modalReplayBtn = document.getElementById('series-modal-replay-btn');
+
+            // Initialize Cinema Player for Series Modal via unified Cinema Engine
+            let seriesCinemaPlayer = null;
+            function getSeriesCinemaPlayer() {
+                if (!seriesCinemaPlayer && typeof createCinemaPlayer === 'function') {
+                    seriesCinemaPlayer = createCinemaPlayer('series', {
+                        onClose: closeVideo
+                    });
+                }
+                return seriesCinemaPlayer;
+            }
+
+            function openVideo(item) {
+                if (!modal || !modalBox || !player) return;
+
+                if (modalTitle) modalTitle.textContent = item.title;
+                if (modalBadge) modalBadge.textContent = item.ep.includes('SEASON') || item.ep.includes('TRAILER') ? item.ep : `SEASON 4 • ${item.ep}`;
+                if (modalRuntime) modalRuntime.textContent = item.runtime;
+                if (modalSynopsis) modalSynopsis.textContent = item.synopsis;
+                if (stageLink) {
+                    stageLink.href = `/pages/watch_a_film_page.html?id=${SERIES_ID}&episode=${item.num}&autoplay=true`;
+                }
+
+                // Phát video kế tiếp theo thứ tự xoay vòng toàn cục (phát dở đóng lại cũng tính là đã phát)
+                const currentVideoFile = typeof window.getNextVideoToPlay === 'function' ? window.getNextVideoToPlay() : getNextVideoToPlay();
+
+                // Open modal
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.classList.add('opacity-100');
+                modalBox.classList.remove('scale-95');
+                modalBox.classList.add('scale-100');
+
+                const playerInstance = getSeriesCinemaPlayer();
+                const seekTime = (item.currentTime > 0) ? item.currentTime : 0;
+                if (playerInstance) {
+                    playerInstance.loadVideo(`/api/stream/${currentVideoFile}`, seekTime);
+                } else {
+                    player.src = `/api/stream/${currentVideoFile}`;
+                    player.currentTime = seekTime;
+                    player.play().catch(() => {});
+                }
+            }
+
+            function closeVideo() {
+                if (!modal || !modalBox || !player) return;
+                modalBox.classList.add('scale-95');
+                modalBox.classList.remove('scale-100');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modal.classList.remove('opacity-100');
+                if (seriesCinemaPlayer) {
+                    seriesCinemaPlayer.pause();
+                }
+                player.pause();
+                player.currentTime = 0;
+                player.src = '';
+            }
+
+            if (closeBtn) closeBtn.addEventListener('click', closeVideo);
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal || !e.target.closest('#series-modal-box')) {
+                        closeVideo();
+                    }
+                });
+            }
+
+            // Keyboard shortcuts when modal is open
+            document.addEventListener('keydown', (e) => {
+                if (modal && !modal.classList.contains('opacity-0')) {
+                    if (e.key === 'Escape') {
+                        closeVideo();
+                        return;
+                    }
+                    if (['input', 'textarea'].includes(document.activeElement?.tagName?.toLowerCase())) return;
+
+                    const playerInstance = getSeriesCinemaPlayer();
+                    if (e.code === 'Space' || e.key === 'k' || e.key === 'K') {
+                        e.preventDefault();
+                        if (playerInstance) playerInstance.toggle();
+                    } else if (e.code === 'ArrowLeft') {
+                        e.preventDefault();
+                        const replayBtn = document.getElementById('series-ctrl-replay-btn');
+                        if (replayBtn) replayBtn.click();
+                    } else if (e.code === 'ArrowRight') {
+                        e.preventDefault();
+                        const forwardBtn = document.getElementById('series-ctrl-forward-btn');
+                        if (forwardBtn) forwardBtn.click();
+                    } else if (e.key === 'm' || e.key === 'M') {
+                        e.preventDefault();
+                        const volBtn = document.getElementById('series-ctrl-volume-btn');
+                        if (volBtn) volBtn.click();
+                    } else if (e.key === 'f' || e.key === 'F') {
+                        e.preventDefault();
+                        const fsBtn = document.getElementById('series-ctrl-fullscreen-btn');
+                        if (fsBtn) fsBtn.click();
+                    }
+                }
+            });
+
+            if (modalReplayBtn) {
+                modalReplayBtn.addEventListener('click', () => {
+                    const playerInstance = getSeriesCinemaPlayer();
+                    if (playerInstance) {
+                        if (playerInstance.video) playerInstance.video.currentTime = 0;
+                        playerInstance.play();
+                        playerInstance.triggerCenterFlash('play_arrow');
+                    }
+                });
+            }
+
+            // Hero CTA Buttons
+            const heroPlayBtn = document.getElementById('series-play-btn');
+            const heroTrailerBtn = document.getElementById('series-trailer-btn');
+
+            if (heroPlayBtn) {
+                heroPlayBtn.addEventListener('click', () => {
+                    openVideo(S4_EPISODES[0]);
+                });
+            }
+
+            if (heroTrailerBtn) {
+                heroTrailerBtn.addEventListener('click', () => {
+                    openVideo(TRAILER_DATA);
+                });
+            }
+
+            // Connect all episode cards and their play buttons
+            document.querySelectorAll('.episode-card').forEach((card) => {
+                const idxStr = card.getAttribute('data-episode-idx');
+                const idx = parseInt(idxStr, 10);
+                const epData = !isNaN(idx) && S4_EPISODES[idx] ? S4_EPISODES[idx] : S4_EPISODES[0];
+
+                card.addEventListener('click', (e) => {
+                    // Don't trigger if user clicked a download button
+                    if (e.target.closest('button[title*="Download"]')) return;
+                    openVideo(epData);
+                });
+            });
+
+            // "More Like This" recommendation play buttons
+            const REC_DATA = [
+                { title: 'Neon Horizon 2088', id: 'cyber-drift-2099', ep: 'SERIES PREMIERE', runtime: '3 Seasons', videoUrl: '/api/stream/cyber-drift-2099', synopsis: 'Undercover synthetics navigate corporate warfare in New Neo-Tokyo.' },
+                { title: 'The Silent Abyss: Deep Station', id: 'dune-part-two', ep: 'LIMITED SERIES', runtime: '2 Seasons', videoUrl: '/api/stream/dune-part-two', synopsis: 'A quantum singularity awakens an ancient intelligence beneath an oceanic world.' },
+                { title: 'Velvet Vault: Syndicate', id: 'cyber-drift-2099', ep: 'LIMITED SERIES', runtime: 'TV-MA', videoUrl: '/api/stream/velvet-vault', synopsis: 'A high-stakes techno-heist inside the most impenetrable bank on Mars.' },
+                { title: 'Oppenheimer', id: 'oppenheimer', ep: 'FEATURE FILM', runtime: '3h 00m', videoUrl: '/api/stream/oppenheimer', synopsis: 'The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.' }
+            ];
+
+            document.querySelectorAll('section .grid .group').forEach((recCard, i) => {
+                const playBtn = recCard.querySelector('button');
+                const item = REC_DATA[i];
+                if (playBtn && item) {
+                    playBtn.classList.add('cursor-pointer');
+                    playBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        openVideo({
+                            num: 1,
+                            ep: item.ep,
+                            title: item.title,
+                            runtime: item.runtime,
+                            videoUrl: item.videoUrl,
+                            synopsis: item.synopsis,
+                            currentTime: 0
+                        });
+                    });
+                }
+            });
+
+            // Watchlist Button
+            const watchlistBtn = document.getElementById('series-watchlist-btn');
+            const watchlistLabel = document.getElementById('series-watchlist-label');
+
+            function updateWatchlistBtn() {
+                if (!watchlistBtn) return;
+                const inList = isInWatchlist(SERIES_ID);
+                const icon = watchlistBtn.querySelector('.material-symbols-outlined');
+                if (icon) icon.textContent = inList ? 'check' : 'add';
+                if (watchlistLabel) watchlistLabel.textContent = inList ? 'In My List' : 'Add to My List';
+            }
+            updateWatchlistBtn();
+
+            if (watchlistBtn) {
+                watchlistBtn.addEventListener('click', () => {
+                    toggleWatchlist(SERIES_ID, SERIES_TITLE);
+                    updateWatchlistBtn();
+                });
+            }
+        </script>
+    </body>
+</html>

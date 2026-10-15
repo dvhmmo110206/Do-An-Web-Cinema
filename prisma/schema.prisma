@@ -1,0 +1,101 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// 1. Bảng Phim & Series (Catalog Movie/Series)
+model Movie {
+  id          String          @id
+  slug        String
+  title       String
+  type        String          @default("movie") // "movie" hoặc "series"
+  synopsis    String
+  releaseYear Int             @default(2024)
+  duration    String
+  rating      String          @default("8.5")
+  genres      String          // Mảng chuỗi JSON
+  posterUrl   String
+  backdropUrl String
+  trailerUrl  String?
+  videoUrl    String?
+  isFeatured  Boolean         @default(false)
+  isTrending  Boolean         @default(false)
+  isImax      Boolean         @default(false)
+  director    String?
+  cast        String?         // Mảng chuỗi JSON
+  createdAt   DateTime        @default(now())
+  
+  // Quan hệ 1 - N
+  episodes    Episode[]
+  watchlist   WatchlistItem[]
+  progress    WatchProgress[]
+}
+
+// 2. Bảng Tập Phim Bộ (Series Episodes)
+model Episode {
+  id            String   @id
+  seriesId      String
+  season        Int      @default(1)
+  episodeNumber Int
+  title         String
+  synopsis      String
+  duration      String
+  videoUrl      String
+  stillUrl      String?
+
+  series        Movie    @relation(fields: [seriesId], references: [id], onDelete: Cascade)
+}
+
+// 3. Bảng Người Dùng (User Account)
+model User {
+  id        String    @id
+  email     String    @unique
+  password  String?
+  plan      String    @default("Ultra 4K CineVIP")
+  createdAt DateTime  @default(now())
+
+  profiles  Profile[]
+}
+
+// 4. Bảng Hồ Sơ Người Xem (User Profiles / Multi-Profile)
+model Profile {
+  id        String          @id
+  userId    String
+  name      String
+  avatar    String
+  isKids    Boolean         @default(false)
+
+  user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  watchlist WatchlistItem[]
+  progress  WatchProgress[]
+}
+
+// 5. Bảng Danh Sách Yêu Thích (My List / Watchlist)
+model WatchlistItem {
+  id        String   @id
+  profileId String
+  movieId   String
+  createdAt DateTime @default(now())
+
+  profile   Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  movie     Movie    @relation(fields: [movieId], references: [id], onDelete: Cascade)
+}
+
+// 6. Bảng Tiến Độ Xem Dở (Continue Watching / Watch Progress)
+model WatchProgress {
+  id          String   @id
+  profileId   String
+  movieId     String
+  episodeId   String?
+  currentTime Int      @default(0)
+  duration    Int      @default(0)
+  progress    Int      @default(0)
+  updatedAt   DateTime @updatedAt
+
+  profile     Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  movie       Movie    @relation(fields: [movieId], references: [id], onDelete: Cascade)
+}

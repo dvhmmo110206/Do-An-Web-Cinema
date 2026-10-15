@@ -1,0 +1,219 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CineStream — Subscription Plans</title>
+    <load src="src/components/head-resources.html" />
+  </head>
+  <body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-white min-h-screen flex flex-col justify-between">
+    <load src="src/components/header.html" />
+
+    <main class="w-full pt-28 pb-20 px-6 md:px-12 flex-1">
+      <div class="max-w-6xl mx-auto flex flex-col items-center">
+        <!-- Hero Section -->
+        <div class="text-center max-w-3xl mb-12">
+          <span class="px-3.5 py-1 rounded-full bg-primary-container/15 border border-primary-container/30 text-primary text-xs font-semibold tracking-wider uppercase mb-4 inline-block">
+            Flexible Screening Tiers
+          </span>
+          <h1 class="font-headline text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+            Choose the Plan That’s Right for You.
+          </h1>
+          <p class="text-base text-on-surface-variant leading-relaxed">
+            Watch all you want without interruptions. Switch tiers or cancel anytime with zero commitments.
+          </p>
+
+          <!-- Billing Period Switcher -->
+          <div class="mt-8 inline-flex items-center p-1 rounded-full bg-surface-container-high border border-white/10 shadow-lg">
+            <button id="monthlyBtn" type="button" class="px-5 py-2 rounded-full text-xs font-bold font-headline transition-all bg-primary-container text-white shadow-sm">
+              Monthly Billing
+            </button>
+            <button id="annualBtn" type="button" class="px-5 py-2 rounded-full text-xs font-bold font-headline transition-all text-on-surface-variant hover:text-white flex items-center gap-1.5">
+              <span>Annual Billing</span>
+              <span class="px-2 py-0.5 rounded-full bg-secondary-container text-black font-bold text-[10px] uppercase tracking-wide">Save 20%</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 Pricing Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-16 items-stretch">
+          <!-- Card 1: Standard with Ads -->
+          <div class="rounded-2xl p-7 bg-surface-container-low/90 border border-white/10 flex flex-col justify-between hover:border-white/25 transition-all">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <h2 class="font-headline text-xl font-bold text-white">Standard with Ads</h2>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-[11px] font-medium text-on-surface-variant">1080p Full HD</span>
+              </div>
+              <p class="text-xs text-on-surface-variant mb-6">Great value with a curated selection of brief commercial breaks.</p>
+              <div class="flex items-baseline gap-1 mb-6">
+                <span class="font-headline text-4xl font-black text-white price-val" data-monthly="$6.99" data-annual="$5.59">$6.99</span>
+                <span class="text-xs text-on-surface-variant">/ month</span>
+              </div>
+              <ul class="flex flex-col gap-3 text-xs text-on-surface-variant border-t border-white/10 pt-6">
+                <li class="flex items-center gap-2.5 text-white">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  Full HD 1080p streaming
+                </li>
+                <li class="flex items-center gap-2.5 text-white">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  Watch on 2 supported devices at a time
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  Stereo and 5.1 Surround Sound
+                </li>
+                <li class="flex items-center gap-2.5 opacity-50">
+                  <span class="material-symbols-outlined text-on-surface-variant text-[18px]">close</span>
+                  No offline downloads
+                </li>
+              </ul>
+            </div>
+            <a href="/pages/checkout.html?plan=standard" class="mt-8 w-full py-3 rounded-xl bg-surface-container-high hover:bg-surface-container-highest border border-white/10 text-white font-headline font-bold text-xs uppercase tracking-wider text-center transition-all block">
+              Choose Standard
+            </a>
+          </div>
+
+          <!-- Card 2: Ultra 4K CineVIP (Featured) -->
+          <div class="rounded-2xl p-7 bg-surface-container/95 border-2 border-primary-container relative flex flex-col justify-between shadow-[0_0_50px_rgba(229,9,20,0.35)] transform md:-translate-y-3 transition-all">
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#e50914] to-[#ee9800] text-white font-headline font-extrabold text-[11px] tracking-widest uppercase shadow-lg">
+              Most Popular • IMAX Enhanced
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-3 pt-2">
+                <h2 class="font-headline text-2xl font-bold text-white">Ultra 4K CineVIP</h2>
+                <span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary text-[11px] font-bold">4K + HDR</span>
+              </div>
+              <p class="text-xs text-on-surface-variant mb-6">The definitive cinematic experience with Dolby Vision, Atmos, and Director's cuts.</p>
+              <div class="flex items-baseline gap-1 mb-6">
+                <span class="font-headline text-4xl font-black text-white price-val" data-monthly="$19.99" data-annual="$15.99">$19.99</span>
+                <span class="text-xs text-on-surface-variant">/ month</span>
+              </div>
+              <ul class="flex flex-col gap-3 text-xs text-on-surface-variant border-t border-white/10 pt-6">
+                <li class="flex items-center gap-2.5 text-white font-medium">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                  4K Ultra HD + Dolby Vision & HDR10+
+                </li>
+                <li class="flex items-center gap-2.5 text-white font-medium">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                  Dolby Atmos 7.1.4 Spatial Audio
+                </li>
+                <li class="flex items-center gap-2.5 text-white font-medium">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                  Watch on 4 screens concurrently
+                </li>
+                <li class="flex items-center gap-2.5 text-white font-medium">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                  Unlimited offline downloads on 6 devices
+                </li>
+                <li class="flex items-center gap-2.5 text-secondary">
+                  <span class="material-symbols-outlined text-secondary text-[18px]">hotel_class</span>
+                  IMAX Enhanced ratio + Director commentaries
+                </li>
+              </ul>
+            </div>
+            <a href="/pages/checkout.html?plan=vip" class="mt-8 w-full py-3.5 rounded-xl bg-primary-container text-white font-headline font-bold text-xs uppercase tracking-wider text-center shadow-glow-red hover:shadow-glow-red-lg hover:brightness-110 transition-all block">
+              Start Free Trial with CineVIP
+            </a>
+          </div>
+
+          <!-- Card 3: Standard Pro -->
+          <div class="rounded-2xl p-7 bg-surface-container-low/90 border border-white/10 flex flex-col justify-between hover:border-white/25 transition-all">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <h2 class="font-headline text-xl font-bold text-white">Standard Pro</h2>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-[11px] font-medium text-on-surface-variant">No Ads</span>
+              </div>
+              <p class="text-xs text-on-surface-variant mb-6">Ad-free streaming with downloads on your mobile devices and tablets.</p>
+              <div class="flex items-baseline gap-1 mb-6">
+                <span class="font-headline text-4xl font-black text-white price-val" data-monthly="$14.99" data-annual="$11.99">$14.99</span>
+                <span class="text-xs text-on-surface-variant">/ month</span>
+              </div>
+              <ul class="flex flex-col gap-3 text-xs text-on-surface-variant border-t border-white/10 pt-6">
+                <li class="flex items-center gap-2.5 text-white">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  Ad-free endless streaming
+                </li>
+                <li class="flex items-center gap-2.5 text-white">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  Full HD 1080p streaming
+                </li>
+                <li class="flex items-center gap-2.5 text-white">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  Watch on 2 supported devices at a time
+                </li>
+                <li class="flex items-center gap-2.5 text-white">
+                  <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                  Download on 2 supported devices
+                </li>
+              </ul>
+            </div>
+            <a href="/pages/checkout.html?plan=pro" class="mt-8 w-full py-3 rounded-xl bg-surface-container-high hover:bg-surface-container-highest border border-white/10 text-white font-headline font-bold text-xs uppercase tracking-wider text-center transition-all block">
+              Choose Standard Pro
+            </a>
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="w-full max-w-3xl border-t border-white/10 pt-12">
+          <h2 class="font-headline text-2xl font-bold text-white text-center mb-8">Frequently Asked Questions</h2>
+          <div class="flex flex-col gap-3">
+            <details class="group bg-surface-container-low p-4 rounded-xl border border-white/5 cursor-pointer">
+              <summary class="font-headline font-semibold text-sm text-white flex items-center justify-between">
+                <span>How does the 30-day free trial work?</span>
+                <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+              </summary>
+              <p class="text-xs text-on-surface-variant mt-3 leading-relaxed">
+                You get full access to the CineStream library for 30 days. If you cancel before your trial ends, you won't be charged a dime.
+              </p>
+            </details>
+            <details class="group bg-surface-container-low p-4 rounded-xl border border-white/5 cursor-pointer">
+              <summary class="font-headline font-semibold text-sm text-white flex items-center justify-between">
+                <span>Can I upgrade or downgrade my tier later?</span>
+                <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+              </summary>
+              <p class="text-xs text-on-surface-variant mt-3 leading-relaxed">
+                Yes, changes apply immediately and your billing cycle is prorated automatically in Account Settings.
+              </p>
+            </details>
+            <details class="group bg-surface-container-low p-4 rounded-xl border border-white/5 cursor-pointer">
+              <summary class="font-headline font-semibold text-sm text-white flex items-center justify-between">
+                <span>What devices support 4K Dolby Atmos?</span>
+                <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+              </summary>
+              <p class="text-xs text-on-surface-variant mt-3 leading-relaxed">
+                Apple TV 4K, Samsung Smart TVs (2020+), LG OLED webOS, PlayStation 5, Xbox Series X, and modern PC web browsers.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <load src="src/components/footer.html" />
+    <script type="module" src="/js/nav.js"></script>
+
+    <!-- Billing switch script -->
+    <script>
+      const monthlyBtn = document.getElementById('monthlyBtn');
+      const annualBtn = document.getElementById('annualBtn');
+      const prices = document.querySelectorAll('.price-val');
+
+      monthlyBtn.addEventListener('click', () => {
+        monthlyBtn.className = 'px-5 py-2 rounded-full text-xs font-bold font-headline transition-all bg-primary-container text-white shadow-sm';
+        annualBtn.className = 'px-5 py-2 rounded-full text-xs font-bold font-headline transition-all text-on-surface-variant hover:text-white flex items-center gap-1.5';
+        prices.forEach((el) => {
+          el.textContent = el.getAttribute('data-monthly');
+        });
+      });
+
+      annualBtn.addEventListener('click', () => {
+        annualBtn.className = 'px-5 py-2 rounded-full text-xs font-bold font-headline transition-all bg-primary-container text-white shadow-sm flex items-center gap-1.5';
+        monthlyBtn.className = 'px-5 py-2 rounded-full text-xs font-bold font-headline transition-all text-on-surface-variant hover:text-white';
+        prices.forEach((el) => {
+          el.textContent = el.getAttribute('data-annual');
+        });
+      });
+    </script>
+  </body>
+</html>

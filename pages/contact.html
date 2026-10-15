@@ -1,0 +1,633 @@
+<!doctype html>
+<html class="dark" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>CINESTREAM — Contact & Feedback</title>
+        <load src="src/components/head-resources.html" />
+    </head>
+    <body
+        class="bg-surface font-body text-on-surface antialiased selection:bg-primary-container selection:text-white min-h-screen flex flex-col justify-between"
+    >
+        <load src="src/components/header.html" />
+
+        <!-- MAIN BODY CONTENT -->
+        <main class="w-full pt-28 pb-20 flex-grow">
+            <!-- HERO HEADER SECTION -->
+            <section class="relative w-full overflow-hidden mb-12">
+                <!-- Ambient Glow Elements -->
+                <div
+                    class="absolute top-0 left-1/2 -translate-x-1/2 w-[720px] h-[280px] bg-primary-container/15 blur-[120px] pointer-events-none -z-10 rounded-full"
+                ></div>
+                <div
+                    class="absolute top-20 right-10 w-[380px] h-[220px] bg-secondary-container/10 blur-[100px] pointer-events-none -z-10 rounded-full"
+                ></div>
+
+                <div class="max-w-7xl mx-auto px-6 md:px-12 text-center pt-6 pb-4">
+                    <div
+                        class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-container-high/80 border border-white/10 text-secondary text-xs font-semibold uppercase tracking-widest mb-4 shadow-lg"
+                    >
+                        <span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+                        CineStream Global Concierge
+                    </div>
+                    <h1
+                        class="font-headline text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight uppercase leading-tight mb-4"
+                    >
+                        How Can We <span class="text-primary-container">Help You?</span>
+                    </h1>
+                    <p
+                        class="text-base sm:text-lg text-on-surface-variant max-w-2xl mx-auto font-normal leading-relaxed"
+                    >
+                        Get in touch with our cinema tech support or studio partnership team. Whether it’s 4K streaming
+                        performance, account queries, or content licensing, we are here 24/7.
+                    </p>
+
+                    <!-- Quick Contact Pills -->
+                    <div class="flex flex-wrap items-center justify-center gap-3 mt-8">
+                        <a
+                            href="#contact-form"
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low border border-white/10 text-xs font-medium text-white hover:bg-surface-container hover:border-primary-container/40 transition-all"
+                        >
+                            <span class="material-symbols-outlined text-[16px] text-primary">chat</span>
+                            Send Feedback Ticket
+                        </a>
+                        <a
+                            href="#live-chat-card"
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low border border-white/10 text-xs font-medium text-white hover:bg-surface-container hover:border-primary-container/40 transition-all"
+                        >
+                            <span class="material-symbols-outlined text-[16px] text-green-400">headset_mic</span>
+                            Live Concierge (Online)
+                        </a>
+                        <a
+                            href="#faq-section"
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low border border-white/10 text-xs font-medium text-white hover:bg-surface-container hover:border-primary-container/40 transition-all"
+                        >
+                            <span class="material-symbols-outlined text-[16px] text-secondary">help_outline</span>
+                            Quick Troubleshooting
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2-COLUMN MAIN INTERACTION GRID -->
+            <section class="max-w-7xl mx-auto px-6 md:px-12 mb-20">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- LEFT COLUMN: Interactive Contact & Feedback Form (7 cols) -->
+                    <div
+                        class="lg:col-span-7 bg-surface-container-low/90 backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-8 shadow-[0_20px_60px_rgba(0,0,0,0.8)] relative overflow-hidden"
+                        id="contact-form"
+                    >
+                        <!-- Top subtle bar -->
+                        <div
+                            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-container via-secondary-container to-transparent"
+                        ></div>
+
+                        <div class="flex items-center justify-between pb-6 border-b border-white/5 mb-6">
+                            <div>
+                                <h2 class="font-headline text-2xl font-bold text-white tracking-tight">
+                                    Direct Support Ticket
+                                </h2>
+                                <p class="text-xs text-on-surface-variant mt-1">
+                                    Average response time: &lt; 15 minutes during peak hours
+                                </p>
+                            </div>
+                            <div
+                                class="hidden sm:flex items-center gap-2 text-xs text-primary font-semibold bg-primary-container/10 border border-primary-container/20 px-3 py-1.5 rounded-full"
+                            >
+                                <span class="material-symbols-outlined text-[16px]">verified</span>
+                                Ticket Priority: High
+                            </div>
+                        </div>
+
+                        <!-- Feedback Form -->
+                        <form id="support-ticket-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                            <!-- Name & Email fields -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="space-y-1.5">
+                                    <label class="text-xs font-medium text-on-surface flex items-center gap-1">
+                                        <span>Full Name</span>
+                                        <span class="text-primary-container">*</span>
+                                    </label>
+                                    <div class="relative flex items-center">
+                                        <span
+                                            class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[18px]"
+                                            >person</span
+                                        >
+                                        <input
+                                            required
+                                            type="text"
+                                            placeholder="Marcus Vance"
+                                            class="w-full bg-surface-container-lowest/90 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-xs font-medium text-on-surface flex items-center gap-1">
+                                        <span>Email Address</span>
+                                        <span class="text-primary-container">*</span>
+                                    </label>
+                                    <div class="relative flex items-center">
+                                        <span
+                                            class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[18px]"
+                                            >mail</span
+                                        >
+                                        <input
+                                            required
+                                            type="email"
+                                            placeholder="marcus.v@cinestream.com"
+                                            class="w-full bg-surface-container-lowest/90 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dropdown: Issue Classification -->
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-medium text-on-surface flex items-center gap-1">
+                                    <span>Inquiry Category</span>
+                                    <span class="text-primary-container">*</span>
+                                </label>
+                                <div class="relative flex items-center">
+                                    <span
+                                        class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[18px]"
+                                        >category</span
+                                    >
+                                    <select
+                                        required
+                                        id="issue-category"
+                                        onchange="toggleMovieTitleField(this.value)"
+                                        class="w-full bg-surface-container-lowest/90 border border-white/10 rounded-xl pl-10 pr-10 py-3 text-sm text-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container appearance-none cursor-pointer transition-all"
+                                    >
+                                        <option value="player-playback" class="bg-surface-container text-white">
+                                            Báo lỗi phát phim / Video Player (Buffering, Audio Sync, 4K HDR)
+                                        </option>
+                                        <option value="billing-subscription" class="bg-surface-container text-white">
+                                            Vấn đề thanh toán & Gói cước (VIP Ultra, Gia hạn, Hóa đơn)
+                                        </option>
+                                        <option value="content-licensing" class="bg-surface-container text-white">
+                                            Hợp tác bản quyền nội dung & Studio Partnership
+                                        </option>
+                                        <option value="feature-suggestion" class="bg-surface-container text-white">
+                                            Góp ý tính năng mới & Trải nghiệm giao diện
+                                        </option>
+                                        <option value="account-security" class="bg-surface-container text-white">
+                                            Bảo mật tài khoản & Đăng nhập đa thiết bị
+                                        </option>
+                                    </select>
+                                    <span
+                                        class="material-symbols-outlined absolute right-3.5 text-on-surface-variant text-[20px] pointer-events-none"
+                                        >expand_more</span
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Optional: Movie Title Input (Revealed / Highlighted on player issue) -->
+                            <div class="space-y-1.5 transition-all duration-300" id="movie-title-container">
+                                <div class="flex items-center justify-between">
+                                    <label class="text-xs font-medium text-on-surface flex items-center gap-1">
+                                        <span>Affected Movie / Episode Title</span>
+                                        <span class="text-on-surface-variant text-[11px]">(Optional)</span>
+                                    </label>
+                                    <span class="text-[11px] text-secondary font-medium">e.g. Neon Horizon 2088</span>
+                                </div>
+                                <div class="relative flex items-center">
+                                    <span
+                                        class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[18px]"
+                                        >movie</span
+                                    >
+                                    <input
+                                        type="text"
+                                        placeholder="Tựa phim gặp sự cố (ví dụ: Neon Horizon 2088 - 4K Dolby Atmos)"
+                                        class="w-full bg-surface-container-lowest/90 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- Textarea: Detailed Message -->
+                            <div class="space-y-1.5">
+                                <div class="flex items-center justify-between">
+                                    <label class="text-xs font-medium text-on-surface flex items-center gap-1">
+                                        <span>Detailed Description & Diagnostics</span>
+                                        <span class="text-primary-container">*</span>
+                                    </label>
+                                    <span class="text-[11px] text-on-surface-variant"
+                                        >Include device or browser type if technical</span
+                                    >
+                                </div>
+                                <textarea
+                                    required
+                                    rows="4"
+                                    placeholder="Please describe the issue or your studio proposal with as much detail as possible..."
+                                    class="w-full bg-surface-container-lowest/90 border border-white/10 rounded-xl p-4 text-sm text-white placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all resize-none"
+                                ></textarea>
+                            </div>
+
+                            <!-- Diagnostic Checkbox & Terms -->
+                            <div class="flex items-start gap-3 pt-1">
+                                <input
+                                    type="checkbox"
+                                    id="diagnostics-check"
+                                    checked
+                                    class="mt-1 w-4 h-4 rounded accent-primary-container bg-surface-container-lowest border-white/20 cursor-pointer"
+                                />
+                                <label
+                                    for="diagnostics-check"
+                                    class="text-xs text-on-surface-variant cursor-pointer leading-relaxed"
+                                >
+                                    Attach anonymous playback bitrate & client diagnostic telemetry to help engineers
+                                    resolve streaming anomalies rapidly.
+                                </label>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="pt-2">
+                                <button
+                                    type="submit"
+                                    id="submit-ticket-btn"
+                                    class="w-full py-3.5 px-8 rounded-xl bg-primary-container hover:bg-[#ff1a26] text-white font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2.5 glow-crimson active:scale-[0.99] cursor-pointer shadow-lg"
+                                >
+                                    <span class="material-symbols-outlined text-[20px]">send</span>
+                                    <span>Send Support Message</span>
+                                </button>
+                            </div>
+
+                            <!-- Success Banner (Hidden by default) -->
+                            <div
+                                id="form-success-alert"
+                                class="hidden p-4 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-emerald-200 text-xs flex items-center gap-3 animate-fade-in"
+                            >
+                                <span class="material-symbols-outlined text-emerald-400 text-[24px]">check_circle</span>
+                                <div>
+                                    <span class="font-bold text-white block"
+                                        >Ticket #CINE-88291 created successfully!</span
+                                    >
+                                    Our cinema engineering team has received your inquiry and sent an acknowledgment
+                                    receipt to your email.
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- RIGHT COLUMN: Direct Support Channels Bento Cards (5 cols) -->
+                    <div class="lg:col-span-5 flex flex-col gap-5">
+                        <!-- CARD 1: 24/7 CineStream Concierge Live Chat -->
+                        <div
+                            class="bg-gradient-to-br from-surface-container-high/90 to-surface-container-low border border-white/10 rounded-3xl p-6 shadow-xl relative overflow-hidden group hover:border-primary-container/40 transition-all duration-300"
+                            id="live-chat-card"
+                        >
+                            <div
+                                class="absolute -right-8 -bottom-8 w-32 h-32 bg-primary-container/10 rounded-full blur-2xl group-hover:bg-primary-container/20 transition-all"
+                            ></div>
+
+                            <div class="flex items-start justify-between mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-primary-container/20 border border-primary-container/30 flex items-center justify-center text-primary-container"
+                                >
+                                    <span class="material-symbols-outlined text-[26px]">headset_mic</span>
+                                </div>
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 text-[11px] font-semibold"
+                                >
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    Concierge Online
+                                </span>
+                            </div>
+
+                            <h3 class="font-headline text-xl font-bold text-white mb-1.5">24/7 Live Concierge</h3>
+                            <p class="text-xs text-on-surface-variant mb-5 leading-relaxed">
+                                Chat in real-time with our dedicated playback engineers for immediate streaming buffer
+                                diagnostics or VIP Ultra plan assistance.
+                            </p>
+
+                            <button
+                                onclick="launchConciergeChat()"
+                                class="w-full py-2.5 px-4 rounded-xl bg-surface-container-highest hover:bg-primary-container text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all duration-300 border border-white/10 cursor-pointer shadow"
+                            >
+                                <span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+                                <span>Start Live Session</span>
+                            </button>
+                        </div>
+
+                        <!-- CARD 2: Hotline & Dedicated Direct Lines -->
+                        <div
+                            class="bg-surface-container-low/90 backdrop-blur-md border border-white/10 rounded-3xl p-6 shadow-xl"
+                        >
+                            <div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-secondary-container/20 border border-secondary-container/30 flex items-center justify-center text-secondary"
+                                >
+                                    <span class="material-symbols-outlined text-[22px]">phone_in_talk</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-headline text-base font-bold text-white">
+                                        Emergency Hotline & Direct Lines
+                                    </h3>
+                                    <p class="text-[11px] text-on-surface-variant">Toll-free worldwide cinema desk</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3 pt-1">
+                                <div
+                                    class="p-3 rounded-xl bg-surface-container-lowest/80 border border-white/5 flex items-center justify-between text-xs"
+                                >
+                                    <div>
+                                        <span class="text-on-surface-variant block text-[10px]"
+                                            >Global Subscriber Hotline</span
+                                        >
+                                        <span class="text-white font-mono font-semibold">+1 (800) 849-CINE</span>
+                                    </div>
+                                    <span class="px-2 py-0.5 rounded bg-surface-container-high text-white text-[10px]"
+                                        >24/7 Toll-free</span
+                                    >
+                                </div>
+                                <div
+                                    class="p-3 rounded-xl bg-surface-container-lowest/80 border border-white/5 flex items-center justify-between text-xs"
+                                >
+                                    <div>
+                                        <span class="text-on-surface-variant block text-[10px]"
+                                            >Direct Engineering Dispatch</span
+                                        >
+                                        <span class="text-white font-mono font-semibold">support@cinestream.io</span>
+                                    </div>
+                                    <span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary text-[10px]"
+                                        >Fast Lane</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 3: Headquarters & Studio Office (Map Visual Mockup) -->
+                        <div
+                            class="bg-surface-container-low/90 backdrop-blur-md border border-white/10 rounded-3xl p-6 shadow-xl"
+                        >
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center gap-2.5">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
+                                    <h3 class="font-headline text-sm font-bold text-white uppercase tracking-wider">
+                                        CineStream Global Studios
+                                    </h3>
+                                </div>
+                                <span class="text-[10px] font-semibold text-on-surface-variant uppercase"
+                                    >Tokyo • LA • London</span
+                                >
+                            </div>
+
+                            <p class="text-xs text-on-surface-variant mb-3 leading-relaxed">
+                                442 Horizon Way, Innovation Media Park, Marina District, San Francisco, CA 94107
+                            </p>
+
+                            <!-- Stylized Dark Mode Map Box -->
+                            <div
+                                class="relative w-full h-28 rounded-2xl overflow-hidden border border-white/10 bg-[#0e0e10] flex items-center justify-center group cursor-pointer"
+                                title="Open Studio Location"
+                            >
+                                <!-- Grid lines pattern -->
+                                <div
+                                    class="absolute inset-0 opacity-20 bg-[radial-gradient(#ff3333_1px,transparent_1px)] [background-size:16px_16px]"
+                                ></div>
+                                <!-- Simulated roads -->
+                                <div class="absolute w-full h-[2px] bg-white/10 top-1/2 -translate-y-1/2"></div>
+                                <div class="absolute w-[2px] h-full bg-white/10 left-1/3"></div>
+                                <div class="absolute w-[2px] h-full bg-white/10 right-1/4 rotate-12"></div>
+
+                                <!-- Center Location Pin -->
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center shadow-[0_0_20px_rgba(229,9,20,0.8)] animate-bounce"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[18px]"
+                                            style="font-variation-settings: &quot;FILL&quot; 1"
+                                            >apartment</span
+                                        >
+                                    </div>
+                                    <span
+                                        class="mt-1 px-2 py-0.5 rounded bg-black/80 backdrop-blur-md border border-white/20 text-[10px] font-bold text-white"
+                                        >CineStream HQ</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 4: Copyright & Content Acquisition DMCA Desk -->
+                        <div
+                            class="bg-surface-container-low/80 border border-white/10 rounded-2xl p-4 flex items-center justify-between gap-4"
+                        >
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-secondary text-[22px]">gavel</span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">DMCA & Studio Rights Portal</h4>
+                                    <p class="text-[11px] text-on-surface-variant">
+                                        Licensing verification & IP dispute
+                                    </p>
+                                </div>
+                            </div>
+                            <a
+                                href="mailto:licensing@cinestream.io"
+                                class="text-xs text-primary hover:underline font-medium flex items-center gap-1 flex-shrink-0"
+                            >
+                                Contact Legal
+                                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- QUICK HELP ACCORDION (FAQ SECTION) -->
+            <section class="max-w-4xl mx-auto px-6 md:px-12" id="faq-section">
+                <div class="text-center mb-10">
+                    <div
+                        class="inline-flex items-center gap-1.5 text-xs text-primary font-semibold uppercase tracking-widest mb-2"
+                    >
+                        <span class="material-symbols-outlined text-[16px]">help_center</span>
+                        Immediate Answers
+                    </div>
+                    <h2 class="font-headline text-3xl font-extrabold text-white tracking-tight">
+                        Frequently Asked Questions
+                    </h2>
+                    <p class="text-xs text-on-surface-variant mt-2">
+                        Find instant solutions for common player, audio, and subscription inquiries.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <!-- Item 1 -->
+                    <div
+                        class="rounded-2xl bg-surface-container-low/80 border border-white/10 overflow-hidden transition-all duration-200"
+                    >
+                        <button
+                            class="w-full px-6 py-4 flex items-center justify-between text-left text-sm font-semibold text-white hover:text-primary transition-colors cursor-pointer"
+                            onclick="toggleAccordion(1)"
+                        >
+                            <span class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary-container text-[20px]"
+                                    >videocam</span
+                                >
+                                Làm thế nào để bật chuẩn 4K Ultra HD và Dolby Vision trên trình duyệt?
+                            </span>
+                            <span class="material-symbols-outlined transition-transform duration-200" id="faq-icon-1"
+                                >expand_more</span
+                            >
+                        </button>
+                        <div
+                            class="px-6 pb-4 pt-1 text-xs text-on-surface-variant leading-relaxed hidden"
+                            id="faq-content-1"
+                        >
+                            CineStream tự động phát hiện độ phân giải màn hình và băng thông mạng của bạn. Để ép phát 4K
+                            Master, nhấp vào biểu tượng bánh răng cài đặt ở góc phải video player, chọn
+                            <strong class="text-white">Quality: 2160p (4K UHD)</strong> và đảm bảo bạn đang sử dụng
+                            trình duyệt hỗ trợ phần cứng giải mã HEVC/AV1 (như Safari hoặc Microsoft Edge).
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div
+                        class="rounded-2xl bg-surface-container-low/80 border border-white/10 overflow-hidden transition-all duration-200"
+                    >
+                        <button
+                            class="w-full px-6 py-4 flex items-center justify-between text-left text-sm font-semibold text-white hover:text-primary transition-colors cursor-pointer"
+                            onclick="toggleAccordion(2)"
+                        >
+                            <span class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary-container text-[20px]"
+                                    >spatial_audio</span
+                                >
+                                Thiết bị nào hỗ trợ giải mã âm thanh vòm Dolby Atmos Spatial Audio?
+                            </span>
+                            <span class="material-symbols-outlined transition-transform duration-200" id="faq-icon-2"
+                                >expand_more</span
+                            >
+                        </button>
+                        <div
+                            class="px-6 pb-4 pt-1 text-xs text-on-surface-variant leading-relaxed hidden"
+                            id="faq-content-2"
+                        >
+                            Âm thanh không gian Dolby Atmos 7.1.4 được kích hoạt trên ứng dụng Apple TV 4K, Smart TV (LG
+                            OLED, Samsung Neo QLED, Sony Bravia), soundbar có chứng nhận Atmos và tai nghe tương thích
+                            Spatial Audio trên macOS/iOS/Windows 11.
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div
+                        class="rounded-2xl bg-surface-container-low/80 border border-white/10 overflow-hidden transition-all duration-200"
+                    >
+                        <button
+                            class="w-full px-6 py-4 flex items-center justify-between text-left text-sm font-semibold text-white hover:text-primary transition-colors cursor-pointer"
+                            onclick="toggleAccordion(3)"
+                        >
+                            <span class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary-container text-[20px]"
+                                    >credit_card</span
+                                >
+                                Làm sao để nâng cấp hoặc thay đổi phương thức thanh toán VIP Ultra?
+                            </span>
+                            <span class="material-symbols-outlined transition-transform duration-200" id="faq-icon-3"
+                                >expand_more</span
+                            >
+                        </button>
+                        <div
+                            class="px-6 pb-4 pt-1 text-xs text-on-surface-variant leading-relaxed hidden"
+                            id="faq-content-3"
+                        >
+                            Bạn có thể truy cập mục
+                            <strong class="text-white">Account Settings &gt; CineStream Plans</strong> ở góc trên bên
+                            phải màn hình. Tại đây hỗ trợ thanh toán qua thẻ quốc tế (Visa, Mastercard, AMEX), Apple
+                            Pay, Google Pay hoặc chuyển đổi chu kỳ thanh toán năm để nhận ưu đãi 20%.
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div
+                        class="rounded-2xl bg-surface-container-low/80 border border-white/10 overflow-hidden transition-all duration-200"
+                    >
+                        <button
+                            class="w-full px-6 py-4 flex items-center justify-between text-left text-sm font-semibold text-white hover:text-primary transition-colors cursor-pointer"
+                            onclick="toggleAccordion(4)"
+                        >
+                            <span class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary-container text-[20px]"
+                                    >movie_edit</span
+                                >
+                                Hãng phim hoặc nhà sản xuất độc lập gửi phim tham gia CineStream như thế nào?
+                            </span>
+                            <span class="material-symbols-outlined transition-transform duration-200" id="faq-icon-4"
+                                >expand_more</span
+                            >
+                        </button>
+                        <div
+                            class="px-6 pb-4 pt-1 text-xs text-on-surface-variant leading-relaxed hidden"
+                            id="faq-content-4"
+                        >
+                            Vui lòng chọn mục
+                            <strong class="text-white">"Hợp tác bản quyền nội dung & Studio Partnership"</strong> trong
+                            biểu mẫu gửi yêu cầu bên trên hoặc gửi email trực tiếp kèm DCP/ProRes trailer và thông tin
+                            phim về
+                            <code class="text-primary bg-surface-container px-1.5 py-0.5 rounded"
+                                >acquisitions@cinestream.io</code
+                            >. Ban giám tuyển liên hoan phim sẽ phản hồi trong 5 ngày làm việc.
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <load src="src/components/footer.html" />
+
+        <!-- INTERACTIVE SCRIPTS -->
+        <script>
+            function toggleMovieTitleField(val) {
+                const container = document.getElementById("movie-title-container");
+                if (val === "player-playback") {
+                    container.classList.remove("opacity-60");
+                } else {
+                    container.classList.add("opacity-80");
+                }
+            }
+
+            function handleFormSubmit(e) {
+                e.preventDefault();
+                const btn = document.getElementById("submit-ticket-btn");
+                const alert = document.getElementById("form-success-alert");
+
+                btn.disabled = true;
+                btn.innerHTML =
+                    '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span><span>Encrypting & Submitting...</span>';
+
+                setTimeout(() => {
+                    btn.classList.add("hidden");
+                    alert.classList.remove("hidden");
+                }, 900);
+            }
+
+            function toggleAccordion(id) {
+                const content = document.getElementById(`faq-content-${id}`);
+                const icon = document.getElementById(`faq-icon-${id}`);
+                const isHidden = content.classList.contains("hidden");
+
+                // Close all first for clean accordion
+                [1, 2, 3, 4].forEach((i) => {
+                    const c = document.getElementById(`faq-content-${i}`);
+                    const ic = document.getElementById(`faq-icon-${i}`);
+                    if (c && ic) {
+                        c.classList.add("hidden");
+                        ic.style.transform = "rotate(0deg)";
+                    }
+                });
+
+                if (isHidden) {
+                    content.classList.remove("hidden");
+                    icon.style.transform = "rotate(180deg)";
+                }
+            }
+
+            function launchConciergeChat() {
+                alert(
+                    "CineStream 24/7 Concierge Chat session initiated! Connecting to Lead Streaming Playback Engineer..."
+                );
+            }
+        </script>
+        <script type="module" src="/js/nav.js"></script>
+    </body>
+</html>

@@ -1,0 +1,443 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>404: Lost in the Cutting Room - CineStream</title>
+        <load src="src/components/head-resources.html" />
+        <style>
+            .material-symbols-outlined {
+                font-family: "Material Symbols Outlined";
+                font-weight: normal;
+                font-style: normal;
+                font-size: 24px;
+                line-height: 1;
+                letter-spacing: normal;
+                text-transform: none;
+                display: inline-block;
+                white-space: nowrap;
+                word-wrap: normal;
+                direction: ltr;
+                -webkit-font-feature-settings: "liga";
+                -webkit-font-smoothing: antialiased;
+            }
+
+            /* Cinematic Scanlines Effect */
+            .crt-scanlines {
+                background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.45) 50%),
+                    linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 128, 0.01), rgba(0, 0, 255, 0.03));
+                background-size:
+                    100% 3px,
+                    6px 100%;
+            }
+
+            /* Chromatic Aberration Text */
+            .glitch-404 {
+                position: relative;
+                text-shadow:
+                    -2px 0 0 rgba(229, 9, 20, 0.8),
+                    2px 0 0 rgba(0, 229, 255, 0.7);
+                animation: glitch-anim 4s infinite ease-in-out;
+            }
+
+            @keyframes glitch-anim {
+                0%,
+                85%,
+                100% {
+                    transform: translate(0);
+                    text-shadow:
+                        -2px 0 0 rgba(229, 9, 20, 0.8),
+                        2px 0 0 rgba(0, 229, 255, 0.7);
+                }
+                86% {
+                    transform: translate(-3px, 2px);
+                    text-shadow:
+                        2px -2px 0 #e50914,
+                        -2px 2px 0 #00e5ff;
+                }
+                88% {
+                    transform: translate(3px, -1px);
+                    text-shadow:
+                        -3px 1px 0 #e50914,
+                        3px -1px 0 #00e5ff;
+                }
+                90% {
+                    transform: translate(-2px, -2px);
+                    text-shadow:
+                        3px 2px 0 #e50914,
+                        -3px -1px 0 #00e5ff;
+                }
+                93% {
+                    transform: translate(0);
+                    text-shadow:
+                        -2px 0 0 rgba(229, 9, 20, 0.8),
+                        2px 0 0 rgba(0, 229, 255, 0.7);
+                }
+            }
+
+            /* Film Sprocket Holes Pattern */
+            .film-strip-sprockets {
+                background-image: radial-gradient(#131315 35%, transparent 36%),
+                    radial-gradient(#131315 35%, transparent 36%);
+                background-position:
+                    0 0,
+                    0 16px;
+                background-size: 14px 32px;
+            }
+
+            /* Projector Light Cone Beam */
+            .projector-beam {
+                background: radial-gradient(
+                    ellipse at 50% 0%,
+                    rgba(229, 9, 20, 0.18) 0%,
+                    rgba(255, 180, 170, 0.05) 35%,
+                    transparent 75%
+                );
+            }
+
+            /* Custom Pulse animation for recording dot */
+            @keyframes recPulse {
+                0%,
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                50% {
+                    opacity: 0.3;
+                    transform: scale(0.85);
+                }
+            }
+            .animate-rec {
+                animation: recPulse 1.8s ease-in-out infinite;
+            }
+        </style>
+    </head>
+    <body
+        class="bg-surface-container-lowest text-on-surface min-h-screen flex flex-col font-body-md selection:bg-primary-container selection:text-white relative overflow-x-hidden"
+    >
+        <!-- Ambient CRT / Film Grain Overlay -->
+        <div class="pointer-events-none fixed inset-0 z-40 crt-scanlines opacity-50 mix-blend-overlay"></div>
+        <!-- Cinematic Projector Volumetric Beam from Top -->
+        <div
+            class="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2 w-[140vw] max-w-[1200px] h-[550px] projector-beam z-0 blur-2xl"
+        ></div>
+        <!-- Ambient Background Lens Glows -->
+        <div
+            class="pointer-events-none fixed -top-24 left-1/4 size-96 bg-primary-container/10 rounded-full blur-[120px] z-0"
+        ></div>
+        <div
+            class="pointer-events-none fixed top-1/3 right-10 size-80 bg-tertiary-container/5 rounded-full blur-[140px] z-0"
+        ></div>
+        <!-- ================= TOP HEADER (Shared Component Integration) ================= -->
+        <load src="src/components/header.html" />
+        <!-- ================= HERO 404 SECTION ================= -->
+        <main
+            class="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-10 pb-16 text-center max-w-5xl mx-auto w-full"
+        >
+            <!-- Vintage Film Clapper / Status Pill -->
+            <div
+                class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-container-low/90 border border-outline-variant/60 shadow-lg mb-6 backdrop-blur-md"
+            >
+                <span class="size-2 rounded-full bg-primary-container animate-rec"></span>
+                <span class="font-label-badge text-on-surface-variant tracking-widest text-[11px] uppercase">
+                    SCENE 404 • TAKE FAILED • REEL MISSING
+                </span>
+                <span class="material-symbols-outlined text-primary text-sm ml-0.5" data-icon="videocam_off"
+                    >videocam_off</span
+                >
+            </div>
+            <!-- Centerpiece Graphic: Broken 35mm Film Reel & Chromatic Aberration 404 -->
+            <div class="relative my-2 select-none flex items-center justify-center w-full max-w-md">
+                <!-- Ambient Backlight Ring -->
+                <div
+                    class="absolute inset-0 m-auto size-64 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"
+                ></div>
+                <!-- Stylized 35mm Celluloid Frame Mockup Graphic -->
+                <div class="relative flex items-center justify-center w-full py-4">
+                    <!-- Giant Chromatic 404 Number -->
+                    <div
+                        class="glitch-404 font-headline-xl font-black text-[100px] sm:text-[140px] md:text-[168px] leading-none tracking-tighter text-white"
+                    >
+                        404
+                    </div>
+                    <!-- Floating Film Artifact Graphic (Overlayed aesthetic badge) -->
+                    <div
+                        class="absolute -right-2 top-2 rotate-12 bg-surface-container border border-outline-variant/80 rounded-lg p-2.5 shadow-2xl backdrop-blur-sm hidden sm:block"
+                    >
+                        <div
+                            class="flex items-center gap-1.5 text-secondary text-[11px] font-mono tracking-tight font-semibold border-b border-outline-variant/40 pb-1 mb-1"
+                        >
+                            <span class="material-symbols-outlined text-xs" data-icon="movie_edit">movie_edit</span>
+                            <span>REEL_CUT_09.RAW</span>
+                        </div>
+                        <p class="text-[10px] text-outline text-left leading-tight">
+                            FRAME: #404-DROP<br />STATUS: CORRUPT
+                        </p>
+                    </div>
+                    <div
+                        class="absolute -left-2 bottom-4 -rotate-6 bg-surface-container-low border border-primary-container/40 rounded-lg px-2.5 py-1.5 shadow-xl backdrop-blur-sm hidden sm:flex items-center gap-2"
+                    >
+                        <span class="material-symbols-outlined text-primary text-sm" data-icon="warning">warning</span>
+                        <span class="text-[11px] font-mono text-primary font-medium">AUDIO-SYNC LOST</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Typography Headline & Narrative Narrative -->
+            <h1
+                class="text-white font-headline-xl text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight max-w-3xl mt-2 mb-3"
+            >
+                Lost in the Cutting Room
+            </h1>
+            <p
+                class="text-on-surface-variant font-body-lg text-sm sm:text-base md:text-lg max-w-xl mx-auto leading-relaxed mb-8"
+            >
+                The reel you are looking for has been cut from the theatrical cut, burned in projector transit, or never
+                existed in our master archive.
+            </p>
+            <!-- Action Navigation Button Deck -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full max-w-md mb-6">
+                <a
+                    class="w-full sm:w-auto flex-1 flex items-center justify-center gap-2.5 px-6 py-3 rounded-lg bg-primary-container hover:bg-inverse-primary text-white font-label-lg font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(229,9,20,0.4)] transition-all hover:scale-[1.02] active:scale-[0.98]"
+                    href="/index.html"
+                >
+                    <span class="material-symbols-outlined text-lg" data-icon="theaters">theaters</span>
+                    <span>Return to Home Page</span>
+                </a>
+                <a
+                    class="w-full sm:w-auto flex-1 flex items-center justify-center gap-2.5 px-6 py-3 rounded-lg bg-surface-container-high/80 hover:bg-surface-bright text-white border border-outline-variant/60 font-label-lg font-semibold text-sm transition-all hover:border-outline backdrop-blur-sm"
+                    href="/pages/search_page.html"
+                >
+                    <span class="material-symbols-outlined text-lg" data-icon="search">search</span>
+                    <span>Browse Catalog</span>
+                </a>
+            </div>
+            <!-- Tertiary Assistance Link -->
+            <a
+                class="inline-flex items-center gap-1.5 text-xs text-outline hover:text-primary transition-colors font-medium group mb-14"
+                href="/pages/contact.html"
+            >
+                <span>Report broken link or contact Studio Concierge</span>
+                <span
+                    class="material-symbols-outlined text-xs transition-transform group-hover:translate-x-1"
+                    data-icon="arrow_forward"
+                    >arrow_forward</span
+                >
+            </a>
+            <!-- ================= QUICK RECOVERY: TRENDING FILMS MINI-SHELF ================= -->
+            <section class="w-full max-w-5xl border-t border-outline-variant/30 pt-10 text-left">
+                <div class="flex items-center justify-between mb-5 px-1">
+                    <div class="flex items-center gap-2.5">
+                        <span
+                            class="material-symbols-outlined text-primary-container text-xl"
+                            data-icon="local_fire_department"
+                            >local_fire_department</span
+                        >
+                        <h2 class="text-white font-headline-sm text-base sm:text-lg font-semibold tracking-tight">
+                            While you're here, check out what's trending on CineStream
+                        </h2>
+                    </div>
+                    <a
+                        class="text-xs text-primary font-semibold hover:underline hidden sm:inline-flex items-center gap-1"
+                        href="/pages/search_page.html"
+                    >
+                        <span>View full top 10</span>
+                        <span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+                    </a>
+                </div>
+                <!-- 4 Cinematic Cards Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-4">
+                    <!-- Film Card 1 -->
+                    <div
+                        class="group relative flex flex-col bg-surface-container rounded-xl overflow-hidden border border-outline-variant/40 hover:border-primary/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(0,0,0,0.6)]"
+                    >
+                        <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container-high">
+                            <img
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-alt="Cinematic movie poster for Neon Horizon 2088 set in a rain-drenched cyberpunk metropolis. Towering holographic skyscrapers bathe the dark obsidian streets in luminous crimson red and cyan neon reflections. A solitary cybernetic operative in a dark trench coat stands on a rain-slicked roof terrace looking over flying vehicles under deep dark theatrical obsidian skies."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjIux1-e9jyCEfixEkfEuPtwEwZvCKDKzghan2PzNTNqFOIRO9zqtZg_YoIk2ggjidGwmLzo2ixrmdA9gAGBEJTVUIo6rVAvucxNn2jx-BiMs2ojkMHVXjy6YER00izDoI4ieCQy5ZUtZzksqqw35sYLTof1TIqHt6zaVXfYFNkDXU-23ZOVzJ_Xr31bOW6dtC_3faRxF95kUMEZtYfSoemYDftE4FYZ7ujYTgYajEIDHBazy0KXxZ"
+                            />
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-black/40"
+                            ></div>
+                            <!-- Badges -->
+                            <div
+                                class="absolute top-2 left-2 flex items-center gap-1 px-2 py-0.5 rounded bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-bold text-secondary"
+                            >
+                                98% MATCH
+                            </div>
+                            <div
+                                class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-[9px] font-mono font-bold text-white border border-outline-variant/30"
+                            >
+                                4K UHD
+                            </div>
+                            <!-- Play hover button -->
+                            <a
+                                href="/pages/watch_a_film_page.html?id=film-1"
+                                aria-label="Play Neon Horizon 2088"
+                                class="absolute inset-0 m-auto size-11 rounded-full bg-primary-container text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg scale-90 group-hover:scale-100 duration-200"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-xl pl-0.5"
+                                    data-icon="play_arrow"
+                                    data-weight="fill"
+                                    style="font-variation-settings: &quot;FILL&quot; 1"
+                                    >play_arrow</span
+                                >
+                            </a>
+                        </div>
+                        <a href="/pages/watch_a_film_page.html?id=film-1" class="p-3 block">
+                            <h3
+                                class="text-white text-sm font-bold font-headline-sm truncate group-hover:text-primary transition-colors"
+                            >
+                                Neon Horizon 2088
+                            </h3>
+                            <p class="text-xs text-outline truncate mt-0.5">Cyberpunk • Sci-Fi Noir</p>
+                        </a>
+                    </div>
+                    <!-- Film Card 2 -->
+                    <div
+                        class="group relative flex flex-col bg-surface-container rounded-xl overflow-hidden border border-outline-variant/40 hover:border-primary/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(0,0,0,0.6)]"
+                    >
+                        <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container-high">
+                            <img
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-alt="Intense psychological sci-fi film poster titled The Silent Abyss featuring an astronaut suspended inside an eerie deep-ocean oceanic trench research vessel. Somber atmospheric bioluminescence glows in eerie indigo and cold cyan against pitch black abyssal waters. High-contrast cinematic film lighting highlights tension on the glass visor with faint red warning reflections."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSKEdw4G5EjotRzbXRUlpi5ZlD6jV7q0vbiWUeCKmM15CyCgqkwjng77OuGtKXglDGTdsu_WdQuhlLUFQlu3ZASHtOS9mwPzIILsEHklZVYG98QFUqaWsEMgDh8nKoDiNSLIsrg-dTw-_gij60dr4wfm6Qh8w4EBsTp0DA6R0D9uK5NtU7kJnPZr6rJ70F3qhvHCzwlxoG_Eq9ovN0VvLygzBDl1yHgYhEfNSDIXmYkKGzukqkOmZm"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-black/40"
+                            ></div>
+                            <div
+                                class="absolute top-2 left-2 flex items-center gap-1 px-2 py-0.5 rounded bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-bold text-secondary"
+                            >
+                                96% MATCH
+                            </div>
+                            <div
+                                class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-[9px] font-mono font-bold text-white border border-outline-variant/30"
+                            >
+                                IMAX
+                            </div>
+                            <a
+                                href="/pages/watch_a_film_page.html?id=film-2"
+                                aria-label="Play The Silent Abyss"
+                                class="absolute inset-0 m-auto size-11 rounded-full bg-primary-container text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg scale-90 group-hover:scale-100 duration-200"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-xl pl-0.5"
+                                    data-icon="play_arrow"
+                                    data-weight="fill"
+                                    style="font-variation-settings: &quot;FILL&quot; 1"
+                                    >play_arrow</span
+                                >
+                            </a>
+                        </div>
+                        <a href="/pages/watch_a_film_page.html?id=film-2" class="p-3 block">
+                            <h3
+                                class="text-white text-sm font-bold font-headline-sm truncate group-hover:text-primary transition-colors"
+                            >
+                                The Silent Abyss
+                            </h3>
+                            <p class="text-xs text-outline truncate mt-0.5">Deep Sci-Fi • Thriller</p>
+                        </a>
+                    </div>
+                    <!-- Film Card 3 -->
+                    <div
+                        class="group relative flex flex-col bg-surface-container rounded-xl overflow-hidden border border-outline-variant/40 hover:border-primary/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(0,0,0,0.6)]"
+                    >
+                        <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container-high">
+                            <img
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-alt="High-octane aerial military action poster for Sovereign Skies showcasing futuristic stealth fighter jets weaving through dramatic sun-streaked volcanic storm clouds. Rich obsidian shadows blend with fiery red engine afterburners and golden hour sunset highlights. Cinematic wide-angle lens with subtle anamorphic lens flares."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr7RG2a8ox0v9aSzOYcjMwHj-joN-x1kzptI08l6YS4j3kbKlTGj1u6ZvRKoIaexTpB8li0QpKtRLwbUHanB7adkX1F3WYeGmb8cFhlnKVmHdRFOZv--0HCa8ceMOJOE6lMqv-vCSaqV-wVSQ7agdOPz7_iwSrZkuQWnb5T4adWV6Fx0rAoJ0Xy-jZvoPHY-M-ZfiCLIAkWyRUf3RDuxzsLXnozP5Z8naknRIJhvfZRoUzA_ec389p"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-black/40"
+                            ></div>
+                            <div
+                                class="absolute top-2 left-2 flex items-center gap-1 px-2 py-0.5 rounded bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-bold text-secondary"
+                            >
+                                97% MATCH
+                            </div>
+                            <div
+                                class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-[9px] font-mono font-bold text-white border border-outline-variant/30"
+                            >
+                                ATMOS
+                            </div>
+                            <a
+                                href="/pages/watch_a_film_page.html?id=film-3"
+                                aria-label="Play Sovereign Skies"
+                                class="absolute inset-0 m-auto size-11 rounded-full bg-primary-container text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg scale-90 group-hover:scale-100 duration-200"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-xl pl-0.5"
+                                    data-icon="play_arrow"
+                                    data-weight="fill"
+                                    style="font-variation-settings: &quot;FILL&quot; 1"
+                                    >play_arrow</span
+                                >
+                            </a>
+                        </div>
+                        <a href="/pages/watch_a_film_page.html?id=film-3" class="p-3 block">
+                            <h3
+                                class="text-white text-sm font-bold font-headline-sm truncate group-hover:text-primary transition-colors"
+                            >
+                                Sovereign Skies
+                            </h3>
+                            <p class="text-xs text-outline truncate mt-0.5">Aerial Action • Adventure</p>
+                        </a>
+                    </div>
+                    <!-- Film Card 4 -->
+                    <div
+                        class="group relative flex flex-col bg-surface-container rounded-xl overflow-hidden border border-outline-variant/40 hover:border-primary/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(0,0,0,0.6)]"
+                    >
+                        <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container-high">
+                            <img
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-alt="Sophisticated crime heist thriller poster for Velvet Vault displaying an ornate European bank vault door slightly cracked open in shadow. Intense red security laser crossbeams intersect dramatically across brushed dark steel surfaces. Elegant high-contrast neo-noir lighting with luxury velvet deep shadows and metallic accents."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB0fMyIxEbP24pk6NcnVSdHdXpSthoDPu3WfzVJxxKvRkxV04N9oOWqUo1kEgmjvv3WZMDSzyHO9GyXrTOznVrKw7byn7lAoPaPEwN6oR08fvKcXWvf9-f2EhkseweOJo7QXQiYoLs96N-Vk7dx9CTs18JOf-7EKpGwMJX9EymnETRdjwcDlSy3qWc8R91tr5swMXdXIlm212HWRGJi1VIjUGnLb3nkqcdtDoAjqLLvadGXt-i5xcm"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-black/40"
+                            ></div>
+                            <div
+                                class="absolute top-2 left-2 flex items-center gap-1 px-2 py-0.5 rounded bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-bold text-secondary"
+                            >
+                                92% MATCH
+                            </div>
+                            <div
+                                class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-[9px] font-mono font-bold text-white border border-outline-variant/30"
+                            >
+                                4K
+                            </div>
+                            <a
+                                href="/pages/watch_a_film_page.html?id=film-4"
+                                aria-label="Play Velvet Vault"
+                                class="absolute inset-0 m-auto size-11 rounded-full bg-primary-container text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg scale-90 group-hover:scale-100 duration-200"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-xl pl-0.5"
+                                    data-icon="play_arrow"
+                                    data-weight="fill"
+                                    style="font-variation-settings: &quot;FILL&quot; 1"
+                                    >play_arrow</span
+                                >
+                            </a>
+                        </div>
+                        <a href="/pages/watch_a_film_page.html?id=film-4" class="p-3 block">
+                            <h3
+                                class="text-white text-sm font-bold font-headline-sm truncate group-hover:text-primary transition-colors"
+                            >
+                                Velvet Vault
+                            </h3>
+                            <p class="text-xs text-outline truncate mt-0.5">Heist • Crime Mystery</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <load src="src/components/footer.html" />
+        <script type="module" src="/js/nav.js"></script>
+    </body>
+</html>

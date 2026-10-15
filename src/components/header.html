@@ -1,0 +1,249 @@
+<!-- ==================== CINESTREAM BRAND TOP NAV BAR ==================== -->
+<header
+    class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-2xl transition-all duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.85)]"
+>
+    <div
+        class="h-20 w-full px-margin-mobile md:px-margin-desktop flex items-center justify-between gap-space-lg"
+    >
+        <div class="flex items-center gap-space-xl flex-shrink-0">
+            <a class="flex items-center gap-2.5 group" data-path="home" href="/index.html"
+                ><img
+                    alt="CINESTREAM Logo"
+                    class="h-9 w-9 rounded-xl object-contain shadow-[0_0_20px_rgba(229,9,20,0.35)] transition-transform duration-300 group-hover:scale-105"
+                    src="/logo.png"
+                /><span
+                    class="font-headline-lg text-headline-lg font-bold tracking-tight text-on-surface hidden sm:inline"
+                    >CINE<span class="text-primary-container">STREAM</span></span
+                ></a
+            >
+            <nav
+                class="hidden xl:flex items-center gap-space-md 2xl:gap-space-lg"
+                data-active-classes="text-on-surface font-semibold"
+            >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="home"
+                    href="/index.html"
+                    >Home</a
+                >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="movies"
+                    href="/pages/search_page.html?type=movie"
+                    >Movies</a
+                >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="series"
+                    href="/pages/series_detail.html"
+                    >Series</a
+                >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="pricing"
+                    href="/pages/pricing.html"
+                    >Pricing</a
+                >
+                <a
+                    class="relative py-3 px-3.5 flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-200 whitespace-nowrap cursor-pointer select-none border-b-2 border-transparent before:absolute before:-inset-y-4 before:inset-x-0"
+                    data-path="contact-help"
+                    href="/pages/contact.html"
+                    >Contact &amp; Help</a
+                >
+            </nav>
+        </div>
+        <div class="flex items-center gap-space-md md:gap-space-lg flex-shrink-0">
+            <div class="relative group flex items-center">
+                <div
+                    class="flex items-center bg-surface-container-lowest/80 backdrop-blur-md rounded-full px-space-md py-space-xs transition-all duration-300 w-44 md:w-64 focus-within:w-72 md:focus-within:w-80 shadow-[0_2px_12px_rgba(0,0,0,0.5)]"
+                >
+                    <span
+                        class="material-symbols-outlined text-on-surface-variant text-[20px] mr-space-sm select-none"
+                        >search</span
+                    ><input
+                        class="w-full bg-transparent text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none"
+                        placeholder="Titles, people, genres..."
+                        type="search"
+                    />
+                </div>
+                <div
+                    class="absolute right-0 top-full mt-2 w-80 bg-surface-container-high/95 backdrop-blur-2xl rounded-xl p-space-sm shadow-[0_24px_48px_rgba(0,0,0,0.9)] hidden group-focus-within:block z-50"
+                >
+                    <div
+                        class="px-space-sm py-space-xs font-label-badge text-label-badge text-secondary uppercase tracking-wider"
+                    >
+                        Top Searches
+                    </div>
+                    <a
+                        class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest transition-colors"
+                        data-path="search-results"
+                        href="/pages/watch_a_film_page.html?id=dune-part-two"
+                        ><span class="material-symbols-outlined text-primary text-[18px]">trending_up</span>
+                        <div class="flex flex-col">
+                            <span class="font-label-lg text-label-lg text-on-surface">Dune: Part Two</span
+                            ><span class="font-body-sm text-body-sm text-on-surface-variant"
+                                >Sci-Fi • 4K UHD</span
+                            >
+                        </div></a
+                    ><a
+                        class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest transition-colors"
+                        data-path="search-results"
+                        href="/pages/series_detail.html?id=neural-drift-reckoning"
+                        ><span class="material-symbols-outlined text-primary text-[18px]">trending_up</span>
+                        <div class="flex flex-col">
+                            <span class="font-label-lg text-label-lg text-on-surface">Neural Drift: Reckoning</span
+                            ><span class="font-body-sm text-body-sm text-on-surface-variant"
+                                >Crime Drama • Series</span
+                            >
+                        </div></a
+                    ><a
+                        class="flex items-center gap-space-sm p-space-sm rounded-lg hover:bg-surface-container-highest transition-colors"
+                        data-path="search-results"
+                        href="/pages/watch_a_film_page.html?id=oppenheimer"
+                        ><span class="material-symbols-outlined text-primary text-[18px]">trending_up</span>
+                        <div class="flex flex-col">
+                            <span class="font-label-lg text-label-lg text-on-surface">Oppenheimer</span
+                            ><span class="font-body-sm text-body-sm text-on-surface-variant"
+                                >Biographical Drama • IMAX</span
+                            >
+                        </div></a
+                    >
+                </div>
+            </div>
+            <div class="relative" id="notifications-wrapper">
+                <button
+                    id="notifications-btn"
+                    aria-label="Notifications"
+                    aria-expanded="false"
+                    class="relative p-space-sm rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors duration-200 flex items-center justify-center cursor-pointer"
+                    type="button"
+                >
+                    <span class="material-symbols-outlined text-[24px]">notifications</span>
+                    <span
+                        id="notifications-badge"
+                        class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_rgba(229,9,20,0.8)]"
+                    ></span>
+                </button>
+
+                <!-- Notifications Dropdown Panel -->
+                <div
+                    id="notifications-dropdown"
+                    class="absolute right-0 top-full mt-3 w-80 sm:w-96 bg-surface-container-high/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden transition-all duration-200 transform scale-95 opacity-0 pointer-events-none translate-y-2 z-50 select-none"
+                    style="display: none;"
+                >
+                    <!-- Header -->
+                    <div class="px-4 py-3 bg-surface-container/90 border-b border-white/5 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-headline text-[15px] font-bold text-white flex items-center gap-1.5">
+                                Thông báo
+                            </span>
+                            <span id="notifications-count-badge" class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary-fixed text-[11px] font-semibold border border-primary-container/30">
+                                3 Mới
+                            </span>
+                        </div>
+                        <button
+                            id="notifications-mark-read-btn"
+                            type="button"
+                            class="text-[12px] text-on-surface-variant hover:text-white transition-colors cursor-pointer flex items-center gap-1 font-medium"
+                        >
+                            <span class="material-symbols-outlined text-[16px] text-primary">done_all</span>
+                            Đọc tất cả
+                        </button>
+                    </div>
+
+                    <!-- Notification Items -->
+                    <div id="notifications-list" class="max-h-[380px] overflow-y-auto divide-y divide-white/5 scrollbar-thin">
+                        <!-- Notification 1 -->
+                        <a href="/pages/series_detail.html?id=neural-drift-reckoning" class="notification-item flex items-start gap-3 p-3.5 hover:bg-white/[0.04] transition-colors group cursor-pointer bg-white/[0.02]">
+                            <div class="relative flex-shrink-0 w-12 h-16 rounded-lg overflow-hidden bg-surface-container shadow-md">
+                                <img
+                                    src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=200&auto=format&fit=crop&q=80"
+                                    alt="Neural Drift"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <span class="notification-dot absolute top-1 left-1 w-2 h-2 rounded-full bg-primary-container shadow-sm"></span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between gap-1 mb-1">
+                                    <span class="font-headline text-[13px] font-bold text-white group-hover:text-primary transition-colors truncate">
+                                        🎬 Tập mới đã phát hành!
+                                    </span>
+                                    <span class="text-[10px] text-on-surface-variant/70 whitespace-nowrap">10p trước</span>
+                                </div>
+                                <p class="text-[12px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                                    <strong class="text-on-surface font-semibold">Neural Drift: Reckoning</strong> - Tập 7 "Mạng Lưới Bóng Đêm" hiện đã có định dạng 4K HDR.
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- Notification 2 -->
+                        <a href="/pages/watch_a_film_page.html?id=dune-part-two" class="notification-item flex items-start gap-3 p-3.5 hover:bg-white/[0.04] transition-colors group cursor-pointer bg-white/[0.02]">
+                            <div class="relative flex-shrink-0 w-12 h-16 rounded-lg overflow-hidden bg-surface-container shadow-md">
+                                <img
+                                    src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=200&auto=format&fit=crop&q=80"
+                                    alt="Dune Part Two"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <span class="notification-dot absolute top-1 left-1 w-2 h-2 rounded-full bg-primary-container shadow-sm"></span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between gap-1 mb-1">
+                                    <span class="font-headline text-[13px] font-bold text-white group-hover:text-primary transition-colors truncate">
+                                        🔥 Đề xuất phim hot cho bạn
+                                    </span>
+                                    <span class="text-[10px] text-on-surface-variant/70 whitespace-nowrap">2 giờ trước</span>
+                                </div>
+                                <p class="text-[12px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                                    <strong class="text-on-surface font-semibold">Dune: Part Two</strong> đã cập bến rạp CineStream với chuẩn âm thanh vòm Dolby Atmos đỉnh cao.
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- Notification 3 -->
+                        <a href="/pages/pricing.html" class="notification-item flex items-start gap-3 p-3.5 hover:bg-white/[0.04] transition-colors group cursor-pointer bg-white/[0.02]">
+                            <div class="relative flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-tr from-secondary-container to-amber-500 flex items-center justify-center text-white shadow-md">
+                                <span class="material-symbols-outlined text-[24px]">verified</span>
+                                <span class="notification-dot absolute top-1 left-1 w-2 h-2 rounded-full bg-primary-container shadow-sm"></span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between gap-1 mb-1">
+                                    <span class="font-headline text-[13px] font-bold text-white group-hover:text-secondary transition-colors truncate">
+                                        👑 Đặc quyền Hội viên VIP
+                                    </span>
+                                    <span class="text-[10px] text-on-surface-variant/70 whitespace-nowrap">Hôm qua</span>
+                                </div>
+                                <p class="text-[12px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                                    Tài khoản của bạn đã được nâng cấp quyền xem sớm các bản chiếu rạp IMAX không giới hạn!
+                                </p>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="p-2.5 bg-surface-container/90 border-t border-white/5 text-center">
+                        <a href="/pages/contact.html" class="text-[12px] font-medium text-primary hover:text-primary-fixed transition-colors flex items-center justify-center gap-1">
+                            <span>Xem tất cả thông báo &amp; trợ giúp</span>
+                            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a class="flex items-center gap-space-xs group" data-path="profile-settings" href="/pages/select_profile.html"
+                ><div
+                    class="p-0.5 rounded-full transition-transform duration-300 group-hover:scale-105 shadow-[0_0_12px_rgba(0,0,0,0.6)]"
+                >
+                    <img
+                        alt="Profile"
+                        class="w-8 h-8 rounded-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwhMB3eSg_URnC3yT-qp7IQGliA1GRo_tn1SxPdNX0PI6uJBlHcqDuSVhYT9F2q5fzGbOgugl_1qHUIM0TUuFUbyHyuVRR_R9mK9iIpm2JPXm5pubC_3J2sa80OB2jaP-9jQEZXybukDqhKz9dZFVYdOteqcqMjhtGuLuKZywDxjR18wzlPCgF169LlaaHdkxAdovGaytmykRoThIUgZ6BmXoWsg2rd3YUBsWxBLGesZzppcVrwmN1"
+                    />
+                </div>
+                <span
+                    class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface text-[18px] hidden sm:inline transition-colors duration-200"
+                    >arrow_drop_down</span
+                ></a
+            >
+        </div>
+    </div>
+</header>

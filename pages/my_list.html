@@ -1,0 +1,1927 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="web_standard" name="shell-type" />
+        <load src="src/components/head-resources.html" />
+    </head>
+    <body
+        class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"
+    >
+        <load src="src/components/header.html" />
+        <main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
+            <div class="flex flex-col w-full">
+                <!-- Subtle Ambient Glow Orbs -->
+                <div class="relative w-full overflow-hidden">
+                    <div
+                        class="absolute -top-32 left-1/4 w-96 h-96 bg-primary-container/15 rounded-full blur-[128px] pointer-events-none"
+                    ></div>
+                    <div
+                        class="absolute top-80 right-10 w-[500px] h-[500px] bg-secondary-container/10 rounded-full blur-[140px] pointer-events-none"
+                    ></div>
+                    <!-- Active Navigation Link Synchronizer -->
+                    <script>
+                        document.addEventListener("DOMContentLoaded", () => {
+                            const navLinks = document.querySelectorAll('header nav a[data-path="my-list"]');
+                            navLinks.forEach((link) => {
+                                link.classList.remove("text-on-surface-variant");
+                                link.classList.add("text-on-surface", "font-semibold", "relative");
+                                link.innerHTML = `My List <span class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_8px_rgba(229,9,20,0.9)]"></span>`;
+                            });
+                        });
+                    </script>
+                    <!-- Main Library Container -->
+                    <div class="w-full px-margin-mobile md:px-margin-desktop py-space-xl flex flex-col gap-space-2xl">
+                        <!-- 1. Header Context & Statistics Banner -->
+                        <section class="flex flex-col gap-space-lg">
+                            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg">
+                                <div class="flex flex-col gap-space-xs max-w-3xl">
+                                    <div class="flex items-center gap-space-sm mb-space-xs">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container-high text-secondary text-label-badge font-label-badge uppercase tracking-widest shadow-sm"
+                                        >
+                                            <span class="material-symbols-outlined text-[14px]">verified</span>
+                                            Curated Private Storage
+                                        </span>
+                                        <span class="text-on-surface-variant/40 text-body-sm">•</span>
+                                        <span
+                                            class="text-on-surface-variant text-label-badge font-label-badge uppercase tracking-wider"
+                                            >Sync Active • 4 Devices</span
+                                        >
+                                    </div>
+                                    <h1
+                                        class="font-headline-xl text-headline-xl text-on-surface tracking-tight flex items-center gap-space-md"
+                                    >
+                                        My Cinema Vault
+                                        <span
+                                            class="text-on-surface-variant/30 text-body-lg font-body-lg hidden sm:inline"
+                                            >|</span
+                                        >
+                                        <span
+                                            class="text-on-surface-variant text-headline-sm font-headline-sm font-normal hidden sm:inline"
+                                            >Watchlist &amp; Archives</span
+                                        >
+                                    </h1>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        Curated personal collection, in-progress streams, and viewing history
+                                        synchronized in master fidelity across all your devices.
+                                    </p>
+                                </div>
+                                <!-- Stats Rack (Visual Stat Badges) -->
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm w-full lg:w-auto">
+                                    <div
+                                        class="flex flex-col p-space-md rounded-xl bg-surface-container-high/60 backdrop-blur-md shadow-md min-w-[130px]"
+                                    >
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant mb-space-xs"
+                                        >
+                                            <span class="font-label-badge text-label-badge uppercase tracking-wider"
+                                                >Watchlist</span
+                                            >
+                                            <span class="material-symbols-outlined text-[16px] text-primary"
+                                                >bookmark</span
+                                            >
+                                        </div>
+                                        <span
+                                            class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight"
+                                            >24</span
+                                        >
+                                        <span class="font-label-badge text-label-badge text-on-surface-variant/70"
+                                            >Saved Titles</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flex flex-col p-space-md rounded-xl bg-surface-container-high/60 backdrop-blur-md shadow-md min-w-[130px]"
+                                    >
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant mb-space-xs"
+                                        >
+                                            <span class="font-label-badge text-label-badge uppercase tracking-wider"
+                                                >Active</span
+                                            >
+                                            <span class="material-symbols-outlined text-[16px] text-primary-container"
+                                                >play_circle</span
+                                            >
+                                        </div>
+                                        <span
+                                            class="font-headline-lg text-headline-lg text-primary-container font-bold tracking-tight"
+                                            >3</span
+                                        >
+                                        <span class="font-label-badge text-label-badge text-on-surface-variant/70"
+                                            >In Progress</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flex flex-col p-space-md rounded-xl bg-surface-container-high/60 backdrop-blur-md shadow-md min-w-[130px]"
+                                    >
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant mb-space-xs"
+                                        >
+                                            <span class="font-label-badge text-label-badge uppercase tracking-wider"
+                                                >Archived</span
+                                            >
+                                            <span class="material-symbols-outlined text-[16px] text-secondary"
+                                                >check_circle</span
+                                            >
+                                        </div>
+                                        <span
+                                            class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight"
+                                            >142</span
+                                        >
+                                        <span class="font-label-badge text-label-badge text-on-surface-variant/70"
+                                            >Completed</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flex flex-col p-space-md rounded-xl bg-surface-container-high/60 backdrop-blur-md shadow-md min-w-[130px]"
+                                    >
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant mb-space-xs"
+                                        >
+                                            <span class="font-label-badge text-label-badge uppercase tracking-wider"
+                                                >Format</span
+                                            >
+                                            <span class="material-symbols-outlined text-[16px] text-tertiary"
+                                                >spatial_audio_off</span
+                                            >
+                                        </div>
+                                        <span
+                                            class="font-headline-lg text-headline-lg text-tertiary font-bold tracking-tight"
+                                            >4K HDR</span
+                                        >
+                                        <span class="font-label-badge text-label-badge text-on-surface-variant/70"
+                                            >Dolby Master</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Inline Visual Data Sparkline: Weekly Stream Engagement -->
+                            <div
+                                class="w-full bg-surface-container-low rounded-xl p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md shadow-sm"
+                            >
+                                <div class="flex items-center gap-space-md">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container shadow-inner"
+                                    >
+                                        <span class="material-symbols-outlined text-[22px]">analytics</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-label-lg text-label-lg text-on-surface font-semibold">
+                                            Weekly Library Momentum
+                                        </p>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                            42 hours watched this month • 18 hours in 4K Atmos
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-space-lg w-full md:w-auto">
+                                    <!-- Inline SVG Sparkline Chart -->
+                                    <div aria-label="Viewing time graph" class="h-8 w-48 flex items-end gap-1.5">
+                                        <div class="w-5 bg-surface-container-highest rounded-t h-3"></div>
+                                        <div class="w-5 bg-surface-container-highest rounded-t h-5"></div>
+                                        <div class="w-5 bg-surface-container-highest rounded-t h-4"></div>
+                                        <div class="w-5 bg-surface-container-highest rounded-t h-6"></div>
+                                        <div class="w-5 bg-primary-container/80 rounded-t h-8"></div>
+                                        <div class="w-5 bg-primary-container rounded-t h-7"></div>
+                                        <div class="w-5 bg-surface-container-highest rounded-t h-2"></div>
+                                    </div>
+                                    <div class="text-right flex-shrink-0">
+                                        <span
+                                            class="font-label-badge text-label-badge uppercase text-secondary font-bold tracking-widest"
+                                            >+18.4%</span
+                                        >
+                                        <p class="font-label-badge text-label-badge text-on-surface-variant">
+                                            vs. Last Month
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- 2. Interactive Navigation Tabs & Filter Bar -->
+                        <section
+                            class="flex flex-col gap-space-md sticky top-20 z-40 bg-surface/90 backdrop-blur-2xl py-space-sm shadow-md"
+                        >
+                            <!-- Top Primary Tabs -->
+                            <div
+                                class="flex items-center justify-between overflow-x-auto pb-1 no-scrollbar gap-space-md"
+                            >
+                                <div
+                                    class="flex items-center gap-space-xs p-1 rounded-full bg-surface-container-low backdrop-blur-lg flex-shrink-0"
+                                >
+                                    <button
+                                        class="px-space-lg py-space-sm rounded-full font-label-lg text-label-lg text-on-primary-container bg-primary-container shadow-[0_0_20px_rgba(229,9,20,0.45)] transition-all flex items-center gap-space-xs"
+                                        id="tab-watchlist"
+                                    >
+                                        <span class="material-symbols-outlined text-[18px]">bookmark</span>
+                                        <span>Watchlist</span>
+                                        <span
+                                            class="px-1.5 py-0.2 rounded-full bg-black/30 font-label-badge text-label-badge"
+                                            >24</span
+                                        >
+                                    </button>
+                                    <button
+                                        class="px-space-lg py-space-sm rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-space-xs"
+                                        id="tab-continue"
+                                    >
+                                        <span class="material-symbols-outlined text-[18px]">play_circle</span>
+                                        <span>Continue Watching</span>
+                                        <span
+                                            class="px-1.5 py-0.2 rounded-full bg-surface-container-high font-label-badge text-label-badge"
+                                            >3</span
+                                        >
+                                    </button>
+                                    <button
+                                        class="px-space-lg py-space-sm rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-space-xs"
+                                        id="tab-history"
+                                    >
+                                        <span class="material-symbols-outlined text-[18px]">history</span>
+                                        <span>Watch History</span>
+                                        <span
+                                            class="px-1.5 py-0.2 rounded-full bg-surface-container-high font-label-badge text-label-badge"
+                                            >142</span
+                                        >
+                                    </button>
+                                    <button
+                                        class="px-space-lg py-space-sm rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-space-xs"
+                                        id="tab-playlists"
+                                    >
+                                        <span class="material-symbols-outlined text-[18px]">queue_music</span>
+                                        <span>Custom Playlists</span>
+                                        <span
+                                            class="px-1.5 py-0.2 rounded-full bg-surface-container-high font-label-badge text-label-badge"
+                                            >4</span
+                                        >
+                                    </button>
+                                </div>
+                                <!-- Quick Action Buttons -->
+                                <div class="flex items-center gap-space-sm flex-shrink-0">
+                                    <button
+                                        class="px-space-md py-space-sm rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-lg text-label-lg transition-colors flex items-center gap-space-xs shadow-sm"
+                                        id="toggle-manage-btn"
+                                        type="button"
+                                    >
+                                        <span class="material-symbols-outlined text-[18px]">checklist</span>
+                                        <span id="manage-text">Manage List</span>
+                                    </button>
+                                    <div class="hidden sm:flex items-center p-1 rounded-lg bg-surface-container-low">
+                                        <button
+                                            class="p-1.5 rounded bg-surface-container-highest text-on-surface"
+                                            title="Grid Layout"
+                                        >
+                                            <span class="material-symbols-outlined text-[18px]">grid_view</span>
+                                        </button>
+                                        <button
+                                            class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors"
+                                            title="List View"
+                                        >
+                                            <span class="material-symbols-outlined text-[18px]">view_list</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Filter & Search Subtoolbar -->
+                            <div
+                                class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md pt-space-xs"
+                            >
+                                <!-- Filter Tags -->
+                                <div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5">
+                                    <button
+                                        class="px-space-md py-1.5 rounded-full bg-on-surface text-surface font-label-md text-label-md font-semibold whitespace-nowrap shadow-sm"
+                                    >
+                                        All (24)
+                                    </button>
+                                    <button
+                                        class="px-space-md py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors"
+                                    >
+                                        Feature Films (16)
+                                    </button>
+                                    <button
+                                        class="px-space-md py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors"
+                                    >
+                                        Original Series (8)
+                                    </button>
+                                    <button
+                                        class="px-space-md py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-[14px] text-secondary">hdr_on</span>
+                                        IMAX / 4K UHD (11)
+                                    </button>
+                                    <button
+                                        class="px-space-md py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-[14px] text-tertiary">star</span>
+                                        Award Winners (6)
+                                    </button>
+                                </div>
+                                <!-- Search + Sort Dropdown Container -->
+                                <div class="flex items-center gap-space-sm">
+                                    <div class="relative flex-1 sm:w-64">
+                                        <span
+                                            class="material-symbols-outlined text-on-surface-variant text-[18px] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                                            >search</span
+                                        >
+                                        <input
+                                            class="w-full bg-surface-container-low focus:bg-surface-container rounded-lg pl-9 pr-space-md py-1.5 text-on-surface placeholder:text-on-surface-variant/60 font-body-sm text-body-sm focus:outline-none transition-colors shadow-inner"
+                                            placeholder="Filter saved titles..."
+                                            type="text"
+                                        />
+                                    </div>
+                                    <!-- Sort Selector -->
+                                    <div class="relative flex-shrink-0">
+                                        <button
+                                            class="flex items-center gap-space-xs bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md px-space-md py-1.5 rounded-lg transition-colors shadow-sm"
+                                        >
+                                            <span class="text-on-surface-variant">Sort:</span>
+                                            <span class="font-semibold">Recently Added</span>
+                                            <span class="material-symbols-outlined text-[16px] text-on-surface-variant"
+                                                >expand_more</span
+                                            >
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Batch Selection Toolbar (Hidden by default, shown via toggle) -->
+                            <div
+                                class="hidden w-full bg-primary-container/10 rounded-xl p-space-sm items-center justify-between gap-space-md transition-all"
+                                id="batch-toolbar"
+                            >
+                                <div class="flex items-center gap-space-md pl-space-sm">
+                                    <input
+                                        class="w-4 h-4 rounded bg-surface-container text-primary-container focus:ring-0 focus:outline-none cursor-pointer"
+                                        id="select-all"
+                                        type="checkbox"
+                                    />
+                                    <label
+                                        class="font-label-md text-label-md text-on-surface font-medium cursor-pointer"
+                                        for="select-all"
+                                    >
+                                        Select All (24 titles)
+                                    </label>
+                                    <span class="text-on-surface-variant text-body-sm hidden sm:inline"
+                                        >• <span id="selected-count">0</span> selected</span
+                                    >
+                                </div>
+                                <div class="flex items-center gap-space-xs">
+                                    <button
+                                        class="px-space-md py-1 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-[16px]">playlist_add</span>
+                                        Add to Playlist
+                                    </button>
+                                    <button
+                                        class="px-space-md py-1 rounded-lg bg-error-container text-on-error-container hover:bg-error font-label-md text-label-md transition-colors flex items-center gap-1"
+                                    >
+                                        <span class="material-symbols-outlined text-[16px]">delete</span>
+                                        Remove Selected
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- 3. Section: Jump Back In • Continue Watching -->
+                        <section class="flex flex-col gap-space-lg">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-space-sm">
+                                    <div
+                                        class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_10px_rgba(229,9,20,0.8)]"
+                                    ></div>
+                                    <h2
+                                        class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight"
+                                    >
+                                        Jump Back In
+                                    </h2>
+                                    <span class="text-on-surface-variant text-body-md font-body-md ml-1 font-normal"
+                                        >• In Progress (3)</span
+                                    >
+                                </div>
+                                <a
+                                    class="text-primary font-label-lg text-label-lg hover:underline flex items-center gap-1 group"
+                                    href="#"
+                                >
+                                    <span>View All Stream Sessions</span>
+                                    <span
+                                        class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:translate-x-1"
+                                        >arrow_forward</span
+                                    >
+                                </a>
+                            </div>
+                            <!-- 3 In-Progress Cards Row -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-lg">
+                                <!-- Continue Card 1 -->
+                                <div
+                                    class="group relative flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                                >
+                                    <div class="relative w-full aspect-video overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            data-alt="High octane futuristic sci-fi city scene at twilight with illuminated red hovercrafts racing between towering dark obsidian skyscrapers, neon holographic billboards glowing in cinematic teal and crimson haze."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCAESZzmF0DVzG30DGaZyBKXQ22q0qHBAWLEyn96ehG0lrp8VSF6W-EF49tbA1MinWO6UWlDqZC8jX8YPZ01w_g88e7w1SOD9tVMH1cbAEITK1rYGqC9E-bciISMEeHERvM_b6AGNTcBdMu82ULD8HgF-lw1oeb1KwUEv8-WlBqcXAZlC-E9n1H8EKJ9NdvZqhr33Ilz-h4s8I0zuSjApUZYOqpl2x1fMZ7BYrQoNOLHVPNxQKfqSs"
+                                        />
+                                        <!-- Gradient Overlay -->
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"
+                                        ></div>
+                                        <!-- Format Badges & Dismiss -->
+                                        <div
+                                            class="absolute top-space-sm left-space-sm right-space-sm flex items-center justify-between"
+                                        >
+                                            <span
+                                                class="px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-badge text-label-badge uppercase tracking-wider shadow"
+                                            >
+                                                Dolby Atmos
+                                            </span>
+                                            <button
+                                                class="w-7 h-7 rounded-full bg-surface-container-lowest/70 backdrop-blur-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center shadow"
+                                                title="Dismiss from Continue Watching"
+                                            >
+                                                <span class="material-symbols-outlined text-[16px]">close</span>
+                                            </button>
+                                        </div>
+                                        <!-- Quick Resume Play Overlay Center -->
+                                        <div
+                                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px]"
+                                        >
+                                            <button
+                                                class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-[0_0_24px_rgba(229,9,20,0.8)] transform scale-90 group-hover:scale-100 transition-all duration-300"
+                                            >
+                                                <span
+                                                    class="material-symbols-outlined text-[32px] translate-x-0.5"
+                                                    style="font-variation-settings: &quot;FILL&quot; 1"
+                                                    >play_arrow</span
+                                                >
+                                            </button>
+                                        </div>
+                                        <!-- Episode & Time Remaining Pill -->
+                                        <div
+                                            class="absolute bottom-space-sm left-space-sm right-space-sm flex items-center justify-between"
+                                        >
+                                            <span
+                                                class="font-label-badge text-label-badge px-2 py-0.5 rounded bg-surface-container-high/90 text-on-surface font-semibold"
+                                            >
+                                                S1 : E4 • Neural Drift
+                                            </span>
+                                            <span class="font-label-badge text-label-badge text-on-surface-variant/90">
+                                                48m left
+                                            </span>
+                                        </div>
+                                        <!-- Progress Bar -->
+                                        <div class="absolute bottom-0 left-0 w-full h-1 bg-surface-container-highest">
+                                            <div
+                                                class="h-full bg-primary-container shadow-[0_0_8px_rgba(229,9,20,0.8)]"
+                                                style="width: 72%"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <!-- Card Body -->
+                                    <div class="p-space-md flex flex-col gap-space-xs">
+                                        <div class="flex items-center justify-between">
+                                            <h3
+                                                class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-bold truncate"
+                                            >
+                                                Neon Horizon 2088
+                                            </h3>
+                                            <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                >98% Match</span
+                                            >
+                                        </div>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+                                            Kael discovers the mainframe breach while navigating the restricted lower
+                                            sector grids.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Continue Card 2 -->
+                                <div
+                                    class="group relative flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                                >
+                                    <div class="relative w-full aspect-video overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            data-alt="Deep underwater ocean exploration submersible with bright xenon headlights cutting through pitch black abyss illuminating bioluminescent cyan deep sea coral formations and mysterious underwater structures."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg704WsdHsciBbERET2qHH2yMN-e08Lut3bAFpA_omV_dWVTsfCW7E3GriqmKZEZzQzxecDJaIirqpalWmuNz3YOtxSH-dtbQ5ugqgJ3ILuP3CcTJkZrWAxg9hYAnVkMlgwYNro2eOcGeM7SB2h9D0VMeCDMXhjG8da57VKlzOdgGMo-qPbQRuIgeXgZ8yzWQrlbfxr2KcJTV1Mjt2Xtk4smB6rmH9mn5Bsy8XVVapILVUr9_CHCVF"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"
+                                        ></div>
+                                        <div
+                                            class="absolute top-space-sm left-space-sm right-space-sm flex items-center justify-between"
+                                        >
+                                            <span
+                                                class="px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-badge text-label-badge uppercase tracking-wider shadow"
+                                            >
+                                                4K UHD • HDR10
+                                            </span>
+                                            <button
+                                                class="w-7 h-7 rounded-full bg-surface-container-lowest/70 backdrop-blur-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center shadow"
+                                                title="Dismiss from Continue Watching"
+                                            >
+                                                <span class="material-symbols-outlined text-[16px]">close</span>
+                                            </button>
+                                        </div>
+                                        <div
+                                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px]"
+                                        >
+                                            <button
+                                                class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-[0_0_24px_rgba(229,9,20,0.8)] transform scale-90 group-hover:scale-100 transition-all duration-300"
+                                            >
+                                                <span
+                                                    class="material-symbols-outlined text-[32px] translate-x-0.5"
+                                                    style="font-variation-settings: &quot;FILL&quot; 1"
+                                                    >play_arrow</span
+                                                >
+                                            </button>
+                                        </div>
+                                        <div
+                                            class="absolute bottom-space-sm left-space-sm right-space-sm flex items-center justify-between"
+                                        >
+                                            <span
+                                                class="font-label-badge text-label-badge px-2 py-0.5 rounded bg-surface-container-high/90 text-on-surface font-semibold"
+                                            >
+                                                Feature Film
+                                            </span>
+                                            <span class="font-label-badge text-label-badge text-on-surface-variant/90">
+                                                34m left
+                                            </span>
+                                        </div>
+                                        <!-- Progress Bar (85%) -->
+                                        <div class="absolute bottom-0 left-0 w-full h-1 bg-surface-container-highest">
+                                            <div
+                                                class="h-full bg-primary-container shadow-[0_0_8px_rgba(229,9,20,0.8)]"
+                                                style="width: 85%"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <div class="p-space-md flex flex-col gap-space-xs">
+                                        <div class="flex items-center justify-between">
+                                            <h3
+                                                class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-bold truncate"
+                                            >
+                                                The Silent Abyss
+                                            </h3>
+                                            <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                >96% Match</span
+                                            >
+                                        </div>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+                                            A crew of deep trench marine scientists encounters an ancient unmapped
+                                            tectonic frequency.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Continue Card 3 -->
+                                <div
+                                    class="group relative flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                                >
+                                    <div class="relative w-full aspect-video overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            data-alt="High altitude snow covered mountain ridge with special tactical operative in winter camouflage surveying a clandestine radar facility nestled in alpine glaciers at dawn with cold ambient violet lighting."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1bX1MNqYTyV-i98Q_RFNg99jiOX2gKhK_SXIGib7wLbxgQee78kDkIjw80fz4UD8RIZlSJKRg8u04JrXC8Zjzn24OYsWCPeBR4ngivIwMald18K749bHZgOOPdu4PidOdkwmQMOKE0QRiEuehjXgyovRxCqf1MpCBvhbjs8mVkyg3NqcOOILjcRpZhbc7sey4YDB4cJKqalaS4AN6JWqh_kJ_fddNu-mgn08tCCc4WXF1FwkDAX5L"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"
+                                        ></div>
+                                        <div
+                                            class="absolute top-space-sm left-space-sm right-space-sm flex items-center justify-between"
+                                        >
+                                            <span
+                                                class="px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-badge text-label-badge uppercase tracking-wider shadow"
+                                            >
+                                                IMAX Enhanced
+                                            </span>
+                                            <button
+                                                class="w-7 h-7 rounded-full bg-surface-container-lowest/70 backdrop-blur-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center shadow"
+                                                title="Dismiss from Continue Watching"
+                                            >
+                                                <span class="material-symbols-outlined text-[16px]">close</span>
+                                            </button>
+                                        </div>
+                                        <div
+                                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px]"
+                                        >
+                                            <button
+                                                class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-[0_0_24px_rgba(229,9,20,0.8)] transform scale-90 group-hover:scale-100 transition-all duration-300"
+                                            >
+                                                <span
+                                                    class="material-symbols-outlined text-[32px] translate-x-0.5"
+                                                    style="font-variation-settings: &quot;FILL&quot; 1"
+                                                    >play_arrow</span
+                                                >
+                                            </button>
+                                        </div>
+                                        <div
+                                            class="absolute bottom-space-sm left-space-sm right-space-sm flex items-center justify-between"
+                                        >
+                                            <span
+                                                class="font-label-badge text-label-badge px-2 py-0.5 rounded bg-surface-container-high/90 text-on-surface font-semibold"
+                                            >
+                                                Feature Film
+                                            </span>
+                                            <span class="font-label-badge text-label-badge text-on-surface-variant/90">
+                                                1h 12m left
+                                            </span>
+                                        </div>
+                                        <!-- Progress Bar (42%) -->
+                                        <div class="absolute bottom-0 left-0 w-full h-1 bg-surface-container-highest">
+                                            <div
+                                                class="h-full bg-primary-container shadow-[0_0_8px_rgba(229,9,20,0.8)]"
+                                                style="width: 42%"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                    <div class="p-space-md flex flex-col gap-space-xs">
+                                        <div class="flex items-center justify-between">
+                                            <h3
+                                                class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-bold truncate"
+                                            >
+                                                Vanguard Protocol
+                                            </h3>
+                                            <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                >94% Match</span
+                                            >
+                                        </div>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+                                            Disavowed intelligence unit infiltrates an Arctic satellite base to
+                                            intercept an orbital missile lock.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- 4. Section: Saved Watchlist • Master 6-Column Grid (24 Titles) -->
+                        <section class="flex flex-col gap-space-lg">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-space-sm">
+                                    <span class="material-symbols-outlined text-primary text-[24px]">bookmark</span>
+                                    <h2
+                                        class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight"
+                                    >
+                                        Watchlist Catalog
+                                    </h2>
+                                    <span class="text-on-surface-variant font-body-sm text-body-sm"
+                                        >(24 titles saved)</span
+                                    >
+                                </div>
+                                <!-- Grid Filter Quick Select -->
+                                <div
+                                    class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md"
+                                >
+                                    <span>Displaying 1–12 of 24</span>
+                                </div>
+                            </div>
+                            <!-- Master 6-Column High Density Poster Grid -->
+                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-gutter">
+                                <!-- Poster 1: Cyber Eclipse -->
+                                <div
+                                    class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:z-20 hover:scale-105 shadow-md hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+                                >
+                                    <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            data-alt="Futuristic cybernetic woman with luminescent red retinal optics looking up into a solar eclipse over a megacity, gritty dark cinematic atmosphere with crimson lens flare and mist."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH7bvUulo3unU3Dcumk9RFTwRoCvEGIc5dtb8xVVppgb27OZmeaCQt8V3a-NM96lTPRpoBm4bzw35g4RiNlof6pddt3OyAAN5ja4Tpu45jSRRsdbIKtj4-9F9FQFyXgMtzhCq5WOT8ctAbs9GJ-hh0TxwxD9QjtWA4aD8F-xWL5HlMGlUxsDvoA990MuRlfOp9k5Blm9qsXunLm3AWquDaeg5aa3wDccFCLTZ4R_9vCKX-SGPqYVeJ"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"
+                                        ></div>
+                                        <!-- Batch Selection Checkbox (Controlled by Manage Mode) -->
+                                        <div class="batch-checkbox-wrap hidden absolute top-2 left-2 z-30">
+                                            <input
+                                                class="title-select-box w-5 h-5 rounded bg-black/60 text-primary-container focus:ring-0 cursor-pointer"
+                                                type="checkbox"
+                                            />
+                                        </div>
+                                        <!-- Top Left Format Badge -->
+                                        <div class="absolute top-2 right-2 flex flex-col items-end gap-1">
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-black/70 backdrop-blur-md text-on-surface font-label-badge text-label-badge uppercase font-bold"
+                                                >4K UHD</span
+                                            >
+                                        </div>
+                                        <!-- Hover Controls Rack (Appears on Hover) -->
+                                        <div
+                                            class="absolute inset-0 flex flex-col justify-between p-space-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        >
+                                            <div class="flex justify-end">
+                                                <button
+                                                    class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors flex items-center justify-center shadow"
+                                                    title="Remove from Watchlist"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]"
+                                                        >bookmark_remove</span
+                                                    >
+                                                </button>
+                                            </div>
+                                            <div class="flex flex-col gap-1.5">
+                                                <button
+                                                    class="w-full py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1 shadow-[0_0_16px_rgba(229,9,20,0.6)]"
+                                                >
+                                                    <span
+                                                        class="material-symbols-outlined text-[18px]"
+                                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                                        >play_arrow</span
+                                                    >
+                                                    Play
+                                                </button>
+                                                <button
+                                                    class="w-full py-1.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-on-surface font-label-badge text-label-badge transition-colors flex items-center justify-center gap-1"
+                                                >
+                                                    <span class="material-symbols-outlined text-[14px]">info</span>
+                                                    Details
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!-- Bottom Content Overlay -->
+                                        <div
+                                            class="absolute bottom-2 left-2 right-2 flex flex-col gap-0.5 pointer-events-none group-hover:opacity-0 transition-opacity"
+                                        >
+                                            <div class="flex items-center gap-1">
+                                                <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                    >99% Match</span
+                                                >
+                                                <span class="text-on-surface-variant/60 text-label-badge">•</span>
+                                                <span class="text-on-surface-variant text-label-badge">2024</span>
+                                            </div>
+                                            <h4
+                                                class="font-headline-sm text-[16px] leading-tight text-on-surface font-bold truncate"
+                                            >
+                                                Cyber Eclipse
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="p-2.5 flex flex-col gap-1 bg-surface-container-low">
+                                        <h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">
+                                            Cyber Eclipse
+                                        </h4>
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant font-label-badge text-label-badge"
+                                        >
+                                            <span>Action • Sci-Fi</span>
+                                            <span class="px-1 py-0.2 rounded bg-surface-container-highest">TV-MA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Poster 2: Sovereign Skies -->
+                                <div
+                                    class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:z-20 hover:scale-105 shadow-md hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+                                >
+                                    <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            data-alt="Two stealth fighter jets breaking supersonic speed through cloud layers over a dramatic sunset horizon with deep gold and violet skies and atmospheric vapor trails."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgAkUe0fifhLHXjxXXW_plUCPF-abtul7hl6KUBR4qjoGYT3_fi06eD83jKUzeTZgS-HtgvBO7WpGmuBRhe_h3HvAyt0X5M6wgvRsxgoHMM3nwefExwiMjmc5t4wuN2l6qgwPv5zpqivlNDlBQXpHU9xHiB4ggd1R_8ZDVk6-uU2Xk7xAv_UD7X-J1Tq0HYlmmJYfpON7TT108mtz-Xc0F6kj138ROPq9H3ruXMHXdr78hOne7PQxa"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"
+                                        ></div>
+                                        <div class="batch-checkbox-wrap hidden absolute top-2 left-2 z-30">
+                                            <input
+                                                class="title-select-box w-5 h-5 rounded bg-black/60 text-primary-container focus:ring-0 cursor-pointer"
+                                                type="checkbox"
+                                            />
+                                        </div>
+                                        <div class="absolute top-2 right-2 flex flex-col items-end gap-1">
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-black/70 backdrop-blur-md text-secondary font-label-badge text-label-badge uppercase font-bold"
+                                                >HDR10+</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="absolute inset-0 flex flex-col justify-between p-space-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        >
+                                            <div class="flex justify-end">
+                                                <button
+                                                    class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors flex items-center justify-center shadow"
+                                                    title="Remove from Watchlist"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]"
+                                                        >bookmark_remove</span
+                                                    >
+                                                </button>
+                                            </div>
+                                            <div class="flex flex-col gap-1.5">
+                                                <button
+                                                    class="w-full py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1 shadow-[0_0_16px_rgba(229,9,20,0.6)]"
+                                                >
+                                                    <span
+                                                        class="material-symbols-outlined text-[18px]"
+                                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                                        >play_arrow</span
+                                                    >
+                                                    Play
+                                                </button>
+                                                <button
+                                                    class="w-full py-1.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-on-surface font-label-badge text-label-badge transition-colors flex items-center justify-center gap-1"
+                                                >
+                                                    <span class="material-symbols-outlined text-[14px]">info</span>
+                                                    Details
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="absolute bottom-2 left-2 right-2 flex flex-col gap-0.5 pointer-events-none group-hover:opacity-0 transition-opacity"
+                                        >
+                                            <div class="flex items-center gap-1">
+                                                <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                    >97% Match</span
+                                                >
+                                                <span class="text-on-surface-variant/60 text-label-badge">•</span>
+                                                <span class="text-on-surface-variant text-label-badge">2023</span>
+                                            </div>
+                                            <h4
+                                                class="font-headline-sm text-[16px] leading-tight text-on-surface font-bold truncate"
+                                            >
+                                                Sovereign Skies
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="p-2.5 flex flex-col gap-1 bg-surface-container-low">
+                                        <h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">
+                                            Sovereign Skies
+                                        </h4>
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant font-label-badge text-label-badge"
+                                        >
+                                            <span>Aerial Military</span>
+                                            <span class="px-1 py-0.2 rounded bg-surface-container-highest">PG-13</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Poster 3: Bloodline of Bohemia -->
+                                <div
+                                    class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:z-20 hover:scale-105 shadow-md hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+                                >
+                                    <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            data-alt="Ornate 19th century candlelit gothic ballroom hall with masked noble figures in velvet capes whispering conspiracies in dramatic chiaroscuro lighting and deep red damask wallpaper."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJTtYY80qgvj3La0tZlq8YZ4JqKhQi7ob4nMvLSzK6HDgkHipBvwL04J1U5iCsb2zfPy1R4QDDuV6KRAElEjSCLtjNAG946K736xqlfM5R1muJ6W8JEiliS8VoWhD0G6WGQYZs8rD9mbgC8TOnRg6GI-IPvPWA5Jd4pCFICsq5hHru2gHq7CCCoNkQ2GrWrup5UGcdIsVq2Nt0Hz_EaCmOZhIx1asPfLPuwmmL4CcjUzIW1CDmFz6f"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"
+                                        ></div>
+                                        <div class="batch-checkbox-wrap hidden absolute top-2 left-2 z-30">
+                                            <input
+                                                class="title-select-box w-5 h-5 rounded bg-black/60 text-primary-container focus:ring-0 cursor-pointer"
+                                                type="checkbox"
+                                            />
+                                        </div>
+                                        <div class="absolute top-2 right-2 flex flex-col items-end gap-1">
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-secondary-container/90 text-on-secondary-container font-label-badge text-label-badge font-bold"
+                                                >Palme d'Or</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="absolute inset-0 flex flex-col justify-between p-space-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        >
+                                            <div class="flex justify-end">
+                                                <button
+                                                    class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors flex items-center justify-center shadow"
+                                                    title="Remove from Watchlist"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]"
+                                                        >bookmark_remove</span
+                                                    >
+                                                </button>
+                                            </div>
+                                            <div class="flex flex-col gap-1.5">
+                                                <button
+                                                    class="w-full py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1 shadow-[0_0_16px_rgba(229,9,20,0.6)]"
+                                                >
+                                                    <span
+                                                        class="material-symbols-outlined text-[18px]"
+                                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                                        >play_arrow</span
+                                                    >
+                                                    Play
+                                                </button>
+                                                <button
+                                                    class="w-full py-1.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-on-surface font-label-badge text-label-badge transition-colors flex items-center justify-center gap-1"
+                                                >
+                                                    <span class="material-symbols-outlined text-[14px]">info</span>
+                                                    Details
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="absolute bottom-2 left-2 right-2 flex flex-col gap-0.5 pointer-events-none group-hover:opacity-0 transition-opacity"
+                                        >
+                                            <div class="flex items-center gap-1">
+                                                <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                    >95% Match</span
+                                                >
+                                                <span class="text-on-surface-variant/60 text-label-badge">•</span>
+                                                <span class="text-on-surface-variant text-label-badge">2h 38m</span>
+                                            </div>
+                                            <h4
+                                                class="font-headline-sm text-[16px] leading-tight text-on-surface font-bold truncate"
+                                            >
+                                                Bloodline of Bohemia
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="p-2.5 flex flex-col gap-1 bg-surface-container-low">
+                                        <h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">
+                                            Bloodline of Bohemia
+                                        </h4>
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant font-label-badge text-label-badge"
+                                        >
+                                            <span>Mystery • Drama</span>
+                                            <span class="px-1 py-0.2 rounded bg-surface-container-highest">R</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Poster 4: The Chronos Rift -->
+                                <div
+                                    class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:z-20 hover:scale-105 shadow-md hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+                                >
+                                    <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            data-alt="Monolithic black space station orbiting a swirling violet gravitational singularity wormhole, lens distortion effects and stars bending in cosmic dark space."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9L1ufm61KyAT_30rw5ZN5VuwvZQh7qTKXrTvfu3BWuhx-gIftgx554y1PMX3NVfFX9Xw_EDCmlWYjf74qDFCsoXEeQSAoVW3TLza5EANEiVYfxjhu69uhg4N6Rg8p86yXHvNumnxW0h9c0xQ7K7f_1w6v0qlLo4Gvm6BAEdS_EqJRtZUGAjmpqlhovprDM2O9xnJz4PApyJSwDuzdL0aast57P5B38dGCZhAckqGh_Cvt2N9h8rn8"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"
+                                        ></div>
+                                        <div class="batch-checkbox-wrap hidden absolute top-2 left-2 z-30">
+                                            <input
+                                                class="title-select-box w-5 h-5 rounded bg-black/60 text-primary-container focus:ring-0 cursor-pointer"
+                                                type="checkbox"
+                                            />
+                                        </div>
+                                        <div class="absolute top-2 right-2 flex flex-col items-end gap-1">
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-black/70 backdrop-blur-md text-tertiary font-label-badge text-label-badge uppercase font-bold"
+                                                >Dolby Vision</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="absolute inset-0 flex flex-col justify-between p-space-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        >
+                                            <div class="flex justify-end">
+                                                <button
+                                                    class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors flex items-center justify-center shadow"
+                                                    title="Remove from Watchlist"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]"
+                                                        >bookmark_remove</span
+                                                    >
+                                                </button>
+                                            </div>
+                                            <div class="flex flex-col gap-1.5">
+                                                <button
+                                                    class="w-full py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1 shadow-[0_0_16px_rgba(229,9,20,0.6)]"
+                                                >
+                                                    <span
+                                                        class="material-symbols-outlined text-[18px]"
+                                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                                        >play_arrow</span
+                                                    >
+                                                    Play
+                                                </button>
+                                                <button
+                                                    class="w-full py-1.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-on-surface font-label-badge text-label-badge transition-colors flex items-center justify-center gap-1"
+                                                >
+                                                    <span class="material-symbols-outlined text-[14px]">info</span>
+                                                    Details
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="absolute bottom-2 left-2 right-2 flex flex-col gap-0.5 pointer-events-none group-hover:opacity-0 transition-opacity"
+                                        >
+                                            <div class="flex items-center gap-1">
+                                                <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                    >94% Match</span
+                                                >
+                                                <span class="text-on-surface-variant/60 text-label-badge">•</span>
+                                                <span class="text-on-surface-variant text-label-badge">2024</span>
+                                            </div>
+                                            <h4
+                                                class="font-headline-sm text-[16px] leading-tight text-on-surface font-bold truncate"
+                                            >
+                                                The Chronos Rift
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="p-2.5 flex flex-col gap-1 bg-surface-container-low">
+                                        <h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">
+                                            The Chronos Rift
+                                        </h4>
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant font-label-badge text-label-badge"
+                                        >
+                                            <span>Space Sci-Fi</span>
+                                            <span class="px-1 py-0.2 rounded bg-surface-container-highest">PG-13</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Poster 5: Velvet Vault -->
+                                <div
+                                    class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:z-20 hover:scale-105 shadow-md hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+                                >
+                                    <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            data-alt="High tech subterranean bank vault door cracked open with smoke pouring out, green security laser grids and safe deposit boxes in stylish monochromatic noir contrast."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6CkP7wllf8uqMAyq-Y-Clgd91qc1QS-daURlns2riYRIZmJPpivt_XdbRRWSJUWHtKhu05DpoRy9pVuonpLNuh-gmuqokD6cwwHLnQ4ShzOzRKGCKtIX4hosISN1mcmSiyWrZPp6IZBcYjBcoKdlKdfQL8WdAys1v76l5C5xzNT_wwm1FLPtoAHM_e4IJ4xEcMoluMrW4fwQ1By0eGXdCZcLIeSFvCGVdECSRaF_cXIH4s8SugRcB"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"
+                                        ></div>
+                                        <div class="batch-checkbox-wrap hidden absolute top-2 left-2 z-30">
+                                            <input
+                                                class="title-select-box w-5 h-5 rounded bg-black/60 text-primary-container focus:ring-0 cursor-pointer"
+                                                type="checkbox"
+                                            />
+                                        </div>
+                                        <div class="absolute top-2 right-2 flex flex-col items-end gap-1">
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-black/70 backdrop-blur-md text-on-surface font-label-badge text-label-badge uppercase font-bold"
+                                                >4K UHD</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="absolute inset-0 flex flex-col justify-between p-space-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        >
+                                            <div class="flex justify-end">
+                                                <button
+                                                    class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors flex items-center justify-center shadow"
+                                                    title="Remove from Watchlist"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]"
+                                                        >bookmark_remove</span
+                                                    >
+                                                </button>
+                                            </div>
+                                            <div class="flex flex-col gap-1.5">
+                                                <button
+                                                    class="w-full py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1 shadow-[0_0_16px_rgba(229,9,20,0.6)]"
+                                                >
+                                                    <span
+                                                        class="material-symbols-outlined text-[18px]"
+                                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                                        >play_arrow</span
+                                                    >
+                                                    Play
+                                                </button>
+                                                <button
+                                                    class="w-full py-1.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-on-surface font-label-badge text-label-badge transition-colors flex items-center justify-center gap-1"
+                                                >
+                                                    <span class="material-symbols-outlined text-[14px]">info</span>
+                                                    Details
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="absolute bottom-2 left-2 right-2 flex flex-col gap-0.5 pointer-events-none group-hover:opacity-0 transition-opacity"
+                                        >
+                                            <div class="flex items-center gap-1">
+                                                <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                    >92% Match</span
+                                                >
+                                                <span class="text-on-surface-variant/60 text-label-badge">•</span>
+                                                <span class="text-on-surface-variant text-label-badge">1h 56m</span>
+                                            </div>
+                                            <h4
+                                                class="font-headline-sm text-[16px] leading-tight text-on-surface font-bold truncate"
+                                            >
+                                                Velvet Vault
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="p-2.5 flex flex-col gap-1 bg-surface-container-low">
+                                        <h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">
+                                            Velvet Vault
+                                        </h4>
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant font-label-badge text-label-badge"
+                                        >
+                                            <span>Heist • Thriller</span>
+                                            <span class="px-1 py-0.2 rounded bg-surface-container-highest">TV-14</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Poster 6: Solaris Protocol -->
+                                <div
+                                    class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:z-20 hover:scale-105 shadow-md hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+                                >
+                                    <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            data-alt="Solitary astronaut in an orange pressure suit walking across a scorched red desert canyon on an alien exoplanet beneath two glowing ringed moons and a blazing solar flare."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu7TJaoKSlkXyErHQvJQ_qyu3aMb98m1OmPAGHKvN18YbG5DcQoigYJyXhKApklTK9Pw5_KfZhZnX5Ur_p9T-vnkyEKD69njTW-hajLQu83vySsoZ17LxzuvKWQzMQ7ZgcSPoZGIPsGwPjRApIfmflqiKmrhGEJ3pwZvqtjIJpSd6dNGCnYjPNH14AGxzSVMyImff_1pgRUBmEcmWRY3XGatMwn6VZpY67i28r8NonkVEWCR_YJ9OY"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"
+                                        ></div>
+                                        <div class="batch-checkbox-wrap hidden absolute top-2 left-2 z-30">
+                                            <input
+                                                class="title-select-box w-5 h-5 rounded bg-black/60 text-primary-container focus:ring-0 cursor-pointer"
+                                                type="checkbox"
+                                            />
+                                        </div>
+                                        <div class="absolute top-2 right-2 flex flex-col items-end gap-1">
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-badge text-label-badge uppercase font-bold"
+                                                >Exclusive</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="absolute inset-0 flex flex-col justify-between p-space-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        >
+                                            <div class="flex justify-end">
+                                                <button
+                                                    class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors flex items-center justify-center shadow"
+                                                    title="Remove from Watchlist"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]"
+                                                        >bookmark_remove</span
+                                                    >
+                                                </button>
+                                            </div>
+                                            <div class="flex flex-col gap-1.5">
+                                                <button
+                                                    class="w-full py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1 shadow-[0_0_16px_rgba(229,9,20,0.6)]"
+                                                >
+                                                    <span
+                                                        class="material-symbols-outlined text-[18px]"
+                                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                                        >play_arrow</span
+                                                    >
+                                                    Play
+                                                </button>
+                                                <button
+                                                    class="w-full py-1.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-on-surface font-label-badge text-label-badge transition-colors flex items-center justify-center gap-1"
+                                                >
+                                                    <span class="material-symbols-outlined text-[14px]">info</span>
+                                                    Details
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="absolute bottom-2 left-2 right-2 flex flex-col gap-0.5 pointer-events-none group-hover:opacity-0 transition-opacity"
+                                        >
+                                            <div class="flex items-center gap-1">
+                                                <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                    >97% Match</span
+                                                >
+                                                <span class="text-on-surface-variant/60 text-label-badge">•</span>
+                                                <span class="text-on-surface-variant text-label-badge">2024</span>
+                                            </div>
+                                            <h4
+                                                class="font-headline-sm text-[16px] leading-tight text-on-surface font-bold truncate"
+                                            >
+                                                Solaris Protocol
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="p-2.5 flex flex-col gap-1 bg-surface-container-low">
+                                        <h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">
+                                            Solaris Protocol
+                                        </h4>
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant font-label-badge text-label-badge"
+                                        >
+                                            <span>Sci-Fi Survival</span>
+                                            <span class="px-1 py-0.2 rounded bg-surface-container-highest">TV-MA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Poster 7: Winter Architect -->
+                                <div
+                                    class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:z-20 hover:scale-105 shadow-md hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+                                >
+                                    <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            data-alt="Gloomy Scandinavian fjord in midwinter with mist rolling off frozen black water, a modern concrete and glass modernist villa perched on the rocky cliffside."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpow_IbjE-2xCadHFFyWeDsxOloBiYDUzcizy648Q062FtH8kEpbTeShuTKzf0q1TpyjalwQjgV4NTWHoyGJTDNBIwQ8tusB49f2FAJnTEYjKjweHW0A3O7GTAJQcVMCXgqNE17ZUB3LEQ6nqtPcPc7vCqlaxmzx4A_DGLnCU8i_CcI-G0pNBAEAEk1ZvHwnCNtka81Cu0fJrjLB6vHcubOj9O_MAg7fcHsooPn9sQCwFW5Zr9vj0c"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"
+                                        ></div>
+                                        <div class="batch-checkbox-wrap hidden absolute top-2 left-2 z-30">
+                                            <input
+                                                class="title-select-box w-5 h-5 rounded bg-black/60 text-primary-container focus:ring-0 cursor-pointer"
+                                                type="checkbox"
+                                            />
+                                        </div>
+                                        <div class="absolute top-2 right-2 flex flex-col items-end gap-1">
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-surface-container-highest/90 text-on-surface font-label-badge text-label-badge uppercase font-bold"
+                                                >New Season</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="absolute inset-0 flex flex-col justify-between p-space-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        >
+                                            <div class="flex justify-end">
+                                                <button
+                                                    class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors flex items-center justify-center shadow"
+                                                    title="Remove from Watchlist"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]"
+                                                        >bookmark_remove</span
+                                                    >
+                                                </button>
+                                            </div>
+                                            <div class="flex flex-col gap-1.5">
+                                                <button
+                                                    class="w-full py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1 shadow-[0_0_16px_rgba(229,9,20,0.6)]"
+                                                >
+                                                    <span
+                                                        class="material-symbols-outlined text-[18px]"
+                                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                                        >play_arrow</span
+                                                    >
+                                                    Play
+                                                </button>
+                                                <button
+                                                    class="w-full py-1.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-on-surface font-label-badge text-label-badge transition-colors flex items-center justify-center gap-1"
+                                                >
+                                                    <span class="material-symbols-outlined text-[14px]">info</span>
+                                                    Details
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="absolute bottom-2 left-2 right-2 flex flex-col gap-0.5 pointer-events-none group-hover:opacity-0 transition-opacity"
+                                        >
+                                            <div class="flex items-center gap-1">
+                                                <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                    >94% Match</span
+                                                >
+                                                <span class="text-on-surface-variant/60 text-label-badge">•</span>
+                                                <span class="text-on-surface-variant text-label-badge">Season 3</span>
+                                            </div>
+                                            <h4
+                                                class="font-headline-sm text-[16px] leading-tight text-on-surface font-bold truncate"
+                                            >
+                                                Winter Architect
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="p-2.5 flex flex-col gap-1 bg-surface-container-low">
+                                        <h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">
+                                            Winter Architect
+                                        </h4>
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant font-label-badge text-label-badge"
+                                        >
+                                            <span>Nordic Noir</span>
+                                            <span class="px-1 py-0.2 rounded bg-surface-container-highest">TV-MA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Poster 8: Architect of Echoes -->
+                                <div
+                                    class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:z-20 hover:scale-105 shadow-md hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+                                >
+                                    <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            data-alt="A maestro conductor standing before an empty circular acoustic concert hall bathed in a dramatic single overhead spotlight, floating dust particles illuminated in gold."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1IrvhIvY7uDcwStiLfUr2gTtZ4r9mqJHTOIWNVd6eJytim8jcOF6u4wSkgAEG4b5nvIrTULozX54jD0KTSFmwe0mCHsPK4xaVUL8u78CkyTPtZm0zW6HXesr8myY8PcZEqYK6wiLY4F8KQFs7Xd1bnuTZJIYNX72Kk4mOc7Y9mqWUEHjGpb9GNFQ7bzpgXaoAEXmUCj_oIw41i6kND-djPgSCqCjWL-0KIcI7OLIZ9N12vvkja5YN"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"
+                                        ></div>
+                                        <div class="batch-checkbox-wrap hidden absolute top-2 left-2 z-30">
+                                            <input
+                                                class="title-select-box w-5 h-5 rounded bg-black/60 text-primary-container focus:ring-0 cursor-pointer"
+                                                type="checkbox"
+                                            />
+                                        </div>
+                                        <div class="absolute top-2 right-2 flex flex-col items-end gap-1">
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-secondary-container/90 text-on-secondary-container font-label-badge text-label-badge font-bold"
+                                                >Oscar Winner</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="absolute inset-0 flex flex-col justify-between p-space-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        >
+                                            <div class="flex justify-end">
+                                                <button
+                                                    class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors flex items-center justify-center shadow"
+                                                    title="Remove from Watchlist"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]"
+                                                        >bookmark_remove</span
+                                                    >
+                                                </button>
+                                            </div>
+                                            <div class="flex flex-col gap-1.5">
+                                                <button
+                                                    class="w-full py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1 shadow-[0_0_16px_rgba(229,9,20,0.6)]"
+                                                >
+                                                    <span
+                                                        class="material-symbols-outlined text-[18px]"
+                                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                                        >play_arrow</span
+                                                    >
+                                                    Play
+                                                </button>
+                                                <button
+                                                    class="w-full py-1.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-on-surface font-label-badge text-label-badge transition-colors flex items-center justify-center gap-1"
+                                                >
+                                                    <span class="material-symbols-outlined text-[14px]">info</span>
+                                                    Details
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="absolute bottom-2 left-2 right-2 flex flex-col gap-0.5 pointer-events-none group-hover:opacity-0 transition-opacity"
+                                        >
+                                            <div class="flex items-center gap-1">
+                                                <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                    >99% Critic</span
+                                                >
+                                                <span class="text-on-surface-variant/60 text-label-badge">•</span>
+                                                <span class="text-on-surface-variant text-label-badge">2h 15m</span>
+                                            </div>
+                                            <h4
+                                                class="font-headline-sm text-[16px] leading-tight text-on-surface font-bold truncate"
+                                            >
+                                                Architect of Echoes
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="p-2.5 flex flex-col gap-1 bg-surface-container-low">
+                                        <h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">
+                                            Architect of Echoes
+                                        </h4>
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant font-label-badge text-label-badge"
+                                        >
+                                            <span>Period Drama</span>
+                                            <span class="px-1 py-0.2 rounded bg-surface-container-highest">PG-13</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Poster 9: Silence of the Dunes -->
+                                <div
+                                    class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:z-20 hover:scale-105 shadow-md hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+                                >
+                                    <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            data-alt="Vast sweeping golden sand dunes with curved wind ripples casting long deep purple shadows during twilight, with a tiny nomadic caravan silhouetted on the crest."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiJVbL_2SiqQbFT1DxqGaWt0x5T9JIQ93NXHU2ONdskTI2Okw269PP1dvstrk5xXfJs4FVQgfO2w4Le04ew3-3rfMRKlpbvgnR0t9J_k7g1hqGnU-AjhtLnVPj58WVrsQD4teS7UZjJaj3vwIhtblyB612riDfk1vu0smjMNwGiprH34FCEucFDcphoo5KVw-Zn3f2h7-y8MK5jIoTbGDw0xbuKwJQ0t5SKe-0Sv-G7rpFCPqFxWqF"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"
+                                        ></div>
+                                        <div class="batch-checkbox-wrap hidden absolute top-2 left-2 z-30">
+                                            <input
+                                                class="title-select-box w-5 h-5 rounded bg-black/60 text-primary-container focus:ring-0 cursor-pointer"
+                                                type="checkbox"
+                                            />
+                                        </div>
+                                        <div class="absolute top-2 right-2 flex flex-col items-end gap-1">
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-black/70 backdrop-blur-md text-on-surface font-label-badge text-label-badge uppercase font-bold"
+                                                >4K Atmos</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="absolute inset-0 flex flex-col justify-between p-space-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        >
+                                            <div class="flex justify-end">
+                                                <button
+                                                    class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors flex items-center justify-center shadow"
+                                                    title="Remove from Watchlist"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]"
+                                                        >bookmark_remove</span
+                                                    >
+                                                </button>
+                                            </div>
+                                            <div class="flex flex-col gap-1.5">
+                                                <button
+                                                    class="w-full py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1 shadow-[0_0_16px_rgba(229,9,20,0.6)]"
+                                                >
+                                                    <span
+                                                        class="material-symbols-outlined text-[18px]"
+                                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                                        >play_arrow</span
+                                                    >
+                                                    Play
+                                                </button>
+                                                <button
+                                                    class="w-full py-1.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-on-surface font-label-badge text-label-badge transition-colors flex items-center justify-center gap-1"
+                                                >
+                                                    <span class="material-symbols-outlined text-[14px]">info</span>
+                                                    Details
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="absolute bottom-2 left-2 right-2 flex flex-col gap-0.5 pointer-events-none group-hover:opacity-0 transition-opacity"
+                                        >
+                                            <div class="flex items-center gap-1">
+                                                <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                    >98% Match</span
+                                                >
+                                                <span class="text-on-surface-variant/60 text-label-badge">•</span>
+                                                <span class="text-on-surface-variant text-label-badge">2h 45m</span>
+                                            </div>
+                                            <h4
+                                                class="font-headline-sm text-[16px] leading-tight text-on-surface font-bold truncate"
+                                            >
+                                                Silence of the Dunes
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="p-2.5 flex flex-col gap-1 bg-surface-container-low">
+                                        <h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">
+                                            Silence of the Dunes
+                                        </h4>
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant font-label-badge text-label-badge"
+                                        >
+                                            <span>Cinematography</span>
+                                            <span class="px-1 py-0.2 rounded bg-surface-container-highest">PG-13</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Poster 10: Ghost Fleet -->
+                                <div
+                                    class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:z-20 hover:scale-105 shadow-md hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+                                >
+                                    <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            data-alt="Modern stealth destroyer warship cutting through stormy rough ocean waves at midnight during heavy rain with green night-vision radar illumination."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrqpWayWSjx-gg_05ghwQm3zwAEwpHl9d-5Vs9P4fHydFzjZmPp9GiNIvcONZQ_oFrqFFi4t0nqobusj2UaLPDiNASo3m7mcW2a9HGtwYt4T5w5pUufhX8gnsWdjmrYJX4Au_f3EuzH5smJhxPUayfrxzsQC5why0wDFiLUIIwkQFHkeLTXT5q5Osj2mLpJWGHWw94QX2DinoqYu0Rzj_xYW0JWevTz51YpHonQGa_rGtn1nb2NxWj"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"
+                                        ></div>
+                                        <div class="batch-checkbox-wrap hidden absolute top-2 left-2 z-30">
+                                            <input
+                                                class="title-select-box w-5 h-5 rounded bg-black/60 text-primary-container focus:ring-0 cursor-pointer"
+                                                type="checkbox"
+                                            />
+                                        </div>
+                                        <div class="absolute top-2 right-2 flex flex-col items-end gap-1">
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-black/70 backdrop-blur-md text-tertiary font-label-badge text-label-badge uppercase font-bold"
+                                                >Atmos</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="absolute inset-0 flex flex-col justify-between p-space-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        >
+                                            <div class="flex justify-end">
+                                                <button
+                                                    class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors flex items-center justify-center shadow"
+                                                    title="Remove from Watchlist"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]"
+                                                        >bookmark_remove</span
+                                                    >
+                                                </button>
+                                            </div>
+                                            <div class="flex flex-col gap-1.5">
+                                                <button
+                                                    class="w-full py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1 shadow-[0_0_16px_rgba(229,9,20,0.6)]"
+                                                >
+                                                    <span
+                                                        class="material-symbols-outlined text-[18px]"
+                                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                                        >play_arrow</span
+                                                    >
+                                                    Play
+                                                </button>
+                                                <button
+                                                    class="w-full py-1.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-on-surface font-label-badge text-label-badge transition-colors flex items-center justify-center gap-1"
+                                                >
+                                                    <span class="material-symbols-outlined text-[14px]">info</span>
+                                                    Details
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="absolute bottom-2 left-2 right-2 flex flex-col gap-0.5 pointer-events-none group-hover:opacity-0 transition-opacity"
+                                        >
+                                            <div class="flex items-center gap-1">
+                                                <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                    >91% Match</span
+                                                >
+                                                <span class="text-on-surface-variant/60 text-label-badge">•</span>
+                                                <span class="text-on-surface-variant text-label-badge">1h 50m</span>
+                                            </div>
+                                            <h4
+                                                class="font-headline-sm text-[16px] leading-tight text-on-surface font-bold truncate"
+                                            >
+                                                Ghost Fleet
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="p-2.5 flex flex-col gap-1 bg-surface-container-low">
+                                        <h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">
+                                            Ghost Fleet
+                                        </h4>
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant font-label-badge text-label-badge"
+                                        >
+                                            <span>Naval Combat</span>
+                                            <span class="px-1 py-0.2 rounded bg-surface-container-highest">PG-13</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Poster 11: Letters to Kyoto -->
+                                <div
+                                    class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:z-20 hover:scale-105 shadow-md hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+                                >
+                                    <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            data-alt="Traditional Kyoto wooden temple garden with cherry blossom petals floating on reflective water pond, warm afternoon golden hour sunlight streaming through bamboo trees."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6vm3sgfRYC4N8NFpKN88xjzuTQC4Y06OcdPstA8Zvzy8SKXhOFVVkUfF_G8W0uKafWVpBd_ofXlvSdavK_lJG6yqmn7s0PU62OZnuYKKL2CmZJ720s--ywBWWm2nOYLGfChyYmCYCU5m4CFOWfegvP7xN7Z1mK5D5bTpHLIYk1Qv9CWkJldnthoU39mJIUIRKiUql-bI0aVU4dqx0RQJnjiC3mDqJqtpizRihG4j72al7kXQi219F"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"
+                                        ></div>
+                                        <div class="batch-checkbox-wrap hidden absolute top-2 left-2 z-30">
+                                            <input
+                                                class="title-select-box w-5 h-5 rounded bg-black/60 text-primary-container focus:ring-0 cursor-pointer"
+                                                type="checkbox"
+                                            />
+                                        </div>
+                                        <div class="absolute top-2 right-2 flex flex-col items-end gap-1">
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-secondary-container/90 text-on-secondary-container font-label-badge text-label-badge font-bold"
+                                                >Venice Lion</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="absolute inset-0 flex flex-col justify-between p-space-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        >
+                                            <div class="flex justify-end">
+                                                <button
+                                                    class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors flex items-center justify-center shadow"
+                                                    title="Remove from Watchlist"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]"
+                                                        >bookmark_remove</span
+                                                    >
+                                                </button>
+                                            </div>
+                                            <div class="flex flex-col gap-1.5">
+                                                <button
+                                                    class="w-full py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1 shadow-[0_0_16px_rgba(229,9,20,0.6)]"
+                                                >
+                                                    <span
+                                                        class="material-symbols-outlined text-[18px]"
+                                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                                        >play_arrow</span
+                                                    >
+                                                    Play
+                                                </button>
+                                                <button
+                                                    class="w-full py-1.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-on-surface font-label-badge text-label-badge transition-colors flex items-center justify-center gap-1"
+                                                >
+                                                    <span class="material-symbols-outlined text-[14px]">info</span>
+                                                    Details
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="absolute bottom-2 left-2 right-2 flex flex-col gap-0.5 pointer-events-none group-hover:opacity-0 transition-opacity"
+                                        >
+                                            <div class="flex items-center gap-1">
+                                                <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                    >97% Match</span
+                                                >
+                                                <span class="text-on-surface-variant/60 text-label-badge">•</span>
+                                                <span class="text-on-surface-variant text-label-badge">2h 02m</span>
+                                            </div>
+                                            <h4
+                                                class="font-headline-sm text-[16px] leading-tight text-on-surface font-bold truncate"
+                                            >
+                                                Letters to Kyoto
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="p-2.5 flex flex-col gap-1 bg-surface-container-low">
+                                        <h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">
+                                            Letters to Kyoto
+                                        </h4>
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant font-label-badge text-label-badge"
+                                        >
+                                            <span>Romance • Drama</span>
+                                            <span class="px-1 py-0.2 rounded bg-surface-container-highest">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Poster 12: Zero Horizon -->
+                                <div
+                                    class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container-low transition-all duration-300 hover:z-20 hover:scale-105 shadow-md hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+                                >
+                                    <div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+                                        <img
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            data-alt="Futuristic cybernetic metropolis under perpetual neon rainfall with flying autonomous police cruisers and towering holographic corporate monoliths in midnight blue and red."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpibkb4PhRzzAv-3p72A90OJe3kcvPn9uzwKq-GEt9PyhFGEHHHCcmIfeMzvnuvSGwZo4VEpVi0-IJmgc7DnYgOFD7aEapAmpigytEYLOCnMUuGoRtkMp8ZPcH5h58hHlhq20GfR2ncseX7_eTkiir0euKPyfOQRzDQeEEAwg3FlWHMz26O4RoPlNULUWmhVM3JKp-AiNQMUpAKdktV-obLWMznIMteETy-wIk3NkZwJGlJpez9jGf"
+                                        />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"
+                                        ></div>
+                                        <div class="batch-checkbox-wrap hidden absolute top-2 left-2 z-30">
+                                            <input
+                                                class="title-select-box w-5 h-5 rounded bg-black/60 text-primary-container focus:ring-0 cursor-pointer"
+                                                type="checkbox"
+                                            />
+                                        </div>
+                                        <div class="absolute top-2 right-2 flex flex-col items-end gap-1">
+                                            <span
+                                                class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-badge text-label-badge uppercase font-bold"
+                                                >Original</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="absolute inset-0 flex flex-col justify-between p-space-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        >
+                                            <div class="flex justify-end">
+                                                <button
+                                                    class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors flex items-center justify-center shadow"
+                                                    title="Remove from Watchlist"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]"
+                                                        >bookmark_remove</span
+                                                    >
+                                                </button>
+                                            </div>
+                                            <div class="flex flex-col gap-1.5">
+                                                <button
+                                                    class="w-full py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1 shadow-[0_0_16px_rgba(229,9,20,0.6)]"
+                                                >
+                                                    <span
+                                                        class="material-symbols-outlined text-[18px]"
+                                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                                        >play_arrow</span
+                                                    >
+                                                    Play
+                                                </button>
+                                                <button
+                                                    class="w-full py-1.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-on-surface font-label-badge text-label-badge transition-colors flex items-center justify-center gap-1"
+                                                >
+                                                    <span class="material-symbols-outlined text-[14px]">info</span>
+                                                    Details
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="absolute bottom-2 left-2 right-2 flex flex-col gap-0.5 pointer-events-none group-hover:opacity-0 transition-opacity"
+                                        >
+                                            <div class="flex items-center gap-1">
+                                                <span class="text-secondary font-label-badge text-label-badge font-bold"
+                                                    >94% Match</span
+                                                >
+                                                <span class="text-on-surface-variant/60 text-label-badge">•</span>
+                                                <span class="text-on-surface-variant text-label-badge"
+                                                    >10 Episodes</span
+                                                >
+                                            </div>
+                                            <h4
+                                                class="font-headline-sm text-[16px] leading-tight text-on-surface font-bold truncate"
+                                            >
+                                                Zero Horizon
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="p-2.5 flex flex-col gap-1 bg-surface-container-low">
+                                        <h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">
+                                            Zero Horizon
+                                        </h4>
+                                        <div
+                                            class="flex items-center justify-between text-on-surface-variant font-label-badge text-label-badge"
+                                        >
+                                            <span>Sci-Fi Series</span>
+                                            <span class="px-1 py-0.2 rounded bg-surface-container-highest">TV-MA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Pagination / Load More Bar -->
+                            <div class="flex items-center justify-center pt-space-lg">
+                                <button
+                                    class="px-space-xl py-space-md rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-lg text-label-lg transition-colors flex items-center gap-space-sm shadow-md group"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[20px] transition-transform duration-300 group-hover:rotate-180"
+                                        >sync</span
+                                    >
+                                    <span>Load Remaining 12 Titles</span>
+                                </button>
+                            </div>
+                        </section>
+                        <!-- 5. Graceful Empty State Preview Drawer (Collapsible Demo Box) -->
+                        <section
+                            class="flex flex-col gap-space-md pt-space-xl border-t border-surface-container-highest/20"
+                        >
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-space-sm">
+                                    <span class="material-symbols-outlined text-on-surface-variant text-[20px]"
+                                        >preview</span
+                                    >
+                                    <span
+                                        class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider"
+                                        >Empty State Simulation Drawer</span
+                                    >
+                                </div>
+                                <button
+                                    class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1"
+                                    id="toggle-empty-state-btn"
+                                >
+                                    <span>Toggle Empty State View</span>
+                                    <span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+                                </button>
+                            </div>
+                            <!-- The Empty State Component Card (Hidden by default, can be toggled) -->
+                            <div
+                                class="w-full bg-surface-container-low/60 backdrop-blur-xl rounded-2xl p-space-2xl flex flex-col items-center justify-center text-center gap-space-lg shadow-inner"
+                                id="empty-state-box"
+                            >
+                                <div
+                                    class="relative w-24 h-24 rounded-full bg-surface-container-high flex items-center justify-center text-primary-container shadow-[0_0_30px_rgba(229,9,20,0.2)]"
+                                >
+                                    <span class="material-symbols-outlined text-[48px]">movie_filter</span>
+                                    <span
+                                        class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-label-badge"
+                                        >0</span
+                                    >
+                                </div>
+                                <div class="flex flex-col gap-space-xs max-w-md">
+                                    <h3 class="font-headline-lg text-headline-lg text-on-surface font-bold">
+                                        Your watchlist is waiting for stories
+                                    </h3>
+                                    <p class="font-body-md text-body-md text-on-surface-variant">
+                                        Explore our master catalog of over 10,000 4K HDR cinematic releases, festival
+                                        award selections, and exclusive CineStream Originals.
+                                    </p>
+                                </div>
+                                <div class="flex flex-wrap items-center justify-center gap-space-md">
+                                    <a
+                                        class="px-space-xl py-space-md rounded-xl bg-primary-container hover:bg-primary-container/90 text-on-primary-container font-label-lg text-label-lg font-semibold shadow-[0_0_24px_rgba(229,9,20,0.5)] transition-all flex items-center gap-space-sm"
+                                        href="#"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            style="font-variation-settings: &quot;FILL&quot; 1"
+                                            >local_fire_department</span
+                                        >
+                                        Explore Trending Movies
+                                    </a>
+                                    <a
+                                        class="px-space-xl py-space-md rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-lg text-label-lg transition-colors flex items-center gap-space-sm"
+                                        href="#"
+                                    >
+                                        <span class="material-symbols-outlined text-[20px]">award_star</span>
+                                        Browse Award Winners
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <!-- Interactive JavaScript for Library Screen Features -->
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        // 1. Manage List / Batch Selection Mode Toggle
+                        const manageBtn = document.getElementById("toggle-manage-btn");
+                        const manageText = document.getElementById("manage-text");
+                        const batchToolbar = document.getElementById("batch-toolbar");
+                        const checkboxes = document.querySelectorAll(".batch-checkbox-wrap");
+                        const titleSelectBoxes = document.querySelectorAll(".title-select-box");
+                        const selectAllBox = document.getElementById("select-all");
+                        const selectedCountLabel = document.getElementById("selected-count");
+
+                        let isManageMode = false;
+
+                        if (manageBtn) {
+                            manageBtn.addEventListener("click", () => {
+                                isManageMode = !isManageMode;
+                                if (isManageMode) {
+                                    manageText.textContent = "Done Managing";
+                                    batchToolbar.classList.remove("hidden");
+                                    batchToolbar.classList.add("flex");
+                                    checkboxes.forEach((c) => c.classList.remove("hidden"));
+                                } else {
+                                    manageText.textContent = "Manage List";
+                                    batchToolbar.classList.add("hidden");
+                                    batchToolbar.classList.remove("flex");
+                                    checkboxes.forEach((c) => c.classList.add("hidden"));
+                                    // Uncheck all
+                                    titleSelectBoxes.forEach((b) => (b.checked = false));
+                                    if (selectAllBox) selectAllBox.checked = false;
+                                    if (selectedCountLabel) selectedCountLabel.textContent = "0";
+                                }
+                            });
+                        }
+
+                        // Update selected count
+                        titleSelectBoxes.forEach((box) => {
+                            box.addEventListener("change", () => {
+                                const checkedCount = document.querySelectorAll(".title-select-box:checked").length;
+                                if (selectedCountLabel) selectedCountLabel.textContent = checkedCount;
+                            });
+                        });
+
+                        // Select All functionality
+                        if (selectAllBox) {
+                            selectAllBox.addEventListener("change", (e) => {
+                                titleSelectBoxes.forEach((box) => {
+                                    box.checked = e.target.checked;
+                                });
+                                const checkedCount = document.querySelectorAll(".title-select-box:checked").length;
+                                if (selectedCountLabel) selectedCountLabel.textContent = checkedCount;
+                            });
+                        }
+
+                        // 2. Empty State Simulation Drawer Toggle
+                        const toggleEmptyBtn = document.getElementById("toggle-empty-state-btn");
+                        const emptyStateBox = document.getElementById("empty-state-box");
+                        if (toggleEmptyBtn && emptyStateBox) {
+                            toggleEmptyBtn.addEventListener("click", () => {
+                                emptyStateBox.classList.toggle("hidden");
+                            });
+                        }
+
+                        // 3. Tab Pill Switchers Visual State
+                        const tabWatchlist = document.getElementById("tab-watchlist");
+                        const tabContinue = document.getElementById("tab-continue");
+                        const tabHistory = document.getElementById("tab-history");
+                        const tabPlaylists = document.getElementById("tab-playlists");
+                        const allTabs = [tabWatchlist, tabContinue, tabHistory, tabPlaylists];
+
+                        allTabs.forEach((tab) => {
+                            if (!tab) return;
+                            tab.addEventListener("click", () => {
+                                allTabs.forEach((t) => {
+                                    if (!t) return;
+                                    t.className =
+                                        "px-space-lg py-space-sm rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-space-xs";
+                                });
+                                tab.className =
+                                    "px-space-lg py-space-sm rounded-full font-label-lg text-label-lg text-on-primary-container bg-primary-container shadow-[0_0_20px_rgba(229,9,20,0.45)] transition-all flex items-center gap-space-xs";
+                            });
+                        });
+                    });
+                </script>
+                <script type="module" src="/js/nav.js"></script>
+                <script type="module">
+                    import { loadMovies } from '/js/db.js';
+                    import { getWatchlist, getContinueWatching } from '/js/store.js';
+
+                    async function linkMyListCards() {
+                        const allMovies = await loadMovies();
+                        const watchlist = getWatchlist();
+                        const contList = getContinueWatching();
+
+                        // Link jump-back-in continue cards
+                        const jumpCards = document.querySelectorAll('section:nth-of-type(3) a');
+                        jumpCards.forEach((a) => {
+                            if (!a.href || a.getAttribute('href') === '#') {
+                                a.href = '/pages/watch_a_film_page.html?id=cyber-drift-2099';
+                            }
+                        });
+
+                        // Link watchlist poster buttons
+                        document.querySelectorAll('section:nth-of-type(4) button').forEach((btn) => {
+                            const card = btn.closest('.group');
+                            const titleEl = card?.querySelector('h4');
+                            const title = titleEl?.textContent?.trim() || '';
+                            const match = allMovies.find((m) => m.title.toLowerCase().includes(title.toLowerCase()));
+
+                            if (btn.textContent.includes('Play')) {
+                                btn.addEventListener('click', (e) => {
+                                    e.preventDefault();
+                                    const id = match ? match.id : 'cyber-drift-2099';
+                                    window.location.href = match?.type === 'series' ? `/pages/series_detail.html?id=${id}` : `/pages/watch_a_film_page.html?id=${id}`;
+                                });
+                            } else if (btn.textContent.includes('Details')) {
+                                btn.addEventListener('click', (e) => {
+                                    e.preventDefault();
+                                    const id = match ? match.id : 'cyber-drift-2099';
+                                    window.location.href = match?.type === 'series' ? `/pages/series_detail.html?id=${id}` : `/pages/watch_a_film_page.html?id=${id}`;
+                                });
+                            }
+                        });
+                    }
+
+                    document.addEventListener('DOMContentLoaded', linkMyListCards);
+                </script>
+            </div>
+        </main>
+        <load src="src/components/footer.html" />
+    </body>
+</html>

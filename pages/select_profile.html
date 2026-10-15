@@ -1,0 +1,588 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="web_standard" name="shell-type" />
+        <load src="src/components/head-resources.html" />
+    </head>
+    <body
+        class="bg-surface-container-lowest font-body-md text-on-surface min-h-screen flex flex-col justify-between selection:bg-primary-container selection:text-on-primary-container"
+    >
+        <load src="src/components/header.html" />
+        <main
+            class="w-full pt-20 flex-1 flex flex-col justify-center items-center px-margin-mobile md:px-margin-desktop bg-surface-container-lowest"
+        >
+            <div
+                class="flex flex-col w-full relative min-h-[calc(100vh-10rem)] justify-between items-center select-none overflow-hidden py-space-xl"
+            >
+                <!-- Atmospheric Cinematic Glows -->
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[360px] bg-primary-container/10 rounded-full blur-[140px] pointer-events-none -z-10"
+                ></div>
+                <div
+                    class="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-tertiary-container/5 rounded-full blur-[120px] pointer-events-none -z-10"
+                ></div>
+                <!-- Subtle decorative ambient framing line -->
+                <div
+                    class="w-full max-w-5xl flex items-center justify-between opacity-20 pointer-events-none px-gutter-sm mb-space-md"
+                >
+                    <span class="font-body-sm text-label-badge uppercase tracking-[0.3em] text-outline"
+                        >CineStream Experience</span
+                    >
+                    <span class="font-body-sm text-label-badge uppercase tracking-[0.3em] text-outline"
+                        >ID: CS-9082-NX</span
+                    >
+                </div>
+                <!-- Center Stage Container -->
+                <div class="w-full max-w-6xl flex flex-col items-center my-auto px-margin-mobile">
+                    <!-- Hero Headline & Sub-indicator -->
+                    <div class="flex flex-col items-center text-center mb-space-2xl">
+                        <span
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high/60 backdrop-blur-md mb-space-md"
+                        >
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+                            <span
+                                class="font-label-badge text-label-badge uppercase tracking-widest text-on-surface-variant"
+                                >Select Persona</span
+                            >
+                        </span>
+                        <h1
+                            class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface tracking-tight font-extrabold transition-all duration-300"
+                            id="page-heading"
+                        >
+                            Who's Watching?
+                        </h1>
+                        <p
+                            class="font-body-md text-body-md text-outline mt-space-xs transition-all duration-300"
+                            id="page-subheading"
+                        >
+                            Choose your space to access tailored cinema, continuous queue, and 4K Ultra HD.
+                        </p>
+                    </div>
+                    <!-- Profiles Flex / Grid Rack -->
+                    <div
+                        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-gutter-sm md:gap-gutter-lg justify-items-center w-full max-w-5xl"
+                    >
+                        <!-- Profile 1: Alex (Master) -->
+                        <a
+                            class="profile-card group relative flex flex-col items-center w-36 sm:w-40 md:w-44 focus:outline-none transition-transform duration-300 hover:scale-105"
+                            data-path="index"
+                            data-profile="Alex"
+                            href="#"
+                        >
+                            <div
+                                class="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-xl overflow-hidden bg-surface-container-high shadow-2xl transition-all duration-300 group-hover:shadow-[0_0_35px_rgba(229,9,20,0.45)]"
+                            >
+                                <img
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    data-alt="Close up dramatic cinematic portrait of a cool protagonist with neon crimson and electric cyan dual lighting accents, dark obsidian background, 8k resolution studio still"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7dG0WWLgz6C4EODILfBKhYLsoxkI8O0JYdxgSM80lWOhkjo58H7VhQnSLQkRKnQ9j6UkmM2n_ieiNHOCMC0FdX6Hb5LGMH0Lywna0bxp80oJvAAttvh_vOZJj_vFWiIZMqcO7rljoHVZtEHVnTImOhm6r9wblqTM-ToptpBjq_Xvy7oK0S08tHN0z7ZTNz4wPVq07ie6IGWzESRIY8atAvEfYyJ31-_DRttiSf1w"
+                                />
+                                <!-- Glass sheen & vignette -->
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"
+                                ></div>
+                                <!-- Master Account Badge -->
+                                <div
+                                    class="absolute top-2.5 left-2.5 flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-lowest/85 backdrop-blur-md shadow-sm"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-secondary text-[14px]"
+                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                        >star</span
+                                    >
+                                    <span
+                                        class="font-label-badge text-label-badge tracking-wider uppercase text-secondary"
+                                        >Primary</span
+                                    >
+                                </div>
+                                <!-- Edit Mode Icon Overlay -->
+                                <div
+                                    class="edit-overlay absolute inset-0 bg-surface-container-lowest/75 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center"
+                                >
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg transform transition-transform group-hover:scale-110"
+                                    >
+                                        <span class="material-symbols-outlined text-[20px]">edit</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-space-md flex flex-col items-center text-center">
+                                <span
+                                    class="font-headline-sm text-headline-sm text-outline group-hover:text-on-surface font-medium transition-colors duration-200"
+                                >
+                                    Alex
+                                </span>
+                                <span class="font-body-sm text-[11px] text-outline/70 mt-0.5">Admin • UHD</span>
+                            </div>
+                        </a>
+                        <!-- Profile 2: Sarah -->
+                        <a
+                            class="profile-card group relative flex flex-col items-center w-36 sm:w-40 md:w-44 focus:outline-none transition-transform duration-300 hover:scale-105"
+                            data-path="index"
+                            data-profile="Sarah"
+                            href="#"
+                        >
+                            <div
+                                class="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-xl overflow-hidden bg-surface-container-high shadow-2xl transition-all duration-300 group-hover:shadow-[0_0_35px_rgba(255,185,95,0.4)]"
+                            >
+                                <img
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    data-alt="Editorial warm cinematic portrait of an expressive female filmmaker, golden hour amber rim light, subtle film grain aesthetic, moody shadows"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHwDj2ySXMGKgQG8tK22i4E-bVbvKWz8ugJNUMHkcoZlxowv3m5dhaIrUHV83GTcFoqo0Nmj2WMEaAAv6fRaTTMglUty3FnsTmwk-k0DLNmUCZGN81JDE63N54g5cDQvX562HPCwAOqRthVCb3XNALcKVdFN0qGD-7JTijpTkz3BHQHwW1RZqWj_ZVZhuTl-1SuFpmDkOFO1YwXMmf6nouzNVr9CxbJ-T5pyhBlF0"
+                                />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"
+                                ></div>
+                                <!-- Edit Mode Icon Overlay -->
+                                <div
+                                    class="edit-overlay absolute inset-0 bg-surface-container-lowest/75 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center"
+                                >
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg transform transition-transform group-hover:scale-110"
+                                    >
+                                        <span class="material-symbols-outlined text-[20px]">edit</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-space-md flex flex-col items-center text-center">
+                                <span
+                                    class="font-headline-sm text-headline-sm text-outline group-hover:text-on-surface font-medium transition-colors duration-200"
+                                >
+                                    Sarah
+                                </span>
+                                <span class="font-body-sm text-[11px] text-outline/70 mt-0.5">Favorites Queue</span>
+                            </div>
+                        </a>
+                        <!-- Profile 3: Kids Safe -->
+                        <a
+                            class="profile-card group relative flex flex-col items-center w-36 sm:w-40 md:w-44 focus:outline-none transition-transform duration-300 hover:scale-105"
+                            data-path="index"
+                            data-profile="Kids"
+                            href="#"
+                        >
+                            <div
+                                class="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-xl overflow-hidden bg-surface-container-high shadow-2xl transition-all duration-300 group-hover:shadow-[0_0_35px_rgba(192,193,255,0.4)]"
+                            >
+                                <img
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    data-alt="Playful 3D animated fantasy creature with glowing vibrant purple, blue, and amber colors, Pixar style character design, friendly and whimsical aesthetic"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNAwbRcOh0M5BqQp7bm_VpXIR2Z295t5E_MSHDiI19r2dmRKCh4uZeFzabuykrz1XGQ3tkETstIg2FWTmFd6YPtvWFi4-WFfEMGbj5M6tzmKYi_1Xfnwf2Ec5D-BVrRRyK_J5CKdSabXLCV79xtvRs5EwffwYpzbXXnDjS6TeqTqwsV_Schnx973FfoPWsM7ZvZz_yAORcIyLtfCY2zNYTi6qD74q_b_0LH2PnSYs"
+                                />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"
+                                ></div>
+                                <!-- Kids Safe Protective Badge -->
+                                <div
+                                    class="absolute top-2.5 left-2.5 flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-container/90 backdrop-blur-md shadow-sm text-on-tertiary-container"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[12px]"
+                                        style="font-variation-settings: &quot;FILL&quot; 1"
+                                        >family_restroom</span
+                                    >
+                                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-bold"
+                                        >Kids Safe</span
+                                    >
+                                </div>
+                                <!-- Edit Mode Icon Overlay -->
+                                <div
+                                    class="edit-overlay absolute inset-0 bg-surface-container-lowest/75 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center"
+                                >
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg transform transition-transform group-hover:scale-110"
+                                    >
+                                        <span class="material-symbols-outlined text-[20px]">edit</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-space-md flex flex-col items-center text-center">
+                                <span
+                                    class="font-headline-sm text-headline-sm text-outline group-hover:text-on-surface font-medium transition-colors duration-200"
+                                >
+                                    Kids
+                                </span>
+                                <span class="font-body-sm text-[11px] text-outline/70 mt-0.5">PG-13 Filtered</span>
+                            </div>
+                        </a>
+                        <!-- Profile 4: Guest -->
+                        <a
+                            class="profile-card group relative flex flex-col items-center w-36 sm:w-40 md:w-44 focus:outline-none transition-transform duration-300 hover:scale-105"
+                            data-path="index"
+                            data-profile="Guest"
+                            href="#"
+                        >
+                            <div
+                                class="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-xl overflow-hidden bg-surface-container-high shadow-2xl transition-all duration-300 group-hover:shadow-[0_0_35px_rgba(255,255,255,0.25)]"
+                            >
+                                <div
+                                    class="w-full h-full bg-gradient-to-br from-surface-bright via-surface-container to-surface-container-lowest flex items-center justify-center transition-transform duration-500 group-hover:scale-110"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-outline-variant text-[56px] group-hover:text-on-surface transition-colors duration-300"
+                                    >
+                                        account_circle
+                                    </span>
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"
+                                ></div>
+                                <!-- Edit Mode Icon Overlay -->
+                                <div
+                                    class="edit-overlay absolute inset-0 bg-surface-container-lowest/75 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center"
+                                >
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg transform transition-transform group-hover:scale-110"
+                                    >
+                                        <span class="material-symbols-outlined text-[20px]">edit</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-space-md flex flex-col items-center text-center">
+                                <span
+                                    class="font-headline-sm text-headline-sm text-outline group-hover:text-on-surface font-medium transition-colors duration-200"
+                                >
+                                    Guest
+                                </span>
+                                <span class="font-body-sm text-[11px] text-outline/70 mt-0.5">Temporary Session</span>
+                            </div>
+                        </a>
+                        <!-- Card 5: Add Profile -->
+                        <button
+                            class="group relative flex flex-col items-center w-36 sm:w-40 md:w-44 focus:outline-none transition-transform duration-300 hover:scale-105 cursor-pointer"
+                            id="add-profile-btn"
+                            type="button"
+                        >
+                            <div
+                                class="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-xl bg-surface-container/60 backdrop-blur-sm flex flex-col items-center justify-center transition-all duration-300 group-hover:bg-surface-container-high group-hover:shadow-[0_0_30px_rgba(229,9,20,0.25)]"
+                            >
+                                <!-- Ambient icon disc -->
+                                <div
+                                    class="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center text-outline group-hover:text-on-primary-container group-hover:bg-primary-container transition-all duration-300 shadow-md"
+                                >
+                                    <span class="material-symbols-outlined text-[28px]">add</span>
+                                </div>
+                            </div>
+                            <div class="mt-space-md flex flex-col items-center text-center">
+                                <span
+                                    class="font-headline-sm text-headline-sm text-outline group-hover:text-on-surface font-medium transition-colors duration-200"
+                                >
+                                    Add Profile
+                                </span>
+                                <span class="font-body-sm text-[11px] text-outline/70 mt-0.5">Up to 5 accounts</span>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Secondary Action: Manage Profiles Toggle -->
+                    <div class="mt-space-2xl flex flex-col sm:flex-row items-center gap-space-md">
+                        <button
+                            class="cursor-pointer group flex items-center gap-2 px-8 py-3 rounded-lg bg-surface-container-high/80 hover:bg-surface-bright text-outline hover:text-on-surface font-label-lg text-label-lg uppercase tracking-widest transition-all duration-200 shadow-md hover:shadow-xl focus:outline-none active:scale-95"
+                            id="manage-toggle-btn"
+                            type="button"
+                        >
+                            <span class="material-symbols-outlined text-[18px]" id="manage-icon">tune</span>
+                            <span id="manage-text">Manage Profiles</span>
+                        </button>
+                        <!-- Account Switcher Auxiliary Quick Link -->
+                        <a
+                            class="cursor-pointer flex items-center gap-1 px-5 py-3 rounded-lg text-outline hover:text-on-surface font-label-md text-label-md tracking-wider transition-colors duration-200"
+                            data-path="account-settings"
+                            href="#"
+                        >
+                            <span class="material-symbols-outlined text-[16px]">lock</span>
+                            <span>Account PIN & Security</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Subtle Bottom Bar: Language & Quality Status -->
+                <div
+                    class="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-space-sm px-margin-mobile pt-space-lg"
+                >
+                    <!-- Language Selector Pill -->
+                    <div
+                        class="flex items-center gap-1.5 p-1 rounded-full bg-surface-container-high/60 backdrop-blur-md"
+                    >
+                        <button
+                            class="lang-btn active px-3 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-badge text-label-badge transition-all"
+                            type="button"
+                        >
+                            EN
+                        </button>
+                        <button
+                            class="lang-btn px-3 py-1 rounded-full text-outline hover:text-on-surface font-label-badge text-label-badge transition-all"
+                            type="button"
+                        >
+                            VI
+                        </button>
+                        <button
+                            class="lang-btn px-3 py-1 rounded-full text-outline hover:text-on-surface font-label-badge text-label-badge transition-all"
+                            type="button"
+                        >
+                            ES
+                        </button>
+                        <button
+                            class="lang-btn px-3 py-1 rounded-full text-outline hover:text-on-surface font-label-badge text-label-badge transition-all"
+                            type="button"
+                        >
+                            FR
+                        </button>
+                    </div>
+                    <!-- Streaming Specs Indicators -->
+                    <div class="flex items-center gap-space-sm text-outline/80">
+                        <span
+                            class="px-2 py-0.5 rounded bg-surface-container-high font-label-badge text-label-badge text-outline"
+                            >4K HDR</span
+                        >
+                        <span
+                            class="px-2 py-0.5 rounded bg-surface-container-high font-label-badge text-label-badge text-outline"
+                            >DOLBY ATMOS</span
+                        >
+                        <span
+                            class="px-2 py-0.5 rounded bg-surface-container-high font-label-badge text-label-badge text-outline"
+                            >SPATIAL AUDIO</span
+                        >
+                    </div>
+                </div>
+                <!-- Interactive Add Profile Modal (Hidden by default) -->
+                <div
+                    class="fixed inset-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl flex items-center justify-center p-gutter-sm opacity-0 pointer-events-none transition-opacity duration-300"
+                    id="add-modal"
+                >
+                    <div
+                        class="relative w-full max-w-lg bg-surface-container rounded-xl p-space-xl shadow-2xl flex flex-col transform scale-95 transition-transform duration-300"
+                        id="modal-card"
+                    >
+                        <div class="flex items-center justify-between pb-space-md">
+                            <div>
+                                <h2 class="font-headline-lg text-headline-lg text-on-surface">Create New Profile</h2>
+                                <p class="font-body-sm text-body-sm text-outline mt-1">
+                                    Add a profile for another viewer in your household.
+                                </p>
+                            </div>
+                            <button
+                                class="w-8 h-8 rounded-full bg-surface-container-high text-outline hover:text-on-surface flex items-center justify-center transition-colors"
+                                id="close-modal-btn"
+                                type="button"
+                            >
+                                <span class="material-symbols-outlined text-[18px]">close</span>
+                            </button>
+                        </div>
+                        <form
+                            class="flex flex-col gap-space-lg mt-space-md"
+                            id="new-profile-form"
+                            onsubmit="event.preventDefault();"
+                        >
+                            <div class="flex items-center gap-space-md">
+                                <div
+                                    class="w-20 h-20 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary-container shrink-0 shadow-inner"
+                                >
+                                    <span class="material-symbols-outlined text-[40px]">face</span>
+                                </div>
+                                <div class="flex-1">
+                                    <label
+                                        class="font-label-md text-label-md text-outline block mb-1 uppercase tracking-wider"
+                                        for="profile-name-input"
+                                        >Profile Name</label
+                                    >
+                                    <input
+                                        class="w-full bg-surface-container-lowest text-on-surface px-4 py-3 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary-container placeholder:text-outline/40"
+                                        id="profile-name-input"
+                                        placeholder="e.g. Liam, Maya"
+                                        type="text"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Kids Toggle Option -->
+                            <div
+                                class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-low"
+                            >
+                                <div class="flex flex-col">
+                                    <span class="font-label-lg text-label-lg text-on-surface">Kids Profile?</span>
+                                    <span class="font-body-sm text-body-sm text-outline"
+                                        >Restricts catalog to TV-PG and under.</span
+                                    >
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input class="sr-only peer" id="is-kids-check" type="checkbox" />
+                                    <div
+                                        class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"
+                                    ></div>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-end gap-space-sm mt-space-sm">
+                                <button
+                                    class="px-6 py-2.5 rounded-lg text-outline hover:text-on-surface font-label-md text-label-md transition-colors"
+                                    id="cancel-modal-btn"
+                                    type="button"
+                                >
+                                    Cancel
+                                </button>
+                                <button
+                                    class="px-8 py-2.5 rounded-lg bg-primary-container hover:bg-primary-container/90 text-on-primary-container font-label-md text-label-md transition-all shadow-[0_0_20px_rgba(229,9,20,0.3)] active:scale-95"
+                                    id="save-profile-btn"
+                                    type="submit"
+                                >
+                                    Continue
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Micro-interaction Logic -->
+                <script>
+                    (function () {
+                        let isManageMode = false;
+                        const manageBtn = document.getElementById("manage-toggle-btn");
+                        const manageText = document.getElementById("manage-text");
+                        const manageIcon = document.getElementById("manage-icon");
+                        const heading = document.getElementById("page-heading");
+                        const subheading = document.getElementById("page-subheading");
+                        const overlays = document.querySelectorAll(".edit-overlay");
+                        const profileCards = document.querySelectorAll(".profile-card");
+
+                        const addBtn = document.getElementById("add-profile-btn");
+                        const addModal = document.getElementById("add-modal");
+                        const modalCard = document.getElementById("modal-card");
+                        const closeModalBtn = document.getElementById("close-modal-btn");
+                        const cancelModalBtn = document.getElementById("cancel-modal-btn");
+                        const saveProfileBtn = document.getElementById("save-profile-btn");
+                        const profileInput = document.getElementById("profile-name-input");
+                        const langBtns = document.querySelectorAll(".lang-btn");
+
+                        // Manage Profiles Mode Toggle
+                        if (manageBtn) {
+                            manageBtn.addEventListener("click", () => {
+                                isManageMode = !isManageMode;
+                                if (isManageMode) {
+                                    manageText.textContent = "Done";
+                                    manageIcon.textContent = "check";
+                                    manageBtn.classList.add(
+                                        "bg-primary-container",
+                                        "text-on-primary-container",
+                                        "shadow-[0_0_20px_rgba(229,9,20,0.4)]"
+                                    );
+                                    manageBtn.classList.remove("bg-surface-container-high/80", "text-outline");
+                                    heading.textContent = "Manage Profiles";
+                                    subheading.textContent =
+                                        "Select any profile icon to edit name, rating locks, or visual avatars.";
+                                    overlays.forEach((el) => {
+                                        el.classList.remove("opacity-0", "pointer-events-none");
+                                        el.classList.add("opacity-100", "pointer-events-auto");
+                                    });
+                                } else {
+                                    manageText.textContent = "Manage Profiles";
+                                    manageIcon.textContent = "tune";
+                                    manageBtn.classList.remove(
+                                        "bg-primary-container",
+                                        "text-on-primary-container",
+                                        "shadow-[0_0_20px_rgba(229,9,20,0.4)]"
+                                    );
+                                    manageBtn.classList.add("bg-surface-container-high/80", "text-outline");
+                                    heading.textContent = "Who's Watching?";
+                                    subheading.textContent =
+                                        "Choose your space to access tailored cinema, continuous queue, and 4K Ultra HD.";
+                                    overlays.forEach((el) => {
+                                        el.classList.add("opacity-0", "pointer-events-none");
+                                        el.classList.remove("opacity-100", "pointer-events-auto");
+                                    });
+                                }
+                            });
+                        }
+
+                        // Card Selection Feedback & Storage
+                        profileCards.forEach((card) => {
+                            card.addEventListener("click", (e) => {
+                                if (isManageMode) {
+                                    e.preventDefault();
+                                    const profileName = card.getAttribute("data-profile");
+                                    alert("Editing profile options for: " + profileName);
+                                    return;
+                                }
+                                e.preventDefault();
+                                const profileName = card.getAttribute("data-profile") || "Alex";
+                                const img = card.querySelector("img");
+                                const avatar = img ? img.src : "";
+                                const isKids = profileName.toLowerCase().includes("kid");
+                                try {
+                                    localStorage.setItem("cinestream_active_profile", JSON.stringify({
+                                        id: "profile-" + profileName.toLowerCase(),
+                                        name: profileName,
+                                        avatar: avatar,
+                                        isKids: isKids
+                                    }));
+                                } catch (err) {}
+                                card.classList.add("scale-90", "opacity-80");
+                                setTimeout(() => {
+                                    window.location.href = "/index.html";
+                                }, 200);
+                            });
+                        });
+
+                        // Modal Triggers
+                        function openModal() {
+                            addModal.classList.remove("opacity-0", "pointer-events-none");
+                            modalCard.classList.remove("scale-95");
+                            modalCard.classList.add("scale-100");
+                            if (profileInput) profileInput.focus();
+                        }
+
+                        function closeModal() {
+                            modalCard.classList.remove("scale-100");
+                            modalCard.classList.add("scale-95");
+                            addModal.classList.add("opacity-0", "pointer-events-none");
+                            if (profileInput) profileInput.value = "";
+                        }
+
+                        if (addBtn) addBtn.addEventListener("click", openModal);
+                        if (closeModalBtn) closeModalBtn.addEventListener("click", closeModal);
+                        if (cancelModalBtn) cancelModalBtn.addEventListener("click", closeModal);
+
+                        // Close when clicking backdrop outside modal-card
+                        if (addModal) {
+                            addModal.addEventListener("click", (e) => {
+                                if (e.target === addModal || !e.target.closest("#modal-card")) {
+                                    closeModal();
+                                }
+                            });
+                        }
+
+                        // Close modal on Escape key
+                        document.addEventListener("keydown", (e) => {
+                            if (e.key === "Escape") {
+                                closeModal();
+                            }
+                        });
+
+                        if (saveProfileBtn) {
+                            saveProfileBtn.addEventListener("click", (e) => {
+                                e.preventDefault();
+                                const name = profileInput.value.trim();
+                                if (name) {
+                                    closeModal();
+                                } else {
+                                    profileInput.focus();
+                                }
+                            });
+                        }
+
+                        // Language Switcher Toggle
+                        langBtns.forEach((btn) => {
+                            btn.addEventListener("click", () => {
+                                langBtns.forEach((b) => {
+                                    b.classList.remove("bg-surface-container-highest", "text-on-surface");
+                                    b.classList.add("text-outline");
+                                });
+                                btn.classList.add("bg-surface-container-highest", "text-on-surface");
+                                btn.classList.remove("text-outline");
+                            });
+                        });
+                    })();
+                </script>
+            </div>
+        </main>
+        <load src="src/components/footer.html" />
+        <script type="module" src="/js/nav.js"></script>
+    </body>
+</html>

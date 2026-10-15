@@ -1,0 +1,192 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CineStream — Sign In</title>
+    <load src="src/components/head-resources.html" />
+  </head>
+  <body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-white min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+    <!-- Cinematic Dark Backdrop Background -->
+    <div class="fixed inset-0 z-0 bg-cover bg-center pointer-events-none opacity-25 scale-105 transition-transform duration-1000" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1600&auto=format&fit=crop&q=80');"></div>
+    <div class="fixed inset-0 z-0 bg-gradient-to-t from-surface via-surface/85 to-surface/60 pointer-events-none"></div>
+
+    <!-- Header with CineStream Logo -->
+    <header class="relative z-20 w-full px-6 md:px-16 py-6 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-3 group" title="CineStream Home">
+        <img
+          src="/logo.png"
+          alt="CineStream Logo"
+          class="size-10 rounded-xl object-contain shadow-lg shadow-primary-container/40 group-hover:scale-105 transition-transform"
+        />
+        <span class="font-headline font-extrabold text-2xl tracking-wider text-white">
+          CINE<span class="text-primary-container">STREAM</span>
+        </span>
+      </a>
+      <a href="/pages/register.html" class="text-xs md:text-sm text-on-surface-variant hover:text-white transition-colors">
+        Need an account? <span class="text-white font-semibold underline underline-offset-4 decoration-primary-container">Sign Up</span>
+      </a>
+    </header>
+
+    <!-- Main Sign In Container -->
+    <main class="relative z-10 w-full flex-1 flex items-center justify-center px-4 py-8">
+      <div class="w-full max-w-[440px] bg-surface-container-low/90 backdrop-blur-2xl rounded-2xl p-8 sm:p-10 border border-white/10 shadow-2xl shadow-black/80">
+        <h1 class="font-headline font-bold text-3xl text-white mb-2">Sign In</h1>
+        <p class="text-sm text-on-surface-variant mb-6">Welcome back to your cinematic universe.</p>
+
+        <!-- Sign In Form -->
+        <form id="signInForm" class="flex flex-col gap-4">
+          <div class="flex flex-col gap-1.5">
+            <label for="email" class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Email or Mobile Number</label>
+            <div class="relative flex items-center">
+              <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px]">mail</span>
+              <input
+                id="email"
+                type="email"
+                required
+                value="alex.cinema@cinestream.com"
+                class="w-full bg-surface-container-highest/60 border border-white/10 focus:border-primary-container rounded-xl pl-11 pr-4 py-3 text-sm text-white placeholder-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary-container/20 transition-all"
+                placeholder="you@example.com"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between">
+              <label for="password" class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Password</label>
+              <a href="help.html" class="text-xs text-on-surface-variant hover:text-white transition-colors">Forgot password?</a>
+            </div>
+            <div class="relative flex items-center">
+              <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px]">lock</span>
+              <input
+                id="password"
+                type="password"
+                required
+                value="password123"
+                class="w-full bg-surface-container-highest/60 border border-white/10 focus:border-primary-container rounded-xl pl-11 pr-11 py-3 text-sm text-white placeholder-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary-container/20 transition-all"
+                placeholder="••••••••"
+              />
+              <button
+                type="button"
+                id="togglePassword"
+                class="absolute right-3.5 text-on-surface-variant hover:text-white transition-colors"
+                title="Toggle password visibility"
+              >
+                <span class="material-symbols-outlined text-[20px]">visibility</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Remember Me -->
+          <div class="flex items-center justify-between pt-1">
+            <label class="flex items-center gap-2 cursor-pointer select-none">
+              <input type="checkbox" checked class="rounded bg-surface-container-highest border-white/20 text-primary-container focus:ring-0 focus:ring-offset-0" />
+              <span class="text-xs text-on-surface-variant">Remember me</span>
+            </label>
+            <span class="text-xs text-on-surface-variant/60">Auto-login enabled</span>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            id="signInBtn"
+            class="mt-2 w-full py-3.5 rounded-xl bg-primary-container text-white font-headline font-bold text-sm tracking-wide shadow-glow-red hover:shadow-glow-red-lg hover:brightness-110 active:scale-[0.99] transition-all flex items-center justify-center gap-2"
+          >
+            <span>Sign In to CineStream</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </button>
+        </form>
+
+        <!-- Divider -->
+        <div class="flex items-center gap-3 my-6">
+          <div class="flex-1 h-px bg-white/10"></div>
+          <span class="text-[11px] uppercase tracking-widest text-on-surface-variant font-medium">Or continue with</span>
+          <div class="flex-1 h-px bg-white/10"></div>
+        </div>
+
+        <!-- Social Logins -->
+        <div class="grid grid-cols-2 gap-3">
+          <button
+            type="button"
+            class="py-2.5 px-4 rounded-xl bg-surface-container-highest/60 hover:bg-surface-container-highest border border-white/10 text-xs font-medium text-white flex items-center justify-center gap-2 transition-colors"
+            onclick="quickLogin('Google Account')"
+          >
+            <svg class="size-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.24 10.285V13.4h6.887C18.2 15.633 15.645 18 12.24 18c-3.315 0-6-2.685-6-6s2.685-6 6-6c1.635 0 3.06.63 4.14 1.62l2.43-2.43C17.31 3.735 14.955 3 12.24 3 7.275 3 3.24 7.035 3.24 12s4.035 9 9 9c5.22 0 8.7-3.675 8.7-8.865 0-.585-.06-1.155-.165-1.85h-8.535z" />
+            </svg>
+            <span>Google</span>
+          </button>
+          <button
+            type="button"
+            class="py-2.5 px-4 rounded-xl bg-surface-container-highest/60 hover:bg-surface-container-highest border border-white/10 text-xs font-medium text-white flex items-center justify-center gap-2 transition-colors"
+            onclick="quickLogin('Apple ID')"
+          >
+            <svg class="size-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.85c.65-.82 1.09-1.95.97-3.1-.96.04-2.17.65-2.85 1.45-.58.68-1.1 1.8-1 2.91 1.07.08 2.21-.56 2.88-1.26z" />
+            </svg>
+            <span>Apple</span>
+          </button>
+        </div>
+
+        <!-- Footnote -->
+        <p class="text-[11px] text-on-surface-variant/60 text-center mt-6">
+          Protected by CineStream Shield and subject to the 
+          <a href="about.html" class="underline hover:text-white">Privacy Policy</a> & 
+          <a href="about.html" class="underline hover:text-white">Terms of Screening</a>.
+        </p>
+      </div>
+    </main>
+
+    <!-- Mini Footer -->
+    <footer class="relative z-20 w-full px-6 py-6 border-t border-white/5 text-center text-xs text-on-surface-variant/60">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p>© 2025 CineStream Entertainment Inc. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a href="/pages/help.html" class="hover:text-white transition-colors">Help Center</a>
+          <a href="/pages/pricing.html" class="hover:text-white transition-colors">Plans</a>
+          <a href="/pages/about.html" class="hover:text-white transition-colors">About</a>
+          <a href="/pages/contact.html" class="hover:text-white transition-colors">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script for handling Sign In state -->
+    <script type="module">
+      import { loginUser, showToast } from '/js/store.js';
+
+      window.quickLogin = function(provider) {
+        showToast(`Signing in with ${provider}...`, 'info');
+        loginUser(`user.${provider.toLowerCase().replace(' ', '')}@cinestream.com`);
+        setTimeout(() => {
+          window.location.href = '/pages/select_profile.html';
+        }, 600);
+      };
+
+      const form = document.getElementById('signInForm');
+      const togglePassword = document.getElementById('togglePassword');
+      const passwordInput = document.getElementById('password');
+
+      togglePassword.addEventListener('click', () => {
+        const isPassword = passwordInput.type === 'password';
+        passwordInput.type = isPassword ? 'text' : 'password';
+        togglePassword.innerHTML = `<span class="material-symbols-outlined text-[20px]">${isPassword ? 'visibility_off' : 'visibility'}</span>`;
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value.trim();
+        const btn = document.getElementById('signInBtn');
+        btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span> Authenticating...`;
+        btn.disabled = true;
+
+        setTimeout(() => {
+          loginUser(email);
+          showToast('Sign in successful! Loading profiles...', 'success');
+          setTimeout(() => {
+            window.location.href = '/pages/select_profile.html';
+          }, 500);
+        }, 700);
+      });
+    </script>
+  </body>
+</html>

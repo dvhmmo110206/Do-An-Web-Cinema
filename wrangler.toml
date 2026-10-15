@@ -1,0 +1,31 @@
+# ==============================================================================
+# CineStream - Cloudflare Pages Fullstack Configuration (wrangler.toml)
+# Supports: Cloudflare Pages + Pages Functions (API) + Cloudflare D1 (SQL) + Static Videos
+# ==============================================================================
+
+name = "cinestream"
+compatibility_date = "2024-09-21"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "dist"
+
+# ------------------------------------------------------------------------------
+# Cloudflare D1 Database Binding
+# Accessible in functions/api/* via `context.env.DB` or `context.env.cinestream_db`
+# ------------------------------------------------------------------------------
+[[d1_databases]]
+binding = "DB"
+database_name = "cinestream_db"
+database_id = "bb754ccc-0c0b-40e5-bc39-24b55e2e0bc4"
+
+[[d1_databases]]
+binding = "cinestream_db"
+database_name = "cinestream_db"
+database_id = "bb754ccc-0c0b-40e5-bc39-24b55e2e0bc4"
+
+# ------------------------------------------------------------------------------
+# Environment Variables
+# ------------------------------------------------------------------------------
+[vars]
+ENVIRONMENT = "production"
+PLATFORM = "Cloudflare Pages Fullstack"
+API_PREFIX = "/api"

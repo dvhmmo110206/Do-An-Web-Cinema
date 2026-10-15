@@ -1,0 +1,1757 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="web_standard" name="shell-type" />
+        <load src="src/components/head-resources.html" />
+    </head>
+    <body
+        class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"
+    >
+        <load src="src/components/header.html" />
+        <main class="w-full pt-16 bg-surface min-h-[calc(100vh-16rem)]">
+            <div class="flex flex-col w-full text-on-surface">
+                <!-- Ambient Glow Canvas Elements -->
+                <div class="relative w-full overflow-hidden">
+                    <div
+                        class="absolute -top-32 left-1/4 w-96 h-96 bg-primary-container/15 rounded-full blur-[128px] pointer-events-none"
+                    ></div>
+                    <div
+                        class="absolute top-48 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-[110px] pointer-events-none"
+                    ></div>
+                    <div
+                        class="px-margin-mobile md:px-gutter lg:px-margin-desktop py-space-lg max-w-7xl mx-auto w-full"
+                    >
+                        <!-- Top Header & Profiles Section -->
+                        <section class="mb-space-2xl">
+                            <div
+                                class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg"
+                            >
+                                <div>
+                                    <div class="flex items-center gap-space-sm mb-1.5">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary/10 text-secondary font-label-badge text-label-badge tracking-wider uppercase"
+                                        >
+                                            <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                                            Family Plan Active (4/5 Slots Used)
+                                        </span>
+                                        <span class="text-outline text-body-sm hidden sm:inline">•</span>
+                                        <span class="text-outline font-body-sm text-body-sm hidden sm:inline"
+                                            >Shared Vault & Profiles</span
+                                        >
+                                    </div>
+                                    <h1
+                                        class="font-headline-xl text-headline-xl font-bold tracking-tight text-on-surface"
+                                    >
+                                        Who's Watching?
+                                    </h1>
+                                </div>
+                                <div class="flex items-center gap-space-sm self-start md:self-auto">
+                                    <button
+                                        class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-lg text-label-lg transition-colors flex items-center gap-2 shadow-sm"
+                                        id="btn-manage-profiles"
+                                        type="button"
+                                    >
+                                        <span class="material-symbols-outlined text-[18px]">edit</span>
+                                        <span>Manage Profiles</span>
+                                    </button>
+                                    <button
+                                        class="px-space-md py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg transition-all shadow-[0_0_20px_rgba(229,9,20,0.35)] flex items-center gap-2"
+                                        type="button"
+                                    >
+                                        <span class="material-symbols-outlined text-[18px]">cached</span>
+                                        <span>Switch Profile</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Profile Cards Grid -->
+                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-space-md">
+                                <!-- Alex Vance (Active / Master) -->
+                                <div
+                                    class="group relative flex flex-col items-center p-space-md rounded-xl bg-surface-container-high text-center shadow-lg transition-all duration-300 hover:-translate-y-1"
+                                >
+                                    <div class="relative mb-3">
+                                        <div
+                                            class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden shadow-[0_0_24px_rgba(229,9,20,0.45)] bg-surface-container"
+                                        >
+                                            <img
+                                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                                data-alt="Close-up portrait of a confident creative man named Alex wearing cinema headset in a moody red-lit dark screening room aesthetic, high fidelity, 8k resolution"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGGKNiEfAo5ZUpNfobnTbwKGy7Pz2jdGyehlnoI-QeJiyrkdA0pYunjLofGOk2BD-VR1HC8j-gn5AOfOxe6TtXKXPfnIpC2JcodY-AQD0jfNnLGdLgk8yyG0un-QT3i-CJTuk_oUHmyYbC-38suLdY2jEQkuf72bykyQBgYdtSKj4DtheQSLnZsRMOEZax0gUvI8vk8A059FRr6VGPoQy9C7Yny2T5ChluenvhmbO7N6VAI6VikJhu"
+                                            />
+                                        </div>
+                                        <span
+                                            class="absolute -bottom-1 -right-1 flex items-center justify-center w-6 h-6 rounded-full bg-primary-container text-on-primary-container shadow-md"
+                                        >
+                                            <span class="material-symbols-outlined text-[14px]">lock</span>
+                                        </span>
+                                    </div>
+                                    <span
+                                        class="font-headline-sm text-headline-sm font-semibold text-on-surface flex items-center gap-1"
+                                    >
+                                        Alex
+                                        <span
+                                            class="material-symbols-outlined text-secondary text-[16px]"
+                                            style="font-variation-settings: &quot;FILL&quot; 1"
+                                            >star</span
+                                        >
+                                    </span>
+                                    <span class="font-label-md text-label-md text-on-surface-variant mt-0.5"
+                                        >Master Account</span
+                                    >
+                                    <span
+                                        class="mt-2 px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-badge text-label-badge uppercase tracking-wider"
+                                    >
+                                        PIN Protected
+                                    </span>
+                                </div>
+                                <!-- Sarah -->
+                                <div
+                                    class="group relative flex flex-col items-center p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high text-center transition-all duration-300 hover:-translate-y-1 shadow-md"
+                                >
+                                    <div class="relative mb-3">
+                                        <div
+                                            class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden bg-surface-container-low"
+                                        >
+                                            <img
+                                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                                data-alt="Portrait of an elegant young woman named Sarah with soft warm studio lighting, cinematic obsidian atmosphere, photorealistic film look"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9E8FSmnbYuH_9eTkLQq5vZ2PtHcnoSMpTcIsrrA-791DI6z_9_Xvx7TbD9_lrUvx8G9MYDcSFQ0-y6-d7virjQ-ua0PP3OHtKBMPCBw6qOlP9DKodfkRXswYW3ijwIDOJKc0pLUmBSWCU8k6N_yqK0MpBqNiEK6x5LWjpjubcQBbx4IspAYNSiQ24jAtIhlZVCH65pM_rNFd_4Rs2eGXNspV-hy4XY76vVMoU4GJSVljGhrZdutWV"
+                                            />
+                                        </div>
+                                    </div>
+                                    <span class="font-headline-sm text-headline-sm font-semibold text-on-surface"
+                                        >Sarah</span
+                                    >
+                                    <span class="font-label-md text-label-md text-outline mt-0.5"
+                                        >Standard Profile</span
+                                    >
+                                    <span
+                                        class="mt-2 px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-badge text-label-badge uppercase tracking-wider"
+                                    >
+                                        TV-MA Allowed
+                                    </span>
+                                </div>
+                                <!-- Leo & Maya -->
+                                <div
+                                    class="group relative flex flex-col items-center p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high text-center transition-all duration-300 hover:-translate-y-1 shadow-md"
+                                >
+                                    <div class="relative mb-3">
+                                        <div
+                                            class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden bg-surface-container-low"
+                                        >
+                                            <img
+                                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                                data-alt="Two cheerful young teens Leo and Maya sitting together watching a 3D movie with subtle amber and neon backlight, cinematic photography"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_oIclDZw8lw8n3_qnUnjksNJL87NtJ4_spWf8JHZ5-LgTYOLyaN1zeslxHXzMQu8NzeEJaoNYuv5g8kA9bi7MW28v0wZihlklh3AGPOs_73yLJw5-OWmHWG6ExdmRAtPYpqI-qJnZ__RUKHNNjcnyhAsGryLVnaQZh0jRYtGt5FEMNfiH-gZmbjCm3sqP2KDbf33UC0fuqS5ijD8mt0n5aZvDx7MpHS9QhQIYVpc5L0uPaKvCLK0i"
+                                            />
+                                        </div>
+                                    </div>
+                                    <span class="font-headline-sm text-headline-sm font-semibold text-on-surface"
+                                        >Leo & Maya</span
+                                    >
+                                    <span class="font-label-md text-label-md text-outline mt-0.5">Teens Hub</span>
+                                    <span
+                                        class="mt-2 px-2 py-0.5 rounded-full bg-surface-container-low text-secondary font-label-badge text-label-badge uppercase tracking-wider"
+                                    >
+                                        PG-13 Restricted
+                                    </span>
+                                </div>
+                                <!-- Kids Cinema -->
+                                <div
+                                    class="group relative flex flex-col items-center p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high text-center transition-all duration-300 hover:-translate-y-1 shadow-md"
+                                >
+                                    <div class="relative mb-3">
+                                        <div
+                                            class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden bg-tertiary-container flex items-center justify-center shadow-inner"
+                                        >
+                                            <img
+                                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                                data-alt="Playful vibrant 3D cartoon superhero badge illustration with vivid colors, friendly mascot for kids streaming, clean vector render style"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuChkbWSa_lVJkknIooVyvBodp9XKDMYkp_EaHKdMqFPJ2ug0lMmz22SPt4KHbJ7OSga7AuorOTFOq-XWoYHCm8hmlDVJp8wSTsvbyIe0xOu6Kc73ioVD8xut_TtvoRWzKOl_UyPKtIMkK-vVHO_QjE-DUnyo2c976UEN--S82Il-TQ7El1rtl75Jvyx2tlf_QSskka8P2c7vSnixhKWutDdyx0OxdCwTYUvIOG-6wgKI_O2NTJQJi2Z"
+                                            />
+                                        </div>
+                                    </div>
+                                    <span class="font-headline-sm text-headline-sm font-semibold text-on-surface"
+                                        >Kids Cinema</span
+                                    >
+                                    <span class="font-label-md text-label-md text-outline mt-0.5"
+                                        >Curated Safe Zone</span
+                                    >
+                                    <span
+                                        class="mt-2 px-2 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary font-label-badge text-label-badge uppercase tracking-wider"
+                                    >
+                                        G / TV-Y7 Only
+                                    </span>
+                                </div>
+                                <!-- Add Profile Button -->
+                                <button
+                                    class="group flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-300 hover:-translate-y-1"
+                                    type="button"
+                                >
+                                    <div
+                                        class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-surface-container flex items-center justify-center mb-3 group-hover:bg-primary-container/20 group-hover:text-primary transition-colors"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[32px] text-outline group-hover:text-primary transition-colors"
+                                            >add</span
+                                        >
+                                    </div>
+                                    <span
+                                        class="font-headline-sm text-headline-sm font-semibold text-outline group-hover:text-on-surface transition-colors"
+                                        >Add Profile</span
+                                    >
+                                    <span class="font-label-md text-label-md text-outline/70 mt-0.5"
+                                        >1 slot available</span
+                                    >
+                                    <span
+                                        class="mt-2 px-2 py-0.5 rounded-full bg-surface-container text-outline font-label-badge text-label-badge uppercase tracking-wider"
+                                    >
+                                        Create New
+                                    </span>
+                                </button>
+                            </div>
+                        </section>
+                        <!-- Account Settings Hub Section -->
+                        <section
+                            class="bg-surface-container-low rounded-2xl p-space-md md:p-space-xl shadow-2xl relative"
+                        >
+                            <div class="flex flex-col lg:flex-row gap-space-xl">
+                                <!-- Navigation Tabs Sidebar -->
+                                <aside class="w-full lg:w-72 flex-shrink-0">
+                                    <div class="mb-space-md">
+                                        <span
+                                            class="font-label-md text-label-md text-outline uppercase tracking-wider block mb-1"
+                                            >Preferences & Security</span
+                                        >
+                                        <h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">
+                                            Settings Center
+                                        </h2>
+                                    </div>
+                                    <!-- Tab Buttons Container -->
+                                    <nav
+                                        class="flex lg:flex-col gap-1.5 overflow-x-auto pb-2 lg:pb-0 scrollbar-none"
+                                        id="settings-tab-list"
+                                        role="tablist"
+                                    >
+                                        <button
+                                            aria-selected="true"
+                                            class="tab-btn active flex items-center gap-3 px-4 py-3 rounded-xl font-label-lg text-label-lg text-left transition-all bg-surface-container-high text-on-surface shadow-sm"
+                                            data-tab="tab-overview"
+                                            role="tab"
+                                        >
+                                            <span class="material-symbols-outlined text-[20px] text-primary-container"
+                                                >badge</span
+                                            >
+                                            <span class="whitespace-nowrap">Account Overview</span>
+                                        </button>
+                                        <button
+                                            aria-selected="false"
+                                            class="tab-btn flex items-center gap-3 px-4 py-3 rounded-xl font-label-lg text-label-lg text-left transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface"
+                                            data-tab="tab-billing"
+                                            role="tab"
+                                        >
+                                            <span class="material-symbols-outlined text-[20px] text-secondary"
+                                                >credit_card</span
+                                            >
+                                            <span class="whitespace-nowrap">Membership & Billing</span>
+                                        </button>
+                                        <button
+                                            aria-selected="false"
+                                            class="tab-btn flex items-center gap-3 px-4 py-3 rounded-xl font-label-lg text-label-lg text-left transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface"
+                                            data-tab="tab-playback"
+                                            role="tab"
+                                        >
+                                            <span class="material-symbols-outlined text-[20px] text-outline">tune</span>
+                                            <span class="whitespace-nowrap">Playback Preferences</span>
+                                        </button>
+                                        <button
+                                            aria-selected="false"
+                                            class="tab-btn flex items-center gap-3 px-4 py-3 rounded-xl font-label-lg text-label-lg text-left transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface"
+                                            data-tab="tab-subtitles"
+                                            role="tab"
+                                        >
+                                            <span class="material-symbols-outlined text-[20px] text-outline"
+                                                >subtitles</span
+                                            >
+                                            <span class="whitespace-nowrap">Subtitles & Audio</span>
+                                        </button>
+                                        <button
+                                            aria-selected="false"
+                                            class="tab-btn flex items-center gap-3 px-4 py-3 rounded-xl font-label-lg text-label-lg text-left transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface"
+                                            data-tab="tab-parental"
+                                            role="tab"
+                                        >
+                                            <span class="material-symbols-outlined text-[20px] text-outline"
+                                                >family_restroom</span
+                                            >
+                                            <span class="whitespace-nowrap">Parental Controls</span>
+                                        </button>
+                                    </nav>
+                                    <!-- Quick Storage / Quality Metric Tile -->
+                                    <div
+                                        class="hidden lg:block mt-space-xl p-space-md rounded-xl bg-surface-container-lowest"
+                                    >
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-label-md text-label-md text-on-surface-variant"
+                                                >Cloud Watch Sync</span
+                                            >
+                                            <span class="font-label-md text-label-md text-secondary">94% Synced</span>
+                                        </div>
+                                        <div
+                                            class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden"
+                                        >
+                                            <div class="h-full bg-secondary rounded-full" style="width: 94%"></div>
+                                        </div>
+                                        <div
+                                            class="flex items-center gap-1.5 mt-3 text-outline font-body-sm text-body-sm"
+                                        >
+                                            <span class="material-symbols-outlined text-[16px]">cloud_done</span>
+                                            <span>Continuity enabled on all screens</span>
+                                        </div>
+                                    </div>
+                                </aside>
+                                <!-- Tab Content Area -->
+                                <div class="flex-1 min-w-0">
+                                    <!-- TAB 1: ACCOUNT OVERVIEW -->
+                                    <div class="tab-pane flex flex-col gap-space-lg" id="tab-overview">
+                                        <!-- Personal Info Card -->
+                                        <div class="p-space-lg rounded-xl bg-surface-container">
+                                            <div class="flex items-center justify-between pb-space-sm mb-space-md">
+                                                <div>
+                                                    <h3
+                                                        class="font-headline-sm text-headline-sm font-bold text-on-surface"
+                                                    >
+                                                        Personal Information
+                                                    </h3>
+                                                    <p class="font-body-sm text-body-sm text-outline">
+                                                        Primary subscriber identity and communication channels
+                                                    </p>
+                                                </div>
+                                                <button
+                                                    class="text-primary-container hover:text-primary font-label-lg text-label-lg flex items-center gap-1 transition-colors"
+                                                    type="button"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]">edit</span>
+                                                    <span>Edit Info</span>
+                                                </button>
+                                            </div>
+                                            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+                                                <div class="p-3.5 rounded-lg bg-surface-container-low">
+                                                    <span class="font-label-md text-label-md text-outline block mb-1"
+                                                        >Account Holder</span
+                                                    >
+                                                    <span
+                                                        class="font-headline-sm text-headline-sm font-semibold text-on-surface"
+                                                        >Alex Vance</span
+                                                    >
+                                                    <span
+                                                        class="inline-block mt-1 font-body-sm text-body-sm text-on-surface-variant"
+                                                        >Master Profile</span
+                                                    >
+                                                </div>
+                                                <div class="p-3.5 rounded-lg bg-surface-container-low">
+                                                    <div class="flex items-center justify-between mb-1">
+                                                        <span class="font-label-md text-label-md text-outline"
+                                                            >Email Address</span
+                                                        >
+                                                        <span
+                                                            class="px-1.5 py-0.5 rounded bg-secondary/15 text-secondary font-label-badge text-label-badge uppercase tracking-wider"
+                                                            >Verified</span
+                                                        >
+                                                    </div>
+                                                    <span
+                                                        class="font-headline-sm text-headline-sm font-semibold text-on-surface break-all"
+                                                        >alex.vance@cinestream.io</span
+                                                    >
+                                                    <span
+                                                        class="inline-block mt-1 font-body-sm text-body-sm text-outline"
+                                                        >Primary notifications</span
+                                                    >
+                                                </div>
+                                                <div class="p-3.5 rounded-lg bg-surface-container-low">
+                                                    <div class="flex items-center justify-between mb-1">
+                                                        <span class="font-label-md text-label-md text-outline"
+                                                            >Mobile Number</span
+                                                        >
+                                                        <span
+                                                            class="px-1.5 py-0.5 rounded bg-primary-container/20 text-primary font-label-badge text-label-badge uppercase tracking-wider"
+                                                            >2FA Active</span
+                                                        >
+                                                    </div>
+                                                    <span
+                                                        class="font-headline-sm text-headline-sm font-semibold text-on-surface"
+                                                        >+1 (555) 392-8819</span
+                                                    >
+                                                    <span
+                                                        class="inline-block mt-1 font-body-sm text-body-sm text-outline"
+                                                        >SMS verification ready</span
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Security & Password Card -->
+                                        <div class="p-space-lg rounded-xl bg-surface-container">
+                                            <div
+                                                class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md"
+                                            >
+                                                <div>
+                                                    <h3
+                                                        class="font-headline-sm text-headline-sm font-bold text-on-surface"
+                                                    >
+                                                        Security & Privacy
+                                                    </h3>
+                                                    <p class="font-body-sm text-body-sm text-outline">
+                                                        Master passcode and account access restrictions
+                                                    </p>
+                                                </div>
+                                                <button
+                                                    class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-lg text-label-lg transition-colors flex items-center justify-center gap-1.5 shadow-sm"
+                                                    type="button"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]">key</span>
+                                                    <span>Change Password</span>
+                                                </button>
+                                            </div>
+                                            <div class="flex flex-col divide-y divide-surface-container-high/50">
+                                                <div class="py-3 flex items-center justify-between gap-space-md">
+                                                    <div>
+                                                        <span class="font-label-lg text-label-lg text-on-surface block"
+                                                            >Password State</span
+                                                        >
+                                                        <span class="font-body-sm text-body-sm text-outline"
+                                                            >Updated 45 days ago • Strong entropy rating</span
+                                                        >
+                                                    </div>
+                                                    <span
+                                                        class="font-label-md text-label-md text-secondary font-mono tracking-widest"
+                                                        >••••••••••••••••</span
+                                                    >
+                                                </div>
+                                                <div class="py-3 flex items-center justify-between gap-space-md">
+                                                    <div>
+                                                        <span class="font-label-lg text-label-lg text-on-surface block"
+                                                            >Require PIN for Profile Switching</span
+                                                        >
+                                                        <span class="font-body-sm text-body-sm text-outline"
+                                                            >Prompts 4-digit PIN whenever entering Alex master
+                                                            account</span
+                                                        >
+                                                    </div>
+                                                    <!-- Toggle element -->
+                                                    <label class="relative inline-flex items-center cursor-pointer">
+                                                        <input checked="" class="sr-only peer" type="checkbox" />
+                                                        <div
+                                                            class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"
+                                                        ></div>
+                                                    </label>
+                                                </div>
+                                                <div class="py-3 flex items-center justify-between gap-space-md">
+                                                    <div>
+                                                        <span class="font-label-lg text-label-lg text-on-surface block"
+                                                            >Two-Factor Authentication (2FA)</span
+                                                        >
+                                                        <span class="font-body-sm text-body-sm text-outline"
+                                                            >Protects session token renewal and purchase
+                                                            authorization</span
+                                                        >
+                                                    </div>
+                                                    <span
+                                                        class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-badge text-label-badge uppercase"
+                                                        >Enabled</span
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Devices & Streaming Activity -->
+                                        <div class="p-space-lg rounded-xl bg-surface-container">
+                                            <div class="flex items-center justify-between mb-space-md">
+                                                <div>
+                                                    <h3
+                                                        class="font-headline-sm text-headline-sm font-bold text-on-surface"
+                                                    >
+                                                        Registered Devices
+                                                    </h3>
+                                                    <p class="font-body-sm text-body-sm text-outline">
+                                                        Active on 3 devices across authorized locations
+                                                    </p>
+                                                </div>
+                                                <span
+                                                    class="px-2.5 py-1 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md flex items-center gap-1.5"
+                                                >
+                                                    <span
+                                                        class="w-2 h-2 rounded-full bg-primary-container animate-pulse"
+                                                    ></span>
+                                                    3 of 4 concurrent streams used
+                                                </span>
+                                            </div>
+                                            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+                                                <!-- Device 1 -->
+                                                <div
+                                                    class="p-space-md rounded-lg bg-surface-container-low flex flex-col justify-between"
+                                                >
+                                                    <div>
+                                                        <div class="flex items-center justify-between mb-2">
+                                                            <span
+                                                                class="material-symbols-outlined text-primary-container text-[24px]"
+                                                                >tv</span
+                                                            >
+                                                            <span
+                                                                class="px-1.5 py-0.5 rounded bg-primary-container/20 text-primary font-label-badge text-label-badge uppercase"
+                                                                >Streaming</span
+                                                            >
+                                                        </div>
+                                                        <span
+                                                            class="font-headline-sm text-headline-sm font-semibold text-on-surface block"
+                                                            >Living Room Apple TV 4K</span
+                                                        >
+                                                        <span
+                                                            class="font-body-sm text-body-sm text-secondary block mt-1"
+                                                            >Now Playing: Neon Horizon (4K)</span
+                                                        >
+                                                    </div>
+                                                    <div
+                                                        class="mt-4 pt-3 flex items-center justify-between text-outline font-body-sm text-body-sm"
+                                                    >
+                                                        <span>Los Angeles, CA</span>
+                                                        <button
+                                                            class="text-outline hover:text-error transition-colors"
+                                                            title="Disconnect device"
+                                                            type="button"
+                                                        >
+                                                            <span class="material-symbols-outlined text-[18px]"
+                                                                >power_settings_new</span
+                                                            >
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- Device 2 -->
+                                                <div
+                                                    class="p-space-md rounded-lg bg-surface-container-low flex flex-col justify-between"
+                                                >
+                                                    <div>
+                                                        <div class="flex items-center justify-between mb-2">
+                                                            <span
+                                                                class="material-symbols-outlined text-outline text-[24px]"
+                                                                >laptop_mac</span
+                                                            >
+                                                            <span
+                                                                class="px-1.5 py-0.5 rounded bg-surface-container-high text-outline font-label-badge text-label-badge uppercase"
+                                                                >Idle</span
+                                                            >
+                                                        </div>
+                                                        <span
+                                                            class="font-headline-sm text-headline-sm font-semibold text-on-surface block"
+                                                            >MacBook Pro 16"</span
+                                                        >
+                                                        <span
+                                                            class="font-body-sm text-body-sm text-on-surface-variant block mt-1"
+                                                            >Chrome Browser • Last seen 18m ago</span
+                                                        >
+                                                    </div>
+                                                    <div
+                                                        class="mt-4 pt-3 flex items-center justify-between text-outline font-body-sm text-body-sm"
+                                                    >
+                                                        <span>San Francisco, CA</span>
+                                                        <button
+                                                            class="text-outline hover:text-error transition-colors"
+                                                            title="Disconnect device"
+                                                            type="button"
+                                                        >
+                                                            <span class="material-symbols-outlined text-[18px]"
+                                                                >power_settings_new</span
+                                                            >
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- Device 3 -->
+                                                <div
+                                                    class="p-space-md rounded-lg bg-surface-container-low flex flex-col justify-between"
+                                                >
+                                                    <div>
+                                                        <div class="flex items-center justify-between mb-2">
+                                                            <span
+                                                                class="material-symbols-outlined text-outline text-[24px]"
+                                                                >smartphone</span
+                                                            >
+                                                            <span
+                                                                class="px-1.5 py-0.5 rounded bg-secondary/20 text-secondary font-label-badge text-label-badge uppercase"
+                                                                >Syncing</span
+                                                            >
+                                                        </div>
+                                                        <span
+                                                            class="font-headline-sm text-headline-sm font-semibold text-on-surface block"
+                                                            >iPhone 16 Pro</span
+                                                        >
+                                                        <span
+                                                            class="font-body-sm text-body-sm text-on-surface-variant block mt-1"
+                                                            >4 Offline Episodes Downloaded</span
+                                                        >
+                                                    </div>
+                                                    <div
+                                                        class="mt-4 pt-3 flex items-center justify-between text-outline font-body-sm text-body-sm"
+                                                    >
+                                                        <span>Cellular Network</span>
+                                                        <button
+                                                            class="text-outline hover:text-error transition-colors"
+                                                            title="Disconnect device"
+                                                            type="button"
+                                                        >
+                                                            <span class="material-symbols-outlined text-[18px]"
+                                                                >power_settings_new</span
+                                                            >
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Danger Zone Card -->
+                                        <div
+                                            class="p-space-lg rounded-xl bg-surface-container-lowest flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md"
+                                        >
+                                            <div>
+                                                <span
+                                                    class="font-headline-sm text-headline-sm font-semibold text-on-surface block"
+                                                    >Session Management & Data</span
+                                                >
+                                                <span class="font-body-sm text-body-sm text-outline"
+                                                    >Manage active tokens or export personal watch telemetry</span
+                                                >
+                                            </div>
+                                            <div class="flex items-center gap-space-sm flex-wrap">
+                                                <button
+                                                    class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-lg text-label-lg transition-colors flex items-center gap-1.5"
+                                                    type="button"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]">download</span>
+                                                    <span>Export History</span>
+                                                </button>
+                                                <button
+                                                    class="px-space-md py-2 rounded-lg bg-error-container hover:bg-error text-on-error font-label-lg text-label-lg transition-colors flex items-center gap-1.5"
+                                                    type="button"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]">logout</span>
+                                                    <span>Sign Out All Devices</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- TAB 2: MEMBERSHIP & BILLING -->
+                                    <div class="tab-pane hidden flex-col gap-space-lg" id="tab-billing">
+                                        <!-- Hero Plan Banner -->
+                                        <div
+                                            class="relative overflow-hidden rounded-xl bg-gradient-to-r from-surface-container via-surface-container-high to-surface-container p-space-lg shadow-xl"
+                                        >
+                                            <div
+                                                class="absolute -right-12 -bottom-12 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"
+                                            ></div>
+                                            <div
+                                                class="absolute -left-12 -top-12 w-64 h-64 bg-secondary/15 rounded-full blur-3xl pointer-events-none"
+                                            ></div>
+                                            <div
+                                                class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-space-md"
+                                            >
+                                                <div>
+                                                    <div class="flex items-center gap-2 mb-2">
+                                                        <span
+                                                            class="px-2.5 py-0.5 rounded-full bg-secondary/20 text-secondary font-label-badge text-label-badge uppercase tracking-wider"
+                                                        >
+                                                            Premium Tier
+                                                        </span>
+                                                        <span
+                                                            class="px-2.5 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-badge text-label-badge uppercase tracking-wider"
+                                                        >
+                                                            Active Renewal
+                                                        </span>
+                                                    </div>
+                                                    <h3
+                                                        class="font-headline-xl text-headline-xl font-extrabold text-on-surface"
+                                                    >
+                                                        Ultra 4K CineVIP
+                                                    </h3>
+                                                    <p
+                                                        class="font-body-md text-body-md text-on-surface-variant max-w-lg mt-1"
+                                                    >
+                                                        Highest definition Dolby Atmos soundscapes, calibrated HDR
+                                                        master cinema prints, and unlimited simultaneous profile
+                                                        streaming.
+                                                    </p>
+                                                </div>
+                                                <div class="flex flex-col md:items-end">
+                                                    <div class="flex items-baseline gap-1">
+                                                        <span
+                                                            class="font-headline-xl text-headline-xl font-bold text-secondary"
+                                                            >$19.99</span
+                                                        >
+                                                        <span class="font-body-sm text-body-sm text-outline"
+                                                            >/ month</span
+                                                        >
+                                                    </div>
+                                                    <span
+                                                        class="font-label-md text-label-md text-on-surface-variant mt-1"
+                                                        >Next bill on April 15, 2025</span
+                                                    >
+                                                    <button
+                                                        class="mt-4 px-space-lg py-2.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg transition-all shadow-[0_0_20px_rgba(229,9,20,0.35)]"
+                                                        type="button"
+                                                    >
+                                                        Change Plan
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- Plan Features Row -->
+                                            <div
+                                                class="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-space-sm mt-space-lg pt-space-md"
+                                            >
+                                                <div class="flex items-center gap-2 text-on-surface">
+                                                    <span class="material-symbols-outlined text-secondary text-[20px]"
+                                                        >high_quality</span
+                                                    >
+                                                    <span class="font-label-md text-label-md">4K Ultra HD • HDR</span>
+                                                </div>
+                                                <div class="flex items-center gap-2 text-on-surface">
+                                                    <span class="material-symbols-outlined text-secondary text-[20px]"
+                                                        >spatial_audio_off</span
+                                                    >
+                                                    <span class="font-label-md text-label-md">Dolby Atmos Spatial</span>
+                                                </div>
+                                                <div class="flex items-center gap-2 text-on-surface">
+                                                    <span class="material-symbols-outlined text-secondary text-[20px]"
+                                                        >devices</span
+                                                    >
+                                                    <span class="font-label-md text-label-md"
+                                                        >4 Concurrent Screens</span
+                                                    >
+                                                </div>
+                                                <div class="flex items-center gap-2 text-on-surface">
+                                                    <span class="material-symbols-outlined text-secondary text-[20px]"
+                                                        >download_for_offline</span
+                                                    >
+                                                    <span class="font-label-md text-label-md">Unlimited Downloads</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Payment Method & Billing Cycle -->
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                                            <!-- Card Details -->
+                                            <div
+                                                class="p-space-lg rounded-xl bg-surface-container flex flex-col justify-between"
+                                            >
+                                                <div>
+                                                    <div class="flex items-center justify-between mb-space-md">
+                                                        <span
+                                                            class="font-headline-sm text-headline-sm font-bold text-on-surface"
+                                                            >Primary Payment</span
+                                                        >
+                                                        <button
+                                                            class="text-primary-container hover:text-primary font-label-lg text-label-lg"
+                                                            type="button"
+                                                        >
+                                                            Update Card
+                                                        </button>
+                                                    </div>
+                                                    <div
+                                                        class="p-space-md rounded-xl bg-surface-container-high flex items-center justify-between"
+                                                    >
+                                                        <div class="flex items-center gap-space-md">
+                                                            <div
+                                                                class="w-12 h-8 rounded bg-surface-container-lowest flex items-center justify-center font-bold text-on-surface text-[12px] tracking-wider"
+                                                            >
+                                                                VISA
+                                                            </div>
+                                                            <div>
+                                                                <span
+                                                                    class="font-headline-sm text-headline-sm font-semibold text-on-surface block"
+                                                                    >Visa ending in •••• 4829</span
+                                                                >
+                                                                <span class="font-body-sm text-body-sm text-outline"
+                                                                    >Expires 09/2028 • Default Card</span
+                                                                >
+                                                            </div>
+                                                        </div>
+                                                        <span class="material-symbols-outlined text-secondary"
+                                                            >verified</span
+                                                        >
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="mt-6 flex items-center justify-between text-body-sm text-outline"
+                                                >
+                                                    <span>Secured with End-to-End Vault</span>
+                                                    <span class="flex items-center gap-1"
+                                                        ><span class="material-symbols-outlined text-[16px]">lock</span>
+                                                        PCI DSS Level 1</span
+                                                    >
+                                                </div>
+                                            </div>
+                                            <!-- Billing Cycle Information -->
+                                            <div
+                                                class="p-space-lg rounded-xl bg-surface-container flex flex-col justify-between"
+                                            >
+                                                <div>
+                                                    <h3
+                                                        class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-sm"
+                                                    >
+                                                        Billing Cycle & Terms
+                                                    </h3>
+                                                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                                        Your membership renews on the 15th of each calendar month.
+                                                        Changes take effect on the subsequent billing window without
+                                                        loss of watch progress.
+                                                    </p>
+                                                    <div
+                                                        class="mt-4 p-3 rounded-lg bg-surface-container-low flex items-center justify-between"
+                                                    >
+                                                        <span class="font-label-lg text-label-lg text-on-surface"
+                                                            >Auto-Renew Status</span
+                                                        >
+                                                        <span
+                                                            class="font-label-md text-label-md text-secondary font-bold"
+                                                            >Enabled</span
+                                                        >
+                                                    </div>
+                                                </div>
+                                                <div class="mt-6 pt-2 flex items-center justify-between">
+                                                    <a
+                                                        class="font-body-sm text-body-sm text-outline hover:text-primary transition-colors"
+                                                        href="#"
+                                                    >
+                                                        Cancel Membership / Pause Subscription
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Billing History / Invoices Table -->
+                                        <div class="p-space-lg rounded-xl bg-surface-container">
+                                            <div class="flex items-center justify-between mb-space-md">
+                                                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">
+                                                    Invoice History
+                                                </h3>
+                                                <button
+                                                    class="text-primary-container hover:text-primary font-label-lg text-label-lg"
+                                                    type="button"
+                                                >
+                                                    Download All (CSV)
+                                                </button>
+                                            </div>
+                                            <div class="overflow-x-auto">
+                                                <table class="w-full text-left font-body-sm text-body-sm">
+                                                    <thead>
+                                                        <tr
+                                                            class="bg-surface-container-high text-outline uppercase font-label-badge text-label-badge"
+                                                        >
+                                                            <th class="p-3 rounded-l-lg">Invoice Date</th>
+                                                            <th class="p-3">Plan Details</th>
+                                                            <th class="p-3">Method</th>
+                                                            <th class="p-3">Amount</th>
+                                                            <th class="p-3">Status</th>
+                                                            <th class="p-3 text-right rounded-r-lg">Receipt</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="divide-y divide-surface-container-high/40">
+                                                        <tr
+                                                            class="hover:bg-surface-container-high/20 transition-colors"
+                                                        >
+                                                            <td class="p-3 font-semibold text-on-surface">
+                                                                Mar 15, 2025
+                                                            </td>
+                                                            <td class="p-3 text-on-surface-variant">
+                                                                Ultra 4K CineVIP - 1 Month
+                                                            </td>
+                                                            <td class="p-3 text-outline">Visa •••• 4829</td>
+                                                            <td class="p-3 font-semibold text-on-surface">$19.99</td>
+                                                            <td class="p-3">
+                                                                <span
+                                                                    class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-badge text-label-badge uppercase"
+                                                                    >Paid</span
+                                                                >
+                                                            </td>
+                                                            <td class="p-3 text-right">
+                                                                <button
+                                                                    class="text-outline hover:text-on-surface transition-colors flex items-center gap-1 justify-end ml-auto"
+                                                                    type="button"
+                                                                >
+                                                                    <span class="material-symbols-outlined text-[16px]"
+                                                                        >file_download</span
+                                                                    >
+                                                                    <span>PDF</span>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr
+                                                            class="hover:bg-surface-container-high/20 transition-colors"
+                                                        >
+                                                            <td class="p-3 font-semibold text-on-surface">
+                                                                Feb 15, 2025
+                                                            </td>
+                                                            <td class="p-3 text-on-surface-variant">
+                                                                Ultra 4K CineVIP - 1 Month
+                                                            </td>
+                                                            <td class="p-3 text-outline">Visa •••• 4829</td>
+                                                            <td class="p-3 font-semibold text-on-surface">$19.99</td>
+                                                            <td class="p-3">
+                                                                <span
+                                                                    class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-badge text-label-badge uppercase"
+                                                                    >Paid</span
+                                                                >
+                                                            </td>
+                                                            <td class="p-3 text-right">
+                                                                <button
+                                                                    class="text-outline hover:text-on-surface transition-colors flex items-center gap-1 justify-end ml-auto"
+                                                                    type="button"
+                                                                >
+                                                                    <span class="material-symbols-outlined text-[16px]"
+                                                                        >file_download</span
+                                                                    >
+                                                                    <span>PDF</span>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr
+                                                            class="hover:bg-surface-container-high/20 transition-colors"
+                                                        >
+                                                            <td class="p-3 font-semibold text-on-surface">
+                                                                Jan 15, 2025
+                                                            </td>
+                                                            <td class="p-3 text-on-surface-variant">
+                                                                Ultra 4K CineVIP - 1 Month
+                                                            </td>
+                                                            <td class="p-3 text-outline">Visa •••• 4829</td>
+                                                            <td class="p-3 font-semibold text-on-surface">$19.99</td>
+                                                            <td class="p-3">
+                                                                <span
+                                                                    class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-badge text-label-badge uppercase"
+                                                                    >Paid</span
+                                                                >
+                                                            </td>
+                                                            <td class="p-3 text-right">
+                                                                <button
+                                                                    class="text-outline hover:text-on-surface transition-colors flex items-center gap-1 justify-end ml-auto"
+                                                                    type="button"
+                                                                >
+                                                                    <span class="material-symbols-outlined text-[16px]"
+                                                                        >file_download</span
+                                                                    >
+                                                                    <span>PDF</span>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- TAB 3: PLAYBACK PREFERENCES -->
+                                    <div class="tab-pane hidden flex-col gap-space-lg" id="tab-playback">
+                                        <!-- Video Streaming Quality Card -->
+                                        <div class="p-space-lg rounded-xl bg-surface-container">
+                                            <h3
+                                                class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1"
+                                            >
+                                                Video Streaming Bitrate & Resolution
+                                            </h3>
+                                            <p class="font-body-sm text-body-sm text-outline mb-space-md">
+                                                Configure network bandwidth thresholds for high-fidelity theatrical
+                                                rendering
+                                            </p>
+                                            <div
+                                                class="grid grid-cols-1 md:grid-cols-3 gap-space-md"
+                                                id="quality-radio-group"
+                                            >
+                                                <!-- Option 1: 4K Ultra -->
+                                                <label
+                                                    class="cursor-pointer p-space-md rounded-xl bg-surface-container-high hover:bg-surface-bright transition-all flex flex-col justify-between shadow-sm border-0"
+                                                >
+                                                    <div class="flex items-start justify-between mb-3">
+                                                        <div>
+                                                            <span
+                                                                class="font-headline-sm text-headline-sm font-semibold text-on-surface block"
+                                                                >4K Ultra HD</span
+                                                            >
+                                                            <span
+                                                                class="font-label-badge text-label-badge uppercase text-secondary"
+                                                                >Cinematic Master</span
+                                                            >
+                                                        </div>
+                                                        <input
+                                                            checked=""
+                                                            class="accent-primary-container w-4 h-4"
+                                                            name="video_quality"
+                                                            type="radio"
+                                                            value="4k"
+                                                        />
+                                                    </div>
+                                                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                                        Full uncompressed theatrical stream. Highest dynamic range &
+                                                        Dolby Vision color depth.
+                                                    </p>
+                                                    <span class="font-label-md text-label-md text-outline mt-3 block"
+                                                        >~7.0 GB per hour</span
+                                                    >
+                                                </label>
+                                                <!-- Option 2: Auto -->
+                                                <label
+                                                    class="cursor-pointer p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col justify-between shadow-sm"
+                                                >
+                                                    <div class="flex items-start justify-between mb-3">
+                                                        <div>
+                                                            <span
+                                                                class="font-headline-sm text-headline-sm font-semibold text-on-surface block"
+                                                                >Auto (Adaptive)</span
+                                                            >
+                                                            <span
+                                                                class="font-label-badge text-label-badge uppercase text-outline"
+                                                                >Recommended</span
+                                                            >
+                                                        </div>
+                                                        <input
+                                                            class="accent-primary-container w-4 h-4"
+                                                            name="video_quality"
+                                                            type="radio"
+                                                            value="auto"
+                                                        />
+                                                    </div>
+                                                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                                        Dynamically scales between 1080p and 4K based on instantaneous
+                                                        connection speed.
+                                                    </p>
+                                                    <span class="font-label-md text-label-md text-outline mt-3 block"
+                                                        >Variable bandwidth</span
+                                                    >
+                                                </label>
+                                                <!-- Option 3: Data Saver -->
+                                                <label
+                                                    class="cursor-pointer p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col justify-between shadow-sm"
+                                                >
+                                                    <div class="flex items-start justify-between mb-3">
+                                                        <div>
+                                                            <span
+                                                                class="font-headline-sm text-headline-sm font-semibold text-on-surface block"
+                                                                >Data Saver</span
+                                                            >
+                                                            <span
+                                                                class="font-label-badge text-label-badge uppercase text-outline"
+                                                                >1080p Standard</span
+                                                            >
+                                                        </div>
+                                                        <input
+                                                            class="accent-primary-container w-4 h-4"
+                                                            name="video_quality"
+                                                            type="radio"
+                                                            value="saver"
+                                                        />
+                                                    </div>
+                                                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                                        Optimized encoding for metered connections or mobile hotspots
+                                                        without buffering.
+                                                    </p>
+                                                    <span class="font-label-md text-label-md text-outline mt-3 block"
+                                                        >~0.7 GB per hour</span
+                                                    >
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!-- Autoplay Controls -->
+                                        <div class="p-space-lg rounded-xl bg-surface-container">
+                                            <h3
+                                                class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1"
+                                            >
+                                                Autoplay Behaviors
+                                            </h3>
+                                            <p class="font-body-sm text-body-sm text-outline mb-space-md">
+                                                Tailor seamless binge sequences and interactive catalog browsing
+                                            </p>
+                                            <div class="flex flex-col divide-y divide-surface-container-high/50">
+                                                <div class="py-3 flex items-center justify-between gap-space-md">
+                                                    <div>
+                                                        <span class="font-label-lg text-label-lg text-on-surface block"
+                                                            >Autoplay Next Episode</span
+                                                        >
+                                                        <span class="font-body-sm text-body-sm text-outline"
+                                                            >Automatically cue the next chapter when end credits
+                                                            begin</span
+                                                        >
+                                                    </div>
+                                                    <label class="relative inline-flex items-center cursor-pointer">
+                                                        <input checked="" class="sr-only peer" type="checkbox" />
+                                                        <div
+                                                            class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"
+                                                        ></div>
+                                                    </label>
+                                                </div>
+                                                <div class="py-3 flex items-center justify-between gap-space-md">
+                                                    <div>
+                                                        <span class="font-label-lg text-label-lg text-on-surface block"
+                                                            >Autoplay Video Previews</span
+                                                        >
+                                                        <span class="font-body-sm text-body-sm text-outline"
+                                                            >Play theatrical trailers with muted sound while hovering
+                                                            media rails</span
+                                                        >
+                                                    </div>
+                                                    <label class="relative inline-flex items-center cursor-pointer">
+                                                        <input checked="" class="sr-only peer" type="checkbox" />
+                                                        <div
+                                                            class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"
+                                                        ></div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Audio Dynamic Range -->
+                                        <div class="p-space-lg rounded-xl bg-surface-container">
+                                            <h3
+                                                class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1"
+                                            >
+                                                Audio Dynamic Range Mode
+                                            </h3>
+                                            <p class="font-body-sm text-body-sm text-outline mb-space-md">
+                                                Choose acoustic compression tailored for dedicated cinema monitors or
+                                                late-night dialogue clarity
+                                            </p>
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                                                <div
+                                                    class="p-space-md rounded-xl bg-surface-container-high flex items-start gap-space-md"
+                                                >
+                                                    <span
+                                                        class="material-symbols-outlined text-secondary text-[28px] mt-0.5"
+                                                        >surround_sound</span
+                                                    >
+                                                    <div>
+                                                        <span
+                                                            class="font-headline-sm text-headline-sm font-semibold text-on-surface block"
+                                                            >Studio Reference (Original Dynamic Range)</span
+                                                        >
+                                                        <p class="font-body-sm text-body-sm text-outline mt-1">
+                                                            Full visceral bass response, theatrical punch, and wide
+                                                            channel separation for soundbars and discrete 7.1 setups.
+                                                        </p>
+                                                        <span
+                                                            class="mt-2 inline-block px-2 py-0.5 rounded bg-secondary/15 text-secondary font-label-badge text-label-badge uppercase"
+                                                            >Active Selection</span
+                                                        >
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-space-md"
+                                                >
+                                                    <span
+                                                        class="material-symbols-outlined text-outline text-[28px] mt-0.5"
+                                                        >volume_up</span
+                                                    >
+                                                    <div>
+                                                        <span
+                                                            class="font-headline-sm text-headline-sm font-semibold text-on-surface block"
+                                                            >Night Mode (Dialogue Boost)</span
+                                                        >
+                                                        <p class="font-body-sm text-body-sm text-outline mt-1">
+                                                            Levels extreme peaks, lifts quiet whisper dialogue, and
+                                                            compresses sudden concussive sound effects.
+                                                        </p>
+                                                        <button
+                                                            class="mt-2 text-primary-container hover:text-primary font-label-md text-label-md"
+                                                            type="button"
+                                                        >
+                                                            Switch to Night Mode
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- TAB 4: SUBTITLES & AUDIO -->
+                                    <div class="tab-pane hidden flex-col gap-space-lg" id="tab-subtitles">
+                                        <!-- Language Selectors -->
+                                        <div class="p-space-lg rounded-xl bg-surface-container">
+                                            <h3
+                                                class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1"
+                                            >
+                                                Audio Track & Subtitle Defaults
+                                            </h3>
+                                            <p class="font-body-sm text-body-sm text-outline mb-space-md">
+                                                Set language fallbacks when starting any film or episodic title
+                                            </p>
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                                                <div>
+                                                    <label
+                                                        class="font-label-lg text-label-lg text-on-surface block mb-2"
+                                                        >Default Audio Language</label
+                                                    >
+                                                    <select
+                                                        class="w-full px-4 py-3 rounded-lg bg-surface-container-high text-on-surface font-body-md text-body-md focus:outline-none focus:ring-0 appearance-none cursor-pointer"
+                                                    >
+                                                        <option selected="">
+                                                            English [Original - Dolby Atmos 7.1.4]
+                                                        </option>
+                                                        <option>English [Descriptive Audio narration]</option>
+                                                        <option>French / Français [5.1 Surround]</option>
+                                                        <option>Spanish / Español [Dolby Atmos]</option>
+                                                        <option>Japanese / 日本語 [Original Studio Master]</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label
+                                                        class="font-label-lg text-label-lg text-on-surface block mb-2"
+                                                        >Default Subtitle Track</label
+                                                    >
+                                                    <select
+                                                        class="w-full px-4 py-3 rounded-lg bg-surface-container-high text-on-surface font-body-md text-body-md focus:outline-none focus:ring-0 appearance-none cursor-pointer"
+                                                    >
+                                                        <option selected="">English (CC / Closed Captions)</option>
+                                                        <option>English [Dialog Only]</option>
+                                                        <option>Vietnamese / Tiếng Việt</option>
+                                                        <option>Spanish / Español</option>
+                                                        <option>Off (Disabled by default)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Interactive Live Subtitle Preview Studio -->
+                                        <div class="p-space-lg rounded-xl bg-surface-container">
+                                            <div class="flex items-center justify-between mb-space-sm">
+                                                <div>
+                                                    <h3
+                                                        class="font-headline-sm text-headline-sm font-bold text-on-surface"
+                                                    >
+                                                        Theatrical Subtitle Appearance
+                                                    </h3>
+                                                    <p class="font-body-sm text-body-sm text-outline">
+                                                        Real-time styling engine with instantaneous playback preview
+                                                    </p>
+                                                </div>
+                                                <button
+                                                    class="text-outline hover:text-on-surface font-label-md text-label-md transition-colors"
+                                                    id="btn-reset-subs"
+                                                    type="button"
+                                                >
+                                                    Reset to Default
+                                                </button>
+                                            </div>
+                                            <!-- Preview Screen Mockup -->
+                                            <div
+                                                class="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden shadow-2xl mb-space-lg bg-surface-container-lowest flex items-end justify-center pb-8"
+                                            >
+                                                <!-- Cinematic scene image background -->
+                                                <div
+                                                    class="absolute inset-0 bg-cover bg-center"
+                                                    data-alt="Cinematic atmospheric still from a sci-fi neo-noir film, dark rainy neon city street at night with high contrast shadows and moody crimson glow"
+                                                    style="
+                                                        background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCZK6HuG8-lBhKzoQyn54suLnGL-NwHlkD4wjzD2c9MFQ0vWGW52u2GrpDqJwabe7E_CDPBGClHKpFD00Ob4pMrpll1le86LVOXcnJJ-axbhvpszAM8Ch5qYGnhfdJKWdLDMme6CSquZ0SY1hYQHlLm5W15Xdmc1VpMUj2lkXZZPRbNzJILBZ1RQLUc1igc67Ci2_VWv10rzTnhHWVmHSgYb3WZtDHMcdP-T7EEohhIM01Snzq2J3pd&quot;);
+                                                    "
+                                                ></div>
+                                                <!-- Theatrical Scrim Overlay -->
+                                                <div
+                                                    class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-black/30"
+                                                ></div>
+                                                <!-- Subtitle Text Element (interactive via JS) -->
+                                                <div
+                                                    class="relative z-10 max-w-xl text-center px-4 py-1.5 rounded transition-all duration-200"
+                                                    id="sub-preview-box"
+                                                    style="background-color: rgba(0, 0, 0, 0.6)"
+                                                >
+                                                    <p
+                                                        class="font-body-lg text-body-lg font-semibold tracking-wide"
+                                                        id="sub-preview-text"
+                                                        style="
+                                                            color: #ffffff;
+                                                            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+                                                        "
+                                                    >
+                                                        "I have seen things you people wouldn't believe... attack ships
+                                                        on fire off the shoulder of Orion."
+                                                    </p>
+                                                </div>
+                                                <!-- Mini Video Timeline UI -->
+                                                <div class="absolute top-3 left-4 flex items-center gap-2">
+                                                    <span
+                                                        class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge uppercase font-bold"
+                                                        >PREVIEW MODE</span
+                                                    >
+                                                    <span class="text-on-surface/80 font-mono text-[11px]"
+                                                        >01:42:19 / 02:08:44</span
+                                                    >
+                                                </div>
+                                            </div>
+                                            <!-- Customization Controls Grid -->
+                                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md">
+                                                <div>
+                                                    <label class="font-label-md text-label-md text-outline block mb-1.5"
+                                                        >Font Style</label
+                                                    >
+                                                    <select
+                                                        class="w-full px-3 py-2 rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm focus:outline-none cursor-pointer"
+                                                        id="sub-font-select"
+                                                    >
+                                                        <option value="sans-serif">Proportional Sans-Serif</option>
+                                                        <option value="serif">Classic Serif</option>
+                                                        <option value="monospace">Monospace Typewriter</option>
+                                                        <option value="cursive">Casual Script</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label class="font-label-md text-label-md text-outline block mb-1.5"
+                                                        >Font Size</label
+                                                    >
+                                                    <div
+                                                        class="flex items-center gap-1 bg-surface-container-high rounded-lg p-1"
+                                                    >
+                                                        <button
+                                                            class="sub-size-btn flex-1 py-1 rounded text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface"
+                                                            data-size="small"
+                                                            type="button"
+                                                        >
+                                                            Small
+                                                        </button>
+                                                        <button
+                                                            class="sub-size-btn active flex-1 py-1 rounded text-center font-label-md text-label-md bg-surface-bright text-on-surface"
+                                                            data-size="medium"
+                                                            type="button"
+                                                        >
+                                                            Medium
+                                                        </button>
+                                                        <button
+                                                            class="sub-size-btn flex-1 py-1 rounded text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface"
+                                                            data-size="large"
+                                                            type="button"
+                                                        >
+                                                            Large
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="font-label-md text-label-md text-outline block mb-1.5"
+                                                        >Text Tint</label
+                                                    >
+                                                    <div class="flex items-center gap-2 pt-1">
+                                                        <button
+                                                            class="sub-color-btn w-7 h-7 rounded-full bg-white ring-2 ring-primary-container focus:outline-none shadow"
+                                                            data-color="#ffffff"
+                                                            title="Pure White"
+                                                            type="button"
+                                                        ></button>
+                                                        <button
+                                                            class="sub-color-btn w-7 h-7 rounded-full bg-[#ffdd40] focus:outline-none shadow"
+                                                            data-color="#ffdd40"
+                                                            title="Cinema Yellow"
+                                                            type="button"
+                                                        ></button>
+                                                        <button
+                                                            class="sub-color-btn w-7 h-7 rounded-full bg-[#4deeea] focus:outline-none shadow"
+                                                            data-color="#4deeea"
+                                                            title="Cyan Crisp"
+                                                            type="button"
+                                                        ></button>
+                                                        <button
+                                                            class="sub-color-btn w-7 h-7 rounded-full bg-[#a8ff78] focus:outline-none shadow"
+                                                            data-color="#a8ff78"
+                                                            title="Green Screen"
+                                                            type="button"
+                                                        ></button>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="font-label-md text-label-md text-outline block mb-1.5"
+                                                        >Background Plate</label
+                                                    >
+                                                    <select
+                                                        class="w-full px-3 py-2 rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm focus:outline-none cursor-pointer"
+                                                        id="sub-bg-select"
+                                                    >
+                                                        <option value="rgba(0,0,0,0.6)">Semi-Transparent Black</option>
+                                                        <option value="rgba(0,0,0,0.95)">Solid Obsidian</option>
+                                                        <option value="transparent">None (Text Shadow Only)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- TAB 5: PARENTAL CONTROLS -->
+                                    <div class="tab-pane hidden flex-col gap-space-lg" id="tab-parental">
+                                        <!-- Master Security Lock PIN -->
+                                        <div class="p-space-lg rounded-xl bg-surface-container">
+                                            <div
+                                                class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md mb-space-md"
+                                            >
+                                                <div>
+                                                    <h3
+                                                        class="font-headline-sm text-headline-sm font-bold text-on-surface"
+                                                    >
+                                                        Master Parental PIN
+                                                    </h3>
+                                                    <p class="font-body-sm text-body-sm text-outline">
+                                                        Prevents younger family members from accessing restricted
+                                                        profile feeds or lifting controls
+                                                    </p>
+                                                </div>
+                                                <button
+                                                    class="px-space-md py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg transition-colors flex items-center justify-center gap-1.5"
+                                                    type="button"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]"
+                                                        >lock_reset</span
+                                                    >
+                                                    <span>Update 4-Digit PIN</span>
+                                                </button>
+                                            </div>
+                                            <div
+                                                class="p-space-md rounded-xl bg-surface-container-high flex items-center justify-between"
+                                            >
+                                                <div class="flex items-center gap-space-md">
+                                                    <div
+                                                        class="w-10 h-10 rounded-full bg-secondary/15 flex items-center justify-center text-secondary"
+                                                    >
+                                                        <span class="material-symbols-outlined text-[22px]"
+                                                            >shield</span
+                                                        >
+                                                    </div>
+                                                    <div>
+                                                        <span
+                                                            class="font-headline-sm text-headline-sm font-semibold text-on-surface block"
+                                                            >Parental Lock is Active</span
+                                                        >
+                                                        <span class="font-body-sm text-body-sm text-outline"
+                                                            >PIN required to change ratings, modify account info, or
+                                                            launch TV-MA titles</span
+                                                        >
+                                                    </div>
+                                                </div>
+                                                <span
+                                                    class="font-mono text-[16px] tracking-widest text-secondary font-bold"
+                                                    >● ● ● ●</span
+                                                >
+                                            </div>
+                                        </div>
+                                        <!-- Stepped Maturity Rating Selector -->
+                                        <div class="p-space-lg rounded-xl bg-surface-container">
+                                            <div class="mb-space-md">
+                                                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">
+                                                    Maximum Content Maturity Threshold
+                                                </h3>
+                                                <p class="font-body-sm text-body-sm text-outline">
+                                                    Alex Vance (Master Profile) currently permits playback for all
+                                                    cinema ratings
+                                                </p>
+                                            </div>
+                                            <div
+                                                class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 mb-space-md"
+                                                id="rating-step-group"
+                                            >
+                                                <button
+                                                    class="rating-pill p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high text-left transition-all"
+                                                    data-rating="TV-Y"
+                                                    type="button"
+                                                >
+                                                    <span
+                                                        class="font-headline-sm text-headline-sm font-bold block text-outline"
+                                                        >TV-Y</span
+                                                    >
+                                                    <span
+                                                        class="font-label-badge text-label-badge uppercase text-outline"
+                                                        >All Children</span
+                                                    >
+                                                </button>
+                                                <button
+                                                    class="rating-pill p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high text-left transition-all"
+                                                    data-rating="TV-G"
+                                                    type="button"
+                                                >
+                                                    <span
+                                                        class="font-headline-sm text-headline-sm font-bold block text-outline"
+                                                        >TV-G / G</span
+                                                    >
+                                                    <span
+                                                        class="font-label-badge text-label-badge uppercase text-outline"
+                                                        >General Audiences</span
+                                                    >
+                                                </button>
+                                                <button
+                                                    class="rating-pill p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high text-left transition-all"
+                                                    data-rating="PG"
+                                                    type="button"
+                                                >
+                                                    <span
+                                                        class="font-headline-sm text-headline-sm font-bold block text-outline"
+                                                        >PG / PG-13</span
+                                                    >
+                                                    <span
+                                                        class="font-label-badge text-label-badge uppercase text-outline"
+                                                        >Parental Guidance</span
+                                                    >
+                                                </button>
+                                                <button
+                                                    class="rating-pill p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high text-left transition-all"
+                                                    data-rating="TV-14"
+                                                    type="button"
+                                                >
+                                                    <span
+                                                        class="font-headline-sm text-headline-sm font-bold block text-outline"
+                                                        >TV-14 / R</span
+                                                    >
+                                                    <span
+                                                        class="font-label-badge text-label-badge uppercase text-outline"
+                                                        >Strong Discretion</span
+                                                    >
+                                                </button>
+                                                <button
+                                                    class="rating-pill active p-3 rounded-xl bg-primary-container text-on-primary-container text-left shadow-[0_0_16px_rgba(229,9,20,0.4)] transition-all"
+                                                    data-rating="TV-MA"
+                                                    type="button"
+                                                >
+                                                    <span class="font-headline-sm text-headline-sm font-bold block"
+                                                        >TV-MA / NC-17</span
+                                                    >
+                                                    <span class="font-label-badge text-label-badge uppercase opacity-90"
+                                                        >Unrestricted Master</span
+                                                    >
+                                                </button>
+                                            </div>
+                                            <div
+                                                class="p-3 rounded-lg bg-surface-container-low flex items-center gap-2 text-outline font-body-sm text-body-sm"
+                                            >
+                                                <span class="material-symbols-outlined text-secondary text-[18px]"
+                                                    >verified_user</span
+                                                >
+                                                <span
+                                                    >Allows viewing of mature artistic themes, extreme cinema violence,
+                                                    and adult-oriented documentary features.</span
+                                                >
+                                            </div>
+                                        </div>
+                                        <!-- Blocked Titles Registry -->
+                                        <div class="p-space-lg rounded-xl bg-surface-container">
+                                            <h3
+                                                class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1"
+                                            >
+                                                Explicitly Blocked Titles
+                                            </h3>
+                                            <p class="font-body-sm text-body-sm text-outline mb-space-md">
+                                                Specific catalog items blocked across family profiles regardless of
+                                                maturity grade
+                                            </p>
+                                            <div class="flex flex-col sm:flex-row gap-space-sm mb-space-md">
+                                                <div class="relative flex-1">
+                                                    <input
+                                                        class="w-full h-11 pl-10 pr-4 rounded-lg bg-surface-container-high text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none"
+                                                        id="blocked-title-input"
+                                                        placeholder="Type movie or series name to restrict..."
+                                                        type="text"
+                                                    />
+                                                    <span
+                                                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]"
+                                                        >search</span
+                                                    >
+                                                </div>
+                                                <button
+                                                    class="px-space-lg py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-lg text-label-lg transition-colors flex items-center justify-center gap-1.5"
+                                                    id="btn-add-blocked"
+                                                    type="button"
+                                                >
+                                                    <span class="material-symbols-outlined text-[18px]">block</span>
+                                                    <span>Block Title</span>
+                                                </button>
+                                            </div>
+                                            <!-- Existing Blocked Items Chips -->
+                                            <div class="flex flex-wrap gap-2" id="blocked-chip-container">
+                                                <div
+                                                    class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md"
+                                                >
+                                                    <span>The Abyss Uncut (1989)</span>
+                                                    <button
+                                                        class="remove-chip-btn text-outline hover:text-error transition-colors flex items-center"
+                                                        type="button"
+                                                    >
+                                                        <span class="material-symbols-outlined text-[16px]">close</span>
+                                                    </button>
+                                                </div>
+                                                <div
+                                                    class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md"
+                                                >
+                                                    <span>Carnival of Shadows (Season 2)</span>
+                                                    <button
+                                                        class="remove-chip-btn text-outline hover:text-error transition-colors flex items-center"
+                                                        type="button"
+                                                    >
+                                                        <span class="material-symbols-outlined text-[16px]">close</span>
+                                                    </button>
+                                                </div>
+                                                <div
+                                                    class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md"
+                                                >
+                                                    <span>Midnight Asylum Vol. 1</span>
+                                                    <button
+                                                        class="remove-chip-btn text-outline hover:text-error transition-colors flex items-center"
+                                                        type="button"
+                                                    >
+                                                        <span class="material-symbols-outlined text-[16px]">close</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <!-- Vanilla Interaction Script -->
+                <script>
+                    (function () {
+                        // Tab Switching Logic
+                        const tabButtons = document.querySelectorAll("#settings-tab-list .tab-btn");
+                        const tabPanes = document.querySelectorAll(".tab-pane");
+
+                        tabButtons.forEach((button) => {
+                            button.addEventListener("click", () => {
+                                const targetId = button.getAttribute("data-tab");
+
+                                // Reset all tabs
+                                tabButtons.forEach((btn) => {
+                                    btn.setAttribute("aria-selected", "false");
+                                    btn.classList.remove("bg-surface-container-high", "text-on-surface", "shadow-sm");
+                                    btn.classList.add("text-on-surface-variant");
+                                });
+
+                                // Activate clicked tab
+                                button.setAttribute("aria-selected", "true");
+                                button.classList.add("bg-surface-container-high", "text-on-surface", "shadow-sm");
+                                button.classList.remove("text-on-surface-variant");
+
+                                // Toggle Pane Views
+                                tabPanes.forEach((pane) => {
+                                    if (pane.id === targetId) {
+                                        pane.classList.remove("hidden");
+                                        pane.classList.add("flex");
+                                    } else {
+                                        pane.classList.add("hidden");
+                                        pane.classList.remove("flex");
+                                    }
+                                });
+                            });
+                        });
+
+                        // Subtitle Preview Customizer Logic
+                        const subPreviewText = document.getElementById("sub-preview-text");
+                        const subPreviewBox = document.getElementById("sub-preview-box");
+                        const fontSelect = document.getElementById("sub-font-select");
+                        const bgSelect = document.getElementById("sub-bg-select");
+                        const sizeButtons = document.querySelectorAll(".sub-size-btn");
+                        const colorButtons = document.querySelectorAll(".sub-color-btn");
+                        const resetBtn = document.getElementById("btn-reset-subs");
+
+                        if (fontSelect && subPreviewText) {
+                            fontSelect.addEventListener("change", (e) => {
+                                subPreviewText.style.fontFamily = e.target.value;
+                            });
+                        }
+
+                        if (bgSelect && subPreviewBox) {
+                            bgSelect.addEventListener("change", (e) => {
+                                subPreviewBox.style.backgroundColor = e.target.value;
+                            });
+                        }
+
+                        sizeButtons.forEach((btn) => {
+                            btn.addEventListener("click", () => {
+                                sizeButtons.forEach((b) => {
+                                    b.classList.remove("bg-surface-bright", "text-on-surface");
+                                    b.classList.add("text-on-surface-variant");
+                                });
+                                btn.classList.add("bg-surface-bright", "text-on-surface");
+                                btn.classList.remove("text-on-surface-variant");
+
+                                const size = btn.getAttribute("data-size");
+                                if (size === "small") {
+                                    subPreviewText.style.fontSize = "14px";
+                                    subPreviewText.style.lineHeight = "20px";
+                                } else if (size === "medium") {
+                                    subPreviewText.style.fontSize = "18px";
+                                    subPreviewText.style.lineHeight = "26px";
+                                } else if (size === "large") {
+                                    subPreviewText.style.fontSize = "24px";
+                                    subPreviewText.style.lineHeight = "32px";
+                                }
+                            });
+                        });
+
+                        colorButtons.forEach((btn) => {
+                            btn.addEventListener("click", () => {
+                                colorButtons.forEach((b) => b.classList.remove("ring-2", "ring-primary-container"));
+                                btn.classList.add("ring-2", "ring-primary-container");
+                                const color = btn.getAttribute("data-color");
+                                if (subPreviewText) {
+                                    subPreviewText.style.color = color;
+                                }
+                            });
+                        });
+
+                        if (resetBtn && subPreviewText && subPreviewBox) {
+                            resetBtn.addEventListener("click", () => {
+                                subPreviewText.style.color = "#ffffff";
+                                subPreviewText.style.fontFamily = "sans-serif";
+                                subPreviewText.style.fontSize = "18px";
+                                subPreviewBox.style.backgroundColor = "rgba(0,0,0,0.6)";
+                                if (fontSelect) fontSelect.value = "sans-serif";
+                                if (bgSelect) bgSelect.value = "rgba(0,0,0,0.6)";
+                            });
+                        }
+
+                        // Parental Rating Step Selector
+                        const ratingPills = document.querySelectorAll("#rating-step-group .rating-pill");
+                        ratingPills.forEach((pill) => {
+                            pill.addEventListener("click", () => {
+                                ratingPills.forEach((p) => {
+                                    p.classList.remove(
+                                        "bg-primary-container",
+                                        "text-on-primary-container",
+                                        "shadow-[0_0_16px_rgba(229,9,20,0.4)]"
+                                    );
+                                    p.classList.add("bg-surface-container-low", "text-outline");
+                                });
+                                pill.classList.add(
+                                    "bg-primary-container",
+                                    "text-on-primary-container",
+                                    "shadow-[0_0_16px_rgba(229,9,20,0.4)]"
+                                );
+                                pill.classList.remove("bg-surface-container-low", "text-outline");
+                            });
+                        });
+
+                        // Blocked Title Add & Remove
+                        const addBlockedBtn = document.getElementById("btn-add-blocked");
+                        const blockedInput = document.getElementById("blocked-title-input");
+                        const chipContainer = document.getElementById("blocked-chip-container");
+
+                        if (addBlockedBtn && blockedInput && chipContainer) {
+                            addBlockedBtn.addEventListener("click", () => {
+                                const title = blockedInput.value.trim();
+                                if (title) {
+                                    const chip = document.createElement("div");
+                                    chip.className =
+                                        "flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md";
+                                    chip.innerHTML = `<span>${title}</span>
+              <button type="button" class="remove-chip-btn text-outline hover:text-error transition-colors flex items-center">
+                <span class="material-symbols-outlined text-[16px]">close</span>
+              </button>`;
+                                    chipContainer.appendChild(chip);
+                                    blockedInput.value = "";
+                                }
+                            });
+
+                            chipContainer.addEventListener("click", (e) => {
+                                const removeBtn = e.target.closest(".remove-chip-btn");
+                                if (removeBtn) {
+                                    const chip = removeBtn.closest("div");
+                                    if (chip) chip.remove();
+                                }
+                            });
+                        }
+                    })();
+                </script>
+            </div>
+        </main>
+        <load src="src/components/footer.html" />
+        <script type="module" src="/js/nav.js"></script>
+    </body>
+</html>
